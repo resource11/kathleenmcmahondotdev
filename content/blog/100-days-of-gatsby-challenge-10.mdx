@@ -66,15 +66,18 @@ The instructions for adding [‘gatsby-tranformer-cloudinary`](https://www.gatsb
 
 The `gatsby-config` environment setup docs for `gatsby-transform-cloudinary` indicated to import the `dotenv` dependency like this:
 
-```// Load the environment variables.
+```bash
+// Load the environment variables.
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV}`,});
+```
 
 The `gatsby-source-cloudinary` docs indicated it a different way:
 
-require('dotenv').config();
+```js
+require("dotenv").config()
+```
 
 Using the former config with the path set would throw an error in the CLI when trying to run the site in develop mode, yet using the setting without assigning the path seemed to work when using both plugins in the site. Once I removed the path from the dotenv config, everything worked as expected.
-
 
 CDN for media assets takeaways:
 I really enjoyed exploring using Cloudinary for my images, and will be looking into pairing these plugins with [rendering images sourced from a YAML file](https://www.gatsbyjs.org/tutorial/gatsby-image-tutorial/#rendering-images-sourced-from-yaml) and [lazy loading components](https://www.gatsbyjs.org/docs/mdx/importing-and-using-components/#lazy-loading-components) in future projects.
@@ -82,21 +85,16 @@ I really enjoyed exploring using Cloudinary for my images, and will be looking i
 .envfiles: https://medium.com/codait/environment-variables-or-keeping-your-secrets-secret-in-a-node-js-app-99019dfff716
 https://www.gatsbyjs.org/docs/environment-variables/
 
-
 D: JavaScript Concerns
 
 Skipping this step for now, because I want to continue using React rather than Preact. I’ll come back to this section, though.
-
 
 til:
 When using Gatsby Cloud for deploying your site, you must add the .env variables into the General environment settings, to make the build work, regardless of which service you use for your hosting integration. I initially added those .env variables in the Netlify Build & deploy environment section, and that proved unsuccessful. Once I removed the variables from the Netlify settings and added them to the Gatsby Cloud environment settings instead, the build worked as expected. I didn’t need to add them to the Netlify environment variables at all.
 
 the bulk upload feature in Gatsby Cloud is pretty sweet (add image)
 
-
-
 Working on my site
 
 What I learned:
 GraphQL will do a regex query to exclude names but gatsby doesn’t like using that it in a static query. I was trying to exclude two file names and the syntax would throw errors. I used the negation filter instead to exclude one file instead. Doesn’t seem very efficient. Will come back to this.
-```

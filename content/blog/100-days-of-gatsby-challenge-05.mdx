@@ -37,7 +37,7 @@ and
 
 interesting CLI error here when trying to import graphql into an MDX file and doing a query right form that file:
 
-```
+```bash
 Multiple "root" queries found: "MyQuery" and "MyQuery".
 Only the first ("MyQuery") will be registered.
 Instead of:
@@ -84,7 +84,9 @@ you can make a component using an MDX file! Make sure you do a default export to
 <!-- This default export overrides the default layout ensuring -->
 <!-- that the FAQ component isn't wrapped by other elements -->
 
+```jsx
 export default ({ children }) => <>{children}</>
+```
 
 from the [defining an (MDX) layout](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) section
 
