@@ -1,0 +1,20 @@
+@import "../../../src/common/styles/variables.css";
+.displayBox {
+  position: relative;
+  padding: 1.25rem;
+  min-height: 4rem;
+  background-color: var(--steel);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--storm);
+  border-bottom: 0;
+}
+
+.block {
+  display: block;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-export default {
+const data = {
   primaryNavLinks: [
     {
       name: "Work",
@@ -14,3 +14,5 @@ export default {
     },
   ],
 }
+
+export default data
