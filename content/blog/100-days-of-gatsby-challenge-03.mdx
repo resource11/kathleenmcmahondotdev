@@ -1,0 +1,54 @@
+---
+title: "100 Days of Gatsby — Challenge 3"
+date: 2020-03-29
+author: "Kathleen McMahon"
+path: /blog/100-days-of-gatsby-challenge-03
+tags: ["GatsbyJS"]
+description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
+---
+
+Intro paragraph.
+
+## Challenge 3: Learn How to Use Images with Gatsby
+
+I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the link in Challenge resources part 1.
+https://www.gatsbyjs.org/docs/working-with-images-in-markdown/
+
+After installing plugins related to gatsby image, `npm` warned me in the CLI about of security vulnerabilities (I love this new feature of NPM by the way). Running the `npm audit` command gives you a list of all the vulnerabilities and which commands to run to fix them. I especially love the flag for `mini mist` that shows the `—depth 8` because it allows you to target the **exact** place where that package is in the dependency tree.
+
+I fixed the errors, and did a clean install.
+
+When I got to this error:
+
+```bash
+The fragment “GatsbyImageSharpFluid” does not exist
+```
+
+I realized that I had to start from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead, and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page to get a better sense of things before diving deeper.
+
+This helped me understand what Webpack does with the images at the bundle stage [for Gatsby sites? Or is it what Webpack does at the bundle stage for all sites, but you have to specify the output path, right? (at build time Webpack moves the images into the public folder and provide the correct path)
+
+went through the part 1 steps, made pages with images for the markdown pages. Got a bit stuck when trying to do the same with MDX (needed the MDX provider to wrap Layout). I want to see if you can do both Markdown and MDX queries at the same time in a page…
+
+While reading the pages and layouts recipes (https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically), the createPage method uses the path to create the route, component to use the template, the context to set the context object (in that example it was the dogData object getting a forEach for the dog). The dog is destructured as an object to pass in the context { dog }, which has to do with pageContext (find link on that)
+
+Then, in your template, you pass in the destructured doc into `pageContext`. So…
+
+```jsx
+import React from "react"
+
+export default ({ pageContext: { dog } }) => (
+  <section>
+    {dog.name} - {dog.breed}
+  </section>
+)
+```
+
+I abandoned the MDX portion for now and will stick with Markdown and will continue with challenges
+
+While working on the https://www.gatsbyjs.org/docs/working-with-images-in-markdown/#inline-images-with-gatsby-remark-images section, make sure you pass in linkImagesToOriginal: false
+into the webpack config, otherwise your image will be linked
+
+the rest of the challenge was straightforward.
+
+Later on I plan on learning [how to use the Cloudinary image service](https://www.gatsbyjs.org/docs/using-cloudinary-image-service/) to host my images

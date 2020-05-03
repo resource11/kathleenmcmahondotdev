@@ -1,0 +1,161 @@
+---
+title: "100 Days of Gatsby — Challenge 5"
+date: 2020-04-15
+author: "Kathleen McMahon"
+path: /blog/100-days-of-gatsby-challenge-05
+tags: ["GatsbyJS"]
+description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
+---
+
+Intro paragraph.
+
+## Challenge 5: Mix Markdown and React Using MDX
+
+https://www.gatsbyjs.org/blog/100days/mdx/
+
+Adding gatsby-plugin-mdx and all the companion dependencies allowed me to render any MDX files with no issue.
+
+the section on [writing pages in MDX](https://www.gatsbyjs.org/docs/mdx/writing-pages/) in Gatsby was clear:
+
+Pages are rendered at a URL that is constructed from the filesystem path inside src/pages. An MDX file at src/pages/awesome.mdx will result in a page being rendered at mysite.com/awesome.
+gatsby-plugin-mdx looks for MDX files and automatically transpiles them so that Gatsby internals can render them.
+
+The documentation is a bit unclear
+
+Note: To query MDX content, it must be included in the node system using a source like the gatsby-source-filesystem plugin first. Instructions for sourcing content from somewhere like your /src/pages directory can be found on the plugin’s README.
+Frontmatter is also available in props.pageContext.frontmatter and can be accessed in blocks of JSX in your MDX document:
+
+What does ‘node system’ mean here? Does this mean doing something in the gatsby-config file or the gatsby-node file?
+
+The props.pageContext.frontmatter part was unclear… do you have to do a graphQL query to find that first, or is it done automatically under the hood? Is there an example of how you do this in a .mdx file?
+
+Ahhh. When using frontmatter in an MDX file, all the imports need to occur after the frontmatter block, otherwise MDX thinks your frontmatter is text and the three dashes closing the frontmatter block are considered to be a horizontal rule element. I wish I had seen that earlier in the order of this page.
+
+so was this part
+
+and
+
+interesting CLI error here when trying to import graphql into an MDX file and doing a query right form that file:
+
+```bash
+Multiple "root" queries found: "MyQuery" and "MyQuery".
+Only the first ("MyQuery") will be registered.
+Instead of:
+   1 | query MyQuery {
+   2 |   allMdx {
+   3 |     #...
+   4 |   }
+   5 | }
+   6 |
+   7 | query MyQuery {
+   8 |   allMdx {
+   9 |     #...
+  10 |   }
+  11 | }
+Do:
+  1 | query myQueryAndMyQuery {
+  2 |   allMdx {
+  3 |     #...
+  4 |   }
+  5 |   allMdx {
+  6 |     #...
+  7 |   }
+  8 | }
+This can happen when you use two page/static queries in one file. Please combine those into one query.
+If you're defining multiple components (each with a static query) in one file, you'll need to move each component to its own file.
+File: src/pages/this-is-mdx.mdx
+```
+
+and...
+
+I wanted the [Using Frontmatter in MDX](https://www.gatsbyjs.org/docs/mdx/writing-pages/#using-frontmatter-in-mdx) section to be last in the page order
+
+Since I was unfamiliar with how front matter works and how it interacts with file/depencency imports, I would have liked to read the page in this order:
+
+Importing JSX components and MDX documents
+
+Using JavaScript exports
+GraphQL queries
+Using frontmatter in MDX, with a link to [what frontmatter is](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/#frontmatter) and what it does, and the graphQL query part later?
+Combining frontmatter and imports
+
+you can make a component using an MDX file! Make sure you do a default export to make sure your mdx-based component isn’t wrapped by the default layout set in the gatsby-config.js file
+
+<!-- This default export overrides the default layout ensuring -->
+<!-- that the FAQ component isn't wrapped by other elements -->
+
+```jsx
+export default ({ children }) => <>{children}</>
+```
+
+from the [defining an (MDX) layout](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) section
+
+If you have provided a default layout in your gatsby-config.js through the gatsby-plugin-mdx plugin options, the exported component you define from this file will replace the default.
+
+So… if you don’t want your MDX file wrapped by another file, make sure you do an export in the MDX file, either by doing the export default anonymous function(?) like above or by importing a component into your MDX file and then exporting that component at the end of your file. (test this out)
+
+The [gatsby-plugin-mdx](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/?=mdx#default-layouts) docs seem straightforward to understand.
+
+Nesting MDX files inside of MDX files are interesting. If you pass in an MDX file into another, you can’t pass children into that imported MDX file like you can do with a standard React component.
+
+From [Using JavaScript exports](https://www.gatsbyjs.org/docs/mdx/writing-pages/#using-javascript-exports) section: you don’t technically need to export MDX documents to import them in other files, but the unsaid thing is if you want that doc to use a layout other than the default or other layouts specified in the gatsby-config files, yes you need to export the MDX doc (yes?)
+
+For the GraphQL section
+
+Note: For now, this only works if the .mdx file exporting the query is placed in src/pages. Exporting GraphQL queries from .mdx files that are used for programmatic page creation in gatsby-node.js via actions.createPage is not currently supported.
+
+This means doing a GraphQLpageQuery in an MDX file will only work for MDX files in the src/pages folder
+
+to do a GraphQL pageQuery in an MDX file located out of the src/pages folder, you need to to it in gatsby-node.js and you also need to point to the correct folder using the gatsby-filesystem plugin in the gatsby-config.js file (right?)
+
+There seems to be a lot of features under the hood for rendering MDX files when the mdx files are hosted in the src/pages folder.
+
+seems you don’t need the MDXProvider
+
+I moved the MDX test pages into a posts folder, and added gatsby-plugin-page-creator in gastby-config, So I could separate out MD and MDX concerns while testing things.
+
+After refactoring to have the index.js page point to the collection of posts pages and the about page…
+
+Somehow, I can still generate pages
+from the posts directory using
+gatsby-plugin-page-creator without
+also pointing to the posts folder
+with gatsby-source-filesystem
+Is it because I did a graphQL
+page query using a page in the src/pages folder?
+
+…it’s because it’s in the src folder. Any files in the pages/src folder will be grabbed and rendered by gatsby, as long as you use gatsby-plugin-page-creator to point to a subfolder
+
+When commenting out both gatsby-source-filesystem and gatsby-plugin-page-creator, none of the blog posts in the posts folder rendered except for the one MDX file in the src/pages folder.
+
+Something odd happened with gatsby not recognizing templated layouts. Seems like the cache would stick around and wouldn’t use the correct MDX template, no matter how many times I’d run `npm run clean` and then `npm run start`
+
+Seems the only way the new template would show up is if I made a change to the content in the actual MDX file and then the template around the MDX file would show the correct stuff. But it’s not consistent. Can’t figure out why the post template isn’t consistently sticking. It seems like I have to add and remove that iframe element in that MDX file for things to stick?
+
+I wonder if it has anything to do with using subfolders of src/pages directory in this case.
+
+for programmatically generating pages, this information on [creating pages from sourced MDX](https://www.gatsbyjs.org/docs/mdx/programmatically-creating-pages/#create-pages-from-sourced-mdx-files) was very straightforward for me to understand.
+
+Where I got tripped up though, was in the [instructions for using the MDXRenderer component]() and in the [making a page template for your posts](https://www.gatsbyjs.org/docs/mdx/programmatically-creating-pages/#make-a-template-for-your-posts) section.
+
+Partially because I thought I had to do a GraphQL page (or static query) in the layout template to get the data (nope). I kept on getting an error about my data being an object and the layout not being exported correctly.
+
+I was wondering if that a separate way to generate pages? Or a separate way to template pages? How does a page query affect a query coming in from gatsby-node?
+
+After some serious tinkering, I discovered the real issue for me was: I was importing MDXRenderer from the wrong package dependency. I should have been importing it from [gatsby-plugin-mdx]() rather than from ["@mdx-js/react”]() . Whoops! Error stemming from not staring hard enough at the code. Or staring too hard at it!
+
+Once I pointed to the correct library, I could use `<MDXRenderer>` and didn’t need to use `<MDXProvider>` in the layout at all —even though the example guided you to do that — because you already made the query in the gatsby-node file.
+
+In fact, I don’t think I’m using MDXProvider at all in these examples, yet. I will if I want to create shortcodes, though, and use the WrapRootElement
+
+Later on I will work on [making a blog index](https://www.gatsbyjs.org/docs/mdx/programmatically-creating-pages/#bonus-make-a-blog-index) following the docs instructions. I already have a bit of an index going, so this will be a nice way to try it differently.
+
+Again, since the data is already queried in the gatsby-node file, do I need to do that page query in that particular page?
+
+I still have the odd side effect of the posts page template not showing up consistently in my site. I’m wondering about the config settings there, and if it’s because the posts directory is a subdirectory of src/
+
+Bonus:
+using the [gatsby-plugin-embed](https://www.gatsbyjs.org/packages/@pauliescanlon/gatsby-mdx-embed/). by Oooo, that plugin is **sweet**. I’ll keep in mind that I may need to use the `<MDXEmbedProvider>` in the future, in case I use more shortcodes and run into `<MDXProvider>` conflicts
+
+To do later:
+Lazy loading components

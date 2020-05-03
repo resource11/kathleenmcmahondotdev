@@ -1,0 +1,35 @@
+---
+title: "100 Days of Gatsby — Challenge 9"
+date: 2020-04-19
+author: "Kathleen McMahon"
+path: /blog/100-days-of-gatsby-challenge-09
+tags: ["GatsbyJS"]
+description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
+---
+
+Intro paragraph.
+
+## [Challenge 9: Help Your Site Rank No. 1 in Search Engines](https://www.gatsbyjs.org/blog/100days/seo/#challenge-9-help-your-site-rank-no-1-in-search-engines)
+
+When following the [Adding an SEO component](https://www.gatsbyjs.org/docs/add-seo-component/) tutorial, I noticed that the guidance initially indicated to declare a `location` const through the `useLocation()` method, then switched to using `pathname` instead. Why?
+
+I noticed that in the [add page metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section of [Gatsby Tutorial part 8](https://www.gatsbyjs.org/tutorial/part-eight) took a different approach for passing in the metadata into the [react-helmet](https://github.com/nfl/react-helmet) component. Which way is optimal? I’m assuming the latter option because of the fallback prop structure.
+
+I got a bit stuck creating a sitemap. I followed the instructions, yet it wasn’t clear how to test the solution. Do you generate a static build and deploy to test? Can you test this while running the site locally? I couldn’t see that sitemap.xml page when running locally using `npm run start`
+
+I referred to the [Gatsby tutorial part 8 - Preparing a site to go live](https://www.gatsbyjs.org/tutorial/part-eight/) page, tried a `gatsby build` and threw an error in the GraphQL request:
+
+```bash
+Cannot query field "siteUrl" on type "SiteSiteMetadata".
+GraphQL request:13:7
+12 |     siteMetadata {
+13 |       siteUrl
+   |       ^
+14 |     }
+```
+
+I looked at the instructions again. The [gatsby-plugin-advanced-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-advanced-sitemap/) uses the `siteUrl` key rather than the `url` key, which is used for the SEO tutorial. Once I added that key, in addition to the `url` key, the sitemap would build. Still need to test this in the deployed site to see if the pages populate in the sitemap.
+
+Question: for things like sitemaps and Lighthouse, we must always create a production build (gatsby build) and serve it locally (gatsby serve) to test for SEO and performance things? Ahh, this is answered in [Challenge 10](https://www.gatsbyjs.org/blog/100days/performance) in the [audit with Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/):
+
+> The Gatsby development server is optimized for making development fast, but the site that it generates, while closely resembling a production version of the site, isn’t as optimized.

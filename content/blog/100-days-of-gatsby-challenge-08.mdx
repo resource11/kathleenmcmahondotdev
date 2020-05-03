@@ -1,0 +1,47 @@
+---
+title: "100 Days of Gatsby — Challenge 8"
+date: 2020-04-18
+author: "Kathleen McMahon"
+path: /blog/100-days-of-gatsby-challenge-08
+tags: ["GatsbyJS"]
+description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
+---
+
+Intro paragraph.
+
+## Challenge 8: Make Your Forms and Images Accessible to Everyone
+
+I completed these steps during [Challenge 1](), however, because the site is more expanded, I did a re-audit
+
+re-auditing the site:
+Once I started re-auditng the site for a11y, I noticed that the form labels were not being recognized as associated with the labels anymore, so I made sure that the id attribute was clearly added to each input (it was relying on the spreaded props before this). The iframe embeds were missing the title attribute, so I added those in.
+
+I also noticed that any of the [MDX files that used a default export](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) in the document would fail the accessibility audit, because they will not use the default layout you defined in your `gatsby-config` file. The default layout file I used contains the `<Seo>` which injects a `lang` attribute into the `<html>` element and a page `title` attribute in the `<head>` element. Importing the `<Seo>` into those particular files solved the issue.
+
+Once all those accessibility issues were solved, I chose to focus on getting end-to-end testing scaffolded using Cypress, along with some unit testing on one component as a proof of concept.
+
+I’ll tackle setting up basic Cypress CI GitHub actions in my other site… later.
+
+what I learned from setting up unit and end-to-end testing:
+I had to remember to refer to the config file code snippet repeatedly when referencing the [creating a configuration file for Jest section](https://www.gatsbyjs.org/docs/unit-testing/#2-creating-a-configuration-file-for-jest), while reading the text.
+
+I went back add started adding support for unit testing with Jest, and learned that I should delete the `cypress/integration` folder, otherwise the test script that calls Jest will also look at that integration folder and try to test it. I deleted it, but still, Jest was running tests that lived in the `cypress/e2e` folder, so I explored what wa
+
+Lastly you need to tell Jest where to find this file. Open your jest.config.js and add this entry to the bottom after ‘setupFiles’. When looking
+
+I ran into issues running Jest with Cypress already added. Tried going about it using the [](https://www.gatsbyjs.org/docs/testing-react-components/) way instead, using [@testing-library/react]() and [@testing-library/jest-dom]() instead
+
+noticed this sentence:
+
+> Lastly you need to tell Jest where to find this file. Open your jest.config.js and add this entry to the bottom after ‘setupFiles’:
+
+and wondered if order was important in the config, since the link to the [using-jest](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest) example at the bottom of the page showed a different order in the config (setupFiles in that example was listed after the setupFilesAfterEnv in the example config up in the repo, rather than before. I changed the order in my config file.
+
+I still ran into issues. After some digging, I discovered that file naming is important. When adding both Jest and Cypress support into the app, if you named your file according to the [writing tests for Cypress](https://www.gatsbyjs.org/docs/end-to-end-testing/#writing-tests) section, if you named your file `accessibility.test.js` rather than `accessibility.js`, Jest would try to run a test on that file. Once I removed the `.test` from the file name, all tests ran smoothly.
+
+Another way to do this is to add `cypress` as one of the items to [exclude/ignore files from Jest coverage](https://codewithhugo.com/jest-exclude-coverage/) in the `jest.config.js` `testPathIgnorePatterns` array https://codewithhugo.com/jest-exclude-coverage/
+
+Todo:
+Later on, I’ll dig into testing components that use GraphQL and Gatsby components in Storybook.
+
+Also, I’m going to also look into using Cloudinary to host my images.

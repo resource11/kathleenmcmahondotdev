@@ -1,0 +1,100 @@
+---
+title: "100 Days of Gatsby — Challenge 10"
+date: 2020-04-29
+author: "Kathleen McMahon"
+path: /blog/100-days-of-gatsby-challenge-10
+tags: ["GatsbyJS"]
+description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
+---
+
+Intro paragraph.
+
+## Challenge 10 - Keep Your Gatsby Site Blazing Fast
+
+A: Auditing with Lighthouse
+When auditing with Lighthouse, the issue found was time to first meaningful paint. The opportunities to take are:
+
+- [Eliminate render-blocking resources](https://web.dev/render-blocking-resources/)
+- [Preload key requests](https://web.dev/uses-rel-preload/), which showed up in the local build, but not in the deployed app
+- [Ensure text remains visible during webfoot load](https://web.dev/font-display/) (can I do this when using `Typography.js`?
+- [Avoid chaining critical requests](https://web.dev/critical-request-chains/)(optional) and…
+- [Keep request counts low and file sizes small](https://developers.google.com/web/tools/lighthouse/audits/budgets) (optional), aka, being mindful of performance budgets
+
+All of the instructions provided are framework agnostic, so the questions are…
+
+- How do I do this in a Gatsby-based site, knowing the some of the techniques shown may be handled behind the scenes during the Gatsby build process?
+- I’m also using [gatsby-plugin-typography](https://www.gatsbyjs.org/packages/gatsby-plugin-typography/) in this site, so do I need to adjust anything there?
+- How can I add that async or defer attribute to a font loaded by the `Typography.js` package?
+- Should I do something with adjusting the link attribute in the `head` element with [react-helmet](https://github.com/nfl/react-helmet#features)?
+- If so, how does that work with `Typography.js`? What about adding [gatsby-plugin-preload-fonts](https://www.gatsbyjs.org/packages/gatsby-plugin-preload-fonts/)? That should handle preloading, at least. Or… I could move on to part B, and use Guess.js to do intelligent preloading.
+
+B: Intelligent Preloading using [Guess.js](https://github.com/guess-js)
+
+- Woof, this whole section was a huge challenge to figure out. I started with reading the [optimizing site performance with Guess.js](https://www.gatsbyjs.org/docs/optimizing-site-performance-with-guessjs/) page then dug into the [gatsby-plugin-guess-js](https://www.gatsbyjs.org/packages/gatsby-plugin-guess-js) docs and didn’t find those docs clear at all for me. I’m probably going to skip this portion because the instructions assumes you are already familiar with setting up a Google Analytics account, JWTs, and environment variables (if they’re needed here for the JWT token?), and more. The docs on [using environment variables](https://www.gatsbyjs.org/docs/environment-variables/) are clear once I found them, yet the instructions on JWTs and such were not clear at all.
+
+The questions I had while reading this section were:
+
+- I already have a Google Analytics account set up for another site, do I create a new account? That’s what I did, and it’s now… hanging out, because the whole JWT section was unclear, so I stopped work on this section.
+
+In terms of unclear sentences… what does this sentence on [getting a JWT token](https://www.gatsbyjs.org/packages/gatsby-plugin-guess-js#how-to-get-a-jwt-token) even mean?
+
+> Put that file into a directory node_modules that is inside one of the parent directories of the script that we’ll create later. That means that you can keep it out of the repository with analytics.js. For example, the following path is perfectly fine: \$HOME/node_modules/myproject-3126e4caac6a.json
+
+What happens if you do a clean install of the node modules? What happens then? Do you need to download that JSON file again? Also, the “inside the parent directories of the script we’ll create later” phrase. Which script was created later? Where?
+
+So far, this entire challenge has been the one that’s been challenging to understand, docs-wise. For now, I’m abandoning this portion of the challenge, and will move onto the CDN for Media Assets section instead. I’ll go about preloading assets in my other site, most likely using something other than `Typography.js` if I can’t figure this out.
+
+C: CDN for Media Assets
+
+Exploring `gatsby-source-cloudinary`
+I’m starting out experimenting with [gatsby-source-cloudinary](https://www.gatsbyjs.org/packages/gatsby-source-cloudinary/) to see what I can do with the service. To get started, I had to [sign up with Cloudinary](https://cloudinary.com/) and get an account. After that was all set — their onboarding walkthrough is pretty nice, by the way — I read through this excellent [scotch.io](https://scotch.io) tutorial on [Handling Images in Gatsby with High Performance](https://scotch.io/tutorials/handling-images-in-gatsby-with-high-performance)
+
+https://res.cloudinary.com/kathleenmcmahon/image/upload/v1587484209/sample.jpg
+
+https://res.cloudinary.com/kathleenmcmahon/image/upload/v1587484215/samples/bike.jpg
+
+https://res.cloudinary.com/kathleenmcmahon/image/upload/v1587484213/samples/sheep.jpg
+
+The Gatsby docs on this plugin were straightforward to read once you followed the Scotch.io tutorial, and there was a timely reference to how to [set up your (development) environment](https://www.gatsbyjs.org/packages/gatsby-source-cloudinary/?=clou#environment-configuration) and how to [configure your dotenv](https://www.npmjs.com/package/dotenv) options for working in a development or production environment.
+
+`gatsby-source-cloudinary` takeaways:
+I learned when you set your `gatsby-source-cloudinary` options `prefix` option to use the `sample/` in your Cloudinary Media Library, Cloudinary will return the first 10 images it finds by default, in alphabetical order of both folder and file name, no matter if the images are in a nested folder or not. So, in this case it returned all the images in the animals directory since the directory started with the letter `a`, then found the images in the main samples directory beginning with the letters `b` and `c`, then the images in the ecommerce directory beginning with the letter `a`. The takeaway here is: be careful setting your `gatsby-source-cloudinary` `prefix` path to a cloudinary directory location that contains subdirectories, or you may not get all the results you want… unless you up the `maxResults` value for your options.
+
+Exploring `gatsby-transformer-cloudinary`
+
+The instructions for adding [‘gatsby-tranformer-cloudinary`](https://www.gatsbyjs.org/packages/gatsby-transformer-cloudinary) were pretty straightforward, especially the examples in the [`gatsby-tranformer-cloudinary` demo source](https://github.com/cloudinary-devs/gatsby-transformer-cloudinary). The one part that got a bit sticky was loading the environment variables in the `gatsby-config.js` file. The instructions for this plugin seem to be at odds with the instructions for `gatsby-source-cloudinary`.
+
+The `gatsby-config` environment setup docs for `gatsby-transform-cloudinary` indicated to import the `dotenv` dependency like this:
+
+```bash
+// Load the environment variables.
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}`,});
+```
+
+The `gatsby-source-cloudinary` docs indicated it a different way:
+
+```js
+require("dotenv").config()
+```
+
+Using the former config with the path set would throw an error in the CLI when trying to run the site in develop mode, yet using the setting without assigning the path seemed to work when using both plugins in the site. Once I removed the path from the dotenv config, everything worked as expected.
+
+CDN for media assets takeaways:
+I really enjoyed exploring using Cloudinary for my images, and will be looking into pairing these plugins with [rendering images sourced from a YAML file](https://www.gatsbyjs.org/tutorial/gatsby-image-tutorial/#rendering-images-sourced-from-yaml) and [lazy loading components](https://www.gatsbyjs.org/docs/mdx/importing-and-using-components/#lazy-loading-components) in future projects.
+
+.envfiles: https://medium.com/codait/environment-variables-or-keeping-your-secrets-secret-in-a-node-js-app-99019dfff716
+https://www.gatsbyjs.org/docs/environment-variables/
+
+D: JavaScript Concerns
+
+Skipping this step for now, because I want to continue using React rather than Preact. I’ll come back to this section, though.
+
+til:
+When using Gatsby Cloud for deploying your site, you must add the .env variables into the General environment settings, to make the build work, regardless of which service you use for your hosting integration. I initially added those .env variables in the Netlify Build & deploy environment section, and that proved unsuccessful. Once I removed the variables from the Netlify settings and added them to the Gatsby Cloud environment settings instead, the build worked as expected. I didn’t need to add them to the Netlify environment variables at all.
+
+the bulk upload feature in Gatsby Cloud is pretty sweet (add image)
+
+Working on my site
+
+What I learned:
+GraphQL will do a regex query to exclude names but gatsby doesn’t like using that it in a static query. I was trying to exclude two file names and the syntax would throw errors. I used the negation filter instead to exclude one file instead. Doesn’t seem very efficient. Will come back to this.
