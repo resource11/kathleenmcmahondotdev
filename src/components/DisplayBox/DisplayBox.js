@@ -3,11 +3,12 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import css from "./DisplayBox.module.css"
 
-const DisplayBox = () => {
-  const { children, display = "block" } = this.props
+export const DisplayBox = ({ children, display = "block" }) => {
   const displayBoxCSS = classnames(css.displayBox, css[display])
-  return <div className={displayBoxCSS}>{children}</div>
+  return <h4 className={displayBoxCSS}>testing and {children}</h4>
 }
+
+export default DisplayBox
 
 DisplayBox.propTypes = {
   children: PropTypes.object,

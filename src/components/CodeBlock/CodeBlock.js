@@ -9,7 +9,7 @@ import { DisplayBox } from "../DisplayBox"
 // and Chris Biscardi's blog post:
 // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope/
 
-const CodeBlock = ({ codeString, language, ...props }) => {
+export const CodeBlock = ({ codeString, language, ...props }) => {
   const components = useMDXScope()
   // render component and editable code block. TODO: figure out how to adjust pre font-size to 1rem
   if (props["react-live"]) {
