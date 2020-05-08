@@ -12,7 +12,6 @@ const BlogMDXLayout = ({ pageContext }) => {
       />
       <article>
         <header>
-          aaaand 789
           <h1>{pageContext.frontmatter.title}</h1>
         </header>
         <div>
