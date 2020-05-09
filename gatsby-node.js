@@ -3,6 +3,7 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === "Mdx") {
+    const { frontmatter } = node
     createNodeField({
       name: "slug",
       node,
@@ -10,7 +11,22 @@ exports.onCreateNode = ({ node, actions }) => {
       to the appended file name. I'm adding it by hand here 
       because I'm using the frontmatter path instead.
       */
-      value: `/write/${node.frontmatter.path}`,
+      value: `/write/${frontmatter.slug}`,
+    })
+    createNodeField({
+      name: "featuredImage",
+      node,
+      value: frontmatter.featuredImage,
+    })
+    createNodeField({
+      name: "hidden",
+      node,
+      value: frontmatter.hidden,
+    })
+    createNodeField({
+      name: "published",
+      node,
+      value: frontmatter.published,
     })
   }
 }
@@ -25,6 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             fields {
+              featuredImage
               slug
             }
             body
@@ -32,7 +49,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               author
               date
-              path
+              description
+              featuredImage
+              hidden
+              published
+              slug
+              tags
               title
             }
           }
@@ -48,14 +70,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const mdxPosts = result.data.allMdx.edges
 
   mdxPosts.forEach(({ node }) => {
+    const { body, excerpt, fields, frontmatter, id } = node
     createPage({
-      path: node.fields.slug,
+      path: fields.slug,
       component: path.resolve(`./src/templates/blog-mdx-layout.js`),
       context: {
-        id: node.id,
-        body: node.body,
-        frontmatter: node.frontmatter,
-        excerpt: node.excerpt,
+        id,
+        body,
+        frontmatter,
+        excerpt,
       },
     })
   })

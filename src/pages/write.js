@@ -22,13 +22,21 @@ const Write = () => {
               frontmatter {
                 author
                 date(formatString: "MMMM DD, YYYY")
-                path
+                description
+                featuredImage
+                hidden
+                published
+                slug
+                tags
                 title
               }
               excerpt
               id
+              fields {
+                featuredImage
+                slug
+              }
             }
-            changeTime(formatString: "MMMM DD, YYYY")
           }
         }
         totalCount
@@ -52,7 +60,7 @@ const Write = () => {
         {data.allFile.edges.map(({ node }) => (
           <div key={node.id}>
             <h2>
-              <Link to={node.childMdx.frontmatter.path}>
+              <Link to={`write/${node.childMdx.frontmatter.slug}`}>
                 {node.childMdx.frontmatter.title}
               </Link>
             </h2>

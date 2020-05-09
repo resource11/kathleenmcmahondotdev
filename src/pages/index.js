@@ -51,7 +51,7 @@ export const query = graphql`
             frontmatter {
               author
               date(formatString: "MMMM DD, YYYY")
-              path
+              slug
               title
             }
             excerpt
