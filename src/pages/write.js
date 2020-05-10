@@ -23,7 +23,16 @@ const Write = () => {
                 author
                 date(formatString: "MMMM DD, YYYY")
                 description
-                featuredImage
+                featuredImage {
+                  childImageSharp {
+                    fluid(quality: 90) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
                 hidden
                 published
                 slug
@@ -33,7 +42,16 @@ const Write = () => {
               excerpt
               id
               fields {
-                featuredImage
+                featuredImage {
+                  childImageSharp {
+                    fluid(quality: 90) {
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
                 slug
               }
             }
