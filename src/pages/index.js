@@ -12,9 +12,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO
-        title={`Kathleen McMahon | Software Engineer | UX Designer | Speaker`}
-      />
+      <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
       <article>
         <header>
           <h1>
@@ -25,23 +23,43 @@ export default ({ data }) => {
                 display: inline-block;
               `}
             >
-              Software Engineer | UX Designer | Speaker
+              Software Engineer | Designer | Speaker
             </small>
           </h1>
           <hr />
         </header>
-        <h2>What I do</h2>
         <p>
-          I’m an experienced software engineer, product designer, and
-          internationally-known conference speaker with a passion for making
-          inclusive and accessible experiences.
+          Hello! I'm Kathleen, an engineer, designer, conference speaker, and
+          occasional writer with a passion for making inclusive experiences.
+          Welcome to the space where I cultivate all the varied things I do.
         </p>
+        <h2>Featured speaking</h2>
+        <p>
+          I’m an experienced software engineer, product designer, and conference
+          speaker with a passion for making inclusive experiences.
+        </p>
+        <p data-notist="resource11/1ecxhG">
+          View{" "}
+          <a href="https://noti.st/resource11/1ecxhG">
+            Accessibility-flavored React components make your design system
+            delicious!
+          </a>{" "}
+          on Notist.
+        </p>
+        <script async src="https://on.notist.cloud/embed/002.js"></script>
+        <Link to="/speak/">Browse all media</Link>
+        <h2>Favorite posts</h2>
+        <p>
+          I’m an experienced software engineer, product designer, and conference
+          speaker with a passion for making inclusive experiences.
+        </p>
+        <Link to="/write/">Browse all articles</Link>
       </article>
     </Layout>
   )
 }
 
-export const query = graphql`
+export const indexQuery = graphql`
   query {
     allFile(filter: { extension: { eq: "mdx" } }) {
       edges {
