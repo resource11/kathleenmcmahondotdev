@@ -1,36 +1,26 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import SignupForm from "../components/contactform"
-import Img from "gatsby-image"
+import ContactForm from "../components/contactform"
+import { Card } from "../components/Card"
 
 const About = () => {
-  const data = useStaticQuery(graphql`
+  const { socialLinks } = data
+  const dataQuery = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
         }
       }
-      file(relativePath: { eq: "images/daylilies-in-july.jpg" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fixed(width: 400, height: 400, grayscale: true) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
     }
   `)
   return (
     <Layout>
-      <SEO title={data.site.siteMetadata.title} />
-      <h1>About</h1>
-      <Img
-        fixed={data.file.childImageSharp.fixed}
-        alt="Daylilies in the warm summer garden"
-      />
+      <SEO title={dataQuery.site.siteMetadata.title} />
+      <h1>What I do</h1>
       <p>
         So... you want to know more about me? OK. Well, I'm fullstack engineer
         with a design background. In other words, I really enjoy the{" "}
@@ -45,7 +35,23 @@ const About = () => {
         When I’m not coding, designing, or speaking about things, I’m the best
         Lanterne Rouge cyclocrosser you’ll ever meet.
       </p>
-      <SignupForm />
+      <h2>My portfolios</h2>
+      <p>Here are some of the portfolio sites I've done:</p>
+      <Card />
+      <Card />
+      <hr />
+      <h2>Social links</h2>
+      <p>Here are some of the ways you can get in touch with me:</p>
+      <ul>
+        {socialLinks.map((social) => (
+          <li key={social.name}>
+            <span>{social.icon} </span>
+            <a href={social.link}>{social.name}</a>
+          </li>
+        ))}
+      </ul>
+      <hr />
+      <ContactForm />
     </Layout>
   )
 }

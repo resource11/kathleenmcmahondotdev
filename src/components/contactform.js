@@ -57,6 +57,7 @@ export const ContactForm = () => {
       {/* Formik component is a React Context-powered Component. 
       It connects the state/methods from the Formik component 
       to the Form and other components */}
+      <p>You can also reach me my email</p>
       <Formik
         initialValues={{
           name: "",
@@ -112,7 +113,7 @@ export const ContactForm = () => {
             name="message"
             placeholder="type a message"
           />
-          <button type="submit">Submit</button>
+          <button type="submit">Send message</button>
         </Form>
       </Formik>
     </>

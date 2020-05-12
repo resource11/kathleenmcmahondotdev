@@ -1,3 +1,11 @@
+// add support for postCSS processing
+const postCSSPresetEnv = require(`postcss-preset-env`)
+const postCSSImport = require(`postcss-import`)
+const postCSSColorFunction = require(`postcss-color-function`)
+const postCSSMixins = require(`postcss-mixins`)
+const postCSSVariables = require(`postcss-css-variables`)
+const postCSSNested = require(`postcss-nested`)
+
 // add support for .env file in `gastby-source-cloudinary`
 require("dotenv").config()
 
@@ -20,6 +28,40 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-autolink-headers`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          postCSSImport(),
+          postCSSPresetEnv({
+            stage: 0,
+            preserve: true,
+            browsers: ">0.25%, not op_mini all",
+            features: {
+              "color-mod-function": false,
+              "focus-within-pseudo-class": false,
+            },
+          }),
+          postCSSVariables({
+            preserve: true,
+          }),
+          postCSSColorFunction({
+            preserveCustomProps: false,
+          }),
+          postCSSMixins(),
+          postCSSNested(),
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -62,12 +104,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
       resolve: `gatsby-source-cloudinary`,
       options: {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
@@ -83,10 +119,11 @@ module.exports = {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
-        uploadFolder: "100-days-of-gatsby-cloudinary",
+        uploadFolder: "kathleenmcmahon-dot-dev",
+        fluidMaxWidth: 800,
+        fluidMinWidth: 200,
       },
     },
-    // Path to find files in the src folder
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -112,7 +149,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `svgs`,
+        path: `${__dirname}/src/svgs`,
       },
     },
   ],

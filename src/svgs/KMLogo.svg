@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.21 95.93">
+  <defs>
+    <linearGradient id="redPurpleGrad" x1="-115.18" y1="-102.37" x2="-115.18" y2="-25.41" gradientTransform="rotate(172.35 -41.504 -1.51) scale(1.07)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b900a5"/>
+      <stop offset="1" stop-color="#ff1a14"/>
+    </linearGradient>
+    <linearGradient id="redOrangeGrad" x1="-244.72" y1="-253.23" x2="-244.72" y2="-111.18" gradientTransform="matrix(-.33 -.33 .33 -.33 17.99 -121.05)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8200"/>
+      <stop offset="1" stop-color="#ff1a14"/>
+    </linearGradient>
+    <clipPath id="clip-path" transform="translate(-2.49 30.51)">
+      <path fill="none" d="M0 0h98.46v66.63H0z"/>
+    </clipPath>
+    <style>
+      .cls-5{fill:#fff}
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="KMlogo">
+      <g clip-path="url(#clip-path)" id="rectGroup">
+        <path id="redPurple" fill="url(#redPurpleGrad)" d="M42 9.97l50.21 38.32-38.32 47.64-50.2-38.32L42 9.97z"/>
+        <path id="redOrange" transform="rotate(-61.61 70.065 29.897)" fill="url(#redOrangeGrad)" d="M14.1-19.5h63.25v64.1H14.1z"/>
+      </g>
+      <g id="KM">
+        <path class="cls-5" d="M31.91 22l-.43.4v7h-3.62V11.78h3.62v6.63l6.16-6.63h4.47l-7.57 8.11 7.69 9.48h-4.37z" transform="translate(-2.49 30.51)"/>
+        <path class="cls-5" d="M58.19 11.78h2.69l1.78 17.59H59l-.93-9.83-4.75 9.83h-2l-4.75-9.83-.93 9.83H42l1.79-17.59h2.69l5.85 12.14z" transform="translate(-2.49 30.51)"/>
+      </g>
+    </g>
+  </g>
+</svg>

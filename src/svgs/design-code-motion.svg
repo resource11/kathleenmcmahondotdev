@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 153.26 30.31">
+  <defs>
+    <linearGradient id="metallicGrayGrad" x1="3.14" y1="29.82" x2="3.14" y2="-.05" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#708394"/>
+      <stop offset="1" stop-color="#8298ab"/>
+    </linearGradient>
+    <linearGradient id="metallicGrayGrad-3" x1="3.13" y1="29.82" x2="3.13" y2="-.05" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="redPurpleGrad" x1="22.24" y1="-2.85" x2="22.24" y2="94.02" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b900a5"/>
+      <stop offset="1" stop-color="#ff1a14"/>
+    </linearGradient>
+    <linearGradient id="redPurpleGrad-2" x1="81.61" y1="-2.85" x2="81.61" y2="94.02" xlink:href="#redPurpleGrad"/>
+    <linearGradient id="redPurpleGrad-3" x1="107.33" y1="-2.85" x2="107.33" y2="94.02" xlink:href="#redPurpleGrad"/>
+    <linearGradient id="redOrangeGrad" x1="51.89" y1="-.51" x2="51.89" y2="30.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8200"/>
+      <stop offset="1" stop-color="#ff1a14"/>
+    </linearGradient>
+    <linearGradient id="metallicGrayGrad-7" x1="124.2" y1="29.49" x2="124.2" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-8" x1="133.68" y1="29.49" x2="133.68" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-9" x1="123.44" y1="29.49" x2="123.44" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-10" x1="130.64" y1="29.49" x2="130.64" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-11" x1="135.87" y1="29.49" x2="135.87" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-12" x1="139.59" y1="29.49" x2="139.59" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-13" x1="144.1" y1="29.49" x2="144.1" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <linearGradient id="metallicGrayGrad-14" x1="150.59" y1="29.49" x2="150.59" y2="11.46" xlink:href="#metallicGrayGrad"/>
+    <style>
+      .cls-1{fill:url(#metallicGrayGrad)}.cls-2{fill:url(#metallicGrayGrad-3)}
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="design">
+      <path class="cls-1" d="M.09 30.1v-2.33a2.82 2.82 0 013-3 2.78 2.78 0 013.07 2.93v2.4zm5-2.39C5 26.53 4.25 26 3.12 26a1.66 1.66 0 00-1.88 1.74v1.08H5zM1.24 22.7h1.28V20h1.15v2.7H5v-3h1.19V24H.09v-4.26h1.15z"/>
+      <path class="cls-2" d="M4.5 16.1c-.48 0-.7.6-1 1.33-.36 1.06-.7 1.86-1.83 1.86-.82 0-1.67-.71-1.67-2.16a2.15 2.15 0 011.81-2.21v1.25a.91.91 0 00-.68 1c0 .64.26.92.58.92s.6-.49.79-1.06c.42-1.23.81-2.13 1.93-2.13a2 2 0 011.83 2.19 2.15 2.15 0 01-1.82 2.34v-1.29c.5-.11.69-.5.69-1.14 0-.44-.13-.9-.63-.9z"/>
+      <path class="cls-1" d="M6.19 12.82v1.25H.09v-1.25z"/>
+      <path class="cls-2" d="M3.82 7.28V8.9H2.7V6h.5a2.8 2.8 0 013.06 2.9 3.08 3.08 0 01-3.12 3A3.08 3.08 0 010 9a2.93 2.93 0 012.21-2.93v1.34a1.51 1.51 0 00-1 1.49 1.86 1.86 0 002 1.79 1.86 1.86 0 002-1.79 1.5 1.5 0 00-1.39-1.62z"/>
+      <path class="cls-1" d="M6.19 0v1L2.33 4h3.86v1.2H.09v-.9L4 1.25H.09V0z"/>
+    </g>
+    <path d="M29.34 18.88h7.43a14.26 14.26 0 01-14.24 11.43A14.86 14.86 0 017.71 15.19 14.9 14.9 0 0122.53 0C30.05 0 35 4.89 36.61 11.36H29.3a6.78 6.78 0 00-6.77-5c-4.2 0-7.81 3.53-7.81 8.83S18.33 24 22.53 24a6.76 6.76 0 006.81-5.12z" fill="url(#redPurpleGrad)" id="C"/>
+    <path d="M68.19.48h12.3C89.86.48 95 6.49 95 15.1c0 9-4.88 14.79-14.24 14.79H68.19zm12.6 23.07c5.08 0 7.22-3.28 7.22-8.45 0-4.95-2.39-8.27-7.52-8.27H75.2v16.72z" fill="url(#redPurpleGrad-2)" id="D"/>
+    <path d="M103.51 6.83v5h13.73v6.26h-13.73v5.42h14.66v6.34H96.49V.48h21.68v6.35z" fill="url(#redPurpleGrad-3)" id="E"/>
+    <path d="M66.72 15.19a14.83 14.83 0 11-29.66 0 14.83 14.83 0 1129.66 0zm-7 0c0-5.3-3.61-8.83-7.81-8.83s-7.81 3.53-7.81 8.83S47.69 24 51.89 24s7.81-3.52 7.81-8.81z" fill="url(#redOrangeGrad)" id="O"/>
+    <g id="_motion" data-name="&amp;&amp; motion">
+      <path d="M121.22 16a3.34 3.34 0 01-1-2.31 2.63 2.63 0 012.85-2.49 2.51 2.51 0 012.74 2.57 3.22 3.22 0 01-1.81 2.62l1.65 1.75a2.16 2.16 0 00.38-1.23v-1.15h2v1.15a4.43 4.43 0 01-1 2.7l1.81 2h-2.38l-.6-.65a4.24 4.24 0 01-2.59.78c-2.1 0-3.55-1.39-3.55-3a3.26 3.26 0 011.5-2.74zm3.26 3.53l-2-2.19a1.77 1.77 0 00-.85 1.37 1.45 1.45 0 001.56 1.29 2.15 2.15 0 001.29-.43zM122.82 15c.56-.37 1.07-.73 1.07-1.2a.78.78 0 00-.79-.82.81.81 0 00-.88.73 2 2 0 00.6 1.29z" fill="url(#metallicGrayGrad-7)"/>
+      <path d="M130.7 16a3.34 3.34 0 01-1-2.31 2.63 2.63 0 012.85-2.49 2.51 2.51 0 012.74 2.57 3.22 3.22 0 01-1.87 2.58l1.65 1.75a2.16 2.16 0 00.38-1.23v-1.11h2v1.15a4.43 4.43 0 01-1 2.7l1.81 2h-2.38l-.6-.65a4.24 4.24 0 01-2.59.78c-2.1 0-3.55-1.39-3.55-3A3.26 3.26 0 01130.7 16zm3.3 3.57l-2-2.19a1.77 1.77 0 00-.85 1.37 1.45 1.45 0 001.52 1.25 2.15 2.15 0 001.33-.43zM132.3 15c.56-.37 1.07-.73 1.07-1.2a.78.78 0 00-.79-.82.81.81 0 00-.88.73 2 2 0 00.6 1.29z" fill="url(#metallicGrayGrad-8)"/>
+      <path d="M125.53 23.53h1l.63 6.27h-1.29l-.34-3.5-1.69 3.5h-.72l-1.69-3.5-.33 3.5h-1.3l.64-6.27h1l2.08 4.32z" fill="url(#metallicGrayGrad-9)"/>
+      <path d="M133.71 26.66a3.08 3.08 0 11-3.07-3.22 3.14 3.14 0 013.07 3.22zm-4.85 0a1.79 1.79 0 103.55 0 1.79 1.79 0 10-3.55 0z" fill="url(#metallicGrayGrad-10)"/>
+      <path d="M138.36 24.71h-1.85v5.09h-1.29v-5.09h-1.84v-1.18h5z" fill="url(#metallicGrayGrad-11)"/>
+      <path d="M140.23 29.8h-1.29v-6.27h1.29z" fill="url(#metallicGrayGrad-12)"/>
+      <path d="M147.17 26.66a3.07 3.07 0 11-3.07-3.22 3.14 3.14 0 013.07 3.22zm-4.84 0a1.79 1.79 0 103.54 0 1.79 1.79 0 10-3.54 0z" fill="url(#metallicGrayGrad-13)"/>
+      <path d="M153.26 29.8h-1l-3-4v4h-1.29v-6.27h.93l3.12 4v-4h1.29z" fill="url(#metallicGrayGrad-14)"/>
+    </g>
+  </g>
+</svg>

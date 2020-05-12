@@ -1,0 +1,19 @@
+<svg width="259" height="198" viewBox="0 0 259 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path transform="scale(-1 1) rotate(-45 -110.243 312.877)" stroke="url(#paint0_diamond)" stroke-width="4.524" d="M-3.199 0h178.608v178.608H-3.199z"/>
+  <path transform="scale(-1 1) rotate(-45 125.735 267.299)" stroke="url(#paint1_diamond)" stroke-width="4.524" d="M-3.199 0h35.837v35.837H-3.199z"/>
+  <path transform="scale(1 -1) rotate(-45 -64.803 -72.392)" stroke="url(#paint2_diamond)" stroke-width="4.524" d="M3.199 0h134.229v134.229H3.199z"/>
+  <defs>
+    <radialGradient id="paint0_diamond" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(135.483 104.363 32.815) scale(355.522)">
+      <stop stop-color="#FF8200"/>
+      <stop offset=".67" stop-color="#FF1A14"/>
+    </radialGradient>
+    <radialGradient id="paint1_diamond" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(122.816 30.125 5.039) scale(63.1333 89.1811)">
+      <stop stop-color="#FF1A14"/>
+      <stop offset="1" stop-color="#B900A5"/>
+    </radialGradient>
+    <radialGradient id="paint2_diamond" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(121.364 69.377 38.961) scale(272.402 376.063)">
+      <stop stop-color="#B901BD"/>
+      <stop offset="1" stop-color="#5200FF"/>
+    </radialGradient>
+  </defs>
+</svg>

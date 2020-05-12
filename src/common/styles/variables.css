@@ -1,5 +1,25 @@
 :root {
   /* Base Colors  */
-  --steel: #f7fafc;
-  --storm: #c4cfdc;
+
+  /* Modular scale, numbers rounded */
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio)); /* 2px */
+  --s-4: calc(var(--s-3) / var(--ratio)); /* 3px */
+  --s-3: calc(var(--s-2) / var(--ratio)); /* 5px */
+  --s-2: calc(var(--s-1) / var(--ratio)); /* 7px */
+  --s-1: calc(var(--s0) / var(--ratio)); /* 11px */
+  --s0: 1rem; /* 16px */
+  --s1: calc(var(--s0) * var(--ratio)); /* 24px */
+  --s2: calc(var(--s1) * var(--ratio)); /* 36px */
+  --s3: calc(var(--s2) * var(--ratio)); /* 54px */
+  --s4: calc(var(--s3) * var(--ratio)); /* 81px */
+  --s5: calc(var(--s4) * var(--ratio)); /* 121px */
 }
+
+/*
+	We are using `em` for our breakpoints due to some issues where Safari
+	is not properly supporting media queries that are set to `rem` units.
+*/
+@custom-media --xsmall (min-width: 0);
+@custom-media --small (min-width: 41.25em); /* 660px */
+@custom-media --medium (min-width: 60em); /* 960px */

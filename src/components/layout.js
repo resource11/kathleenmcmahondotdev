@@ -31,9 +31,9 @@ const Layout = ({ children }) => {
     `
   )
 
-  const primaryNavLinks = data.primaryNavLinks
+  const { primaryNav, footerNav } = data
 
-  console.log(`nav is ${JSON.stringify(data.primaryNavLinks, null, 2)}`)
+  console.log(`nav is ${JSON.stringify(primaryNav, null, 2)}`)
 
   return (
     <MdxEmbedProvider>
@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
       <div className={lcss.withSidebar}>
         <div className={lcss.contentWrapper}>
           <header>
+            <a href="#mainContent">Skip to main</a>
             <div
               css={css`
                 margin-bottom: ${rhythm(2)};
@@ -52,10 +53,7 @@ const Layout = ({ children }) => {
             </div>
             <nav>
               <ul className={lcss.listItem}>
-                <li>
-                  <Link to={`/about/`}>About</Link>
-                </li>
-                {primaryNavLinks.map((nav) => (
+                {primaryNav.map((nav) => (
                   <li key={nav.name}>
                     <Link to={nav.link}>{nav.name}</Link>
                   </li>
@@ -64,9 +62,20 @@ const Layout = ({ children }) => {
             </nav>
           </header>
           <div className={lcss.notSidebar}>
-            <main className={lcss.main}>{children}</main>
+            <main id="mainContent" className={lcss.main}>
+              {children}
+            </main>
             <footer className={lcss.footer} role="contentinfo">
-              <small>This is a footer</small>
+              <ul className={lcss.listItem}>
+                {footerNav.map((nav) => (
+                  <li key={nav.link}>
+                    <a href={nav.link} aria-label={nav.ariaLabel}>
+                      {nav.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <small>copyright 2020 Kathleen McMahon</small>
             </footer>
           </div>
         </div>

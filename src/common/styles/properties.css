@@ -1,0 +1,249 @@
+@import "./variables.css";
+
+/**
+ * Font style used for tiny text
+ */
+@define-mixin font-body-tiny {
+  font-size: 0.688rem; /* 11px */
+}
+
+/**
+ * Font style used for small text
+ */
+@define-mixin font-body-small {
+  font-size: 0.75rem; /* 12px */
+}
+
+/**
+ * Font style used for medium text
+ */
+@define-mixin font-body-medium {
+  font-size: 0.875rem; /* 14px */
+}
+
+/**
+ * Default font style used for body text
+ */
+@define-mixin font-body-normal {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5; /* 24px */
+}
+
+/**
+ * Font style used for large text
+ */
+@define-mixin font-body-large {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.33; /* 24px */
+}
+
+/**
+ * Monospace font style used for code.
+ */
+@define-mixin font-code {
+  font-family: Courier, monospace;
+}
+
+/* Heading Sizes  */
+
+@define-mixin font-page-header {
+  @add-mixin font-weight-bold;
+
+  font-family: "Futura", sans-serif;
+  font-style: normal;
+  font-size: var(--s2);
+  line-height: 120%; /* or 43px */
+  letter-spacing: -0.05rem;
+  @media screen and (--small) {
+    font-size: var(--s3);
+  }
+  @media screen and (--medium) {
+    font-size: var(--s4);
+  }
+}
+
+@define-mixin font-section-header {
+  @add-mixin font-weight-bold;
+
+  font-family: Futura;
+  font-style: normal;
+  font-size: var(--s1);
+  line-height: 120%; /* or 29px */
+  letter-spacing: -0.02rem;
+  @media screen and (--small) {
+    font-size: var(--s2);
+  }
+  @media screen and (--medium) {
+    font-size: var(--s3);
+  }
+}
+
+@define-mixin font-section-title {
+  @add-mixin font-weight-bold;
+
+  font-family: Futura;
+  font-style: normal;
+  font-size: 1.375rem; /* or 22px */
+  line-height: 120%;
+  @media screen and (--small) {
+    font-size: var(--s1);
+  }
+  @media screen and (--medium) {
+    font-size: var(--s2);
+  }
+}
+
+@define-mixin font-intro-title {
+  @add-mixin font-weight-bold;
+
+  font-family: Futura;
+  font-style: normal;
+  font-size: 1.25rem; /* or 20px */
+  line-height: 120%;
+  @media screen and (--small) {
+    font-size: 1.375rem; /* or 22px */
+  }
+  @media screen and (--medium) {
+    font-size: 2rem; /* or 32px */
+  }
+}
+
+@define-mixin font-content-title {
+  @add-mixin font-weight-bold;
+
+  font-family: Futura;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 120%;
+  @media screen and (--small) {
+    font-size: 1.125rem;
+  }
+  @media screen and (--medium) {
+    font-size: 1.75rem;
+  }
+}
+
+@define-mixin font-attribute {
+  @add-mixin font-weight-bold;
+
+  font-family: Futura;
+  font-style: normal;
+  font-size: var(--s0);
+  line-height: 120%;
+  letter-spacing: -0.02rem;
+}
+
+@define-mixin font-content-intro {
+  @add-mixin font-weight-normal;
+
+  font-size: 1.25rem;
+  @media screen and (--small) {
+    font-size: 1.5rem;
+  }
+  @media screen and (--medium) {
+    font-size: 1.75rem;
+  }
+}
+
+@define-mixin font-content-body {
+  @add-mixin font-weight-normal;
+
+  font-size: 1.125rem;
+  @media screen and (--small) {
+    font-size: 1.25rem;
+  }
+  @media screen and (--medium) {
+    font-size: 1.5rem;
+  }
+}
+
+@define-mixin font-content-subtext {
+  @add-mixin font-weight-normal;
+
+  font-size: 0.875rem;
+  @media screen and (--small) {
+    font-size: 1rem;
+  }
+  @media screen and (--medium) {
+    font-size: 1.125rem;
+  }
+}
+
+@define-mixin font-label {
+  @add-mixin font-body-small;
+  @add-mixin font-weight-bold;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+}
+
+@define-mixin font-label-small {
+  @add-mixin font-body-small;
+  @add-mixin font-weight-bold;
+
+  font-size: 0.688rem; /* 11px */
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+}
+
+/**
+ * Default regular font weight
+ */
+@define-mixin font-weight-regular {
+  font-weight: 400;
+  font-style: book;
+}
+
+/**
+ * Medium font weight
+ */
+@define-mixin font-weight-medium {
+  font-weight: 500;
+  font-style: medium;
+}
+
+/**
+ * Bold font weight
+ */
+@define-mixin font-weight-bold {
+  font-weight: 700;
+  font-style: bold;
+}
+
+/**
+ * Font color used for medium contrast against white background
+ */
+@define-mixin font-color-medium {
+  color: var(--text-medium);
+}
+
+/**
+ * Font color used for light contrast against white background
+ */
+@define-mixin font-color-light {
+  color: var(--text-light);
+}
+
+/**
+ * Used to hyphenate blocks of text when they wrap.
+ */
+@define-mixin hyphens {
+  -webkit-hyphens: auto; /* Saf 5.1+ */
+  -moz-hyphens: auto; /* Fx 6.0+ */
+  -ms-hyphens: auto; /* IE 10+ */
+  hyphens: auto;
+}
+
+/**
+ * Used to hide elements when creating accessible interfaces.
+ */
+@define-mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 0.063rem;
+  width: 0.063rem;
+  margin: -0.063rem;
+  padding: 0;
+  border: 0;
+}

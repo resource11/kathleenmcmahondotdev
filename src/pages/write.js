@@ -12,7 +12,6 @@ const Write = ({ data: { site, allMdx } }) => {
           <h1>
             Cultivated thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
-          <hr />
         </header>
         <p>
           This is a gathering of all my thoughts, "digital garden" style. If you
@@ -22,6 +21,7 @@ const Write = ({ data: { site, allMdx } }) => {
           </a>{" "}
           to learn more about the philosophy behind the phase.
         </p>
+        <hr />
         {allMdx.edges.map(({ node }) => (
           <ul key={node.id}>
             <li>
