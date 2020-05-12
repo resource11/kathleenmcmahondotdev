@@ -34,10 +34,6 @@ export default ({ data }) => {
           Welcome to the space where I cultivate all the varied things I do.
         </p>
         <h2>Featured speaking</h2>
-        <p>
-          I’m an experienced software engineer, product designer, and conference
-          speaker with a passion for making inclusive experiences.
-        </p>
         <p data-notist="resource11/1ecxhG">
           View{" "}
           <a href="https://noti.st/resource11/1ecxhG">
