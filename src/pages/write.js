@@ -3,88 +3,35 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-const Write = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      allFile(
-        filter: { extension: { eq: "mdx" } }
-        sort: { order: DESC, fields: childMdx___frontmatter___date }
-      ) {
-        edges {
-          node {
-            childMdx {
-              body
-              frontmatter {
-                author
-                date(formatString: "MMMM DD, YYYY")
-                description
-                featuredImage {
-                  childImageSharp {
-                    fluid(quality: 90) {
-                      aspectRatio
-                      src
-                      srcSet
-                      sizes
-                    }
-                  }
-                }
-                isHidden
-                isPublished
-                slug
-                tags
-                title
-              }
-              excerpt
-              id
-              fields {
-                featuredImage {
-                  childImageSharp {
-                    fluid(quality: 90) {
-                      aspectRatio
-                      src
-                      srcSet
-                      sizes
-                    }
-                  }
-                }
-                slug
-              }
-            }
-          }
-        }
-        totalCount
-      }
-    }
-  `)
-
+const Write = ({ data: { site, allMdx } }) => {
   return (
     <Layout>
-      <SEO title={`${data.site.siteMetadata.title} | Write`} />
+      <SEO title={`${site.siteMetadata.title} | Write`} />
       <article>
         <header>
           <h1>
-            Some of my thoughts <small>{data.allFile.totalCount} Posts</small>
+            Cultivating my thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
           <hr />
         </header>
         <p>
-          This is a gathering of all the MDX files that exist in this project
+          This is a gathering of all my thoughts, "digital garden" style. If you
+          haven't heard the term before, check out the this{" "}
+          <a href="https://joelhooks.com/digital-garden">
+            fantastic post on digital gardens by Joel Hooks
+          </a>{" "}
+          to learn more about the philosophy behind the phase.
         </p>
-        {data.allFile.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h2>
-              <Link to={`write/${node.childMdx.frontmatter.slug}`}>
-                {node.childMdx.frontmatter.title}
+        {allMdx.edges.map(({ node }) => (
+          <ul key={node.id}>
+            <li>
+              <Link to={`write/${node.frontmatter.slug}`}>
+                {node.frontmatter.title}
               </Link>
-            </h2>
-            <span>— {node.childMdx.frontmatter.date}</span>
-            <p>{node.childMdx.excerpt}</p>
-          </div>
+            </li>
+            <span>Published: {node.frontmatter.date}</span>
+            <p>{node.excerpt}</p>
+          </ul>
         ))}
       </article>
     </Layout>
@@ -92,3 +39,37 @@ const Write = () => {
 }
 
 export default Write
+
+export const writeQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(
+      filter: { frontmatter: { isPublished: { ne: false } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            author
+            date(formatString: "MMMM DD, YYYY")
+            description
+            isHidden
+            isPublished
+            slug
+            tags
+            title
+          }
+          body
+          excerpt
+          timeToRead
+        }
+      }
+      totalCount
+    }
+  }
+`
