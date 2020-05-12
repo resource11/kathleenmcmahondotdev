@@ -33,8 +33,8 @@ const Write = () => {
                     }
                   }
                 }
-                hidden
-                published
+                isHidden
+                isPublished
                 slug
                 tags
                 title

@@ -96,7 +96,7 @@ export const contentQuery = graphql`
       frontmatter {
         title
         tags
-        published
+        isPublished
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {
