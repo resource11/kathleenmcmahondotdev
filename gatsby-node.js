@@ -19,14 +19,19 @@ exports.onCreateNode = ({ node, actions }) => {
       value: frontmatter.featuredImage,
     })
     createNodeField({
-      name: "hidden",
+      name: "isFeatured",
       node,
-      value: frontmatter.hidden,
+      value: frontmatter.isFeatured,
     })
     createNodeField({
-      name: "published",
+      name: "isHidden",
       node,
-      value: frontmatter.published,
+      value: frontmatter.isHidden,
+    })
+    createNodeField({
+      name: "isPublished",
+      node,
+      value: frontmatter.isPublished,
     })
   }
 }

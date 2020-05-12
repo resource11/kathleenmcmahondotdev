@@ -10,7 +10,7 @@ const Write = ({ data: { site, allMdx } }) => {
       <article>
         <header>
           <h1>
-            Cultivating my thoughts <small>{allMdx.totalCount} Posts</small>
+            Cultivated thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
           <hr />
         </header>

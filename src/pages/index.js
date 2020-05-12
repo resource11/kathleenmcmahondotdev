@@ -7,8 +7,8 @@ import Layout from "../components/layout"
 
 const dateColor = `purple`
 
-export default ({ data }) => {
-  console.log(data)
+const Home = ({ data: { allMdx } }) => {
+  console.log(allMdx)
 
   return (
     <Layout>
@@ -31,9 +31,9 @@ export default ({ data }) => {
         <p>
           Hello! I'm Kathleen, an engineer, designer, conference speaker, and
           occasional writer with a passion for making inclusive experiences.
-          Welcome to the space where I cultivate all the varied things I do.
+          Welcome to the space where I cultivate my variety of interests.
         </p>
-        <h2>Featured speaking</h2>
+        <h2>Recent talks, podcasts, streams</h2>
         <p data-notist="resource11/1ecxhG">
           View{" "}
           <a href="https://noti.st/resource11/1ecxhG">
@@ -44,11 +44,18 @@ export default ({ data }) => {
         </p>
         <script async src="https://on.notist.cloud/embed/002.js"></script>
         <Link to="/speak/">Browse all media</Link>
-        <h2>Favorite posts</h2>
-        <p>
-          I’m an experienced software engineer, product designer, and conference
-          speaker with a passion for making inclusive experiences.
-        </p>
+        <h2>Featured posts</h2>
+        {allMdx.edges.map(({ node }) => (
+          <ul key={node.id}>
+            <li>
+              <Link to={`write/${node.frontmatter.slug}`}>
+                {node.frontmatter.title}
+              </Link>
+            </li>
+            <span>Published: {node.frontmatter.date}</span>
+            <p>{node.excerpt}</p>
+          </ul>
+        ))}
         <Link to="/write/">Browse all articles</Link>
       </article>
     </Layout>
@@ -57,23 +64,25 @@ export default ({ data }) => {
 
 export const indexQuery = graphql`
   query {
-    allFile(filter: { extension: { eq: "mdx" } }) {
+    allMdx(filter: { frontmatter: { isFeatured: { eq: true } } }) {
       edges {
         node {
-          childMdx {
-            body
-            frontmatter {
-              author
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-            }
-            excerpt
-            id
+          id
+          fields {
+            slug
+            isFeatured
           }
+          frontmatter {
+            slug
+            title
+            isFeatured
+          }
+          body
         }
       }
       totalCount
     }
   }
 `
+
+export default Home

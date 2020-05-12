@@ -44,16 +44,16 @@ const MyTextArea = ({ label, ...props }) => {
   )
 }
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
 }
 
-export const SignupForm = () => {
+export const ContactForm = () => {
   return (
     <>
-      <h2>Subscribe!</h2>
+      <h2>Contact Me</h2>
       {/* Formik component is a React Context-powered Component. 
       It connects the state/methods from the Formik component 
       to the Form and other components */}
@@ -119,4 +119,4 @@ export const SignupForm = () => {
   )
 }
 
-export default SignupForm
+export default ContactForm
