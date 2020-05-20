@@ -49,11 +49,9 @@
 @define-mixin font-page-header {
   @add-mixin font-weight-bold;
 
-  font-family: "Futura", sans-serif;
-  font-style: normal;
   font-size: var(--s2);
   line-height: 120%; /* or 43px */
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.05em;
   @media screen and (--small) {
     font-size: var(--s3);
   }
@@ -65,11 +63,9 @@
 @define-mixin font-section-header {
   @add-mixin font-weight-bold;
 
-  font-family: Futura;
-  font-style: normal;
   font-size: var(--s1);
   line-height: 120%; /* or 29px */
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.02em;
   @media screen and (--small) {
     font-size: var(--s2);
   }
@@ -81,8 +77,6 @@
 @define-mixin font-section-title {
   @add-mixin font-weight-bold;
 
-  font-family: Futura;
-  font-style: normal;
   font-size: 1.375rem; /* or 22px */
   line-height: 120%;
   @media screen and (--small) {
@@ -96,8 +90,6 @@
 @define-mixin font-intro-title {
   @add-mixin font-weight-bold;
 
-  font-family: Futura;
-  font-style: normal;
   font-size: 1.25rem; /* or 20px */
   line-height: 120%;
   @media screen and (--small) {
@@ -111,8 +103,6 @@
 @define-mixin font-content-title {
   @add-mixin font-weight-bold;
 
-  font-family: Futura;
-  font-style: normal;
   font-size: 1.125rem;
   line-height: 120%;
   @media screen and (--small) {
@@ -126,11 +116,9 @@
 @define-mixin font-attribute {
   @add-mixin font-weight-bold;
 
-  font-family: Futura;
-  font-style: normal;
   font-size: var(--s0);
   line-height: 120%;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.02em;
 }
 
 @define-mixin font-content-intro {
@@ -191,7 +179,6 @@
  */
 @define-mixin font-weight-regular {
   font-weight: 400;
-  font-style: book;
 }
 
 /**
@@ -199,15 +186,14 @@
  */
 @define-mixin font-weight-medium {
   font-weight: 500;
-  font-style: medium;
 }
 
 /**
  * Bold font weight
  */
 @define-mixin font-weight-bold {
+  font-family: "Futura", sans-serif;
   font-weight: 700;
-  font-style: bold;
 }
 
 /**

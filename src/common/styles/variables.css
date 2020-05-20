@@ -1,5 +1,33 @@
 :root {
   /* Base Colors  */
+  --black: #111314;
+  --grey-50: #313b44;
+  --grey-40: #5c6c7a;
+  --grey-30: #65788b;
+  --grey-20: #8394a5;
+  --grey-10: #edf4fb;
+  --white: #ffffff;
+  --purple-violet: #a000ba;
+  --purple-red-200: #ba00a1;
+  --purple-red-100: #b900a4;
+  --purple-orchid: #b901bd;
+  --magenta-red-100: #d10971;
+  --caribbean-blue-muted-200: #346c8c;
+  --caribbean-blue-muted-100: #527b99;
+  --caribbean-blue: #0071c2;
+  --purple-muted-100: #ae08b1;
+  --pink: #fa9aff;
+
+  /* Gradients */
+  --grad-grey-500: linear-gradient(to right, #343f4a, #111314);
+  --grad-grey-400: linear-gradient(to right, #465863, #5f788b);
+  --grad-grey-300: linear-gradient(to right, #96a6b5, #c0d8f0);
+  --grad-grey-200: linear-gradient(to right, #8aaabd, #d5dee5);
+  --grad-grey-100: linear-gradient(to right, #eef6fe, #edf4fb);
+
+  /* Colors by Intent */
+  --text: --black;
+  --text-reverse: --white;
 
   /* Modular scale, numbers rounded */
   --ratio: 1.5;
