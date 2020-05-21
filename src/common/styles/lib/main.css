@@ -1,25 +1,42 @@
-@import "./variables.css";
-@import "./properties.css";
+:root {
+  @add-mixin font-body-normal;
+  font-family: var(--font-standard);
+  line-height: var(--line-height);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  text-rendering: optimizeLegibility;
+}
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  background-color: inherit;
+  font-family: inherit;
+  color: inherit;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  border-style: solid;
+  border-width: 0;
+  border-color: currentColor;
 }
 
 *:focus {
   outline: 0;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px purple;
+  outline-offset: var(--s-5);
+  box-shadow: 0 0 0 var(--s-5) purple;
 }
 
 body {
   /* @add-mixin font-body-normal; */
   @add-mixin font-weight-regular;
-  background: var(--text-reverse);
+  /* background: var(--text-reverse);
   color: var(--text);
   font-family: "Futura PT", sans-serif;
   font-size: calc(0.1vw + 0.1vh + 1em);
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
+  line-height: var(--ratio);
+  text-rendering: optimizeLegibility; */
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -157,22 +174,12 @@ p.tiny,
   margin: var(--s-4) 0;
 }
 
-span.color-medium,
-p.color-medium {
-  @add-mixin font-color-medium;
-}
-
-span.color-light,
-p.color-light {
-  @add-mixin font-color-light;
-}
-
 code {
   @add-mixin font-code;
 
   padding: 0.1rem 0.3rem;
   color: var(--text);
-  background-color: var(--grey-01);
+  background-color: var(--grey-100);
   border-radius: var(--s-4);
 }
 

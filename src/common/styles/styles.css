@@ -1,0 +1,26 @@
+/* Modular scale, colors, etc. */
+@import "./lib/variables.css";
+@import "./lib/mixins.css";
+@import "./lib/main.css";
+@import "./lib/code.css";
+
+/* Utility classes */
+/* @import "./lib/helpers.css"; */
+
+/* Modular scale, numbers rounded
+  Based on Every Layout by Andy Bell and Heydon Pickering 
+  */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--s0);
+}

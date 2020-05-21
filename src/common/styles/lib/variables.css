@@ -1,4 +1,9 @@
 :root {
+  /* Fonts */
+  --font-standard: "Futura PT", Helvetica, Arial, sans-serif;
+  --font-bold: Futura, Helvetica, Arial, sans-serif;
+  --font-mono: Courier, Courier New, Andale Mono, monospace;
+
   /* Base Colors  */
   --black: #111314;
   --grey-500: #313b44;
@@ -26,11 +31,15 @@
   --grad-grey-100: linear-gradient(to right, #eef6fe, #edf4fb);
 
   /* Colors by Intent */
-  --text: var(--black);
-  --text-reverse: var(--white);
+  --color-light: var(--white);
+  --color-dark: var(--black);
+  --text: var(--color-dark);
+  --text-reverse: var(--color-light);
   --link: var(--purple-muted-100);
 
-  /* Modular scale, numbers rounded */
+  /* Modular scale, numbers rounded
+  Based on Every Layout by Andy Bell and Heydon Pickering 
+  */
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio)); /* 2px */
   --s-4: calc(var(--s-3) / var(--ratio)); /* 3px */
@@ -43,11 +52,22 @@
   --s3: calc(var(--s2) * var(--ratio)); /* 54px */
   --s4: calc(var(--s3) * var(--ratio)); /* 81px */
   --s5: calc(var(--s4) * var(--ratio)); /* 121px */
+
+  /* Measure */
+  --measure: 65ch;
+
+  /* Line height */
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8 * var(--ratio));
+
+  --border-thin: var(--s-5);
+  --border-thick: var(--s-3);
 }
 
 /*
-	We are using `em` for our breakpoints due to some issues where Safari
-	is not properly supporting media queries that are set to `rem` units.
+	Custom media
+  Using `em` for our breakpoints due to some issues where Safari
+	does not properly supporting media queries that use `rem` units.
 */
 @custom-media --xsmall (min-width: 0);
 @custom-media --small (min-width: 41.25em); /* 660px */

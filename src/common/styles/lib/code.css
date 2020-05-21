@@ -1,0 +1,99 @@
+/* 
+Based on a11y-dark theme for JavaScript, CSS, and HTML by Eric Bailey 
+*/
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em; /* fonts are weird, so not in the modular scale */
+}
+
+pre code {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  display: block;
+  padding: var(--s1);
+  overflow-x: auto;
+}
+
+pre[class*="language-"] {
+  color: var(--color-light);
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  overflow-x: auto;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #cecece;
+}
+
+.token.punctuation {
+  color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b1b1b1;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #cbcbcb;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #b8b8b8;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #d2d2d2;
+}
+
+.token.keyword {
+  color: #b8b8b8;
+}
+
+.token.regex,
+.token.important,
+.token.color {
+  color: #d2d2d2;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

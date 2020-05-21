@@ -1,4 +1,4 @@
-@import "./variables.css";
+/* @import "./variables.css"; */
 
 /**
  * Font style used for tiny text
@@ -25,13 +25,14 @@
  * Default font style used for body text
  */
 @define-mixin font-body-normal {
-  font-size: 1rem; /* 16px */
-  line-height: 1.5; /* 24px */
+  font-size: calc(0.1vw + 0.1vh + 1em); /* 16px */
+  line-height: var(--line-height); /* 24px */
   @media screen and (--small) {
+    font-size: calc(0.1vw + 0.1vh + 1.25em);
     font-size: 1.25rem;
   }
   @media screen and (--medium) {
-    font-size: var(--s0);
+    font-size: calc(0.1vw + 0.1vh + 1.5em);
   }
 }
 
@@ -132,7 +133,7 @@
 
   font-size: 1.25rem;
   @media screen and (--small) {
-    font-size: 1.5rem;
+    font-size: var(--s1);
   }
   @media screen and (--medium) {
     font-size: 1.75rem;
@@ -147,7 +148,7 @@
     font-size: 1.25rem;
   }
   @media screen and (--medium) {
-    font-size: 1.5rem;
+    font-size: var(--s1);
   }
 }
 
@@ -198,22 +199,8 @@
  * Bold font weight
  */
 @define-mixin font-weight-bold {
-  font-family: "Futura", sans-serif;
+  font-family: var(--font-bold);
   font-weight: 700;
-}
-
-/**
- * Font color used for medium contrast against white background
- */
-@define-mixin font-color-medium {
-  color: var(--text-medium);
-}
-
-/**
- * Font color used for light contrast against white background
- */
-@define-mixin font-color-light {
-  color: var(--text-light);
 }
 
 /**
