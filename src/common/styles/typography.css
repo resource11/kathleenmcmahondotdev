@@ -12,9 +12,9 @@
 }
 
 body {
-  @add-mixin font-body-normal;
+  /* @add-mixin font-body-normal; */
   @add-mixin font-weight-regular;
-  background: white;
+  background: var(--text-reverse);
   color: var(--text);
   font-family: "Futura PT", sans-serif;
   font-size: calc(0.1vw + 0.1vh + 1em);
@@ -28,10 +28,10 @@ body {
 }
 
 ::selection {
-  background: var(--gray-01);
+  background: var(--grey-100);
 }
 ::-moz-selection {
-  background: var(--gray-01);
+  background: var(--grey-100);
 }
 
 hr,
@@ -39,9 +39,9 @@ hr,
   border-bottom: 0;
   border-left: 0;
   border-right: 0;
-  border-top: 0.063em solid #929292; /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
+  border-top: 0.063em solid var(--grey-200); /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
   width: 100%;
 
   @media (--medium) {
@@ -68,7 +68,7 @@ h2,
 h3,
 .h3,
 .sectionTitle {
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 0 var(--s-2);
 
   @add-mixin font-section-title;
 }
@@ -76,7 +76,7 @@ h3,
 h4,
 .h4,
 .introTitle {
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 0 var(--s-2);
 
   @add-mixin font-intro-title;
 }
@@ -84,7 +84,7 @@ h4,
 h5,
 .h5,
 .contentTitle {
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
 
   @add-mixin font-content-title;
 }
@@ -92,28 +92,28 @@ h5,
 h6,
 .h6,
 .attribute {
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
 
   @add-mixin font-attribute;
 }
 
 a,
 .link {
-  color: blueviolet;
+  color: var(--link);
   cursor: pointer;
 }
 
 a:hover,
 .link:hover {
   background-color: purple;
-  color: white;
+  color: var(--text-reverse);
 }
 
 a:active,
 .link:active {
   background-color: indigo;
   box-shadow: 0 0 0 2px indigo;
-  color: white;
+  color: var(--text-reverse);
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ p,
 .paragraph {
   @add-mixin font-body-normal;
 
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
 }
 
 span.medium,
@@ -137,7 +137,7 @@ p.medium,
 .paragraph.medium {
   @add-mixin font-body-medium;
 
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
 }
 
 span.small,
@@ -145,7 +145,7 @@ p.small,
 .paragraph.small {
   @add-mixin font-body-small;
 
-  margin: 0.5rem 0;
+  margin: var(--s-2) 0;
 }
 
 span.tiny,
@@ -154,7 +154,7 @@ p.tiny,
 .caption {
   @add-mixin font-body-tiny;
 
-  margin: 0.25rem 0;
+  margin: var(--s-4) 0;
 }
 
 span.color-medium,
@@ -171,18 +171,18 @@ code {
   @add-mixin font-code;
 
   padding: 0.1rem 0.3rem;
-  color: black;
+  color: var(--text);
   background-color: var(--grey-01);
-  border-radius: 0.25rem;
+  border-radius: var(--s-4);
 }
 
 pre {
   @add-mixin font-code;
 
   padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  color: black;
-  background-color: lightgrey;
+  border-radius: var(--s-4);
+  color: var(--text);
+  background-color: var(--grey-100);
 
   & code {
     font-size: inherit;
@@ -194,25 +194,25 @@ pre {
 ol.list,
 .article ol {
   counter-reset: orderedlist;
-  padding-left: 0.5rem;
-  margin: 0.5rem 0;
+  padding-left: var(--s-2);
+  margin: var(--s-2) 0;
   & ol,
   & ul {
     counter-reset: orderedlist;
-    padding-left: 0.5rem;
+    padding-left: var(--s-2);
   }
   & li {
     counter-increment: orderedlist;
     list-style: none;
     padding-left: 1.25rem;
-    margin: 0.5rem 0;
+    margin: var(--s-2) 0;
 
     &::before {
       @add-mixin font-weight-bold;
       @add-mixin font-body-small;
 
       content: counter(orderedlist);
-      color: black;
+      color: var(--text);
       display: inline-block;
       width: 1.25rem;
       margin-left: -1.25rem;
@@ -222,23 +222,23 @@ ol.list,
 
 ul.list,
 .article ul {
-  padding-left: 0.5rem;
-  margin: 0.5rem 0;
+  padding-left: var(--s-2);
+  margin: var(--s-2) 0;
   & ol,
   & ul {
-    padding-left: 0.5rem;
+    padding-left: var(--s-2);
   }
   & li {
     list-style: none;
     padding-left: 1.25rem;
-    margin: 0.5rem 0;
+    margin: var(--s-2) 0;
 
     &::before {
       @add-mixin font-weight-bold;
       @add-mixin font-body-large;
 
       content: "•";
-      color: black;
+      color: var(--text);
       display: inline-block;
       width: 1.25rem;
       margin-left: -1.25rem;

@@ -1,11 +1,11 @@
 :root {
   /* Base Colors  */
   --black: #111314;
-  --grey-50: #313b44;
-  --grey-40: #5c6c7a;
-  --grey-30: #65788b;
-  --grey-20: #8394a5;
-  --grey-10: #edf4fb;
+  --grey-500: #313b44;
+  --grey-400: #5c6c7a;
+  --grey-300: #65788b;
+  --grey-200: #8394a5;
+  --grey-100: #edf4fb;
   --white: #ffffff;
   --purple-violet: #a000ba;
   --purple-red-200: #ba00a1;
@@ -26,8 +26,9 @@
   --grad-grey-100: linear-gradient(to right, #eef6fe, #edf4fb);
 
   /* Colors by Intent */
-  --text: --black;
-  --text-reverse: --white;
+  --text: var(--black);
+  --text-reverse: var(--white);
+  --link: var(--purple-muted-100);
 
   /* Modular scale, numbers rounded */
   --ratio: 1.5;
