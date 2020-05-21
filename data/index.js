@@ -28,6 +28,7 @@ const siteData = {
     },
     {
       name: "Accessbility Statement",
+      icon: "accessible-icon",
       link: "#",
     },
   ],

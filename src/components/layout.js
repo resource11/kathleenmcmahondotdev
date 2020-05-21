@@ -1,9 +1,12 @@
 import React from "react"
 import classnames from "classnames"
+import "../utils/fontawesome"
 import data from "../../data"
-import css from "./layout.module.css"
-import { Link } from "gatsby"
+
 import { MdxEmbedProvider } from "@pauliescanlon/gatsby-mdx-embed"
+import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import css from "./layout.module.css"
 
 const Layout = ({ children }) => {
   const { primaryNav, footerNav } = data
@@ -34,8 +37,15 @@ const Layout = ({ children }) => {
         <footer className={css.footer} role="contentinfo">
           <ul className={css.listItem}>
             {footerNav.map((nav) => (
-              <li key={nav.link}>
-                <a href={nav.link} aria-label={nav.ariaLabel}>
+              <li key={nav.icon}>
+                <a
+                  href={nav.link}
+                  aria-label={nav.ariaLabel ? nav.ariaLabel : null}
+                >
+                  <FontAwesomeIcon
+                    icon={["fab", nav.icon]}
+                    className={css.icon}
+                  />
                   {nav.name}
                 </a>
               </li>
