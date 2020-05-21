@@ -98,16 +98,6 @@ export const contentQuery = graphql`
         tags
         isPublished
         date(formatString: "MMMM DD, YYYY")
-        featuredImage {
-          childImageSharp {
-            fluid(quality: 90) {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-          }
-        }
       }
     }
   }
