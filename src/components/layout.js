@@ -2,6 +2,7 @@ import React from "react"
 import classnames from "classnames"
 import "../utils/fontawesome"
 import data from "../../data"
+import KMLogo from "../svgs/KMLogo.svg"
 
 import { MdxEmbedProvider } from "@pauliescanlon/gatsby-mdx-embed"
 import { Link } from "gatsby"
@@ -17,12 +18,19 @@ const Layout = ({ children }) => {
     <MdxEmbedProvider>
       <div className={css.contentWrapper}>
         <header className={css.header}>
-          <a href="#main">Skip to main</a>
-          <div>
-            <Link to={`/`}>KathleenMcMahon.dev</Link>
+          <div className={css.headerLinks}>
+            <a href="#main">Skip to main</a>
+            <Link to={`/`} className={css.logo}>
+              <img
+                src={KMLogo}
+                alt="KathleenMcMahon.dev"
+                className={css.logoImg}
+              />
+            </Link>
           </div>
+
           <nav className={css.nav}>
-            <ul className={css.listItem}>
+            <ul className={css.primaryNavList}>
               {primaryNav.map((nav) => (
                 <li key={nav.name}>
                   <Link to={nav.link}>{nav.name}</Link>
