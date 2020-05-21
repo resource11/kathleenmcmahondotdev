@@ -1,5 +1,3 @@
-/* @import "./variables.css"; */
-
 /**
  * Font style used for tiny text
  */
@@ -48,7 +46,8 @@
  * Monospace font style used for code.
  */
 @define-mixin font-code {
-  font-family: Courier, monospace;
+  font-family: var(--font-mono);
+  font-size: 0.85em; /* fonts are weird, so not in the modular scale */
 }
 
 /* Heading Sizes  */

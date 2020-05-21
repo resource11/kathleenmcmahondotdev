@@ -3,20 +3,23 @@ Based on a11y-dark theme for JavaScript, CSS, and HTML by Eric Bailey
 */
 
 code {
-  font-family: var(--font-mono);
-  font-size: 0.85em; /* fonts are weird, so not in the modular scale */
+  @add-mixin font-code;
 }
 
-pre code {
-  color: var(--color-light);
-  background-color: var(--color-dark);
-  display: block;
-  padding: var(--s1);
-  overflow-x: auto;
+pre {
+  border-radius: var(--s-4);
+
+  & code {
+    color: var(--color-dark);
+    background-color: var(--grey-100);
+    display: block;
+    padding: var(--s1);
+    overflow-x: auto;
+  }
 }
 
 pre[class*="language-"] {
-  color: var(--color-light);
+  color: var(--color-dark);
   text-align: left;
   white-space: pre;
   word-spacing: normal;

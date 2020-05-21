@@ -22,22 +22,42 @@
   border-color: currentColor;
 }
 
+/* Hidden content */
+
+[hidden] {
+  display: none;
+}
+
+[hidden] + * {
+  margin-top: 0 !important;
+}
+
+/* For older browsers */
+nav,
+main,
+header,
+footer {
+  display: block;
+}
+
+/* Smooth scrolling */
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 *:focus {
   outline: 0;
   outline-offset: var(--s-5);
   box-shadow: 0 0 0 var(--s-5) purple;
 }
 
-body {
-  /* @add-mixin font-body-normal; */
-  @add-mixin font-weight-regular;
-  /* background: var(--text-reverse);
-  color: var(--text);
-  font-family: "Futura PT", sans-serif;
-  font-size: calc(0.1vw + 0.1vh + 1em);
-  line-height: var(--ratio);
-  text-rendering: optimizeLegibility; */
+/* Typography */
 
+body {
+  @add-mixin font-weight-regular;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -51,67 +71,192 @@ body {
   background: var(--grey-100);
 }
 
-hr,
-.hr {
-  border-bottom: 0;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0.063em solid var(--grey-200); /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
-  display: inline-block;
-  margin: var(--s-2) 0;
-  width: 100%;
-
-  @media (--medium) {
-    margin: 5rem 0;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-small);
+  font-family: var(--font-bold);
+  font-weight: 700;
+  hyphens: auto;
 }
 
 h1,
 .h1,
 .pageHeader {
-  margin: 1rem 0;
-
   @add-mixin font-page-header;
 }
 
 h2,
 .h2,
 .sectionHeader {
-  margin: 1rem 0;
-
   @add-mixin font-section-header;
 }
 
 h3,
 .h3,
 .sectionTitle {
-  margin: 1rem 0 var(--s-2);
-
   @add-mixin font-section-title;
 }
 
 h4,
 .h4,
 .introTitle {
-  margin: 1rem 0 var(--s-2);
-
   @add-mixin font-intro-title;
 }
 
 h5,
 .h5,
 .contentTitle {
-  margin: var(--s-2) 0;
-
   @add-mixin font-content-title;
 }
 
 h6,
 .h6,
 .attribute {
-  margin: var(--s-2) 0;
-
   @add-mixin font-attribute;
+}
+
+hr,
+.hr {
+  /* padding: var(--border-thin) 0 0;
+  border-width: var(--border-thin) 0;
+  border-color: var(--grey-200); */
+
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0.063em solid var(--grey-200); /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
+  display: inline-block;
+  margin: 0.5rem 0;
+  width: 100%;
+
+  @media (--medium) {
+    margin: 1rem 0;
+  }
+}
+
+.label {
+  @add-mixin font-label;
+}
+
+.label-small {
+  @add-mixin font-label-small;
+}
+
+p,
+.paragraph {
+  @add-mixin font-body-normal;
+}
+
+span.medium,
+p.medium,
+.paragraph.medium {
+  @add-mixin font-body-medium;
+}
+
+span.small,
+p.small,
+.paragraph.small {
+  @add-mixin font-body-small;
+}
+
+span.tiny,
+p.tiny,
+.paragraph.tiny,
+.caption {
+  @add-mixin font-body-tiny;
+}
+
+ol.list,
+.article ol {
+  counter-reset: orderedlist;
+  padding-left: var(--s-2);
+  & ol,
+  & ul {
+    counter-reset: orderedlist;
+    padding-left: var(--s-2);
+  }
+  & li {
+    counter-increment: orderedlist;
+    list-style: none;
+    padding-left: 1.25rem;
+
+    &::before {
+      @add-mixin font-weight-bold;
+      @add-mixin font-body-small;
+
+      content: counter(orderedlist);
+      color: var(--text);
+      display: inline-block;
+      width: 1.25rem;
+      margin-left: -1.25rem;
+    }
+  }
+}
+
+ul.list,
+.article ul {
+  padding-left: var(--s-2);
+  & ol,
+  & ul {
+    padding-left: var(--s-2);
+  }
+  & li {
+    list-style: none;
+    padding-left: 1.25rem;
+
+    &::before {
+      @add-mixin font-weight-bold;
+      @add-mixin font-body-large;
+
+      content: "•";
+      color: var(--text);
+      display: inline-block;
+      width: 1.25rem;
+      margin-left: -1.25rem;
+    }
+  }
+}
+
+/* Buttons and links */
+
+/**
+https://www.scottohara.me/blog/2018/10/03/unbutton-buttons.html
+
+ * Note: Rules have been combined to cut down on redundancy.
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ * 3. Show the overflow in Edge.
+ * 4. Remove the inheritance of text transform in Firefox.
+ * 5. Correct the inability to style clickable types in iOS and Safari.
+ */
+button {
+  -webkit-appearance: button; /* 5 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  overflow: visible; /* 3 */
+  text-transform: none; /* 4 */
+  cursor: pointer;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring {
+  outline: 0.063em dotted ButtonText;
 }
 
 a,
@@ -134,125 +279,76 @@ a:active,
   text-decoration: none;
 }
 
-.label {
-  @add-mixin font-label;
+[href="#main"] {
+  display: inline-block;
+  padding: var(--s-1);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  position: absolute;
+  top: -10rem;
 }
 
-.label-small {
-  @add-mixin font-label-small;
+[href="#main"]:focus {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  outline: none;
 }
 
-p,
-.paragraph {
-  @add-mixin font-body-normal;
+/* Media */
 
-  margin: var(--s-2) 0;
+img {
+  width: 100%;
 }
 
-span.medium,
-p.medium,
-.paragraph.medium {
-  @add-mixin font-body-medium;
-
-  margin: var(--s-2) 0;
+figure,
+[role="figure"] {
+  text-align: center;
 }
 
-span.small,
-p.small,
-.paragraph.small {
-  @add-mixin font-body-small;
-
-  margin: var(--s-2) 0;
+figure img,
+[role="figure"] img {
+  background-image: linear-gradient(var(--color-light), var(--color-light));
 }
 
-span.tiny,
-p.tiny,
-.paragraph.tiny,
-.caption {
-  @add-mixin font-body-tiny;
-
-  margin: var(--s-4) 0;
+figcaption,
+.figcaption {
+  margin-top: var(--s-1);
+  font-size: var(--s-1);
 }
 
-code {
-  @add-mixin font-code;
+/* Icons */
 
-  padding: 0.1rem 0.3rem;
-  color: var(--text);
-  background-color: var(--grey-100);
-  border-radius: var(--s-4);
+.icon {
+  width: 0.75em;
+  width: 1cap;
+  height: 0.75em;
+  height: 1cap;
 }
 
-pre {
-  @add-mixin font-code;
-
-  padding: 0.2rem 0.4rem;
-  border-radius: var(--s-4);
-  color: var(--text);
-  background-color: var(--grey-100);
-
-  & code {
-    font-size: inherit;
-    background-color: transparent;
-    padding: 0;
-  }
+.with-icon {
+  display: inline-flex;
+  align-items: baseline;
 }
 
-ol.list,
-.article ol {
-  counter-reset: orderedlist;
-  padding-left: var(--s-2);
-  margin: var(--s-2) 0;
-  & ol,
-  & ul {
-    counter-reset: orderedlist;
-    padding-left: var(--s-2);
-  }
-  & li {
-    counter-increment: orderedlist;
-    list-style: none;
-    padding-left: 1.25rem;
-    margin: var(--s-2) 0;
-
-    &::before {
-      @add-mixin font-weight-bold;
-      @add-mixin font-body-small;
-
-      content: counter(orderedlist);
-      color: var(--text);
-      display: inline-block;
-      width: 1.25rem;
-      margin-left: -1.25rem;
-    }
-  }
+.with-icon .icon {
+  margin-inline-end: var(--s0);
 }
 
-ul.list,
-.article ul {
-  padding-left: var(--s-2);
-  margin: var(--s-2) 0;
-  & ol,
-  & ul {
-    padding-left: var(--s-2);
-  }
-  & li {
-    list-style: none;
-    padding-left: 1.25rem;
-    margin: var(--s-2) 0;
-
-    &::before {
-      @add-mixin font-weight-bold;
-      @add-mixin font-body-large;
-
-      content: "•";
-      color: var(--text);
-      display: inline-block;
-      width: 1.25rem;
-      margin-left: -1.25rem;
-    }
-  }
+/* Block spacing
+  Based on Every Layout by Andy Bell and Heydon Pickering 
+  */
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-form {
+.stack > * {
+  margin-top: 0;
   margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--s0);
 }
