@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  min-height: 100vh;
 }
 
 /* Heading */
@@ -38,7 +39,7 @@
   padding: 0 1rem;
 }
 
-.nav {
+.primaryNav {
   height: 2.25rem;
   border-top: 0.25rem solid var(--grey-100, #e5ebf1);
 }
@@ -85,17 +86,33 @@
 
 .footer {
   margin-top: auto;
-  min-height: 6rem;
-  padding: 2.5rem 1.75rem;
+  min-height: 10rem;
+  padding: 1.5rem 1.75rem;
+  color: var(--grey-400, #65788b);
+  border-top: 0.25rem solid var(--grey-300, #8394a5);
+
+  & small {
+    display: block;
+    margin-top: 1rem;
+  }
 }
 
-.listItem {
+.footerNavList {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   margin-left: 0;
 
   & Li {
-    padding: 1rem;
+    padding: 0 1rem 0 0;
+  }
+
+  & a {
+    color: var(--grey-400, #65788b);
+
+    &:hover {
+      color: var(--text-light, #ffffff);
+    }
   }
 }
 

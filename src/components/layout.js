@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
             </Link>
           </div>
 
-          <nav className={css.nav}>
+          <nav className={css.primaryNav}>
             <ul className={css.primaryNavList}>
               {primaryNav.map((nav) => (
                 <li key={nav.name}>
@@ -43,22 +43,24 @@ const Layout = ({ children }) => {
           {children}
         </main>
         <footer className={css.footer} role="contentinfo">
-          <ul className={css.listItem}>
-            {footerNav.map((nav) => (
-              <li key={nav.icon}>
-                <a
-                  href={nav.link}
-                  aria-label={nav.ariaLabel ? nav.ariaLabel : null}
-                >
-                  <FontAwesomeIcon
-                    icon={["fab", nav.icon]}
-                    className={css.icon}
-                  />
-                  {nav.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <nav className={css.footerNav}>
+            <ul className={css.footerNavList}>
+              {footerNav.map((nav) => (
+                <li key={nav.icon}>
+                  <a
+                    href={nav.link}
+                    aria-label={nav.ariaLabel ? nav.ariaLabel : null}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fab", nav.icon]}
+                      className={css.icon}
+                    />
+                    {nav.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <small>copyright 2020 Kathleen McMahon</small>
         </footer>
       </div>
