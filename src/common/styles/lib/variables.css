@@ -6,7 +6,8 @@
 
   /* Base Colors  */
   --black: #111314;
-  --grey-600: #313b44;
+  --grey-700: #313b44;
+  --grey-600: #465863;
   --grey-500: #5c6c7a;
   --grey-400: #65788b;
   --grey-300: #8394a5;
@@ -48,6 +49,21 @@
     131.46% 203.85% at 125.58% -43.48%,
     #ff1a14 0%,
     #b900a5 100%
+  );
+  --grad-rad-blue-violet: radial-gradient(
+    167.63% 245.72% at 100% 0%,
+    #b901bd 0%,
+    #5200ff 100%
+  );
+  --grad-lin-solid-grey-300: linear-gradient(
+    to right,
+    var(--grey-300),
+    var(--grey-300)
+  );
+  --grad-lin-solid-grey-100: linear-gradient(
+    to right,
+    var(--grey-100),
+    var(--grey-100)
   );
 
   /* Colors by Intent */

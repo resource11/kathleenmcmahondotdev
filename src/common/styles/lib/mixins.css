@@ -23,15 +23,15 @@
  * Default font style used for body text
  */
 @define-mixin font-body-normal {
-  font-size: calc(0.1vw + 0.1vh + 1em); /* 16px */
+  font-size: calc(0.1vw + 0.1vh + 1rem); /* 16px */
   line-height: var(--line-height); /* 24px */
-  @media screen and (--small) {
-    font-size: calc(0.1vw + 0.1vh + 1.25em);
+  /* @media screen and (--small) {
+    font-size: calc(0.1vw + 0.1vh + 1.25rem);
     font-size: 1.25rem;
   }
   @media screen and (--medium) {
-    font-size: calc(0.1vw + 0.1vh + 1.5em);
-  }
+    font-size: calc(0.1vw + 0.1vh + 1.5rem);
+  } */
 }
 
 /**
@@ -184,7 +184,7 @@
  * Default regular font weight
  */
 @define-mixin font-weight-regular {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /**

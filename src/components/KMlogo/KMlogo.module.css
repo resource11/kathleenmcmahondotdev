@@ -1,0 +1,83 @@
+.logo {
+  width: 4.125rem;
+  height: 3.313rem;
+
+  & .logoImg {
+    position: relative;
+    top: -1.325rem;
+  }
+}
+
+.logoTmpGroup {
+  /* z-index: 1; */
+  position: absolute;
+  top: 0;
+  filter: opacity(50%);
+}
+
+.logoImgLink {
+  z-index: 1;
+  position: relative;
+  top: 16px;
+  left: 16px;
+  transform: rotate(28deg) scale(1);
+  width: 18%;
+  /* filter: opacity(50%);
+  filter: invert(1); */
+  transition: transform 0.2s ease-in-out;
+
+  /* &:hover {
+    transform: rotate(-10deg);
+  } */
+}
+
+.logoSqGroup {
+  /* z-index: 1; */
+  position: relative;
+  /* top: 16px;
+  left: 16px; */
+  transform: rotate(0deg);
+  /* width: 18%; */
+  /* filter: opacity(50%);
+  filter: invert(1); */
+  transition: transform 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: rotate(10deg);
+  }
+}
+
+.KMtxt {
+  position: absolute;
+  top: 66px;
+  left: 56px;
+  z-index: 2;
+  width: 9.5%;
+}
+
+.redOrangeSq {
+  position: absolute;
+  z-index: 1;
+  transform-origin: bottom left;
+  transform: rotate(0deg) scale(1);
+  /* transition: transform 0.2s ease-in-out; */
+
+  &:hover {
+    /* transform: rotate(-10deg) scale(1.2); */
+  }
+}
+
+.redPurpleSq {
+  position: relative;
+  left: 0.25rem;
+  top: 0.25rem;
+  transform-origin: bottom left;
+  transform: rotate(10deg) scale(1.02);
+
+  /* transition: transform 0.2s ease-in-out; */
+
+  &:hover {
+    /* transform: rotate(0deg) scale(0.97); */
+  }
+}

@@ -1,0 +1,108 @@
+@import "../../common/styles/lib/mixins.css";
+
+/* Skip link */
+[href="#main"] {
+  display: inline-block;
+  position: absolute;
+  right: var(--s0, 1rem);
+  top: 0.625rem;
+  padding: var(--s-3, 0.313rem);
+  color: var(--magenta-red-100, #d10971);
+  background-color: var(--color-light, #ffffff);
+  border-radius: var(--s-4, 0.188rem);
+  @media screen and (--medium) {
+    top: -10rem;
+  }
+}
+
+[href="#main"]:focus {
+  z-index: 1;
+  /* top: 0; */
+  outline: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 3.5rem;
+  border-bottom: 0.25rem solid var(--grey-100, #e5ebf1);
+}
+
+.headerLinks {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.primaryNav {
+  height: 2.25rem;
+  border-bottom: 0.063rem solid var(--grey-100, #e5ebf1);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.07);
+}
+
+.primaryNavUl {
+  position: relative;
+  display: flex;
+  top: -0.063rem;
+  max-width: 20rem;
+  list-style-type: none;
+
+  & .primaryNavLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.25rem;
+  }
+
+  & .primaryNavLi:not(:last-of-type) {
+    margin-right: 0.5rem;
+  }
+
+  & .link {
+    @add-mixin font-weight-medium;
+    width: 100%;
+    padding: 0.15rem var(--s0, 1rem) 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--grey-600, #465863);
+    background: var(--color-light, #ffffff);
+    border-top: 0.25rem solid;
+    border-image-source: var(--grad-lin-solid-grey-100);
+    border-image-slice: 1;
+
+    &:hover {
+      /* border-top: 0.25rem solid; */
+      border-image-source: var(--grad-lin-red-orange);
+      /* border-image-slice: 1; */
+    }
+
+    &:focus {
+      color: var(--color-light, #ffffff);
+      background: var(--grad-lin-red-orange);
+      border-image-source: var(--grad-lin-red-orange);
+      border-image-source: var(--grad-lin-red-orange-muted);
+      box-shadow: none;
+    }
+
+    &:active {
+      border-image-source: var(--grad-lin-red-orange-muted);
+      background: var(--grad-lin-red-orange-muted);
+    }
+  }
+
+  & .activeLink {
+    @add-mixin font-weight-bold;
+    font-size: 92%;
+  }
+}
+
+.logo {
+  width: 4.125rem;
+  height: 3.313rem;
+  z-index: 1;
+
+  & .logoImg {
+    position: relative;
+    top: -1.438rem;
+  }
+}

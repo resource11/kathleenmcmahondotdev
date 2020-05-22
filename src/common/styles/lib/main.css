@@ -148,6 +148,13 @@ hr,
 p,
 .paragraph {
   @add-mixin font-body-normal;
+  @media screen and (--small) {
+    font-size: calc(0.1vw + 0.1vh + 1.25rem);
+    font-size: 1.25rem;
+  }
+  @media screen and (--medium) {
+    font-size: calc(0.1vw + 0.1vh + 1.5rem);
+  }
 }
 
 span.medium,
