@@ -2,6 +2,7 @@
 
 /* Skip link */
 [href="#main"] {
+  position: relative;
   display: block;
   order: 1;
   align-self: center;
@@ -10,8 +11,12 @@
   text-align: center;
   color: var(--magenta-red-100, #d10971);
   background-color: var(--color-light, #ffffff);
+
   @media screen and (--medium) {
+    top: -100px;
+    max-width: 100%;
     min-width: 11.25rem;
+    height: 3.5rem;
     padding: 0.5rem 2rem;
     line-height: 2.2;
 
@@ -19,13 +24,19 @@
   }
 
   &:hover {
-    color: var(text-light);
+    color: var(--text-light, #ffffff);
     background: var(--grad-rad-red-purple);
     box-shadow: 0 0 0 var(--s-5) var(--magenta-red-100);
   }
 
   &:focus {
     box-shadow: 0 0 0 var(--s-5) var(--magenta-red-100);
+
+    @media screen and (--medium) {
+      top: 0;
+      color: var(--text-light, #ffffff);
+      background: var(--grad-rad-red-purple);
+    }
   }
 
   &:active {
