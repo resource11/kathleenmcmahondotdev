@@ -1,9 +1,12 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
 .footer {
   margin-top: auto;
   min-height: 8rem;
   padding: 1.5rem 1.75rem;
   text-align: center;
-  color: var(--grey-400, #65788b);
+  color: var(--grey-400);
   border-top: 0.25rem solid;
   border-image-source: var(--grad-lin-purple-red);
   border-image-slice: 1;
@@ -33,7 +36,7 @@
     }
 
     &:not(:last-of-type)::after {
-      background: var(--grey-300, #b9ccde);
+      background: var(--grey-300);
       content: "";
       bottom: 0.25rem;
       position: absolute;
@@ -44,10 +47,10 @@
   }
 
   & .link {
-    color: var(--grey-400, #65788b);
+    color: var(--grey-400);
 
     &:hover {
-      color: var(--text-light, #ffffff);
+      color: var(--text-light);
     }
   }
 }

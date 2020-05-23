@@ -1,3 +1,4 @@
+@import "../../common/styles/lib/variables.css";
 @import "../../common/styles/lib/mixins.css";
 
 /* Skip link */
@@ -9,8 +10,8 @@
   padding: 0.5rem 1.75rem;
   line-height: 3.1;
   text-align: center;
-  color: var(--magenta-red-100, #d10971);
-  background-color: var(--color-light, #ffffff);
+  color: var(--magenta-red-100);
+  background-color: var(--color-light);
 
   @media screen and (--medium) {
     top: -100px;
@@ -24,7 +25,7 @@
   }
 
   &:hover {
-    color: var(--text-light, #ffffff);
+    color: var(--text-light);
     background: var(--grad-rad-red-purple);
     box-shadow: 0 0 0 var(--s-5) var(--magenta-red-100);
   }
@@ -34,7 +35,7 @@
 
     @media screen and (--medium) {
       top: 0;
-      color: var(--text-light, #ffffff);
+      color: var(--text-light);
       background: var(--grad-rad-red-purple);
     }
   }
@@ -65,8 +66,8 @@
 .primaryNav {
   height: 2.25rem;
 
-  border-bottom: 0.063rem solid var(--grey-100, #e5ebf1);
-  border-top: 0.25rem solid var(--grey-100, #e5ebf1);
+  border-bottom: 0.063rem solid var(--grey-100);
+  border-top: 0.25rem solid var(--grey-100);
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.07);
 }
 
@@ -100,12 +101,12 @@
   & .link {
     @add-mixin font-weight-medium;
     width: 100%;
-    padding: 0.15rem var(--s0, 1rem) 0.25rem;
+    padding: 0.15rem var(--s0) 0.25rem;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--grey-600, #465863);
-    background: var(--color-light, #ffffff);
+    color: var(--grey-600);
+    background: var(--color-light);
     border-top: 0.25rem solid;
     border-image-source: var(--grad-lin-solid-grey-100);
     border-image-slice: 1;
@@ -117,7 +118,7 @@
     }
 
     &:focus {
-      color: var(--color-light, #ffffff);
+      color: var(--color-light);
       background: var(--grad-lin-red-orange);
       border-image-source: var(--grad-lin-red-orange);
       border-image-source: var(--grad-lin-red-orange-muted);
