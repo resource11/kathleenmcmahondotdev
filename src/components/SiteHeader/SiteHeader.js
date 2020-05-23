@@ -10,7 +10,9 @@ export const SiteHeader = () => {
   return (
     <header className={css.header}>
       <div className={css.headerLinks}>
-        <a href="#main">Skip to main</a>
+        <a href="#main">
+          Skip to main <span role="presentation">content</span>
+        </a>
         <Link to={`/`} className={css.logo}>
           <img src={KMLogo} alt="KathleenMcMahon.dev" className={css.logoImg} />
         </Link>

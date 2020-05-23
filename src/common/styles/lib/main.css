@@ -1,15 +1,7 @@
-:root {
-  @add-mixin font-body-normal;
-  font-family: var(--font-standard);
-  line-height: var(--line-height);
-  color: var(--color-dark);
-  text-rendering: optimizeLegibility;
-}
-
 *,
-*::before,
-*::after {
-  box-sizing: border-box;
+*:before,
+*:after {
+  box-sizing: inherit;
   font-family: inherit;
   color: inherit;
   overflow-wrap: break-word;
@@ -20,6 +12,15 @@
   border-color: currentColor;
 }
 
+html {
+  @add-mixin font-body-normal;
+  font-family: var(--font-standard);
+  line-height: var(--line-height);
+  color: var(--color-dark);
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
 /* Hidden content */
 
 [hidden] {
@@ -28,6 +29,10 @@
 
 [hidden] + * {
   margin-top: 0 !important;
+}
+
+[role="presentation"] {
+  @add-mixin visually-hidden;
 }
 
 /* For older browsers */
@@ -52,8 +57,6 @@ footer {
   box-shadow: 0 0 0 var(--s-5) purple;
 }
 
-/* Typography */
-
 body {
   @add-mixin font-weight-regular;
   -moz-osx-font-smoothing: grayscale;
@@ -63,6 +66,7 @@ body {
   background-color: var(--color-light);
 }
 
+/* Typography */
 ::selection {
   background: var(--grey-100);
 }
