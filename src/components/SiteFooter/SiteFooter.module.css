@@ -50,7 +50,7 @@
     color: var(--grey-400);
 
     &:hover {
-      color: var(--text-light);
+      color: var(--text-light, #ffffff);
     }
   }
 }

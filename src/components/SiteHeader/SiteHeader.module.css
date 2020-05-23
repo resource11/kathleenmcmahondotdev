@@ -25,7 +25,7 @@
   }
 
   &:hover {
-    color: var(--text-light);
+    color: var(--text-light, #ffffff);
     background: var(--grad-rad-red-purple);
     box-shadow: 0 0 0 var(--s-5) var(--magenta-red-100);
   }
@@ -35,7 +35,7 @@
 
     @media screen and (--medium) {
       top: 0;
-      color: var(--text-light);
+      color: var(--text-light, #ffffff);
       background: var(--grad-rad-red-purple);
     }
   }
