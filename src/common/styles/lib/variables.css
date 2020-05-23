@@ -6,11 +6,12 @@
 
   /* Base Colors  */
   --black: #111314;
-  --grey-700: #313b44;
-  --grey-600: #465863;
-  --grey-500: #5c6c7a;
-  --grey-400: #65788b;
-  --grey-300: #8394a5;
+  --grey-800: #313b44;
+  --grey-700: #465863;
+  --grey-600: #5c6c7a;
+  --grey-500: #65788b;
+  --grey-400: #8394a5;
+  --grey-300: #b9ccde;
   --grey-200: #edf4fb;
   --grey-100: #e5ebf1;
   --white: #ffffff;
