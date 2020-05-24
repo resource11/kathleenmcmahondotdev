@@ -1,0 +1,23 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
+  position: relative;
+}
+
+.hasIcon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon {
+  margin: 0 0.6875rem 0 0;
+}
+
+.iconAfter {
+  margin: 0 0 0 0.6875rem;
+}
+
+[aria-current="true"] {
+  @add-mixin font-weight-bold;
+}
