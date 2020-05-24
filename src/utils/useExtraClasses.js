@@ -11,6 +11,13 @@ CSS selectors that are available for overrides.
 'protectedCSS' is the import name for the file that contains 
 css selectors that cannot be changed.
 
+You can use your own naming convention with this utility, 
+yet you should make sure the name of your css import differs 
+from the name assigned to the value returned by this function. 
+(e.g., using `import css` at the top of the file and 
+`const css = useExtraClasses(...)` inside your function component
+body will not work)
+
 Once this utility is imported into your component, you must 
 declare a const of 'css' inside your component function body 
 and assign the useExtraClasses function to it, passing in two arguments: 
@@ -45,10 +52,8 @@ Example usage of util in a functional component:
   Note that in the above example the `css.button` and `css.icon` classes
   can be overridden and the CSS class on the `span` is protected from 
   any style overrides.
+
   
-  Also note the import name of the original styles and the name you assign 
-  to the return value of the hook must be different 
-  (e.g., `import css` and `const css = useExtraClasses(...)` will not work)
 
   Using the extraClasses prop in a component:
 

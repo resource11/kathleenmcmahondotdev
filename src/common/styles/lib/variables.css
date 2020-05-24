@@ -51,6 +51,19 @@
     #ff1a14 0%,
     #b900a5 100%
   );
+
+  --grad-rad-red-purple-darken: radial-gradient(
+    131.46% 203.85% at 125.58% -43.48%,
+    #e00600 0%,
+    #850076 100%
+  );
+
+  --grad-rad-red-purple-darkest: radial-gradient(
+    131.46% 203.85% at 125.58% -43.48%,
+    #b10702 0%,
+    #4e0145 100%
+  );
+
   --grad-rad-blue-violet: radial-gradient(
     167.63% 245.72% at 100% 0%,
     #b901bd 0%,

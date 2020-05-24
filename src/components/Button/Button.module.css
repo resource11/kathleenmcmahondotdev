@@ -1,0 +1,85 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
+  background: var(--grad-rad-red-purple);
+  background-clip: border-box; /* !importanté */
+  border: 0.063em solid transparent; /* 1px */
+  border-radius: 0.25em; /* 4px */
+  box-shadow: none;
+  color: var(--text-reverse);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.125rem;
+  height: 3rem;
+  max-width: 100%;
+  min-width: 11.25rem;
+  outline: none;
+  padding: 0 0.5rem;
+  position: relative;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  transition-timing-function: ease;
+}
+
+.root:-moz-focusring {
+  outline: none;
+}
+
+.root:hover {
+  background: var(--grad-rad-blue-violet);
+}
+
+.root:focus {
+  background: #010e26;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: calc(var(--s-3) * -1); /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: var(--grad-rad-red-purple);
+  }
+}
+
+.root:active {
+  background: var(--grad-rad-red-purple-darkest);
+}
+
+.root:disabled {
+  background: var(--grey-300);
+  border-color: var(--grey-400);
+  color: var(--grey-500);
+  pointer-events: none;
+}
+
+.btnContentWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  margin-left: 0.5rem;
+}
+
+.small {
+  font-size: var(--s0);
+  height: 2.5rem;
+  min-width: 7.5rem;
+  line-height: 1;
+
+  & .icon {
+    margin-left: 0.25rem;
+  }
+}
+
+.large {
+  font-size: 1.25rem;
+  height: 3.5rem;
+  min-width: 11.25rem;
+}

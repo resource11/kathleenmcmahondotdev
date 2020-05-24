@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import data from "../../../data"
 import KMLogo from "../../svgs/KMLogo.svg"
@@ -14,7 +13,12 @@ export const SiteHeader = () => {
           Skip to main <span role="presentation">content</span>
         </a>
         <Link to={`/`} className={css.logo}>
-          <img src={KMLogo} alt="KathleenMcMahon.dev" className={css.logoImg} />
+          <img
+            src={KMLogo}
+            alt="KathleenMcMahon.dev"
+            className={css.logoImg}
+            role="img"
+          />
         </Link>
       </div>
 
@@ -38,7 +42,3 @@ export const SiteHeader = () => {
 }
 
 export default SiteHeader
-
-SiteHeader.propTypes = {
-  children: PropTypes.object,
-}

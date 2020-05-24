@@ -11,7 +11,12 @@ export const KMlogo = ({ children }) => {
     <>
       <img src={KMtxt} alt="" className={css.KMtxt} />
       <div className={css.logoTmpGroup}>
-        <img src={KMLogo} alt="KathleenMcMahon.dev" className={css.logoImg} />
+        <img
+          src={KMLogo}
+          alt="KathleenMcMahon.dev"
+          className={css.logoImg}
+          role="img"
+        />
       </div>
       <a className={css.logoImgLink} href="#">
         <div className={css.logoSqGroup}>
