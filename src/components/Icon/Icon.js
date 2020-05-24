@@ -1,12 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "../../utils/fontawesome"
+import { useExtraClasses } from "../../utils/useExtraClasses"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import css from "./Icon.module.css"
+import styles from "./Icon.module.css"
 
-export const Icon = ({ icon, children }) => {
+export const Icon = ({ icon, children, extraClasses }) => {
+  const css = useExtraClasses(styles, extraClasses)
   return (
-    <span>
+    <span className={css.span}>
       <FontAwesomeIcon className={css.icon} icon={icon} /> {children}
     </span>
   )
@@ -16,5 +18,6 @@ export default Icon
 
 Icon.propTypes = {
   children: PropTypes.object,
-  icon: PropTypes.string,
+  extraClasses: PropTypes.object,
+  icon: PropTypes.array,
 }
