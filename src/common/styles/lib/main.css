@@ -54,7 +54,7 @@ footer {
 *:focus {
   outline: 0;
   outline-offset: var(--s-5);
-  box-shadow: 0 0 0 var(--s-5) purple;
+  box-shadow: 0 0 0 var(--s-5) var(--purple-orchid);
 }
 
 body {
@@ -277,14 +277,14 @@ a,
 
 a:hover,
 .link:hover {
-  background-color: purple;
+  background: var(--grad-rad-blue-violet);
   color: var(--text-reverse);
 }
 
 a:active,
 .link:active {
-  background-color: indigo;
-  box-shadow: 0 0 0 2px indigo;
+  background: var(--grad-rad-blue-violet-darken);
+  box-shadow: 0 0 0 2px var(--purple-violet-muted);
   color: var(--text-reverse);
   text-decoration: none;
 }

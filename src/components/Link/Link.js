@@ -3,8 +3,13 @@ import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/useExtraClasses"
-import Icon, { IconSizes } from "../icon/Icon"
+import { Icon } from "../Icon"
 import styles from "./Link.module.css"
+
+export const LinkSizes = {
+  small: "small",
+  large: "large",
+}
 
 export const LinkVariants = {
   a: "a",
@@ -20,15 +25,19 @@ export const Link = ({
   iconSize,
   iconAfter,
   linkRef,
-  onClick,
+  size,
   to,
   variant,
 }) => {
   const css = useExtraClasses(styles, extraClasses)
-  const linkClasses = classnames(css.root, { [css.hasIcon]: icon })
+  const linkClasses = classnames(css.root, css[size], { [css.hasIcon]: icon })
   const iconClasses = classnames(css.icon, { [css.iconAfter]: iconAfter })
   const linkIcon = icon && (
-    <Icon name={icon} extraClasses={{ root: iconClasses }} size={iconSize} />
+    <Icon
+      icon={icon}
+      extraClasses={{ icon: iconClasses, iconSpan: css.iconSpan }}
+      size={size !== LinkSizes.small ? "1x" : "sm"}
+    />
   )
   const content = (
     <Fragment>
@@ -41,19 +50,16 @@ export const Link = ({
   let ariaCurrentValue
   if (ariaCurrent) {
     ariaCurrentValue = ariaCurrent
-  } else {
-    ariaCurrentValue = null
   }
 
   if (variant === LinkVariants.a) {
     return (
       <a
         aria-current={ariaCurrentValue}
-        aria-label={ariaLabel ? ariaLabel : null}
-        onClick={onClick}
+        aria-label={ariaLabel}
+        className={linkClasses}
         href={to}
         ref={linkRef}
-        className={linkClasses}
       >
         {content}
       </a>
@@ -65,8 +71,8 @@ export const Link = ({
       activeClassName={css.activeLink}
       aria-label={ariaLabel}
       className={linkClasses}
-      to={to}
       innerRef={linkRef}
+      to={to}
     >
       {content}
     </GatsbyLink>
@@ -76,8 +82,10 @@ export const Link = ({
 export default Link
 
 Link.defaultProps = {
+  ariaCurrent: null,
   ariaLabel: null,
   iconAfter: null,
+  iconSize: "sm",
   to: "#",
   variant: LinkVariants.a,
 }
@@ -94,6 +102,7 @@ Link.propTypes = {
     "time",
     true,
     false,
+    null,
   ]),
 
   /**
@@ -120,7 +129,21 @@ Link.propTypes = {
    * If there is an icon, this sets the size of the icon (Optional)
    */
 
-  iconSize: PropTypes.oneOf(IconSizes),
+  iconSize: PropTypes.oneOf([
+    "lg",
+    "xs",
+    "sm",
+    "1x",
+    "2x",
+    "3x",
+    "4x",
+    "5x",
+    "6x",
+    "7x",
+    "8x",
+    "9x",
+    "10x",
+  ]),
 
   /**
    * If there is an icon, this sets its position relative to the link text
@@ -133,9 +156,9 @@ Link.propTypes = {
   linkRef: PropTypes.instanceOf(Object),
 
   /**
-   * Called when this anchor is clicked
+   * Link size
    */
-  onClick: PropTypes.func,
+  size: PropTypes.oneOf(Object.keys(LinkSizes)),
 
   /**
    * Pathname or location to link to

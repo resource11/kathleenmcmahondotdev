@@ -1,0 +1,22 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
+  @add-mixin font-weight-bold;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.icon {
+  margin: 0 0.6875rem 0 0;
+  width: 1em;
+  height: 1em;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.large {
+  font-size: 1.5rem;
+}

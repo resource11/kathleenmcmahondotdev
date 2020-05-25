@@ -5,6 +5,7 @@
   height: 1cap;
 }
 
-.span {
-  display: inline;
+.iconSpan {
+  display: inline-block;
+  vertical-align: text-top;
 }

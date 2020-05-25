@@ -8,7 +8,7 @@ import styles from "./Icon.module.css"
 export const Icon = ({ icon, extraClasses, size, title }) => {
   const css = useExtraClasses(styles, extraClasses)
   return (
-    <span className={css.span}>
+    <span className={css.iconSpan}>
       <FontAwesomeIcon
         className={css.icon}
         icon={icon}

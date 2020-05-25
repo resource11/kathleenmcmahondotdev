@@ -3,21 +3,42 @@
 
 .root {
   position: relative;
-}
-
-.hasIcon {
-  display: inline-flex;
-  align-items: center;
-}
-
-.icon {
-  margin: 0 0.6875rem 0 0;
-}
-
-.iconAfter {
-  margin: 0 0 0 0.6875rem;
+  font-size: 1.25rem;
 }
 
 [aria-current="true"] {
   @add-mixin font-weight-bold;
+}
+
+.icon {
+  margin: 0 0.5rem 0 0;
+  height: 1.5em;
+}
+
+.hasIcon {
+  margin: 0 0 0 0.5rem;
+}
+
+.iconAfter {
+  margin: 0 0 0 0.5rem;
+}
+
+.small {
+  font-size: var(--s0);
+
+  & .iconAfter {
+    margin: 0 0 0 0.25rem;
+  }
+
+  & .iconSpan {
+    vertical-align: baseline;
+  }
+
+  & .icon {
+    height: 1em;
+  }
+}
+
+.large {
+  font-size: 1.5rem;
 }
