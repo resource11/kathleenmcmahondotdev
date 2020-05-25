@@ -22,7 +22,6 @@ export const Link = ({
   children,
   extraClasses,
   icon,
-  iconSize,
   iconAfter,
   linkRef,
   size,

@@ -2,7 +2,6 @@
 @import "../../common/styles/lib/mixins.css";
 
 .root {
-  position: relative;
   font-size: 1.25rem;
 }
 

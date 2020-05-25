@@ -39,7 +39,6 @@ textarea::placeholder:not(:focus) {
 .textareaLabel {
   display: block;
   color: var(--text);
-  font-size: 0.875rem;
   line-height: 1;
 
   & .textarea {

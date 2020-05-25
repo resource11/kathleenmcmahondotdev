@@ -1,17 +1,82 @@
-.card {
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
   position: relative;
-  padding: 1.25rem;
   min-height: 4rem;
-  background-color: lightgray;
-  border-width: 1px;
-  border-style: solid;
+  background: var(--color-light);
+  border: 0.063em solid var(--grey-200);
+  box-shadow: 0 0 var(--s-2) rgba(0, 0, 0, 0.15);
+  background-clip: padding-box; /* !importanté */
+  border: solid $border transparent; /* !importanté */
+  transition: 250ms box-shadow ease-out, 250ms transform ease-out,
+    250ms -webkit-transform ease-out;
+
+  &:hover {
+    border: 0.063em solid var(--grey-300);
+    box-shadow: 0 0 0 0.125rem var(--grey-300);
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 0 0.125rem var(--purple-red-200);
+    transform: scale(1.02);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: calc(var(--s-3) * -1); /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: var(--grad-rad-blue-violet-darken);
+    }
+
+    & a:focus {
+      box-shadow: 0 0 0 var(--s-5) transparent;
+    }
+  }
 }
 
 .block {
   display: block;
 }
 
-.flexBox {
+.flex {
   display: flex;
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.cardHeader {
+  display: flex;
+}
+
+.cardImageFigure {
+  display: flex;
+  background: var(--grey-100);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cardContentWrapper {
+}
+
+.cardFooterWrapper {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-top: auto;
+  padding: var(--s-2) var(--s0);
+  background: var(--color-light);
 }

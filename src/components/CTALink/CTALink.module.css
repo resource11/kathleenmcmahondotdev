@@ -3,7 +3,6 @@
 
 .root {
   @add-mixin font-weight-bold;
-  position: relative;
   font-size: 1.25rem;
 }
 

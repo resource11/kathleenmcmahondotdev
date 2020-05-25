@@ -1,14 +1,24 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import classnames from "classnames"
+import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import { Card } from "../components/Card"
+import { Link } from "../components/Link"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import styles from "../common/styles/pageStyles/Home.module.css"
 
-const Home = ({
+export const Home = ({
   data: {
     allMdx,
     dataYaml: { recentSpeaking },
   },
+  extraClasses,
 }) => {
+  const css = useExtraClasses(styles, extraClasses)
+
+  const cardListClasses = classnames(css.cardList, css.stackCardList)
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
@@ -21,12 +31,26 @@ const Home = ({
           writer. This is the space where I cultivate my interests.
         </p>
         <h2>Recent talks, podcasts, streams</h2>
-        <ul>
+        <ul className={cardListClasses} role="list">
           {recentSpeaking.map((speak) => (
             <li key={speak.id}>
-              <a href={speak.link}>
-                <img src={speak.image} alt={speak.name} />
-              </a>
+              <Card
+                extraClasses={{ cardFooterWrapper: css.cardFooterWrapper }}
+                footerContent={
+                  <Link
+                    aria-label={speak.ctaAria}
+                    extraClasses={{ root: css.cardFooterLink }}
+                    icon={faArrowRight}
+                    iconAfter={true}
+                    size="small"
+                    to={speak.link}
+                  >
+                    {speak.cta}
+                  </Link>
+                }
+                image={speak.image}
+                imageAlt={speak.name}
+              />
             </li>
           ))}
         </ul>
@@ -37,7 +61,7 @@ const Home = ({
           {allMdx.edges.map(({ node }) => (
             <>
               <li key={node.id}>
-                <Link to={`write/${node.frontmatter.slug}`}>
+                <Link to={`write/${node.frontmatter.slug}`} variant="link">
                   {node.frontmatter.title}
                 </Link>
               </li>
@@ -46,11 +70,15 @@ const Home = ({
             </>
           ))}
         </ul>
-        <Link to="/write/">Browse all writing</Link>
+        <Link to="/write/" variant="link">
+          Browse all writing
+        </Link>
       </article>
     </Layout>
   )
 }
+
+export default Home
 
 export const indexQuery = graphql`
   query {
@@ -80,9 +108,9 @@ export const indexQuery = graphql`
         id
         link
         name
+        cta
+        ctaAria
       }
     }
   }
 `
-
-export default Home
