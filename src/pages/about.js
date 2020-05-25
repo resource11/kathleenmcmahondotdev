@@ -25,6 +25,8 @@ const About = ({
   const css = useExtraClasses(styles, extraClasses)
 
   const cardListClasses = classnames(css.cardList, css.stackCardList)
+  const socialListClasses = classnames(css.cardList, css.stackSocialList)
+
   return (
     <Layout>
       <SEO title={title} />
@@ -71,11 +73,17 @@ const About = ({
       <hr />
       <h2>Social links</h2>
       <p>Here are some of the ways you can get in touch with me:</p>
-      <ul>
+      <ul className={socialListClasses}>
         {socialLinks.map((social) => (
           <li key={social.name}>
-            <span>{social.icon} </span>
-            <a href={social.link}>{social.name}</a>
+            <Link
+              extraClasses={{ root: css.socialLink }}
+              icon={["fab", social.icon]}
+              size="small"
+              to={social.link}
+            >
+              {social.name}
+            </Link>
           </li>
         ))}
       </ul>
