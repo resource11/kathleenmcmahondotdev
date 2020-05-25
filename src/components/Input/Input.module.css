@@ -4,6 +4,7 @@
 .root {
   display: block;
   position: relative;
+  min-height: 5.875rem;
 }
 
 input {
@@ -44,7 +45,7 @@ input[type="time"]:not(:focus) {
   position: relative;
   display: block;
   color: var(--text);
-  font-size: 0.875rem;
+  font-size: var(--s0);
   line-height: 1;
 
   & .input {
@@ -52,7 +53,7 @@ input[type="time"]:not(:focus) {
     border: 0.063em solid var(--grey-400); /* 1px/14px */
     color: var(--text);
     font-family: inherit;
-    font-size: 0.875rem;
+    font-size: var(--s0);
     -webkit-appearance: textfield;
     height: 3rem;
     width: 100%;
@@ -78,8 +79,6 @@ input[type="time"]:not(:focus) {
   & .labelText {
     display: block;
     font-family: inherit;
-    font-size: 0.875rem;
-    padding: 0.5rem 0;
     white-space: nowrap;
   }
 }
@@ -128,12 +127,22 @@ input[type="time"]:not(:focus) {
   display: inline-flex;
   align-items: center;
   margin-top: var(--s-3);
+  font-size: 0.875rem;
   color: var(--error);
 }
 
 .errorIcon {
   display: inline-block;
   margin-right: 0.25rem;
-  height: 1.5rem;
+  height: 1.5em;
   width: 1.5rem;
+}
+
+.stackField > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackField > * + * {
+  margin-top: var(--s-4);
 }

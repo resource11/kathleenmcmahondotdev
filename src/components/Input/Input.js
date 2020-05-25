@@ -22,10 +22,12 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
     [css.hidden]: isHidden,
   })
 
+  const labelClasses = classnames(css.inputLabel, css.stackField)
+
   return (
     <div className={rootClasses}>
       {label && (
-        <label htmlFor={props.id || props.name} className={css.inputLabel}>
+        <label htmlFor={props.id || props.name} className={labelClasses}>
           <span className={css.labelText}>{label}</span>
           <input
             id={props.id || props.name}

@@ -332,6 +332,7 @@ figcaption,
 /* Block spacing
   Based on Every Layout by Andy Bell and Heydon Pickering 
   */
+
 .stack {
   display: flex;
   flex-direction: column;

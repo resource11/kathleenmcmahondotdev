@@ -1,10 +1,10 @@
 import React from "react"
-import { Formik, Form, useField } from "formik"
+import { Formik, Form } from "formik"
 import * as Yup from "yup"
 import { Button } from "../Button"
 import { Input } from "../Input"
 import { TextArea } from "../TextArea"
-import styles from "./ContactForm.module.css"
+import css from "./ContactForm.module.css"
 
 const encode = (data) => {
   return Object.keys(data)
@@ -12,14 +12,12 @@ const encode = (data) => {
     .join("&")
 }
 
+/* Formik component is a React Context-powered Component. It connects the state/methods from the Formik component to the Form and other components
+ */
+
 export const ContactForm = () => {
   return (
     <>
-      <h2>Contact Me</h2>
-      {/* Formik component is a React Context-powered Component. 
-      It connects the state/methods from the Formik component 
-      to the Form and other components */}
-      <p>You can also reach me by email</p>
       <Formik
         initialValues={{
           name: "",
@@ -56,6 +54,7 @@ export const ContactForm = () => {
           name="contact-kathleen"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          className={css.stackForm}
         >
           <Input
             label="bot-catcher"

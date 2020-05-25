@@ -51,6 +51,8 @@ const About = () => {
         ))}
       </ul>
       <hr />
+      <h2>Contact Me</h2>
+      <p>You may also reach me by email</p>
       <ContactForm />
     </Layout>
   )
