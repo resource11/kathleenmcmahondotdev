@@ -1,0 +1,184 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
+  display: block;
+  position: relative;
+}
+/* .errorTxt {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--s-3);
+  color: var(--error);
+}
+
+.errorIcon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+} */
+
+/* TextArea */
+
+/* .root {
+  display: inline-block;
+  position: relative;
+} */
+
+textarea {
+  display: block;
+  text-overflow: ellipsis;
+}
+
+textarea::-ms-clear {
+  display: none;
+}
+
+textarea::-webkit-input-placeholder,
+textarea:-ms-input-placeholder,
+textarea::-ms-input-placeholder,
+textarea:-moz-placeholder,
+textarea::-moz-placeholder,
+textarea::placeholder-shown,
+textarea::placeholder {
+  color: var(--grey-300);
+  padding: 1rem 0;
+}
+
+textarea:placeholder-shown {
+  color: hsla(0, 0%, 0%, 0);
+}
+
+textarea::placeholder:not(:focus) {
+  color: hsla(0, 0%, 0%, 0);
+  padding: 1rem 0;
+}
+
+.textareaLabel {
+  /* position: relative; */
+  display: block;
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1;
+
+  & .textarea {
+    border-radius: -0.143em; /* 2px/14px */
+    border: 0.071em solid var(--grey-400); /* 1px/14px */
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.875rem;
+    -webkit-appearance: textfield;
+    min-height: 7rem;
+    width: 100%;
+    outline: none;
+    hyphens: auto;
+    padding: 0 1rem;
+  }
+
+  & .textarea {
+    transition: all 0.2s ease-out;
+  }
+
+  & .textarea:focus {
+    border: 2px solid var(--purple-red-200);
+    padding: 1.125rem 0.938rem;
+  }
+
+  & .hasValue {
+    padding: 1.188rem 1rem;
+  }
+
+  & .resizeVerticalOnly {
+    resize: vertical;
+  }
+
+  & .labelText {
+    display: block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    /* left: 0;
+    position: absolute;
+    top: 1.813rem;
+    left: 1.063rem;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-out; */
+    white-space: nowrap;
+  }
+
+  & .textarea:focus + .labelText,
+  .hasValue + .labelText {
+    /* top: -0.563rem;
+    left: 0; */
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.625rem;
+    padding: 0;
+    width: 100%;
+    /* z-index: 10; */
+  }
+}
+
+.disabled .textarea {
+  background-color: var(--grey-200);
+  color: var(--grey-400);
+
+  & + .labelText {
+    color: var(--grey-400);
+  }
+}
+
+/* .invalid {
+  .textarea {
+    border-color: var(--error);
+  }
+
+  .infoWrapper {
+    color: var(--error);
+  }
+
+  .errorTxt {
+    display: inline-block;
+  }
+} */
+
+.infoWrapper {
+  color: var(--error);
+}
+
+/* .errorTxt {
+    display: inline-block;
+  } */
+
+.errorText {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--s-3);
+  color: var(--error);
+}
+
+.errorIcon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* .infoWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+  position: relative;
+
+  @add-mixin font-body-small;
+
+  & > *:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+} */
+
+/* Content that is only visible to screen readers */
+/* .visuallyHidden {
+  @add-mixin visually-hidden;
+} */

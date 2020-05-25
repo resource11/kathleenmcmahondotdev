@@ -4,15 +4,10 @@ import { useField } from "formik"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
 import { Icon } from "../Icon"
-import styles from "./Input.module.css"
+import styles from "./TextArea.module.css"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 
-export const InputSizes = {
-  small: "small",
-  large: "large",
-}
-
-export const Input = ({ extraClasses, isHidden, label, ...props }) => {
+export const TextArea = ({ extraClasses, isHidden, label, ...props }) => {
   const css = useExtraClasses(styles, extraClasses)
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and alse replace ErrorMessage entirely.
@@ -25,11 +20,11 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
   return (
     <div className={rootClasses}>
       {label && (
-        <label htmlFor={props.id || props.name} className={css.inputLabel}>
+        <label htmlFor={props.id || props.name} className={css.textareaLabel}>
           <span className={css.labelText}>{label}</span>
-          <input
+          <textarea
             id={props.id || props.name}
-            className={css.input}
+            className={css.textarea}
             {...field}
             {...props}
           />
@@ -48,15 +43,15 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
   )
 }
 
-export default Input
+export default TextArea
 
-Input.defaultProps = {
+TextArea.defaultProps = {
   isHidden: null,
 }
 
-Input.propTypes = {
+TextArea.propTypes = {
   /**
-   * Determines if this input is hidden from screen readers. Pair this with inputs of type hidden
+   * Determines if this textarea is hidden from screen readers. Pair this with textareas of type hidden
    */
   isHidden: PropTypes.bool,
 }

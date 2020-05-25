@@ -1,74 +1,10 @@
 import React from "react"
 import { Formik, Form, useField } from "formik"
 import * as Yup from "yup"
-import { useExtraClasses } from "../../utils/helpers"
-import { Icon } from "../Icon"
+import { Button } from "../Button"
 import { Input } from "../Input"
+import { TextArea } from "../TextArea"
 import styles from "./ContactForm.module.css"
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
-
-const TextInput = ({ label, extraClasses, ...props }) => {
-  const css = useExtraClasses(styles, extraClasses)
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
-  const [field, meta] = useField(props)
-
-  return (
-    <div className={css.root}>
-      {label && (
-        <label htmlFor={props.id || props.name} className={css.inputLabel}>
-          <span className={css.labelTxt}>{label}</span>
-          <input
-            id={props.id || props.name}
-            className={css.input}
-            {...field}
-            {...props}
-          />
-          {meta.touched && meta.error ? (
-            <div className={css.errorTxt}>
-              <Icon
-                icon={faExclamationCircle}
-                extraClasses={{ icon: css.errorIcon }}
-              />
-              {meta.error}
-            </div>
-          ) : null}
-        </label>
-      )}
-    </div>
-  )
-}
-
-const TextArea = ({ label, extraClasses, ...props }) => {
-  const css = useExtraClasses(styles, extraClasses)
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
-  const [field, meta] = useField(props)
-  return (
-    <div className={css.root}>
-      {label && (
-        <label htmlFor={props.id || props.name} className={css.textareaLabel}>
-          <span className={css.labelTxt}>{label}</span>
-          <textarea
-            id={props.id || props.name}
-            className={css.textarea}
-            {...field}
-            {...props}
-          />
-          {meta.touched && meta.error ? (
-            <div className={css.errorTxt}>
-              <Icon
-                icon={faExclamationCircle}
-                extraClasses={{ icon: css.errorIcon }}
-              />
-              {meta.error}
-            </div>
-          ) : null}
-        </label>
-      )}
-    </div>
-  )
-}
 
 const encode = (data) => {
   return Object.keys(data)
@@ -83,7 +19,7 @@ export const ContactForm = () => {
       {/* Formik component is a React Context-powered Component. 
       It connects the state/methods from the Formik component 
       to the Form and other components */}
-      <p>You can also reach me my email</p>
+      <p>You can also reach me by email</p>
       <Formik
         initialValues={{
           name: "",
@@ -128,12 +64,6 @@ export const ContactForm = () => {
             isHidden={true}
           />
           <Input label="Name" name="name" type="text" placeholder="Jane" />
-          {/* <TextInput
-            label="Email Address"
-            name="email"
-            type="email"
-            placeholder="jane@formik.com"
-          /> */}
           <Input
             label="Email Address"
             name="email"
@@ -145,7 +75,7 @@ export const ContactForm = () => {
             name="message"
             placeholder="type a message"
           />
-          <button type="submit">Send message</button>
+          <Button type="submit">Send message</Button>
         </Form>
       </Formik>
     </>

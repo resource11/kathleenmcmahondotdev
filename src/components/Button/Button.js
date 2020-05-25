@@ -21,6 +21,7 @@ export const Button = ({
   iconOnlyBtn,
   onClick,
   size,
+  type,
 }) => {
   const css = useExtraClasses(styles, extraClasses)
 
@@ -34,6 +35,7 @@ export const Button = ({
       disabled={disabled}
       onClick={onClick}
       ref={buttonRef}
+      type={type}
     >
       <span className={css.btnContentWrap}>
         {children}
@@ -108,4 +110,9 @@ Button.propTypes = {
    * Button size
    */
   size: PropTypes.oneOf(Object.keys(ButtonSizes)),
+
+  /**
+   * Button type
+   */
+  type: PropTypes.oneOf(["button", "reset", "submit"]),
 }
