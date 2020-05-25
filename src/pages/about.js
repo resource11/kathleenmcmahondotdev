@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import ContactForm from "../components/contactform"
+import { ContactForm } from "../components/ContactForm"
 import { Card } from "../components/Card"
 
 const About = () => {

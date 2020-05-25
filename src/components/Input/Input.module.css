@@ -1,0 +1,139 @@
+@import "../../common/styles/lib/variables.css";
+@import "../../common/styles/lib/mixins.css";
+
+.root {
+  display: block;
+  position: relative;
+}
+
+input {
+  text-overflow: ellipsis;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input::-ms-input-placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder,
+input::placeholder-shown,
+input::placeholder {
+  color: var(--grey-300);
+  padding: 1rem 0;
+}
+
+input:not([type="search"]):placeholder-shown {
+  color: hsla(0, 0%, 0%, 0);
+}
+
+input:not([type="search"])::placeholder:not(:focus) {
+  color: hsla(0, 0%, 0%, 0);
+  padding: 1rem 0;
+}
+
+input[type="date"]:not(:focus),
+input[type="month"]:not(:focus),
+input[type="time"]:not(:focus) {
+  color: hsla(0, 0%, 0%, 0);
+}
+
+.inputLabel {
+  position: relative;
+  display: block;
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1;
+
+  & .input {
+    border-radius: 0.25rem; /* 4px */
+    border: 0.063em solid var(--grey-400); /* 1px/14px */
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.875rem;
+    -webkit-appearance: textfield;
+    height: 3rem;
+    width: 100%;
+    outline: none;
+    padding: 0 1rem;
+  }
+
+  @media only screen {
+    & .input[type="search"] {
+      -webkit-appearance: none;
+    }
+  }
+
+  & .input:not([type="search"]) {
+    transition: all 0.2s ease-out;
+  }
+
+  & .input:focus {
+    border: 0.125em solid var(--purple-red-200); /* 2px */
+    padding: 0 0.938rem;
+  }
+
+  & .labelText {
+    display: block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+  }
+}
+
+.large > .inputLabel {
+  & .input {
+    height: 3.5rem;
+  }
+
+  & .labelText {
+    padding: 1.25rem 1.063rem;
+  }
+}
+
+.small > .inputLabel {
+  & .input {
+    font-size: 0.75rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+  }
+
+  & .input:focus {
+    padding: 0 0.438rem;
+  }
+
+  & .labelText {
+    padding: 0.625rem 0.563rem;
+    font-size: 0.75rem;
+  }
+}
+
+.disabled .input {
+  background-color: var(--grey-200);
+  color: var(--grey-400);
+
+  & + .labelText {
+    color: var(--grey-400);
+  }
+}
+
+.hidden {
+  @add-mixin visually-hidden;
+}
+
+.errorText {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--s-3);
+  color: var(--error);
+}
+
+.errorIcon {
+  display: inline-block;
+  margin-right: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
