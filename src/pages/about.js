@@ -1,25 +1,33 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import data from "../../data"
+import classnames from "classnames"
+import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { ContactForm } from "../components/ContactForm"
 import { Card } from "../components/Card"
+import { Link } from "../components/Link"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import styles from "../common/styles/pageStyles/About.module.css"
 
-const About = () => {
+const About = ({
+  data: {
+    site: {
+      siteMetadata: { title },
+    },
+    dataYaml: { portfolioList },
+  },
+  extraClasses,
+}) => {
   const { socialLinks } = data
-  const dataQuery = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+
+  const css = useExtraClasses(styles, extraClasses)
+
+  const cardListClasses = classnames(css.cardList, css.stackCardList)
   return (
     <Layout>
-      <SEO title={dataQuery.site.siteMetadata.title} />
+      <SEO title={title} />
       <h1>What I do</h1>
       <p>
         So... you want to know more about me? OK. Well, I'm fullstack engineer
@@ -37,8 +45,29 @@ const About = () => {
       </p>
       <h2>My portfolios</h2>
       <p>Here are some of the portfolio sites I've done:</p>
-      <Card />
-      <Card />
+      <ul className={cardListClasses} role="list">
+        {portfolioList.map((port) => (
+          <li key={port.id}>
+            <Card
+              extraClasses={{ cardFooterWrapper: css.cardFooterWrapper }}
+              footerContent={
+                <Link
+                  aria-label={port.ctaAria}
+                  extraClasses={{ root: css.cardFooterLink }}
+                  icon={faArrowRight}
+                  iconAfter={true}
+                  size="small"
+                  to={port.link}
+                >
+                  {port.cta}
+                </Link>
+              }
+              image={port.image}
+              imageAlt={port.name}
+            />
+          </li>
+        ))}
+      </ul>
       <hr />
       <h2>Social links</h2>
       <p>Here are some of the ways you can get in touch with me:</p>
@@ -59,3 +88,22 @@ const About = () => {
 }
 
 export default About
+
+export const aboutQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    dataYaml {
+      portfolioList {
+        cta
+        id
+        image
+        link
+        name
+      }
+    }
+  }
+`

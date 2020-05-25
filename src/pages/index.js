@@ -103,13 +103,13 @@ export const indexQuery = graphql`
     }
     dataYaml {
       recentSpeaking {
-        image
-        event
-        id
-        link
-        name
         cta
         ctaAria
+        event
+        id
+        image
+        link
+        name
       }
     }
   }

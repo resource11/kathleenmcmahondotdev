@@ -27,3 +27,14 @@ recentSpeaking:
     image: "https://res.cloudinary.com/kathleenmcmahon/image/upload/f_auto,q_auto/v1589225488/kathleenmcmahon-dot-dev/design-systems-and-mdx-in-gatsby.jpg"
     cta: "Watch the Twitch stream"
     ctaAria: "Watch the Learn with Jason Twitch stream"
+portfolioList:
+  - id: 01
+    name: "KathleenMcMahon.me portfolio"
+    link: "https://kathleenmcmahon.me"
+    image: "https://res.cloudinary.com/kathleenmcmahon/image/upload/f_auto,q_auto/v1590306333/kathleenmcmahon-dot-dev/iso-km-me.png"
+    cta: "View engineering portfolio"
+  - id: 02
+    name: "resource11 portfolio"
+    link: "https://resource11.com"
+    image: "https://res.cloudinary.com/kathleenmcmahon/image/upload/f_auto,q_auto/v1590306334/kathleenmcmahon-dot-dev/iso-r11.png"
+    cta: "View design portfolio"
