@@ -8,7 +8,11 @@ import {
   faTwitch,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons"
-import { faArrowRight, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import {
+  faArrowRight,
+  faChevronRight,
+  faExclamationCircle,
+} from "@fortawesome/free-solid-svg-icons"
 
 const fontLibrary = library
 
@@ -17,6 +21,7 @@ fontLibrary.add(
   faAccessibleIcon,
   faArrowRight,
   faChevronRight,
+  faExclamationCircle,
   faInstagram,
   faGithub,
   faLinkedin,

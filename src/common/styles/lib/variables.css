@@ -19,6 +19,7 @@
   --purple-red-200: #ba00a1;
   --purple-red-100: #b900a4;
   --purple-orchid: #b901bd;
+  --red: #f51628;
   --magenta-red-100: #d10971;
   --caribbean-blue-muted-300: #184a63;
   --caribbean-blue-muted-200: #346c8c;
@@ -95,6 +96,7 @@
   --text: var(--color-dark);
   --text-reverse: var(--color-light);
   --link: var(--purple-muted-100);
+  --error: var(--red);
 
   /* Modular scale, numbers rounded
   Based on Every Layout by Andy Bell and Heydon Pickering
