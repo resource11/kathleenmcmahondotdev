@@ -66,6 +66,23 @@ body {
   background-color: var(--color-light);
 }
 
+main {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+  margin-bottom: 3rem;
+  @media screen and (--small) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  @media screen and (--medium) {
+    margin-left: 5.625rem;
+    margin-right: 5.625rem;
+    margin-bottom: 5.625rem;
+    max-width: 50em;
+  }
+}
+
 /* 
 ------ 
   Block spacing
@@ -90,17 +107,24 @@ body {
 
 main > * + * {
   margin-top: var(--s0);
+  @media screen and (--small) {
+    /* margin-top: var(--s1); */
+  }
+
+  @media screen and (--medium) {
+    margin-top: var(--s1);
+  }
 }
 
 article > * + * {
-  margin-top: var(--s1);
+  margin-top: var(--s0);
 
   @media screen and (--small) {
     /* margin-top: var(--s1); */
   }
 
   @media screen and (--medium) {
-    /* margin-top: var(--s2); */
+    margin-top: var(--s1);
   }
 }
 
@@ -128,7 +152,7 @@ h1,
 .h1,
 .pageHeader {
   @add-mixin font-page-header;
-  margin-top: var(--s1);
+  margin-top: var(--s2);
 
   @media screen and (--small) {
     margin-top: var(--s2);
@@ -165,7 +189,7 @@ h3,
   }
 
   @media screen and (--medium) {
-    /* margin-top: var(--s2); */
+    margin-top: var(--s2);
   }
 }
 
@@ -249,7 +273,7 @@ p,
     font-size: 1.25rem;
   }
   @media screen and (--medium) {
-    font-size: calc(0.1vw + 0.1vh + 1.5rem);
+    /* font-size: calc(0.1vw + 0.1vh + 1.5rem); */
   }
 }
 
@@ -272,10 +296,25 @@ p.tiny,
   @add-mixin font-body-tiny;
 }
 
+ol,
 ol.list,
 .article ol {
   counter-reset: orderedlist;
   padding-left: var(--s-2);
+  font-size: inherit;
+  margin-inline-start: 1rem;
+  max-width: 80%;
+
+  @media screen and (--small) {
+    margin-inline-start: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.125rem;
+    margin-inline-start: 2.25rem;
+    max-width: 75%;
+  }
+
   & ol,
   & ul {
     counter-reset: orderedlist;
@@ -299,9 +338,24 @@ ol.list,
   }
 }
 
+ul,
 ul.list,
 .article ul {
   padding-left: var(--s-2);
+  font-size: inherit;
+  margin-inline-start: 1rem;
+  max-width: 80%;
+
+  @media screen and (--small) {
+    margin-inline-start: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.125rem;
+    margin-inline-start: 2.25rem;
+    max-width: 75%;
+  }
+
   & ol,
   & ul {
     padding-left: var(--s-2);
@@ -320,6 +374,26 @@ ul.list,
       width: 1.25rem;
       margin-left: -1.25rem;
     }
+  }
+}
+
+blockquote {
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  /* text-align: center; */
+  color: var(--grey-700);
+  border: 0.063em solid var(--grey-200);
+  border-left: 0.375em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
+
+  @media screen and (--small) {
+    border-left: 0.5em solid;
+  }
+
+  @media screen and (--medium) {
+    /* border-left: 0.75em solid; */
+    padding: 0.75rem 1.25rem;
   }
 }
 
