@@ -4,7 +4,8 @@ import Img from "gatsby-image"
 import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import styles from "../common/styles/pageStyles/BlogMDXLayout.module.css"
+import BlogHeroAccent from "../svgs/blog-hero-accent.svg"
+import styles from "../common/styles/pageStyles/PostMDXLayout.module.css"
 
 const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
   const css = useExtraClasses(styles, extraClasses)
@@ -19,9 +20,10 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
+      <img src={BlogHeroAccent} alt="" className={css.blogHeroAccent} />
       <article>
         <header>
-          <h1>{mdx.frontmatter.title}</h1>
+          <h1 className={css.postH1}>{mdx.frontmatter.title}</h1>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
         <article className={css.bodyWrapper}>

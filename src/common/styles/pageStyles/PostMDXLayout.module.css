@@ -1,0 +1,39 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+.bodyWrapper {
+  max-width: var(--measure);
+}
+
+.blogHeroAccent {
+  position: absolute;
+  top: 0.5rem;
+  right: -3.13rem;
+  width: 14.2rem;
+  z-index: -1;
+
+  @media screen and (--small) {
+    right: -1.13rem;
+    width: 15.2rem;
+  }
+
+  @media screen and (--medium) {
+    right: -1.5rem;
+    width: 19.25rem;
+    /* top: 0.72rem;
+    right: -3.13rem;
+    width: 76%; */
+  }
+}
+
+.postH1 {
+  margin-top: 5.5rem;
+
+  @media screen and (--small) {
+    /* margin-top: 4.5rem; */
+  }
+
+  @media screen and (--medium) {
+    margin-top: 8rem;
+  }
+}

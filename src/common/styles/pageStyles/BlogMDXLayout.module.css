@@ -1,6 +1,0 @@
-@import "../lib/variables.css";
-@import "../lib/mixins.css";
-
-.bodyWrapper {
-  max-width: var(--measure);
-}
