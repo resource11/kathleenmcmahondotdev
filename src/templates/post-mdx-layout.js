@@ -20,9 +20,9 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext }) => {
           <h1>{mdx.frontmatter.title}</h1>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-        <div>
+        <article>
           <MDXRenderer>{mdx.body}</MDXRenderer>
-        </div>
+        </article>
       </article>
     </Layout>
   )

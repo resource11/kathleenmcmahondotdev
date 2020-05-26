@@ -66,6 +66,44 @@ body {
   background-color: var(--color-light);
 }
 
+/* 
+------ 
+  Block spacing
+  Based on Every Layout by Andy Bell and Heydon Pickering 
+------
+*/
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--s0);
+}
+
+main > * + * {
+  margin-top: var(--s0);
+}
+
+article > * + * {
+  margin-top: var(--s1);
+
+  @media screen and (--small) {
+    /* margin-top: var(--s1); */
+  }
+
+  @media screen and (--medium) {
+    /* margin-top: var(--s2); */
+  }
+}
+
 /* Typography */
 ::selection {
   background: var(--grey-100);
@@ -90,36 +128,90 @@ h1,
 .h1,
 .pageHeader {
   @add-mixin font-page-header;
+  margin-top: var(--s1);
+
+  @media screen and (--small) {
+    margin-top: var(--s2);
+  }
+
+  @media screen and (--medium) {
+    margin-top: var(--s3);
+  }
 }
 
 h2,
 .h2,
 .sectionHeader {
   @add-mixin font-section-header;
+  margin-top: var(--s2);
+
+  @media screen and (--small) {
+    /* margin-top: var(--s2); */
+  }
+
+  @media screen and (--medium) {
+    /* margin-top: var(--s3); */
+  }
 }
 
 h3,
 .h3,
 .sectionTitle {
   @add-mixin font-section-title;
+  margin-top: var(--s1);
+
+  @media screen and (--small) {
+    /* margin-top: var(--s1); */
+  }
+
+  @media screen and (--medium) {
+    /* margin-top: var(--s2); */
+  }
 }
 
 h4,
 .h4,
 .introTitle {
   @add-mixin font-intro-title;
+  margin-top: var(--s0);
+
+  @media screen and (--small) {
+    margin-top: var(--s1);
+  }
+
+  @media screen and (--medium) {
+    margin-top: var(--s2);
+  }
 }
 
 h5,
 .h5,
 .contentTitle {
   @add-mixin font-content-title;
+  margin-top: var(--s0);
+
+  @media screen and (--small) {
+    margin-top: var(--s1);
+  }
+
+  /* @media screen and (--medium) {
+    margin-top: var(--s2);
+  } */
 }
 
 h6,
 .h6,
 .attribute {
   @add-mixin font-attribute;
+  margin-top: var(--s0);
+
+  /* @media screen and (--small) {
+    margin-top: var(--s1);
+  }
+
+  @media screen and (--medium) {
+    margin-top: var(--s2);
+  } */
 }
 
 hr,
@@ -231,7 +323,9 @@ ul.list,
   }
 }
 
-/* Buttons and links */
+/* 
+------ Buttons and links ------
+*/
 
 /**
 https://www.scottohara.me/blog/2018/10/03/unbutton-buttons.html
@@ -327,23 +421,4 @@ figcaption,
 
 .with-icon .icon {
   margin-inline-end: var(--s0);
-}
-
-/* Block spacing
-  Based on Every Layout by Andy Bell and Heydon Pickering 
-  */
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.stack > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.stack > * + * {
-  margin-top: var(--s0);
 }
