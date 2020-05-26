@@ -1,8 +1,3 @@
-.cardList,
-.socialList {
-  list-style-type: none;
-}
-
 .stackCardList > * {
   margin-top: 0;
   margin-bottom: 0;
@@ -43,9 +38,41 @@
   }
 }
 
+.cardList,
+.socialList {
+  max-width: var(--measure);
+  list-style-type: none;
+}
+
+.socialList {
+  max-width: 15ch;
+  @media screen and (--small) {
+    max-width: 36ch;
+    column-count: 2;
+  }
+}
+
+.socialListItem {
+  @media screen and (--small) {
+    font-size: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+  }
+}
+
 .socialLink {
   display: inline-block;
-  min-width: 6.875rem;
+  width: 100%;
   margin: 0;
   padding: 0.25rem 0.5rem;
+  font-size: 1.15rem;
+
+  @media screen and (--small) {
+    font-size: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.5rem;
+  }
 }

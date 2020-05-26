@@ -25,7 +25,7 @@ const About = ({
   const css = useExtraClasses(styles, extraClasses)
 
   const cardListClasses = classnames(css.cardList, css.stackCardList)
-  const socialListClasses = classnames(css.cardList, css.stackSocialList)
+  const socialListClasses = classnames(css.socialList, css.stackSocialList)
 
   return (
     <Layout>
@@ -49,7 +49,7 @@ const About = ({
       <p>Here are some of the portfolio sites I've done:</p>
       <ul className={cardListClasses} role="list">
         {portfolioList.map((port) => (
-          <li key={port.id}>
+          <li key={port.id} className={css.cardListItem}>
             <Card
               extraClasses={{ cardFooterWrapper: css.cardFooterWrapper }}
               footerContent={
@@ -75,7 +75,7 @@ const About = ({
       <p>Here are some of the ways you can get in touch with me:</p>
       <ul className={socialListClasses}>
         {socialLinks.map((social) => (
-          <li key={social.name}>
+          <li key={social.name} className={css.socialListItem}>
             <Link
               extraClasses={{ root: css.socialLink }}
               icon={["fab", social.icon]}
