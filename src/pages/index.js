@@ -36,9 +36,12 @@ export const Home = ({
         <h2>Recent talks, podcasts, streams</h2>
         <ul className={cardListClasses} role="list">
           {recentSpeaking.map((speak) => (
-            <li key={speak.id}>
+            <li key={speak.id} className={css.cardListItem}>
               <Card
-                extraClasses={{ cardFooterWrapper: css.cardFooterWrapper }}
+                extraClasses={{
+                  cardContentWrapper: css.cardContentWrapper,
+                  cardFooterWrapper: css.cardFooterWrapper,
+                }}
                 footerContent={
                   <Link
                     aria-label={speak.ctaAria}
@@ -64,7 +67,7 @@ export const Home = ({
         <h2>Featured posts</h2>
         <ul className={postListClasses}>
           {allMdx.edges.map(({ node }) => (
-            <li key={node.id}>
+            <li key={node.id} className={css.postListItem}>
               <Link
                 to={`write/${node.frontmatter.slug}`}
                 variant="link"

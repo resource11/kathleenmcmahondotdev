@@ -25,10 +25,13 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  margin-inline-start: 0;
+  max-width: 100%;
 
   & .footerNavLi {
     position: relative;
     display: inline-block;
+    padding-left: 0;
 
     &:not(:last-of-type) {
       margin-right: 0.625rem;
@@ -43,6 +46,12 @@
       right: 0;
       top: 0.5rem;
       width: 0.063em;
+    }
+
+    &::before {
+      content: "";
+      width: 0;
+      margin: 0;
     }
   }
 

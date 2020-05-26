@@ -46,6 +46,12 @@
   transition: color 0.2s, background 0.2s, border-color 0.2s;
   transition-timing-function: ease;
 
+  &::before {
+    content: "";
+    width: 0;
+    margin: 0;
+  }
+
   @media screen and (--small) {
     padding: 0.5rem 1rem;
   }

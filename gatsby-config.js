@@ -29,6 +29,7 @@ module.exports = {
     `gatsby-remark-autolink-headers`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: "gatsby-plugin-postcss",
       options: {

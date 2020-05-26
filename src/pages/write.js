@@ -32,7 +32,7 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
         <hr className={css.blueVioletHR} />
         <ul className={postListClasses}>
           {allMdx.edges.map(({ node }) => (
-            <li key={node.id}>
+            <li key={node.id} className={css.postListItem}>
               <Link
                 to={`write/${node.frontmatter.slug}`}
                 variant="link"

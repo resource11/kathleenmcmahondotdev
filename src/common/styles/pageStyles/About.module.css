@@ -4,6 +4,8 @@
 .cardUl,
 .socialUl {
   list-style-type: none;
+  margin-inline-start: 0;
+  max-width: 100%;
 }
 
 .cardUl {
@@ -54,6 +56,9 @@
   margin-top: var(--s-1);
 }
 
+.cardContentWrapper {
+  margin: 0;
+}
 .cardFooterWrapper {
   padding: 0;
 }
@@ -105,4 +110,14 @@
   border-top: 0.125em solid;
   border-image-source: var(--grad-lin-red-orange);
   border-image-slice: 1;
+}
+
+.liReset {
+  padding-left: 0;
+
+  &::before {
+    content: "";
+    width: 0;
+    margin: 0;
+  }
 }

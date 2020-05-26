@@ -5,6 +5,9 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  margin-inline-start: 0;
+  max-width: 100%;
+  padding-left: 0;
 
   @media screen and (--small) {
     flex-direction: row;
@@ -13,6 +16,10 @@
   @media screen and (--medium) {
     max-width: 50em;
   }
+}
+
+.cardUl > * {
+  flex: 1 1 30ch;
 }
 
 .stackCardList > * {
@@ -26,14 +33,6 @@
   @media screen and (--small) {
     margin-left: 1rem;
   }
-}
-
-.Cardli:nth-child(odd) {
-  margin-left: 0;
-}
-
-.cardUl > * {
-  flex: 1 1 30ch;
 }
 
 @supports (width: min(250px, 100%)) {
@@ -51,6 +50,24 @@
     margin-top: 0;
     margin-left: 0;
   }
+}
+
+.cardListItem {
+  padding-left: 0;
+
+  &::before {
+    content: "";
+    width: 0;
+    margin: 0;
+  }
+}
+
+.cardListItem:nth-child(odd) {
+  margin-left: 0;
+}
+
+.cardContentWrapper {
+  margin: 0;
 }
 
 .cardFooterWrapper {
@@ -89,6 +106,9 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  margin-inline-start: 0;
+  max-width: 100%;
+  padding-left: 0;
 }
 
 .stackPostList > * {
@@ -99,6 +119,17 @@
 .stackPostList > * + * {
   margin-top: 2.75rem;
   @media screen and (--small) {
+  }
+}
+
+.postListItem {
+  margin: 0;
+  padding-left: 0;
+
+  &::before {
+    content: "";
+    width: 0;
+    margin: 0;
   }
 }
 

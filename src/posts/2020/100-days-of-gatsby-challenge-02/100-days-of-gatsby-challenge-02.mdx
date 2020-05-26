@@ -1,7 +1,7 @@
 ---
 slug: 100-days-of-gatsby-challenge-02
 date: 2020-03-06
-title: "100 Days of Gatsby - Challenge 2"
+title: "Build and Deploy: testing out the ways to host a Gatsby site"
 author: "Kathleen McMahon"
 description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
 tags:
@@ -12,11 +12,11 @@ isHidden: true
 featuredImage: ../images/daylilies-in-july.jpg
 ---
 
-Intro paragraph
+Now that the first [100 Days of Gatsby Challenge](https://twitter.com/gatsbyjs/status/1208068118335119364) is completed, I'm diving right into the second challenge to learn about deploying a Gatsby site with a few services. The two services in particular I was curious about were [Gatsby Cloud](https://www.gatsbyjs.com/) and [Netlify](https://www.netlify.com/), considering I was already familiar with deploying sites using [Zeit Now](https://zeit.co).
 
 ## Build and Deploy Your Gatsby Site (Using Free Tools)
 
-This challenge involved getting set up with a [free site hosting](https://www.gatsbyjs.org/blog/100days/free-hosting) service. I chose to test out two services at once: [Gatsby Cloud](https://www.gatsbyjs.com/) to try out hosting the 100DaysOfGatsby challenges site and used [Netlify](https://www.netlify.com/) to host my [kathleenmcmahon.dev](https://kathleenmcmahon.dev) site. I'm not sure if I needed to use a CMS for the challenges site, so skipped that step in the process.
+This challenge involved getting set up with a [free site hosting](https://www.gatsbyjs.org/blog/100days/free-hosting) service. I chose to test out two services at once: **Gatsby Cloud** to try out hosting the 100DaysOfGatsby challenges site, and used **Netlify** to host my [kathleenmcmahon.dev](https://kathleenmcmahon.dev) site. I'm not sure if I needed to use a CMS for the challenges site, so skipped that step in the process.
 
 At the time, I noticed a suggestion to upgrade to `gatsby@^2.19.9`, followed the steps and discovered my project had [package security vulnerabilities](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities), 6 low and 9 high vulnerabilities. I fixed 6 using `npm audit fix`. The 9 high vulnerabilities have no patch available at the moment.
 
@@ -24,16 +24,17 @@ Oooo… the Gatsby Cloud builds for my challenges site are quite nice… and thi
 
 > “Gatsby Cloud can **automatically deploy** each site build to a CDN host of your choice—just connect and you are good to go!"
 
-The setup to host a site was definitely more straightforward than using the [Zeit Now](https://zeit.co) workflow that we use at O'Reilly Media to deploy our design system documentation site. When using Zeit, we had to build a static site before deploying, and set up our config in a specific way, depending on whether we were using `v1` or `v2` of `Now`. There definitely were some gymnastics involved with the local config files. Also, I haven't been a fan of the way Zeit would request read/write access to Administration to **all** your GitHub repositories in order to use the service, rather than the way Gatsby Cloud and Netlify allow you to grant [scoped repository access](https://docs.netlify.com/configure-builds/repo-permissions-linking/#authentication-with-the-netlify-github-app) permissions. In fact, that blanket permission request by Zeit has long been a big barrier to entry for users who want to contribute to our design system documentation.
+The setup to host a site was definitely more straightforward than using the [Zeit Now](https://zeit.co) workflow that we use at O'Reilly Media to deploy our design system documentation site. When using Zeit, we had to build a static site before deploying, and set up our config in a specific way, depending on whether we were using `v1` or `v2` of `Now`. There definitely were some gymnastics involved with the local config files.
 
-Now that Zeit has now been rebranded as [Vercel](https://vercel.com/) as of late April 2020, and it looks like they may be changing how you can deploy sites with their service, I'm wondering if they'll change that permissions model.
+Personally, I haven't been a fan of the way Zeit would request read/write access to Administration to **all** your GitHub repositories in order to use the service, rather than the way Gatsby Cloud and Netlify allow you to grant [scoped repository access](https://docs.netlify.com/configure-builds/repo-permissions-linking/#authentication-with-the-netlify-github-app) permissions. In fact, that blanket permission request by Zeit has long been a big barrier to entry for users who want to contribute to our design system documentation.
+
+> Now that Zeit has now been rebranded as [Vercel](https://vercel.com/) as of late April 2020, and it looks like they may be changing how you can deploy sites with their service, I'm hoping they may consider changing that permissions model, because other than that, deploying static sites with their service is pretty cool.
 
 After I set up the challenges site on Gatsby Cloud, I set up hosting with Netlify for my blog site, by sigining up for a starter plan and creating a team. In that team, I created a unique site name, purchased a domain name for my blog site, and pointed my deployment to that URL to act as the primary domain. Pretty seamless process.
 
 ### Things I learned:
 
 1. You can’t use the [Deploy to Netlify button](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/) in your README if your GitHubrepository is private.
-
 1. You can point your Gatsby Cloud build to a URL created in your Netlify team. Nice.
 
-And there you go
+That completes Challenge 2. I'm glad I made some time to pick these challenges back up, and I enjoyed testing out the different ways to deploy and host sites. Now I am ready to take on the glory of [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) in [100 Days of Gatsby — Challenge 3](/write/100-days-of-gatsby-challenge-03/), .

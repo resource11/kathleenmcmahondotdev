@@ -26,6 +26,8 @@ const About = ({
 
   const cardListClasses = classnames(css.cardUl, css.stackCardList)
   const socialListClasses = classnames(css.socialUl, css.stackSocialList)
+  const cardListItemClasses = classnames(css.cardListItem, css.liReset)
+  const socialListItemClasses = classnames(css.socialListItem, css.liReset)
 
   return (
     <Layout>
@@ -49,9 +51,12 @@ const About = ({
       <p>Here are some of the portfolio sites I've done:</p>
       <ul className={cardListClasses} role="list">
         {portfolioList.map((port) => (
-          <li key={port.id} className={css.cardListItem}>
+          <li key={port.id} className={cardListItemClasses}>
             <Card
-              extraClasses={{ cardFooterWrapper: css.cardFooterWrapper }}
+              extraClasses={{
+                cardContentWrapper: css.cardContentWrapper,
+                cardFooterWrapper: css.cardFooterWrapper,
+              }}
               footerContent={
                 <Link
                   aria-label={port.ctaAria}
@@ -75,7 +80,7 @@ const About = ({
       <p>Here are some of the ways you can get in touch with me:</p>
       <ul className={socialListClasses}>
         {socialLinks.map((social) => (
-          <li key={social.name} className={css.socialListItem}>
+          <li key={social.name} className={socialListItemClasses}>
             <Link
               extraClasses={{ root: css.socialListLink }}
               icon={["fab", social.icon]}
