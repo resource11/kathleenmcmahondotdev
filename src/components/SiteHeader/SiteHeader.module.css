@@ -41,7 +41,7 @@
 
   &:active {
     background: var(--grad-rad-blue-violet);
-    box-shadow: 0 0 0 var(--s-5) var(--purple-violet);
+    box-shadow: 0 0 0 var(--s-5) var(--purple-violet-200);
   }
 }
 

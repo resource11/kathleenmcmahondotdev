@@ -14,7 +14,7 @@ const components = {
     const props = preToCodeBlock(preProps)
     // if there's a codeString and some props, use the custom code block
     if (props) {
-      return <CodeBlock {...props} />
+      return <CodeBlock {...props} style={{ padding: "1rem" }} />
     } else {
       // don't customize the pre at all
       return undefined

@@ -146,6 +146,7 @@ h6 {
   font-family: var(--font-bold);
   font-weight: 700;
   hyphens: auto;
+  max-width: 50em;
 }
 
 h1,
@@ -452,7 +453,7 @@ a:hover,
 a:active,
 .link:active {
   background: var(--grad-rad-blue-violet-darken);
-  box-shadow: 0 0 0 2px var(--purple-violet-muted);
+  box-shadow: 0 0 0 2px var(--purple-violet-200-muted);
   color: var(--text-reverse);
   text-decoration: none;
 }
@@ -495,4 +496,114 @@ figcaption,
 
 .with-icon .icon {
   margin-inline-end: var(--s0);
+}
+
+/* 
+Based on a11y-dark theme for JavaScript, CSS, and HTML by Eric Bailey 
+*/
+
+code {
+  @add-mixin font-code;
+  @add-mixin font-weight-medium;
+  font-weight: 600;
+  color: var(--purple-violet-100);
+  background-color: var(--color-light);
+  padding: 0 0.25rem;
+  border: 0.063em solid var(--grey-300);
+}
+
+pre {
+  border-radius: var(--s-4);
+  padding: 1rem;
+
+  & code {
+    color: var(--color-dark);
+    background-color: var(--grey-100);
+    display: block;
+    padding: var(--s1);
+    overflow-x: auto;
+  }
+}
+
+pre[class*="language-"] {
+  color: var(--color-dark);
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  overflow-x: auto;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #cecece;
+}
+
+.token.punctuation {
+  color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b1b1b1;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #cbcbcb;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #b8b8b8;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #d2d2d2;
+}
+
+.token.keyword {
+  color: #b8b8b8;
+}
+
+.token.regex,
+.token.important,
+.token.color {
+  color: #d2d2d2;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }

@@ -15,7 +15,9 @@
   --grey-200: #edf4fb;
   --grey-100: #e5ebf1;
   --white: #ffffff;
-  --purple-violet: #a000ba;
+  --purple-violet-200: #a000ba;
+  --purple-violet-200-muted: #8400de;
+  --purple-violet-100: #9305ab;
   --purple-red-200: #ba00a1;
   --purple-red-100: #b900a4;
   --purple-orchid: #b901bd;
@@ -26,7 +28,6 @@
   --caribbean-blue-muted-100: #527b99;
   --caribbean-blue: #0071c2;
   --purple-muted-100: #ae08b1;
-  --purple-violet-muted: #8400de;
   --pink: #fa9aff;
 
   /* Gradients */

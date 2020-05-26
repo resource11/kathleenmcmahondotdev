@@ -1,10 +1,14 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
+import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
+import styles from "../common/styles/pageStyles/BlogMDXLayout.module.css"
 
-const BlogMDXLayout = ({ data: { mdx }, pageContext }) => {
+const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
+  const css = useExtraClasses(styles, extraClasses)
+
   // find the fluid image
   const featuredImg = mdx.frontmatter.featuredImage
   let featuredImgFluid = undefined
@@ -20,7 +24,7 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext }) => {
           <h1>{mdx.frontmatter.title}</h1>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-        <article>
+        <article className={css.bodyWrapper}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </article>
       </article>
