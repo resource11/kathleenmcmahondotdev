@@ -24,8 +24,8 @@ const About = ({
 
   const css = useExtraClasses(styles, extraClasses)
 
-  const cardListClasses = classnames(css.cardList, css.stackCardList)
-  const socialListClasses = classnames(css.socialList, css.stackSocialList)
+  const cardListClasses = classnames(css.cardUl, css.stackCardList)
+  const socialListClasses = classnames(css.socialUl, css.stackSocialList)
 
   return (
     <Layout>
@@ -77,7 +77,7 @@ const About = ({
         {socialLinks.map((social) => (
           <li key={social.name} className={css.socialListItem}>
             <Link
-              extraClasses={{ root: css.socialLink }}
+              extraClasses={{ root: css.socialListLink }}
               icon={["fab", social.icon]}
               size="small"
               to={social.link}

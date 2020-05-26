@@ -18,7 +18,7 @@ export const Home = ({
 }) => {
   const css = useExtraClasses(styles, extraClasses)
 
-  const cardListClasses = classnames(css.cardList, css.stackCardList)
+  const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />

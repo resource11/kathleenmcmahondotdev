@@ -1,5 +1,18 @@
-.cardList {
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+.cardUl {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (--small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media screen and (--medium) {
+    max-width: 50em;
+  }
 }
 
 .stackCardList > * {
@@ -9,6 +22,35 @@
 
 .stackCardList > * + * {
   margin-top: var(--s0);
+
+  @media screen and (--small) {
+    margin-left: 1rem;
+  }
+}
+
+.Cardli:nth-child(odd) {
+  margin-left: 0;
+}
+
+.cardUl > * {
+  flex: 1 1 30ch;
+}
+
+@supports (width: min(250px, 100%)) {
+  .grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+
+    @media screen and (--medium) {
+      grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+    }
+  }
+
+  .stackCardList > * + * {
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
 .cardFooterWrapper {
