@@ -13,6 +13,8 @@ isHidden: true
 
 New year, new challenge! Last year was a very busy time that included traveling to many interesting places speaking about accessible React component libraries and design systems. After I ended the year with a bit of rest, I decided to start this year by continuing to dig deeper into one of my favorite new topics: [JAMstack](https://jamstack.org/), and [MDX](https://mdxjs.com/).
 
+---
+
 ## Why I'm doing this challenge
 
 Currently, we're using Gatsby for documenting our design system, so I'm pretty familiar with how to get started and using Gatsby for projects. Lo and behold, I noticed the [100 Days of Gatsby Challenge](https://twitter.com/gatsbyjs/status/1208068118335119364) come across my Twitter feed. Oh yes, this is something I can have some fun with!
@@ -24,9 +26,9 @@ The purpose of this challenge is to encourage users to learn all the wonderful w
 
 So... let's get to it!
 
-## Challenge 1: Create a Gatsby Blog from Scratch
+---
 
-<small>January 6, 2020</small>
+## Challenge 1: Create a Gatsby Blog from Scratch
 
 I started following the steps in the 8-part Gatsby.js tutorial and **Tutorial parts 0 through 02** were straightforward to follow. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
 
@@ -46,8 +48,6 @@ Some recommended topics to cover:
 
 - [How to change your default package manager for your next project](https://www.gatsbyjs.org/docs/gatsby-cli/#how-to-change-your-default-package-manager-for-your-next-project)
 
----
-
 #### Docs PR Motivation
 
 Users who are brand new to using npm and/or yarn will benefit greatly from this info, here's why:
@@ -63,8 +63,6 @@ I reviewed all the tutorial steps to determine what possibly may have caused the
 As I was following the tutorial steps, I realized I was using `npm` rather than `yarn` to install the typography dependencies. I'm not fully familiar with the issues that could happen (if any) by using `yarn` as your default package manager, generating gatsby projects, and then using `npm` to install dependencies in the project.
 
 However. Considering the tutorial steps are indicating we should be using `npm` to install dependencies, it seems it makes sense to guide brand new users to select `npm` as their default package manager during the first run of `gatsby new`, yes?
-
----
 
 ### Tutorial Part 4
 
@@ -110,10 +108,6 @@ The question I had during this section: **Frontmatter**... what is it? You see i
 
 Another question came up during this section: **Slug.** What is a slug (aka, a pathname for content) and why is it important?
 
-### Tutorial Part 7
-
-Another question came up during this section: **Slug.** What is a slug (aka, a pathname for content) and why is it important?
-
 > **Update** Hooray! A description for a slug has been added to the docs (as of 3/28/20).
 
 After modifying the `gatsby-node.js` file and running `gatsby develop` again, I received this notification in the CLI:
@@ -124,11 +118,15 @@ info: One or more of your plugins have changed since the last time you ran Gatsb
 
 Hooray! Looks like gatsby cleans site cache automatically now? Or does it? I seem to have to still run `gatsby clean` whenever I make changes to `gatsby-config.js` `gatsby-browser.js` or `gatsby-node.js`.
 
+---
+
 ### The 7th inning stretch
 
 I took a quick break from the tutorial to focus on improving the semantic structure and accessibility of the site. The links weren’t presenting visually as links, so I fixed that and added proper headings and landmarks to the site structure.
 
 Running a [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audit revealed a missing `lang` attribute for the `<html>` element and a missing `title` attribute for the page `<head>` element. I started digging into codebase to see if there was a template to modify, or if I should use [`react-helmet`](https://www.npmjs.com/package/react-helmet). I then decided to continue to lesson 8 to see if this was addressed.
+
+---
 
 ### Tutorial Part 8
 

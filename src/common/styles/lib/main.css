@@ -249,12 +249,19 @@ hr,
   border-left: 0;
   border-right: 0;
   border-top: 0.063em solid var(--grey-200); /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
+  border-top: 0.125em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: var(--s2) 0 0 0;
   width: 100%;
 
+  @media (--small) {
+    margin: var(--s3) 0 0 0;
+  }
+
   @media (--medium) {
-    margin: 1rem 0;
+    margin: var(--s4) 0 0 0;
   }
 }
 

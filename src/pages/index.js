@@ -83,7 +83,11 @@ export const Home = ({
             </li>
           ))}
         </ul>
-        <CTALink to="/write/" variant="link">
+        <CTALink
+          to="/write/"
+          variant="link"
+          extraClasses={{ root: css.ctaLink }}
+        >
           Browse all writing
         </CTALink>
       </article>
