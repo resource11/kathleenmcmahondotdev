@@ -7,7 +7,7 @@
   padding: 1.5rem 1.75rem;
   text-align: center;
   color: var(--grey-400);
-  border-top: 0.25rem solid;
+  border-top: 0.25em solid;
   border-image-source: var(--grad-lin-purple-red);
   border-image-slice: 1;
 

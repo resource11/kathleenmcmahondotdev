@@ -5,7 +5,6 @@ import { useExtraClasses } from "../utils/useExtraClasses"
 import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import { Card } from "../components/Card"
 import { Link } from "../components/Link"
 import styles from "../common/styles/pageStyles/Speak.module.css"
 
@@ -45,9 +44,9 @@ const Speak = ({ extraClasses }) => {
       <p>
         I speak about things, using metaphors, and gifs. Lots, and lots of gifs.
       </p>
-      <hr />
+      <hr className={css.purpleRedHR} />
       <h2>Upcoming talks</h2>
-      <p>2020</p>
+      <h3 className={css.speakingH3}>2020</h3>
       <ul className={talkListClasses}>
         {upcomingTalks.map((upcoming) => (
           <li key={upcoming.event} className={upcomingTalkListClasses}>
@@ -64,9 +63,9 @@ const Speak = ({ extraClasses }) => {
           </li>
         ))}
       </ul>
-      <hr />
+      <hr className={css.purpleRedHR} />
       <h2>Past talks</h2>
-      <p>2020</p>
+      <h3 className={css.speakingH3}>2020</h3>
       <ul className={talkListClasses}>
         {talks2020.map((talk) => (
           <li key={talk.event} className={pastTalkListClasses}>
@@ -90,7 +89,7 @@ const Speak = ({ extraClasses }) => {
           </li>
         ))}
       </ul>
-      <p>2019</p>
+      <h3 className={css.speakingH3}>2019</h3>
       <ul className={talkListClasses}>
         {talks2019.map((talk) => (
           <li key={talk.event} className={pastTalkListClasses}>
@@ -114,7 +113,7 @@ const Speak = ({ extraClasses }) => {
           </li>
         ))}
       </ul>
-      <p>2018</p>
+      <h3 className={css.speakingH3}>2018</h3>
       <ul className={talkListClasses}>
         {talks2018.map((talk) => (
           <li key={talk.event} className={pastTalkListClasses}>

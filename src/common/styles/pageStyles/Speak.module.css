@@ -89,3 +89,18 @@
   line-height: 1.2;
   color: var(--caribbean-blue-muted-100);
 }
+
+.speakingH3 {
+  font-size: var(--s0);
+  color: var(--grey-500);
+
+  @media screen and (--small) {
+    font-size: var(--s1);
+  }
+}
+
+.purpleRedHR {
+  border-top: 0.125em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
+}

@@ -70,7 +70,7 @@ const About = ({
           </li>
         ))}
       </ul>
-      <hr />
+      <hr className={css.redOrangeHR} />
       <h2>Social links</h2>
       <p>Here are some of the ways you can get in touch with me:</p>
       <ul className={socialListClasses}>
@@ -87,7 +87,7 @@ const About = ({
           </li>
         ))}
       </ul>
-      <hr />
+      <hr className={css.redOrangeHR} />
       <h2>Contact Me</h2>
       <p>You may also reach me by email</p>
       <ContactForm />

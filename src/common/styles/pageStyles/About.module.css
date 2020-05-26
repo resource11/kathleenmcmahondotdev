@@ -100,3 +100,9 @@
     font-size: 1.5rem;
   }
 }
+
+.redOrangeHR {
+  border-top: 0.125em solid;
+  border-image-source: var(--grad-lin-red-orange);
+  border-image-slice: 1;
+}

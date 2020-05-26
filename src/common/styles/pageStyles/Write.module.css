@@ -1,0 +1,8 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+.blueVioletHR {
+  border-top: 0.125em solid;
+  border-image-source: var(--grad-lin-blue-violet);
+  border-image-slice: 1;
+}

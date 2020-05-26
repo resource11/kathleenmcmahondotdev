@@ -1,9 +1,15 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+import classnames from "classnames"
+import { useExtraClasses } from "../utils/useExtraClasses"
+import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import { Link } from "../components/Link"
+import styles from "../common/styles/pageStyles/Write.module.css"
 
-const Write = ({ data: { site, allMdx } }) => {
+const Write = ({ data: { site, allMdx } }, extraClasses) => {
+  const css = useExtraClasses(styles, extraClasses)
   return (
     <Layout>
       <SEO title={`${site.siteMetadata.title} | Write`} />
@@ -21,7 +27,7 @@ const Write = ({ data: { site, allMdx } }) => {
           </a>{" "}
           to learn more about the philosophy behind the phase.
         </p>
-        <hr />
+        <hr className={css.blueVioletHR} />
         {allMdx.edges.map(({ node }) => (
           <ul key={node.id}>
             <li>

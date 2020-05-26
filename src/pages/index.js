@@ -5,6 +5,7 @@ import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Card } from "../components/Card"
+import { CTALink } from "../components/CTALink"
 import { Link } from "../components/Link"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
@@ -70,9 +71,9 @@ export const Home = ({
             </>
           ))}
         </ul>
-        <Link to="/write/" variant="link">
+        <CTALink to="/write/" variant="link">
           Browse all writing
-        </Link>
+        </CTALink>
       </article>
     </Layout>
   )

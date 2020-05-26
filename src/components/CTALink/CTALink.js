@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link as GatsbyLink } from "gatsby"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/useExtraClasses"
 import { Link, LinkVariants } from "../Link"
@@ -23,36 +22,19 @@ export const CTALink = ({
   const css = useExtraClasses(styles, extraClasses)
   const linkClasses = classnames(css.root, css[size])
 
-  if (variant === LinkVariants.a) {
-    return (
-      <Link
-        aria-label={ariaLabel}
-        extraClasses={{
-          root: linkClasses,
-        }}
-        href={to}
-        icon={"arrow-right"}
-        iconAfter={true}
-        ref={linkRef}
-      >
-        {children}
-      </Link>
-    )
-  }
-
   return (
-    <GatsbyLink
+    <Link
       aria-label={ariaLabel}
-      extraClasses={{
-        root: linkClasses,
-      }}
-      icon={["fas", "arrow-right"]}
+      extraClasses={{ root: linkClasses }}
+      href={to}
+      icon={"arrow-right"}
       iconAfter={true}
-      innerRef={linkRef}
+      ref={linkRef}
+      variant={variant}
       to={to}
     >
       {children}
-    </GatsbyLink>
+    </Link>
   )
 }
 
