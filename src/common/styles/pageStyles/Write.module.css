@@ -6,3 +6,46 @@
   border-image-source: var(--grad-lin-blue-violet);
   border-image-slice: 1;
 }
+
+/*
+  ------ POST STYLES -----
+*/
+
+.postUl {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.stackPostList > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackPostList > * + * {
+  margin-top: 2.75rem;
+  @media screen and (--small) {
+  }
+}
+
+.postListLink {
+  @add-mixin font-weight-bold;
+  display: block;
+  font-size: var(--s1);
+  line-height: 1.15;
+}
+
+.postListPublishedDate {
+  display: inline-block;
+  margin-top: var(--s-2);
+  font-size: 0.875rem;
+  color: var(--grey-500);
+}
+
+.postListPublished {
+  @add-mixin font-weight-bold;
+}
+
+.postListExcerpt {
+  margin-top: var(--s-1);
+}

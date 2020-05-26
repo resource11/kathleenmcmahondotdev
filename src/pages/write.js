@@ -10,6 +10,8 @@ import styles from "../common/styles/pageStyles/Write.module.css"
 
 const Write = ({ data: { site, allMdx } }, extraClasses) => {
   const css = useExtraClasses(styles, extraClasses)
+
+  const postListClasses = classnames(css.postUl, css.stackPostList)
   return (
     <Layout>
       <SEO title={`${site.siteMetadata.title} | Write`} />
@@ -28,17 +30,24 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
           to learn more about the philosophy behind the phase.
         </p>
         <hr className={css.blueVioletHR} />
-        {allMdx.edges.map(({ node }) => (
-          <ul key={node.id}>
-            <li>
-              <Link to={`write/${node.frontmatter.slug}`}>
+        <ul className={postListClasses}>
+          {allMdx.edges.map(({ node }) => (
+            <li key={node.id}>
+              <Link
+                to={`write/${node.frontmatter.slug}`}
+                variant="link"
+                extraClasses={{ root: css.postListLink }}
+              >
                 {node.frontmatter.title}
               </Link>
+              <span className={css.postListPublishedDate}>
+                <span className={css.postListPublished}>Published:</span>{" "}
+                {node.frontmatter.date}
+              </span>
+              <p className={css.postListExcerpt}>{node.excerpt}</p>
             </li>
-            <span>Published: {node.frontmatter.date}</span>
-            <p>{node.excerpt}</p>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </article>
     </Layout>
   )

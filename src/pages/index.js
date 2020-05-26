@@ -20,6 +20,8 @@ export const Home = ({
   const css = useExtraClasses(styles, extraClasses)
 
   const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
+
+  const postListClasses = classnames(css.postUl, css.stackPostList)
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
@@ -55,20 +57,27 @@ export const Home = ({
             </li>
           ))}
         </ul>
-        <Link to="/speak/">Browse all media</Link>
-        <hr />
+        <CTALink to="/speak/" variant="link">
+          Browse all media
+        </CTALink>
+        <hr className={css.purpleRedHR} />
         <h2>Featured posts</h2>
-        <ul>
+        <ul className={postListClasses}>
           {allMdx.edges.map(({ node }) => (
-            <>
-              <li key={node.id}>
-                <Link to={`write/${node.frontmatter.slug}`} variant="link">
-                  {node.frontmatter.title}
-                </Link>
-              </li>
-              <span>Published: {node.frontmatter.date}</span>
-              <p>{node.excerpt}</p>
-            </>
+            <li key={node.id}>
+              <Link
+                to={`write/${node.frontmatter.slug}`}
+                variant="link"
+                extraClasses={{ root: css.postListLink }}
+              >
+                {node.frontmatter.title}
+              </Link>
+              <span className={css.postListPublishedDate}>
+                <span className={css.postListPublished}>Published:</span>{" "}
+                {node.frontmatter.date}
+              </span>
+              <p className={css.postListExcerpt}>{node.excerpt}</p>
+            </li>
           ))}
         </ul>
         <CTALink to="/write/" variant="link">
