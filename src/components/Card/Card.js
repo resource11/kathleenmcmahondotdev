@@ -19,14 +19,18 @@ export const Card = ({
   })
   return (
     <article className={cardCSS}>
-      <header className={css.cardHeader}>
-        <figure className={css.cardImageFigure}>
-          <img src={image} alt={imageAlt} className={css.cardImage} />
-        </figure>
-      </header>
+      {image && (
+        <header className={css.cardHeader}>
+          <figure className={css.cardImageFigure}>
+            <img src={image} alt={imageAlt} className={css.cardImage} />
+          </figure>
+        </header>
+      )}
       <div className={css.cardContentWrapper}>
         {children}
-        <footer className={css.cardFooterWrapper}>{footerContent}</footer>
+        {footerContent && (
+          <footer className={css.cardFooterWrapper}>{footerContent}</footer>
+        )}
       </div>
     </article>
   )

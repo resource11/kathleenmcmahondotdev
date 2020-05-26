@@ -33,12 +33,21 @@
   --grad-grey-500: linear-gradient(to right, #343f4a, #111314);
   --grad-grey-400: linear-gradient(to right, #465863, #5f788b);
   --grad-grey-300: linear-gradient(to right, #96a6b5, #c0d8f0);
-  --grad-grey-200: linear-gradient(180deg, #8aaabd 1.91%, #d5dee6 101.1%);
+  --grad-vert-lin-grey-200: linear-gradient(
+    180deg,
+    #8aaabd 1.91%,
+    #d5dee6 101.1%
+  );
   --grad-grey-100: linear-gradient(to right, #eef6fe, #edf4fb);
   --grad-vert-grey-500: linear-gradient(to bottom, #343f4a, #111314);
   --grad-lin-red-orange: linear-gradient(270deg, #ff8200 0%, #ff1a14 67%);
   --grad-lin-red-orange-muted: linear-gradient(270deg, #e97802 0%, #ce0500 67%);
   --grad-lin-purple-red: linear-gradient(90deg, #b900a5 0%, #ff1a14 253.3%);
+  --grad-lin-vert-purple-red: linear-gradient(
+    to bottom,
+    #b900a5 0%,
+    #ff1a14 253.3%
+  );
   --grad-lin-purple-red-subtle: linear-gradient(
     178.76deg,
     #b900a5 0.09%,

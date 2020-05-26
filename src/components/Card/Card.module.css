@@ -8,7 +8,7 @@
   border: 0.063em solid var(--grey-200);
   box-shadow: 0 0 var(--s-2) rgba(0, 0, 0, 0.15);
   background-clip: padding-box; /* !importanté */
-  border: solid $border transparent; /* !importanté */
+  border: solid 0.063em transparent; /* !importanté */
   transition: 250ms box-shadow ease-out, 250ms transform ease-out,
     250ms -webkit-transform ease-out;
 

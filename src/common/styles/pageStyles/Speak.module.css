@@ -1,0 +1,91 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+.cardUl {
+  position: relative;
+  list-style-type: none;
+  max-width: 30em;
+}
+
+.cardRoot {
+  padding: 0.5rem 1rem;
+  border-color: var(--color-light);
+  box-shadow: none;
+
+  @media screen and (--small) {
+    padding: 0.75rem 1.25rem;
+  }
+
+  &:hover {
+    box-shadow: none;
+    border-right-width: 0.375em;
+  }
+}
+
+.stackList > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackList > * + * {
+  margin-top: var(--s0);
+}
+
+.cardDateLocation {
+  @add-mixin font-body-medium;
+  display: block;
+  color: var(--grey-500);
+  margin-top: auto;
+}
+
+.cardLi {
+  padding: 0.25rem 0.75rem;
+  border-left: 0.375em solid;
+  border-image-slice: 0 0 0 1;
+  background-clip: border-box; /* !importanté */
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  transition-timing-function: ease;
+
+  @media screen and (--small) {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.upcomingCardLi {
+  border-image-source: var(--grad-lin-vert-purple-red);
+}
+
+.pastCardLi {
+  border-image-source: var(--grad-vert-lin-grey-200);
+}
+
+.cardLinkRoot {
+  @add-mixin font-weight-bold;
+  line-height: 1.2;
+
+  @media screen and (--small) {
+    font-size: 1.25rem;
+  }
+}
+
+.upcomingCardLinkRoot {
+  @add-mixin font-weight-bold;
+  line-height: 1.2;
+
+  @media screen and (--small) {
+    font-size: 1.25rem;
+  }
+}
+
+.pastCardLinkRoot {
+  @add-mixin font-weight-bold;
+  color: var(--caribbean-blue-muted-200);
+}
+
+.pastCardSublinkRoot {
+  @add-mixin font-weight-medium;
+  display: block;
+  margin-top: var(--s-3);
+  line-height: 1.2;
+  color: var(--caribbean-blue-muted-100);
+}
