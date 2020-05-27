@@ -3,6 +3,14 @@
 
 .root {
   font-size: 1.25rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    .iconSpan {
+      color: inherit;
+    }
+  }
 }
 
 [aria-current="true"] {
@@ -20,6 +28,10 @@
 
 .iconAfter {
   margin: 0 0 0 0.5rem;
+}
+
+.iconSpan {
+  display: inline-block;
 }
 
 .small {

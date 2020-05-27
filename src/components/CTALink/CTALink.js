@@ -25,7 +25,7 @@ export const CTALink = ({
   return (
     <Link
       aria-label={ariaLabel}
-      extraClasses={{ root: linkClasses }}
+      extraClasses={{ root: linkClasses, iconSpan: css.iconSpan }}
       href={to}
       icon={"arrow-right"}
       iconAfter={true}

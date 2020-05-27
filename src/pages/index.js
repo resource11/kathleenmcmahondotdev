@@ -8,6 +8,7 @@ import { Card } from "../components/Card"
 import { CTALink } from "../components/CTALink"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/hero-masked.svg"
+import LineDot from "../svgs/line-dot.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
@@ -23,78 +24,89 @@ export const Home = ({
   const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
   const postListClasses = classnames(css.postUl, css.stackPostList)
 
-  // const imageData = relativePath
-
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
       <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
-      {/* <div className={css.heroImage}></div> */}
-      <article>
-        <header>
-          <h1>Kathleen McMahon</h1>
+      <article className={css.homeWrapper}>
+        <header className={css.homeHeader}>
+          <h1 className={css.homeH1}>Kathleen McMahon</h1>
         </header>
-        <p>
+        <p className={css.homeIntroPara}>
           Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
-          writer. This is the space where I cultivate my interests.
+          writer. This is the space where I cultivate my interests.{" "}
+          <img src={LineDot} alt="" className={css.lineDot} />
         </p>
-        <h2>Recent talks, podcasts, streams</h2>
-        <ul className={cardListClasses} role="list">
-          {recentSpeaking.map((speak) => (
-            <li key={speak.id} className={css.cardListItem}>
-              <Card
-                extraClasses={{
-                  cardContentWrapper: css.cardContentWrapper,
-                  cardFooterWrapper: css.cardFooterWrapper,
-                }}
-                footerContent={
-                  <Link
-                    aria-label={speak.ctaAria}
-                    extraClasses={{ root: css.cardFooterLink }}
-                    icon={faArrowRight}
-                    iconAfter={true}
-                    size="small"
-                    to={speak.link}
-                  >
-                    {speak.cta}
-                  </Link>
-                }
-                image={speak.image}
-                imageAlt={speak.name}
-              />
-            </li>
-          ))}
-        </ul>
-        <CTALink to="/speak/" variant="link">
-          Browse all media
-        </CTALink>
+        <article className={css.recentTalks}>
+          <h2>
+            Recent talks, <br />
+            podcasts, streams
+          </h2>
+          <ul className={cardListClasses} role="list">
+            {recentSpeaking.map((speak) => (
+              <li key={speak.id} className={css.cardListItem}>
+                <Card
+                  extraClasses={{
+                    cardContentWrapper: css.cardContentWrapper,
+                    cardFooterWrapper: css.cardFooterWrapper,
+                  }}
+                  footerContent={
+                    <Link
+                      aria-label={speak.ctaAria}
+                      extraClasses={{ root: css.cardFooterLink }}
+                      icon={faArrowRight}
+                      iconAfter={true}
+                      size="small"
+                      to={speak.link}
+                    >
+                      {speak.cta}
+                    </Link>
+                  }
+                  image={speak.image}
+                  imageAlt={speak.name}
+                />
+              </li>
+            ))}
+          </ul>
+          <CTALink
+            size="small"
+            to="/speak/"
+            variant="link"
+            extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+          >
+            Browse all media
+          </CTALink>
+        </article>
         <hr className={css.purpleRedHR} />
-        <h2>Featured posts</h2>
-        <ul className={postListClasses}>
-          {allMdx.edges.map(({ node }) => (
-            <li key={node.id} className={css.postListItem}>
-              <Link
-                to={`write/${node.frontmatter.slug}`}
-                variant="link"
-                extraClasses={{ root: css.postListLink }}
-              >
-                {node.frontmatter.title}
-              </Link>
-              <span className={css.postListPublishedDate}>
-                <span className={css.postListPublished}>Published:</span>{" "}
-                {node.frontmatter.date}
-              </span>
-              <p className={css.postListExcerpt}>{node.excerpt}</p>
-            </li>
-          ))}
-        </ul>
-        <CTALink
-          to="/write/"
-          variant="link"
-          extraClasses={{ root: css.ctaLink }}
-        >
-          Browse all writing
-        </CTALink>
+        <article className={css.featuredPosts}>
+          <h2>Featured posts</h2>
+          <ul className={postListClasses}>
+            {allMdx.edges.map(({ node }) => (
+              <li key={node.id} className={css.postListItem}>
+                <Link
+                  to={`write/${node.frontmatter.slug}`}
+                  variant="link"
+                  extraClasses={{ root: css.postListLink }}
+                >
+                  {node.frontmatter.title}
+                </Link>
+                <span className={css.postListPublishedDate}>
+                  <span className={css.postListPublished}>Published:</span>{" "}
+                  {node.frontmatter.date}
+                </span>
+                <p className={css.postListExcerpt}>{node.excerpt}</p>
+              </li>
+            ))}
+          </ul>
+          <CTALink
+            size="small"
+            to="/write/"
+            variant="link"
+            extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+          >
+            Browse all writing
+          </CTALink>
+        </article>
       </article>
     </Layout>
   )
