@@ -1,6 +1,10 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
+.pageMeasure {
+  max-width: 65ch;
+}
+
 .cardUl,
 .socialUl {
   list-style-type: none;
@@ -120,4 +124,64 @@
     width: 0;
     margin: 0;
   }
+}
+
+.headingAccentImage {
+  position: absolute;
+  top: 3.5rem;
+  /* top: 2.5rem; */
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%);
+
+  @media screen and (--small) {
+    top: 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
+  }
+
+  @media screen and (--medium) {
+    clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
+  }
+}
+
+.aboutH1 {
+  margin-top: 23.5%;
+  margin-top: 20.5%;
+  line-height: 1.15;
+  color: var(--text-reverse);
+  font-size: calc(0.1vw + 0.1vh + 2.25rem);
+  font-size: calc(2.3 * 5vw);
+
+  @media screen and (--small) {
+    margin-top: 3.25rem;
+    margin-top: 15.5%;
+    font-size: calc(1.8 * 5vw);
+  }
+
+  @media screen and (--medium) {
+    margin-top: 6rem;
+    margin-top: 5rem;
+    font-size: calc(1.8 * 5vw);
+    font-size: 5rem;
+  }
+}
+
+.aboutIntroPara {
+  margin-top: calc(55vw * (9 / 16));
+  font-size: 1.25rem;
+  max-width: 28ch;
+
+  @media screen and (--small) {
+    margin-top: 9.5rem;
+  }
+}
+
+.aboutSecondPara {
+  font-size: 1.25rem;
+  max-width: 28ch;
+}
+
+.clipPath {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 73% 100%, 0 50%);
 }

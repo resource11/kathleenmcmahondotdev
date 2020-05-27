@@ -17,7 +17,7 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
     <Layout>
       <SEO title={`${site.siteMetadata.title} | Write`} />
       <img src={HeadingAccentImage} alt="" className={css.headingAccentImage} />
-      <article>
+      <article className={css.pageMeasure}>
         <header>
           <h1 className={css.writeH1}>
             Cultivated

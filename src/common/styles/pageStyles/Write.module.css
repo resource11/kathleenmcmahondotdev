@@ -1,6 +1,10 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
+.pageMeasure {
+  max-width: 65ch;
+}
+
 .blueVioletHR {
   border-top: 0.063em solid;
   border-image-source: var(--grad-lin-blue-violet);
@@ -82,7 +86,6 @@
 }
 
 .writeH1 {
-  margin-top: 2.125rem;
   margin-top: 14%;
   line-height: 1.15;
   color: var(--text-reverse);
@@ -99,7 +102,6 @@
   }
 
   @media screen and (--small) {
-    margin-top: 3.25rem;
     margin-top: 10%;
     font-size: calc(1.8 * 5vw);
 
