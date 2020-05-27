@@ -93,7 +93,7 @@
 }
 
 .purpleRedHR {
-  border-top: 0.125em solid;
+  border-top: 0.063em solid;
   border-image-source: var(--grad-lin-purple-red);
   border-image-slice: 1;
 }

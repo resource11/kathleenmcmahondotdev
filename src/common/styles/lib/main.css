@@ -241,15 +241,10 @@ h6,
 
 hr,
 .hr {
-  /* padding: var(--border-thin) 0 0;
-  border-width: var(--border-thin) 0;
-  border-color: var(--grey-200); */
-
   border-bottom: 0;
   border-left: 0;
   border-right: 0;
-  border-top: 0.063em solid var(--grey-200); /* IE11 Fallback to work with postcss-css-variables .postcssrc adjustment */
-  border-top: 0.125em solid;
+  border-top: 0.063em solid;
   border-image-source: var(--grad-lin-purple-red);
   border-image-slice: 1;
   display: inline-block;

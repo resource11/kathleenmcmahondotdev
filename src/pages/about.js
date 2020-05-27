@@ -47,6 +47,7 @@ const About = ({
         When I’m not coding, designing, or speaking about things, I’m the best
         Lanterne Rouge cyclocrosser you’ll ever meet.
       </p>
+      <hr className={css.redOrangeHR} />
       <h2>My portfolios</h2>
       <p>Here are some of the portfolio sites I've done:</p>
       <ul className={cardListClasses} role="list">
