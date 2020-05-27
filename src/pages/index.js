@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import { Card } from "../components/Card"
 import { CTALink } from "../components/CTALink"
 import { Link } from "../components/Link"
+import HeadingAccentImage from "../svgs/hero-masked.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
@@ -20,11 +21,15 @@ export const Home = ({
   const css = useExtraClasses(styles, extraClasses)
 
   const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
-
   const postListClasses = classnames(css.postUl, css.stackPostList)
+
+  // const imageData = relativePath
+
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
+      <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
+      {/* <div className={css.heroImage}></div> */}
       <article>
         <header>
           <h1>Kathleen McMahon</h1>

@@ -154,3 +154,81 @@
 .ctaLink {
   margin-left: 0;
 }
+
+.headingAccentImage {
+  position: absolute;
+  top: -151px;
+  top: calc(32vw * -1.5);
+  top: calc(18vw * -2.8);
+  left: -273px;
+  left: calc(2vw * -43.5);
+  width: 276vw;
+  z-index: -1;
+  transform-origin: 50% 50px;
+
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  @media screen and (--small) {
+    /* top: 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%); */
+    /* top: -421px;
+    top: calc(43vw * -1.5); */
+    /* left: -546px; */
+    width: 272vw;
+  }
+
+  @media screen and (--medium) {
+    /* clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px); */
+  }
+}
+
+.heroImage {
+  background-image: url("../../../../static/hero-bg-med.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: 50% 0;
+  background-position: 27% -17rem;
+  height: 375vw;
+  width: 100vw;
+  /* position: absolute;
+  top: -151px;
+  left: -273px;
+  width: 276vw;
+  z-index: -1; */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: 50% 0;
+  background-position: 27% -18rem;
+  height: 373vw;
+  z-index: -1;
+  position: absolute;
+  width: 100vw
+    /* position: absolute; top: -142px; left: -273px; width: 276vw; z-index: -1; */
+    /* clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%); */;
+
+  /* clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%); */
+
+  @media screen and (--small) {
+    margin-top: -275px;
+  }
+}
+
+.heroImageMasked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  top: 6.5rem;
+  width: 268vw;
+
+  @media screen and (--small) {
+    width: 99.8rem;
+  }
+}
