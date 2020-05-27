@@ -33,6 +33,7 @@
 
 .postListItem {
   margin: 0;
+  padding-left: 0;
 
   &::before {
     content: "";
@@ -61,4 +62,74 @@
 
 .postListExcerpt {
   margin-top: var(--s-1);
+}
+
+.headingAccentImage {
+  position: absolute;
+  top: 6.5rem;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 150px, 75% 208px, 0 132px); */
+  @media screen and (--small) {
+    /* top: 2.25rem; */
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px); */
+  }
+
+  @media screen and (--medium) {
+    /* top: 0; */
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 0%, 50% 54%, 0 30%); */
+    clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 81%, 0 283px);
+    clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
+  }
+}
+
+.writeH1 {
+  margin-top: 2.125rem;
+  margin-top: 14%;
+  line-height: 1.15;
+  color: var(--text-reverse);
+  font-size: calc(0.1vw + 0.1vh + 2.25rem);
+  font-size: calc(2.3 * 5vw);
+
+  & small {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    font-size: calc(0.95 * 5vw);
+    text-transform: uppercase;
+    color: var(--pink);
+    letter-spacing: normal;
+  }
+
+  @media screen and (--small) {
+    margin-top: 3.25rem;
+    margin-top: 10%;
+    font-size: calc(1.8 * 5vw);
+
+    & small {
+      font-size: 1.625rem;
+    }
+  }
+
+  @media screen and (--medium) {
+    margin-top: 4rem;
+    font-size: calc(1.8 * 5vw);
+    font-size: 5rem;
+
+    & small {
+      font-size: 1.625rem;
+    }
+  }
+}
+
+.writeIntroPara {
+  margin-top: 7rem;
+  font-size: 1.25rem;
+}
+
+.clipPath {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 73% 100%, 0 50%);
 }

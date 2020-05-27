@@ -1,14 +1,14 @@
-<svg width="320" height="210" viewBox="0 0 320 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="320" height="309" viewBox="0 0 320 309" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_i)">
-    <path d="M0 133.5V1h321v149.25L239.426 208 0 133.5z" fill="url(#paint0_diamond)"/>
+    <path d="M0 232.5V0h321v249.25L239.426 307 0 232.5z" fill="url(#paint0_diamond)"/>
   </g>
-  <path d="M-.5 133.5v.368l.351.109 239.426 74.5.236.074.202-.143 81.574-57.75.211-.149V.5H-.5v133z" stroke="#BFD4E9"/>
+  <path d="M0-.5h-.5v233.368l.351.109 239.426 74.5.236.074.202-.143 81.574-57.75.211-.149V-.5H0z" stroke="#BFD4E9"/>
   <defs>
-    <radialGradient id="paint0_diamond" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-272.11661 272.11661 -421.978 -421.978 403.117 -89)">
+    <radialGradient id="paint0_diamond" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-264.00103 143.99782 -207.01335 -379.53172 321 133)">
       <stop stop-color="#FF1A14"/>
       <stop offset="1" stop-color="#B900A5"/>
     </radialGradient>
-    <filter id="filter0_i" x="-1" y="-1" width="323" height="210.102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <filter id="filter0_i" x="-1" y="-2" width="323" height="310.102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>

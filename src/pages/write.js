@@ -6,6 +6,7 @@ import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Link } from "../components/Link"
+import HeadingAccentImage from "../svgs/angled-purp-violet-xs.svg"
 import styles from "../common/styles/pageStyles/Write.module.css"
 
 const Write = ({ data: { site, allMdx } }, extraClasses) => {
@@ -15,13 +16,16 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
   return (
     <Layout>
       <SEO title={`${site.siteMetadata.title} | Write`} />
+      <img src={HeadingAccentImage} alt="" className={css.headingAccentImage} />
       <article>
         <header>
-          <h1>
-            Cultivated thoughts <small>{allMdx.totalCount} Posts</small>
+          <h1 className={css.writeH1}>
+            Cultivated
+            <br />
+            thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
         </header>
-        <p>
+        <p className={css.writeIntroPara}>
           This is a gathering of all my thoughts, "digital garden" style. If you
           haven't heard the term before, check out the this{" "}
           <a href="https://joelhooks.com/digital-garden">
