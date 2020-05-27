@@ -45,9 +45,9 @@ const About = ({
           <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">
             front of the frontend
           </a>
-          , digging into new technologies, and talking about it. My favorite
-          presentation and workshop subjects include accessibility, React
-          component libraries, design systems, and inclusive documentation.
+          , digging into new technologies, and talking about accessibility,
+          React component libraries, design systems, and inclusive
+          documentation.
         </p>
         <p className={css.aboutSecondPara}>
           When I’m not coding, designing, or speaking about things, I’m the best
@@ -91,7 +91,7 @@ const About = ({
               <Link
                 extraClasses={{ root: css.socialListLink }}
                 icon={["fab", social.icon]}
-                size="small"
+                size="large"
                 to={social.link}
               >
                 {social.name}

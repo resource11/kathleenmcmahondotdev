@@ -35,7 +35,7 @@ const siteData = {
   socialLinks: [
     {
       name: "GitHub",
-      link: "https://twitter.com/github",
+      link: "https://github.com/resource11",
       icon: "github",
     },
     {

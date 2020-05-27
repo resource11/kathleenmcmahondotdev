@@ -28,11 +28,11 @@
 .socialUl {
   max-width: 15ch;
   @media screen and (--small) {
-    max-width: 36ch;
+    max-width: 30ch;
     column-count: 2;
   }
   @media screen and (--medium) {
-    max-width: 50em;
+    /* max-width: 50em; */
     column-count: 2;
   }
 }
@@ -99,14 +99,14 @@
   width: 100%;
   margin: 0;
   padding: 0.25rem 0.5rem;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 
   @media screen and (--small) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   @media screen and (--medium) {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
 }
 
