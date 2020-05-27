@@ -24,6 +24,7 @@
  */
 @define-mixin font-body-normal {
   font-size: calc(0.1vw + 0.1vh + 1rem); /* 16px */
+  font-size: 1rem;
   line-height: var(--line-height); /* 24px */
   /* @media screen and (--small) {
     font-size: calc(0.1vw + 0.1vh + 1.25rem);

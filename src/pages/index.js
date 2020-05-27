@@ -8,7 +8,8 @@ import { Card } from "../components/Card"
 import { CTALink } from "../components/CTALink"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/hero-masked.svg"
-import LineDot from "../svgs/line-dot.svg"
+import { LineDot } from "../components/LineDot"
+import RecentBgMasked from "../svgs/sm-bot-white-diamond.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
@@ -31,14 +32,22 @@ export const Home = ({
       <article className={css.homeWrapper}>
         <header className={css.homeHeader}>
           <h1 className={css.homeH1}>Kathleen McMahon</h1>
+
+          <p className={css.homeIntroPara}>
+            Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+            writer. This is the space where I cultivate my interests.{" "}
+          </p>
+          <LineDot
+            extraClasses={{
+              root: css.lineDotRoot,
+              lineDotLine: css.lineDotLine,
+              lineDotDot: css.lineDotDot,
+            }}
+          />
         </header>
-        <p className={css.homeIntroPara}>
-          Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
-          writer. This is the space where I cultivate my interests.{" "}
-          <img src={LineDot} alt="" className={css.lineDot} />
-        </p>
+        <img src={RecentBgMasked} alt="" className={css.recentTalksBgMasked} />
         <article className={css.recentTalks}>
-          <h2>
+          <h2 className={css.recentTalksH2}>
             Recent talks, <br />
             podcasts, streams
           </h2>

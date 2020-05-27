@@ -1,0 +1,25 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 0.7rem;
+}
+
+.lineDotSVG {
+}
+
+.lineDotLine {
+  display: block;
+  width: 0.188rem;
+  height: 8.5rem;
+  background-color: #4e336a;
+}
+
+.lineDotDot {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #4e336a;
+}

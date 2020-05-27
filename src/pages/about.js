@@ -55,7 +55,10 @@ const About = ({
         </p>
         <hr className={css.redOrangeHR} />
         <h2>My portfolios</h2>
-        <p>Here are some of the portfolio sites I've done:</p>
+        <p>
+          Here are some of the portfolio sites I've done in the past for my
+          consulting business:
+        </p>
         <ul className={cardListClasses} role="list">
           {portfolioList.map((port) => (
             <li key={port.id} className={cardListItemClasses}>

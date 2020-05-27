@@ -6,15 +6,34 @@
 */
 
 .homeWrapper {
-  margin-top: 20.5rem;
-  margin-top: calc(193vw * 9 / 16);
+  margin-top: 0;
+  /* margin-top: calc(193vw * 9 / 16); */
+
+  @media screen and (--small) {
+    margin-top: calc(125vw * 9 / 16);
+  }
+
+  @media screen and (--medium) {
+    margin-top: 358px;
+  }
 }
 
 .homeHeader {
+  position: relative;
+  margin-top: calc(193vw * 9 / 16);
+  margin-top: calc(248vw * 7 / 16);
+
+  @media screen and (--small) {
+    margin-top: calc(221vw * 7 / 16);
+  }
+  @media screen and (--medium) {
+    margin-top: 0;
+    left: 448px;
+  }
 }
 
 .recentTalks {
-  margin-top: 11rem;
+  margin-top: 0.75rem;
   /* margin-top: 10.65rem; */
 }
 
@@ -29,12 +48,36 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
   top: 6.5em;
   width: 268vw;
 
   @media screen and (--small) {
-    width: 99.8rem;
+    width: 111rem;
+  }
+}
+
+.recentTalksBgMasked {
+  position: absolute;
+  bottom: 0;
+  left: calc(-46vw * 9 / 16);
+  width: 200vw;
+  width: 2000px;
+  z-index: -1;
+  display: none;
+
+  @media screen and (--small) {
+    top: 840px;
+    top: 890px;
+    left: -245px;
+    width: 214%;
+    /* left: calc(-118vw * 9 / 16); */
+  }
+
+  @media screen and (--medium) {
+    top: 671px;
+    left: calc(-118vw * 9 / 16);
+    left: -27px;
   }
 }
 
@@ -43,8 +86,13 @@
 */
 
 .homeH1 {
+  margin-top: 0;
   max-width: 9ch;
   color: var(--text-reverse);
+
+  @media screen and (--medium) {
+    font-size: 3.5rem;
+  }
 }
 
 .homeIntroPara {
@@ -52,13 +100,40 @@
   max-width: 20ch;
   font-size: 1.125rem;
   color: var(--text-reverse);
+
+  @media screen and (--medium) {
+    max-width: 24ch;
+    margin-top: 1rem;
+    font-size: 1.75rem;
+  }
 }
 
-.lineDot {
-  position: absolute;
-  width: 2.25rem;
-  left: 5.5rem;
-  top: 7.6rem;
+.recentTalksH2 {
+  margin-top: 0;
+}
+
+.lineDotRoot {
+  position: relative;
+  top: 0;
+  left: 3.25rem;
+  margin-top: 0.25rem;
+
+  @media screen and (--medium) {
+    left: 11.25rem;
+  }
+}
+
+.lineDotLine {
+  @media screen and (--medium) {
+    background-color: var(--color-light);
+    height: 8rem;
+  }
+}
+
+.lineDotDot {
+  @media screen and (--medium) {
+    background-color: var(--color-light);
+  }
 }
 
 /* 
