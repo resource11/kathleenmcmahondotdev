@@ -6,20 +6,20 @@
 */
 
 .homeWrapper {
-  margin-top: 360px;
-
-  margin-top: calc(193vw * 9 / 16);
+  /* margin-top: 360px;
+  margin-top: calc(193vw * 9 / 16); */
 
   margin-top: calc(14.5rem + 96 * ((100vw - 2rem) / 214));
 
   @media screen and (--small) {
-    margin-top: calc(125vw * 9 / 16);
-    margin-top: 575px;
+    /* margin-top: calc(125vw * 9 / 16); */
+    /* margin-top: 575px; */
+    margin-top: 10rem;
   }
 
   @media screen and (--medium) {
-    margin-top: 22.875rem;
-    margin-top: 11.875rem;
+    /* margin-top: 22.875rem;
+    margin-top: 11.875rem; */
     margin-top: 9rem;
   }
 }
@@ -31,11 +31,12 @@
 
   @media screen and (--small) {
     /* margin-top: calc(221vw * 7 / 16); */
+    left: 21rem;
   }
   @media screen and (--medium) {
     margin-top: 0;
-    left: 28rem;
-    left: 24rem;
+    /* left: 28rem;
+    left: 24rem; */
     left: 20rem;
   }
 }
@@ -44,12 +45,13 @@
   margin-top: 3.5rem;
 
   @media screen and (--small) {
-    margin-top: 0;
+    margin-top: -140px;
     /* left: 28rem; */
   }
 
   @media screen and (--medium) {
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
+    margin-top: -5.25rem;
     left: 28rem;
   }
 }
@@ -96,13 +98,20 @@
     /* width: 214%; */
     /* left: calc(-118vw * 9 / 16); */
     left: -440px;
+
+    /* top: 137px; */
+    top: 81px;
+    left: -712px;
   }
 
   @media screen and (--medium) {
     /* top: 659px;
     left: -84px; */
-    top: 487px;
-    left: -358px;
+    /* top: 487px;
+    left: -358px; */
+
+    top: 55px;
+    left: -592px;
   }
 }
 
@@ -121,7 +130,7 @@
   font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 145));
 
   @media screen and (--medium) {
-    font-size: 3.375rem;
+    /* font-size: 3.375rem; */
     font-size: var(--s4);
   }
 }
@@ -134,12 +143,15 @@
 
   @media screen and (--small) {
     font-size: 1.25rem;
-    margin-top: var(--s0);
+    /* margin-top: var(--s0); */
+    margin-top: 0.25rem;
   }
 
   @media screen and (--medium) {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
+    position: relative;
+    left: 11rem;
+    margin-top: 0;
+    /* font-size: 1.25rem; */
   }
 }
 
@@ -148,8 +160,13 @@
   margin-top: 0;
   font-size: calc(1rem + 4 * ((100vw - 2rem) / 125));
 
+  @media screen and (--small) {
+    left: 5rem;
+    font-size: var(--s2);
+  }
+
   @media screen and (--medium) {
-    left: 16rem;
+    left: 156px;
   }
 }
 
@@ -331,7 +348,7 @@
   }
 
   @media screen and (--medium) {
-    margin-top: var(--s1);
+    /* margin-top: var(--s1); */
   }
 }
 
@@ -358,7 +375,7 @@
   }
 
   @media screen and (--medium) {
-    font-size: 2.25rem;
+    /* font-size: 2.25rem; */
   }
 }
 
