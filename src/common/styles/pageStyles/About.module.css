@@ -45,9 +45,9 @@
 }
 
 .socialUl {
-  max-width: 15ch;
+  max-width: 25ch;
   @media screen and (--small) {
-    max-width: 30ch;
+    max-width: 38ch;
     column-count: 2;
   }
   @media screen and (--medium) {
