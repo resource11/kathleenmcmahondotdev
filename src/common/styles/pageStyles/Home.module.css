@@ -10,6 +10,8 @@
 
   margin-top: calc(193vw * 9 / 16);
 
+  margin-top: calc(14.5rem + 96 * ((100vw - 2rem) / 214));
+
   @media screen and (--small) {
     margin-top: calc(125vw * 9 / 16);
     margin-top: 575px;
@@ -93,8 +95,13 @@
 
 .homeH1 {
   margin-top: 0;
-  max-width: 9ch;
+  max-width: 11ch;
   color: var(--text-reverse);
+
+  /* font-size: clamp(1.5rem, 1.5rem + 2vw, 3.5rem); */
+  font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 680));
+
+  font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 145));
 
   @media screen and (--medium) {
     font-size: 3.5rem;
@@ -385,5 +392,30 @@
 
   &:hover {
     color: var(--text-reverse);
+  }
+}
+
+.temp {
+  display: none;
+
+  & > h1 {
+    position: absolute;
+    margin-top: 0;
+    top: 665px;
+    max-width: 9ch;
+    color: var(--text-reverse);
+  }
+
+  & > p {
+    position: relative;
+    max-width: 20ch;
+    font-size: 1.125rem;
+    top: 8rem;
+    color: var(--text-reverse);
+
+    /* @media screen and (--small) { */
+    font-size: 1.5rem;
+    margin-top: var(--s0);
+    /* } */
   }
 }

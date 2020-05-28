@@ -29,6 +29,20 @@ export const Home = ({
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
       <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
+      <div className={css.temp}>
+        <h1>
+          Kathleen
+          <br />
+          McMahon
+        </h1>
+
+        <p>
+          Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+          writer.
+          <br />
+          This is the space where I cultivate my interests.{" "}
+        </p>
+      </div>
       <article className={css.homeWrapper}>
         <header className={css.homeHeader}>
           <h1 className={css.homeH1}>Kathleen McMahon</h1>
