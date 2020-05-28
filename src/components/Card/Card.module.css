@@ -14,11 +14,17 @@
 
   &:hover {
     border: 0.063em solid var(--grey-300);
-    box-shadow: 0 0 0 0.125rem var(--grey-300);
+    box-shadow: 0 0 0 0.063em var(--grey-300);
+    transform: rotate(
+      0
+    ); /* weird trick to make the box-shadow show for an li */
   }
 
   &:focus-within {
-    box-shadow: 0 0 0 0.125rem var(--purple-red-200);
+    box-shadow: 0 0 0 0.063em var(--purple-red-200);
+    transform: rotate(
+      0
+    ); /* weird trick to make the box-shadow show for an li */
     transform: scale(1.02);
 
     &:before {
@@ -29,7 +35,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      margin: calc(var(--s-3) * -1); /* !importanté */
+      margin: calc(var(--s-4) * -1); /* !importanté */
       border-radius: inherit; /* !importanté */
       background: var(--grad-rad-blue-violet-darken);
     }
