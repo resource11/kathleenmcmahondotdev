@@ -54,11 +54,11 @@
 .headerLinks {
   display: flex;
   justify-content: space-between;
-  height: 4.38rem;
+  height: 4.375rem;
   padding: 0 0 0 1rem;
 
   @media screen and (--medium) {
-    height: 5.25rem;
+    /* height: 5.25rem; */
     padding: 0 2rem;
   }
 }
@@ -154,8 +154,8 @@
   z-index: 1;
 
   @media screen and (--medium) {
-    width: 8.5rem;
-    height: 5.25rem;
+    /* width: 8.5rem;
+    height: 5.25rem; */
   }
 
   &:hover {
@@ -167,7 +167,7 @@
     top: -1.85rem;
 
     @media screen and (--medium) {
-      top: -2.85rem;
+      /* top: -2.85rem; */
     }
   }
 }

@@ -19,6 +19,8 @@
 
   @media screen and (--medium) {
     margin-top: 22.875rem;
+    margin-top: 11.875rem;
+    margin-top: 9rem;
   }
 }
 
@@ -33,11 +35,18 @@
   @media screen and (--medium) {
     margin-top: 0;
     left: 28rem;
+    left: 24rem;
+    left: 20rem;
   }
 }
 
 .recentTalks {
-  margin-top: 0.75rem;
+  margin-top: 3.5rem;
+
+  @media screen and (--small) {
+    margin-top: 0;
+    /* left: 28rem; */
+  }
 
   @media screen and (--medium) {
     margin-top: 10rem;
@@ -62,17 +71,23 @@
 
   @media screen and (--small) {
     width: 111rem;
+    width: 81rem;
+    width: 65rem;
   }
 }
 
 .recentTalksBgMasked {
   position: absolute;
-  bottom: 0;
-  left: calc(-46vw * 9 / 16);
-  width: 200vw;
+  /* top: 584px; */
+  top: calc(28.5rem + 52 * ((100vw - 2rem) / 214));
+  /* left: calc(-295vw * 9 / 16); */
+  left: calc(-41.5rem + 96 * ((100vw - 2rem) / 214));
+  /* width: 200vw; */
   width: 2000px;
   z-index: -1;
-  display: none;
+  /* display: none; */
+  /* box-shadow: 0px -6.73542px 52.1995px rgba(0, 0, 0, 0.25); */
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
   @media screen and (--small) {
     top: 840px;
@@ -84,8 +99,10 @@
   }
 
   @media screen and (--medium) {
-    top: 659px;
-    left: -84px;
+    /* top: 659px;
+    left: -84px; */
+    top: 487px;
+    left: -358px;
   }
 }
 
@@ -99,12 +116,13 @@
   color: var(--text-reverse);
 
   /* font-size: clamp(1.5rem, 1.5rem + 2vw, 3.5rem); */
-  font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 680));
+  /* font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 680)); */
 
   font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 145));
 
   @media screen and (--medium) {
-    font-size: 3.5rem;
+    font-size: 3.375rem;
+    font-size: var(--s4);
   }
 }
 
@@ -115,19 +133,20 @@
   color: var(--text-reverse);
 
   @media screen and (--small) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-top: var(--s0);
   }
 
   @media screen and (--medium) {
-    margin-top: var(--s0);
-    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
   }
 }
 
 .recentTalksH2 {
   position: relative;
   margin-top: 0;
+  font-size: calc(1rem + 4 * ((100vw - 2rem) / 125));
 
   @media screen and (--medium) {
     left: 16rem;
@@ -208,7 +227,7 @@
 @supports (width: min(250px, 100%)) {
   .grid {
     display: grid;
-    grid-gap: 0;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 
     @media screen and (--small) {
