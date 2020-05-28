@@ -16,7 +16,7 @@ module.exports = {
     description: `A software engineer, product designer, and internationally-known conference speaker with a passion for making inclusive and accessible experiences.`,
     url: "https://kathleenmcmahon.dev", // No trailing slash allowed!
     siteUrl: `https://kathleenmcmahon.dev`,
-    image: "/images/icon.png", // Path to your image you placed in the 'static' folder
+    image: "/images/social-sharing-card.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@resource11",
   },
   plugins: [
