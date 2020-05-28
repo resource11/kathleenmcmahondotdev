@@ -58,7 +58,7 @@
 
   & .link {
     color: var(--grey-400);
-    font-size: 0.875rem;
+    font-size: 1rem;
 
     &:hover {
       color: var(--text-light, #ffffff);
