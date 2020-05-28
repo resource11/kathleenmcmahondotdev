@@ -1,0 +1,24 @@
+@import "../common/styles/lib/variables.css";
+@import "../common/styles/lib/mixins.css";
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.backToTop {
+  position: relative;
+  display: block;
+  margin: 2rem 1.75rem 1rem auto;
+  max-width: fit-content;
+
+  @media screen and (--medium) {
+    font-size: 1.25rem;
+  }
+}
