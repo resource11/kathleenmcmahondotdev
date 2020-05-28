@@ -67,7 +67,7 @@ body {
 }
 
 main {
-  margin-left: 1.75rem;
+  /* margin-left: 1.75rem;
   margin-right: 1.75rem;
   margin-bottom: 3rem;
   @media screen and (--small) {
@@ -80,7 +80,7 @@ main {
     margin-right: 5.625rem;
     margin-bottom: 5.625rem;
     max-width: 50em;
-  }
+  } */
 }
 
 /* 

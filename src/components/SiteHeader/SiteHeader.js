@@ -7,9 +7,9 @@ import css from "./SiteHeader.module.css"
 export const SiteHeader = () => {
   const { primaryNav } = data
   return (
-    <header className={css.header}>
+    <header className={css.header} id="#top">
       <div className={css.headerLinks}>
-        <a href="#main">
+        <a href="#main" className={css.skipLink}>
           Skip to main <span role="presentation">content</span>
         </a>
         <Link to={`/`} className={css.logo}>

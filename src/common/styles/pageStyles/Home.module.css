@@ -5,16 +5,24 @@
 ------ WRAPPERS ------ 
 */
 
-.homeWrapper {
+.bodyWrapper {
   margin-top: calc(14.5rem + 96 * ((100vw - 2rem) / 214));
-
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+  margin-bottom: 3rem;
   @media screen and (--small) {
-    margin-top: 10rem;
+    margin: 10rem 3rem 3rem;
   }
 
   @media screen and (--medium) {
     margin-top: 9rem;
+    margin: 9rem 5.625rem 5.625rem;
+    max-width: 50em;
   }
+}
+
+.contentWrapper {
+  /* max-width: var(--measure); */
 }
 
 .homeHeader {
@@ -44,6 +52,7 @@
 }
 
 .featuredPosts {
+  /* max-width: var(--measure); */
 }
 
 /* 

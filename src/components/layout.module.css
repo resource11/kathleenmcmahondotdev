@@ -8,3 +8,12 @@
 .main {
   flex: 1 0 auto;
 }
+
+.backToTop {
+  position: relative;
+  margin-bottom: 0.5rem;
+  max-width: fit-content;
+  margin-top: 2rem;
+  margin-left: auto;
+  display: block;
+}

@@ -1,7 +1,28 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
-.pageMeasure {
+.bodyWrapper {
+  /* margin-left: 1.75rem;
+  margin-right: 1.75rem;
+  margin-bottom: 3rem; */
+  margin: 0 1.75rem 3rem;
+  @media screen and (--small) {
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
+    margin: 0 3rem 3rem;
+  }
+
+  @media screen and (--medium) {
+    /* margin-left: 5.625rem;
+    margin-right: 5.625rem;
+    margin-bottom: 5.625rem; */
+    margin: 0 5.625rem 5.625rem;
+    /* max-width: var(--measure); */
+    max-width: 50em;
+  }
+}
+
+.contentWrapper {
   max-width: 65ch;
 }
 

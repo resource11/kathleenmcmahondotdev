@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import {
   faArrowRight,
+  faArrowUp,
   faChevronRight,
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons"
@@ -20,6 +21,7 @@ fontLibrary.add(
   fab,
   faAccessibleIcon,
   faArrowRight,
+  faArrowUp,
   faChevronRight,
   faExclamationCircle,
   faInstagram,

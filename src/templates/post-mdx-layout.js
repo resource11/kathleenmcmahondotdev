@@ -20,16 +20,18 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
-      <img src={BlogHeroAccent} alt="" className={css.blogHeroAccent} />
-      <article>
+      <div className={css.bodyWrapper}>
+        <img src={BlogHeroAccent} alt="" className={css.blogHeroAccent} />
+        {/* <article className={css.contentWrapper}> */}
         <header>
           <h1 className={css.postH1}>{mdx.frontmatter.title}</h1>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-        <article className={css.bodyWrapper}>
+        <article className={css.contentWrapper}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </article>
-      </article>
+        {/* </article> */}
+      </div>
     </Layout>
   )
 }

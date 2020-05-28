@@ -16,8 +16,13 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
   return (
     <Layout>
       <SEO title={`${site.siteMetadata.title} | Write`} />
-      <img src={HeadingAccentImage} alt="" className={css.headingAccentImage} />
-      <article className={css.pageMeasure}>
+      <article className={css.bodyWrapper}>
+        <img
+          src={HeadingAccentImage}
+          alt=""
+          className={css.headingAccentImage}
+        />
+
         <header>
           <h1 className={css.writeH1}>
             Cultivated
@@ -25,33 +30,35 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
             thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
         </header>
-        <p className={css.writeIntroPara}>
-          This is a gathering of all my thoughts, "digital garden" style. If you
-          haven't heard the term before, check out the this{" "}
-          <a href="https://joelhooks.com/digital-garden">
-            fantastic post on digital gardens by Joel Hooks
-          </a>{" "}
-          to learn more about the philosophy behind the phase.
-        </p>
-        <hr className={css.blueVioletHR} />
-        <ul className={postListClasses}>
-          {allMdx.edges.map(({ node }) => (
-            <li key={node.id} className={css.postListItem}>
-              <Link
-                to={`write/${node.frontmatter.slug}`}
-                variant="link"
-                extraClasses={{ root: css.postListLink }}
-              >
-                {node.frontmatter.title}
-              </Link>
-              <span className={css.postListPublishedDate}>
-                <span className={css.postListPublished}>Published:</span>{" "}
-                {node.frontmatter.date}
-              </span>
-              <p className={css.postListExcerpt}>{node.excerpt}</p>
-            </li>
-          ))}
-        </ul>
+        <div className={css.contentWrapper}>
+          <p className={css.writeIntroPara}>
+            This is a gathering of all my thoughts, "digital garden" style. If
+            you haven't heard the term before, check out the this{" "}
+            <a href="https://joelhooks.com/digital-garden">
+              fantastic post on digital gardens by Joel Hooks
+            </a>{" "}
+            to learn more about the philosophy behind the phase.
+          </p>
+          <hr className={css.blueVioletHR} />
+          <ul className={postListClasses}>
+            {allMdx.edges.map(({ node }) => (
+              <li key={node.id} className={css.postListItem}>
+                <Link
+                  to={`write/${node.frontmatter.slug}`}
+                  variant="link"
+                  extraClasses={{ root: css.postListLink }}
+                >
+                  {node.frontmatter.title}
+                </Link>
+                <span className={css.postListPublishedDate}>
+                  <span className={css.postListPublished}>Published:</span>{" "}
+                  {node.frontmatter.date}
+                </span>
+                <p className={css.postListExcerpt}>{node.excerpt}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </article>
     </Layout>
   )
