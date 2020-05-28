@@ -1,0 +1,82 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+.bodyWrapper {
+  margin: 0 1.75rem 3rem;
+  @media screen and (--small) {
+    margin: 0 3rem 3rem;
+  }
+
+  @media screen and (--medium) {
+    margin: 0 5.625rem 5.625rem;
+    max-width: 50em;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (--small) {
+    max-width: var(--measure);
+  }
+
+  @media screen and (--medium) {
+    /* max-width: 50em; */
+  }
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 45vh;
+  padding: 1rem;
+}
+
+.cover > * {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.cover > :first-child:not(h1) {
+  margin-top: 0;
+}
+
+.cover > :last-child:not(h1) {
+  margin-bottom: 0;
+}
+
+.cover > h1 {
+  margin-top: auto;
+  /* margin-bottom: auto; */
+}
+
+.root {
+  @add-mixin font-weight-medium;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.errorHeader {
+  @add-mixin font-weight-bold;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorCode {
+  font-size: 8.75rem;
+  color: var(--grey-700);
+}
+
+.errorDescription {
+  font-size: 1.5rem;
+}
+
+.errorMessage {
+  max-width: 663px;
+  text-align: center;
+}
