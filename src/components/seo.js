@@ -9,9 +9,13 @@ function SEO({ description, lang, meta, title }) {
       query {
         site {
           siteMetadata {
-            title
-            description
+            image
             author
+            description
+            siteUrl
+            title
+            twitterUsername
+            url
           }
         }
       }
@@ -26,7 +30,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -35,6 +38,11 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+
+        {
+          property: `og:image`,
+          content: site.siteMetadata.image,
         },
         {
           property: `og:description`,
@@ -65,6 +73,8 @@ function SEO({ description, lang, meta, title }) {
   )
 }
 
+export default SEO
+
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
@@ -77,5 +87,3 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
-
-export default SEO
