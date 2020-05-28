@@ -48,16 +48,21 @@ const About = ({
             So... you want to know more about me? OK. Well, I'm fullstack
             engineer with a design background. In other words, I really enjoy
             the{" "}
-            <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">
+            <Link to="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">
               front of the frontend
-            </a>
+            </Link>
             , digging into new technologies, and talking about accessibility,
             React component libraries, design systems, and inclusive
             documentation.
           </p>
           <p className={css.aboutSecondPara}>
             When I’m not coding, designing, or speaking about things, I’m the
-            best Lanterne Rouge cyclocrosser you’ll ever meet.
+            best{" "}
+            <Link to="https://facebook.com/cxsisters">
+              Lanterne Rouge cyclocrosser
+            </Link>{" "}
+            you’ll ever meet. I'm also{" "}
+            <Link to="#contact-me">currently available for work</Link>.
           </p>
           <hr className={css.redOrangeHR} />
           <h2>My portfolios</h2>
@@ -109,7 +114,7 @@ const About = ({
             ))}
           </ul>
           <hr className={css.redOrangeHR} />
-          <h2>Contact Me</h2>
+          <h2 id="contact-me">Contact Me</h2>
           <p>You may also reach me by email</p>
           <ContactForm />
         </article>

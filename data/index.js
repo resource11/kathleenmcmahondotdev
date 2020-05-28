@@ -26,11 +26,6 @@ const siteData = {
       icon: "twitter",
       ariaLabel: "Contact me on Twitter",
     },
-    {
-      name: "Accessbility Statement",
-      icon: "accessible-icon",
-      link: "#",
-    },
   ],
   socialLinks: [
     {
@@ -237,6 +232,25 @@ const siteData = {
         "Accessibility-flavored React components make your design system delicious!",
       talkURL: "",
       talkType: "Talk",
+    },
+  ],
+  fullFooterNav: [
+    {
+      name: "resource11",
+      link: "https://github.com/resource11",
+      icon: "github",
+      ariaLabel: "View my GitHub profile",
+    },
+    {
+      name: "resource11",
+      link: "https://twitter.com/resource11",
+      icon: "twitter",
+      ariaLabel: "Contact me on Twitter",
+    },
+    {
+      name: "Accessbility Statement",
+      icon: "accessible-icon",
+      link: "#",
     },
   ],
 }

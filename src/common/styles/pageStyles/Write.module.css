@@ -83,6 +83,7 @@
 
 .postListPublished {
   @add-mixin font-weight-bold;
+  font-size: 90%;
 }
 
 .postListExcerpt {

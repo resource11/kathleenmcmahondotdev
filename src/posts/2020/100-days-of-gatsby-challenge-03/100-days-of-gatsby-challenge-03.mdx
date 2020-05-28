@@ -18,23 +18,25 @@ If you've been following my 100 Days of Gatsby series of blog posts, you may hav
 I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the link in Challenge resources part 1.
 https://www.gatsbyjs.org/docs/working-with-images-in-markdown/
 
-After installing plugins related to gatsby image, `npm` warned me in the CLI about of security vulnerabilities (I love this new feature of NPM by the way). Running the `npm audit` command gives you a list of all the vulnerabilities and which commands to run to fix them. I especially love the flag for `mini mist` that shows the `—depth 8` because it allows you to target the **exact** place where that package is in the dependency tree.
+After installing plugins related to gatsby image, `npm` warned me in the CLI about of security vulnerabilities (I love this new feature of NPM by the way). Running the `npm audit` command gave me a list of all the vulnerabilities and which commands to run to fix them. I especially loved the flag for `mini mist` that showed the `—depth 8` because it allowed me to target the **exact** place where that package is in the dependency tree. I fixed the errors, and did a clean install.
 
-I fixed the errors, and did a clean install.
-
-When I got to this error:
+When I got to this error in the CLI:
 
 ```bash
 The fragment “GatsbyImageSharpFluid” does not exist
 ```
 
-I realized that I had to start from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead, and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page to get a better sense of things before diving deeper.
+I realized that I had to start following instructions from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead, and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page to get a better sense of things before diving deeper.
 
-This helped me understand what Webpack does with the images at the bundle stage [for Gatsby sites? Or is it what Webpack does at the bundle stage for all sites, but you have to specify the output path, right? (at build time Webpack moves the images into the public folder and provide the correct path)
+This helped me understand what Webpack does with the images at the bundle stage. Is this specific for Gatsby sites, though? Or is this what Webpack does at the bundle stage for all sites, as long as you specify the output path?
 
-went through the part 1 steps, made pages with images for the markdown pages. Got a bit stuck when trying to do the same with MDX (needed the MDX provider to wrap Layout). I want to see if you can do both Markdown and MDX queries at the same time in a page…
+Ahhh, I read this and it helped:
 
-While reading the pages and layouts recipes (https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically), the createPage method uses the path to create the route, component to use the template, the context to set the context object (in that example it was the dogData object getting a forEach for the dog). The dog is destructured as an object to pass in the context { dog }, which has to do with pageContext (find link on that)
+> At build time Webpack moves the images into the public folder and provide the correct path)
+
+I then went through the part 1 steps, made pages with images for the Markdown pages. Got a bit stuck when trying to do the same with MDX (needed to use the MDX provider to wrap Layout). I want to see if you can do both Markdown and MDX queries at the same time in a page, so I tested that out and it works.
+
+While reading the [pages and layouts recipes](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically) docs section, the `createPage()` method uses the `path` value to create the route, component to use the template, the `context` value to set the context object. In the [provided docs example](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#directions-3) the `createPages` method uses the `forEach()` method to loop through the `dogData` array of objects to provide the `path` `component` and `context` value for each `dog`. The `dog` object is destructured as an object to pass in the context { dog }, which has to do with pageContext (find link on that)
 
 Then, in your template, you pass in the destructured doc into `pageContext`. So…
 
