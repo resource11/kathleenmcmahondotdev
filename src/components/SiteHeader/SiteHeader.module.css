@@ -75,8 +75,9 @@
   position: relative;
   display: flex;
   top: -0.25rem;
-  margin: 0 0 0 2%;
   max-width: 20rem;
+  margin: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 
   @media screen and (--small) {
@@ -97,7 +98,6 @@
 
     &::before {
       content: none;
-      /* color: var(--text); */
       display: none;
       width: 0;
       margin-left: 0;
@@ -105,14 +105,14 @@
   }
 
   & .primaryNavLi:not(:last-of-type) {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
 
   & .link {
     @add-mixin font-weight-medium;
     min-width: 6.25rem;
     height: 2.188rem;
-    padding: 0.15rem var(--s0) 0.25rem;
+    padding: 0 var(--s0) 0;
     line-height: 1.6;
     text-align: center;
     text-decoration: none;
@@ -143,8 +143,8 @@
 
   & .activeLink {
     @add-mixin font-weight-bold;
-    font-size: 92%;
-    line-height: 1.7;
+    /* font-size: 92%;
+    line-height: 1.7; */
   }
 }
 
@@ -154,8 +154,8 @@
   z-index: 1;
 
   @media screen and (--medium) {
-    /* width: 8.5rem;
-    height: 5.25rem; */
+    width: 8.5rem;
+    height: 5.25rem;
   }
 
   &:hover {
@@ -167,7 +167,7 @@
     top: -1.85rem;
 
     @media screen and (--medium) {
-      /* top: -2.85rem; */
+      top: -2.85rem;
     }
   }
 }
