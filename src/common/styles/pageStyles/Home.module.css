@@ -6,25 +6,27 @@
 */
 
 .homeWrapper {
-  margin-top: 0;
-  /* margin-top: calc(193vw * 9 / 16); */
+  margin-top: 360px;
+
+  margin-top: calc(193vw * 9 / 16);
 
   @media screen and (--small) {
     margin-top: calc(125vw * 9 / 16);
+    margin-top: 575px;
   }
 
   @media screen and (--medium) {
-    margin-top: 22.375rem;
+    margin-top: 22.875rem;
   }
 }
 
 .homeHeader {
   position: relative;
-  margin-top: calc(193vw * 9 / 16);
-  margin-top: calc(248vw * 7 / 16);
+  /* margin-top: calc(193vw * 9 / 16); */
+  /* margin-top: calc(248vw * 7 / 16); */
 
   @media screen and (--small) {
-    margin-top: calc(221vw * 7 / 16);
+    /* margin-top: calc(221vw * 7 / 16); */
   }
   @media screen and (--medium) {
     margin-top: 0;
@@ -36,7 +38,7 @@
   margin-top: 0.75rem;
 
   @media screen and (--medium) {
-    margin-top: 12rem;
+    margin-top: 10rem;
     left: 28rem;
   }
 }
@@ -72,16 +74,16 @@
 
   @media screen and (--small) {
     top: 840px;
-    top: 890px;
+    /* top: 890px; */
     left: -245px;
-    width: 214%;
+    /* width: 214%; */
     /* left: calc(-118vw * 9 / 16); */
+    left: -440px;
   }
 
   @media screen and (--medium) {
-    top: 671px;
-    left: calc(-118vw * 9 / 16);
-    left: -27px;
+    top: 659px;
+    left: -84px;
   }
 }
 
@@ -105,16 +107,24 @@
   font-size: 1.125rem;
   color: var(--text-reverse);
 
+  @media screen and (--small) {
+    font-size: 1.5rem;
+    margin-top: var(--s0);
+  }
+
   @media screen and (--medium) {
-    margin-top: 1rem;
+    margin-top: var(--s0);
     font-size: 1.75rem;
   }
 }
 
 .recentTalksH2 {
   position: relative;
-  left: 18.6rem;
   margin-top: 0;
+
+  @media screen and (--medium) {
+    left: 16rem;
+  }
 }
 
 .lineDotRoot {
@@ -129,6 +139,10 @@
 }
 
 .lineDotLine {
+  @media screen and (--small) {
+    height: 12.65rem;
+  }
+
   @media screen and (--medium) {
     background-color: var(--color-light);
     height: 5rem;
@@ -176,11 +190,11 @@
   margin-top: var(--s0);
 
   @media screen and (--small) {
-    margin-left: 1rem;
+    margin-left: var(--s0);
   }
 
   @media screen and (--medium) {
-    margin-top: 1rem;
+    margin-top: var(--s0);
   }
 }
 
@@ -191,7 +205,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 
     @media screen and (--small) {
-      grid-gap: 1rem;
+      grid-gap: var(--s0);
     }
 
     @media screen and (--medium) {
@@ -232,13 +246,16 @@
   width: 100%;
   height: 2.5rem;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem var(--s0);
   text-align: right;
 
-  @media screen and (--medium) {
+  font-size: 1.25rem;
+  line-height: 1;
+
+  /* @media screen and (--medium) {
     font-size: 1.25rem;
     line-height: 1;
-  }
+  } */
 
   &::after {
     content: "";
@@ -284,6 +301,10 @@
   margin-top: 2.75rem;
   margin-top: var(--s0);
   @media screen and (--small) {
+    margin-top: 1.25rem;
+  }
+
+  @media screen and (--medium) {
     margin-top: var(--s1);
   }
 }
@@ -306,6 +327,10 @@
   font-size: 1.375rem;
   line-height: 1.2;
 
+  @media screen and (--small) {
+    font-size: 1.75rem;
+  }
+
   @media screen and (--medium) {
     font-size: 2.25rem;
   }
@@ -317,26 +342,30 @@
   font-size: 0.875rem;
   color: var(--grey-500);
 
-  @media screen and (--medium) {
-    font-size: 1rem;
+  @media screen and (--small) {
+    font-size: var(--s0);
   }
 }
 
 .postListPublished {
   @add-mixin font-weight-bold;
+  font-size: 80%;
 }
 
 .ctaLink {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-left: 0;
   margin-top: 1.5rem;
   padding-left: 0.5rem;
-  line-height: 1;
+  /* line-height: 1; */
+  font-size: var(--s0);
   color: var(--caribbean-blue-muted-300);
   border-left: 0.25em solid;
   border-image-slice: 0 0 0 1;
   background-clip: border-box; /* !importanté */
   border-image-source: var(--grad-lin-vert-purple-red);
+  height: 2.5rem;
 
   @media screen and (--medium) {
     font-size: 1.25rem;
