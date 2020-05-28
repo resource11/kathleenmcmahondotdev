@@ -6,20 +6,13 @@
 */
 
 .homeWrapper {
-  /* margin-top: 360px;
-  margin-top: calc(193vw * 9 / 16); */
-
   margin-top: calc(14.5rem + 96 * ((100vw - 2rem) / 214));
 
   @media screen and (--small) {
-    /* margin-top: calc(125vw * 9 / 16); */
-    /* margin-top: 575px; */
     margin-top: 10rem;
   }
 
   @media screen and (--medium) {
-    /* margin-top: 22.875rem;
-    margin-top: 11.875rem; */
     margin-top: 9rem;
   }
 }
@@ -42,10 +35,10 @@
 }
 
 .recentTalks {
-  margin-top: 3.5rem;
+  margin-top: 0.5rem;
 
   @media screen and (--small) {
-    margin-top: -140px;
+    margin-top: -120px;
     /* left: 28rem; */
   }
 
@@ -81,27 +74,33 @@
 .recentTalksBgMasked {
   position: absolute;
   /* top: 584px; */
-  top: calc(28.5rem + 52 * ((100vw - 2rem) / 214));
+  /* top: calc(28.5rem + 52 * ((100vw - 2rem) / 214)); */
   /* left: calc(-295vw * 9 / 16); */
-  left: calc(-41.5rem + 96 * ((100vw - 2rem) / 214));
+  /* left: calc(-41.5rem + 96 * ((100vw - 2rem) / 214)); */
   /* width: 200vw; */
-  width: 2000px;
+  /* width: 4000px; */
+  top: calc(40.5rem + 52 * ((100vw - 2rem) / 154));
+  left: calc(-24.5rem + 6 * ((100vw - 2rem) / 214));
+  width: 1000px;
   z-index: -1;
   /* display: none; */
   /* box-shadow: 0px -6.73542px 52.1995px rgba(0, 0, 0, 0.25); */
   /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
   @media screen and (--small) {
-    top: 840px;
+    /* top: 840px; */
     /* top: 890px; */
-    left: -245px;
+    /* left: -245px; */
     /* width: 214%; */
     /* left: calc(-118vw * 9 / 16); */
-    left: -440px;
+    /* left: -440px; */
 
     /* top: 137px; */
-    top: 81px;
-    left: -712px;
+    /* top: 81px;
+    left: -712px; */
+
+    top: 432px;
+    left: -236px;
   }
 
   @media screen and (--medium) {
@@ -110,8 +109,14 @@
     /* top: 487px;
     left: -358px; */
 
-    top: 55px;
+    /* top: 55px;
     left: -592px;
+
+    top: -314px;
+    left: -1575px; */
+
+    top: 409px;
+    left: -116px;
   }
 }
 
@@ -183,7 +188,7 @@
 
 .lineDotLine {
   @media screen and (--small) {
-    height: 12.65rem;
+    height: 11.5rem;
   }
 
   @media screen and (--medium) {
