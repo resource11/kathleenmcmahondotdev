@@ -1,7 +1,7 @@
 {
   "name": "kathleen-mcmahon-dot-dev",
   "private": true,
-  "description": "A 100 day challenge of various GatsbyJS magic",
+  "description": "The digital garden site for Kathleen McMahon",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -90,7 +90,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/resource11/100DaysOfGatsby"
+    "url": "https://github.com/resource11/kathleenmcmahondotdev"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
