@@ -35,7 +35,9 @@ export const Home = ({
 
           <p className={css.homeIntroPara}>
             Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
-            writer. This is the space where I cultivate my interests.{" "}
+            writer.
+            <br />
+            This is the space where I cultivate my interests.{" "}
           </p>
           <LineDot
             extraClasses={{
@@ -62,7 +64,10 @@ export const Home = ({
                   footerContent={
                     <Link
                       aria-label={speak.ctaAria}
-                      extraClasses={{ root: css.cardFooterLink }}
+                      extraClasses={{
+                        root: css.cardFooterLink,
+                        iconSpan: css.cardFooterLinkIcon,
+                      }}
                       icon={faArrowRight}
                       iconAfter={true}
                       size="small"

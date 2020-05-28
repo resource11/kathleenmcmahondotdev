@@ -119,11 +119,11 @@
 .liReset {
   padding-left: 0;
 
-  &::before {
+  /* &::before {
     content: "";
     width: 0;
     margin: 0;
-  }
+  } */
 }
 
 .headingAccentImage {
