@@ -30,7 +30,7 @@ export const Home = ({
     <Layout>
       <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
       <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
-      <div className={css.bodyWrapper}>
+      <article className={css.bodyWrapper}>
         <article className={css.contentWrapper}>
           <header className={css.homeHeader}>
             <h1 className={css.homeH1}>Kathleen McMahon</h1>
@@ -128,7 +128,7 @@ export const Home = ({
             </CTALink>
           </article>
         </article>
-      </div>
+      </article>
     </Layout>
   )
 }

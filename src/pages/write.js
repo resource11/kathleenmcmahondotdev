@@ -30,7 +30,7 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
             thoughts <small>{allMdx.totalCount} Posts</small>
           </h1>
         </header>
-        <div className={css.contentWrapper}>
+        <article className={css.contentWrapper}>
           <p className={css.writeIntroPara}>
             This is a gathering of all my thoughts, "digital garden" style. If
             you haven't heard the term before, check out the this{" "}
@@ -58,7 +58,7 @@ const Write = ({ data: { site, allMdx } }, extraClasses) => {
               </li>
             ))}
           </ul>
-        </div>
+        </article>
       </article>
     </Layout>
   )

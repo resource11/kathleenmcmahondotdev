@@ -43,7 +43,7 @@ const About = ({
         <header>
           <h1 className={css.aboutH1}>What I do</h1>
         </header>
-        <div className={css.contentWrapper}>
+        <article className={css.contentWrapper}>
           <p className={css.aboutIntroPara}>
             So... you want to know more about me? OK. Well, I'm fullstack
             engineer with a design background. In other words, I really enjoy
@@ -112,7 +112,7 @@ const About = ({
           <h2>Contact Me</h2>
           <p>You may also reach me by email</p>
           <ContactForm />
-        </div>
+        </article>
       </article>
     </Layout>
   )

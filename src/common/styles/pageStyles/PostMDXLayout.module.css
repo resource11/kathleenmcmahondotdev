@@ -13,6 +13,7 @@
   }
 }
 
+.postHeader,
 .contentWrapper {
   max-width: var(--measure);
 }

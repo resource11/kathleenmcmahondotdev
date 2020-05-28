@@ -51,7 +51,7 @@ const Speak = ({ extraClasses }) => {
         <header>
           <h1 className={css.speakH1}>Speaking</h1>
         </header>
-        <div className={css.contentWrapper}>
+        <article className={css.contentWrapper}>
           <p className={css.speakIntroPara}>
             I speak about things, using metaphors, and gifs. Lots, and lots of
             gifs.
@@ -149,7 +149,7 @@ const Speak = ({ extraClasses }) => {
               </li>
             ))}
           </ul>
-        </div>
+        </article>
       </article>
     </Layout>
   )
