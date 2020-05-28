@@ -19,17 +19,12 @@
 
 .homeHeader {
   position: relative;
-  /* margin-top: calc(193vw * 9 / 16); */
-  /* margin-top: calc(248vw * 7 / 16); */
 
   @media screen and (--small) {
-    /* margin-top: calc(221vw * 7 / 16); */
     left: 21rem;
   }
   @media screen and (--medium) {
     margin-top: 0;
-    /* left: 28rem;
-    left: 24rem; */
     left: 20rem;
   }
 }
@@ -38,8 +33,7 @@
   margin-top: 0.5rem;
 
   @media screen and (--small) {
-    margin-top: -120px;
-    /* left: 28rem; */
+    margin-top: -7.5rem;
   }
 
   @media screen and (--medium) {
@@ -73,50 +67,19 @@
 
 .recentTalksBgMasked {
   position: absolute;
-  /* top: 584px; */
-  /* top: calc(28.5rem + 52 * ((100vw - 2rem) / 214)); */
-  /* left: calc(-295vw * 9 / 16); */
-  /* left: calc(-41.5rem + 96 * ((100vw - 2rem) / 214)); */
-  /* width: 200vw; */
-  /* width: 4000px; */
-  top: calc(40.5rem + 52 * ((100vw - 2rem) / 154));
-  left: calc(-24.5rem + 6 * ((100vw - 2rem) / 214));
-  width: 1000px;
+  top: calc(37.5rem + 59 * ((100vw - 2rem) / 154));
+  left: calc(-21.5rem + 16 * ((100vw - 2rem) / 214));
+  width: 56.25rem;
   z-index: -1;
-  /* display: none; */
-  /* box-shadow: 0px -6.73542px 52.1995px rgba(0, 0, 0, 0.25); */
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
   @media screen and (--small) {
-    /* top: 840px; */
-    /* top: 890px; */
-    /* left: -245px; */
-    /* width: 214%; */
-    /* left: calc(-118vw * 9 / 16); */
-    /* left: -440px; */
-
-    /* top: 137px; */
-    /* top: 81px;
-    left: -712px; */
-
-    top: 432px;
-    left: -236px;
+    top: 27rem;
+    left: -11.375rem;
   }
 
   @media screen and (--medium) {
-    /* top: 659px;
-    left: -84px; */
-    /* top: 487px;
-    left: -358px; */
-
-    /* top: 55px;
-    left: -592px;
-
-    top: -314px;
-    left: -1575px; */
-
-    top: 409px;
-    left: -116px;
+    top: 25.563rem;
+    left: -3.75rem;
   }
 }
 
@@ -128,14 +91,9 @@
   margin-top: 0;
   max-width: 11ch;
   color: var(--text-reverse);
-
-  /* font-size: clamp(1.5rem, 1.5rem + 2vw, 3.5rem); */
-  /* font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 680)); */
-
   font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 145));
 
   @media screen and (--medium) {
-    /* font-size: 3.375rem; */
     font-size: var(--s4);
   }
 }
@@ -148,7 +106,6 @@
 
   @media screen and (--small) {
     font-size: 1.25rem;
-    /* margin-top: var(--s0); */
     margin-top: 0.25rem;
   }
 
@@ -156,7 +113,6 @@
     position: relative;
     left: 11rem;
     margin-top: 0;
-    /* font-size: 1.25rem; */
   }
 }
 
@@ -269,12 +225,6 @@
 
 .cardListItem {
   padding-left: 0;
-
-  /* &::before {
-    content: "";
-    width: 0;
-    margin: 0;
-  } */
 }
 
 .cardListItem:nth-child(odd) {
@@ -296,14 +246,8 @@
   margin: 0;
   padding: 0.5rem var(--s0);
   text-align: right;
-
   font-size: 1.25rem;
   line-height: 1;
-
-  /* @media screen and (--medium) {
-    font-size: 1.25rem;
-    line-height: 1;
-  } */
 
   &::after {
     content: "";
@@ -353,20 +297,12 @@
   }
 
   @media screen and (--medium) {
-    /* margin-top: var(--s1); */
   }
 }
 
 .postListItem {
   padding-left: 0;
   display: block;
-
-  /* &::before {
-    content: "";
-    width: 0;
-    height: 0;
-    margin: 0;
-  } */
 }
 
 .postListLink {
@@ -380,7 +316,6 @@
   }
 
   @media screen and (--medium) {
-    /* font-size: 2.25rem; */
   }
 }
 
@@ -406,7 +341,6 @@
   margin-left: 0;
   margin-top: 1.5rem;
   padding-left: 0.5rem;
-  /* line-height: 1; */
   font-size: var(--s0);
   color: var(--caribbean-blue-muted-300);
   border-left: 0.25em solid;
@@ -433,30 +367,5 @@
 
   &:hover {
     color: var(--text-reverse);
-  }
-}
-
-.temp {
-  display: none;
-
-  & > h1 {
-    position: absolute;
-    margin-top: 0;
-    top: 665px;
-    max-width: 9ch;
-    color: var(--text-reverse);
-  }
-
-  & > p {
-    position: relative;
-    max-width: 20ch;
-    font-size: 1.125rem;
-    top: 8rem;
-    color: var(--text-reverse);
-
-    /* @media screen and (--small) { */
-    font-size: 1.5rem;
-    margin-top: var(--s0);
-    /* } */
   }
 }
