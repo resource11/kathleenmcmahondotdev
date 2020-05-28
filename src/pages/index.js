@@ -10,6 +10,7 @@ import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/hero-masked.svg"
 import { LineDot } from "../components/LineDot"
 import RecentBgMasked from "../svgs/sm-bot-white-diamond.svg"
+import SVGLineDot from "../svgs/line-dot-flipped-shorter.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
@@ -46,6 +47,7 @@ export const Home = ({
                 lineDotDot: css.lineDotDot,
               }}
             />
+            {/* <img src={SVGLineDot} alt="" className={css.svgLineDot} /> */}
           </header>
           <img
             src={RecentBgMasked}

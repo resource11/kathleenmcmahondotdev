@@ -41,12 +41,12 @@
   margin-top: 0.5rem;
 
   @media screen and (--small) {
-    margin-top: -7.5rem;
+    margin-top: -3.25rem;
   }
 
   @media screen and (--medium) {
     /* margin-top: 10rem; */
-    margin-top: -5.25rem;
+    margin-top: -4.85rem;
     left: 28rem;
   }
 }
@@ -136,7 +136,7 @@
   }
 
   @media screen and (--medium) {
-    left: 156px;
+    left: 10.125rem;
   }
 }
 
@@ -145,27 +145,33 @@
   top: 0;
   left: 3.25rem;
   margin-top: 0.25rem;
+  mix-blend-mode: hard-light;
 
   @media screen and (--medium) {
-    left: 11.25rem;
+    left: 11.5rem;
   }
 }
 
 .lineDotLine {
+  background-color: #64015e;
   @media screen and (--small) {
-    height: 11.5rem;
+    height: 7.25rem;
   }
 
   @media screen and (--medium) {
-    background-color: var(--color-light);
-    height: 5rem;
+    height: 4.55rem;
   }
 }
 
 .lineDotDot {
-  @media screen and (--medium) {
-    background-color: var(--color-light);
-  }
+  background-color: #64015e;
+}
+
+.svgLineDot {
+  position: absolute;
+  border: 1px solid green;
+  width: 3rem;
+  top: 20px;
 }
 
 /* 
