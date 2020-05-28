@@ -22,6 +22,7 @@ const Layout = ({ children, extraClasses }) => {
         <main id="main" className={mainClasses}>
           {children}
           <Link
+            size="small"
             to={"#top"}
             icon={"arrow-up"}
             extraClasses={{ root: css.backToTop }}
