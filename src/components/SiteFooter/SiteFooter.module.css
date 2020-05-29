@@ -42,18 +42,18 @@
     &:not(:last-of-type)::after {
       background: var(--grey-300);
       content: "";
-      bottom: 0.25rem;
+      bottom: 0;
       position: absolute;
       right: 0;
-      top: 0.5rem;
+      top: 0.25rem;
       width: 0.063em;
     }
 
-    &::before {
+    /* &::before {
       content: "";
       width: 0;
       margin: 0;
-    }
+    } */
   }
 
   & .link {

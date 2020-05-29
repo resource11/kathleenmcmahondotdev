@@ -82,8 +82,10 @@
 .cardContentWrapper {
   margin: 0;
 }
+
 .cardFooterWrapper {
   padding: 0;
+  justify-content: flex-end;
 }
 
 .cardFooterLink {
