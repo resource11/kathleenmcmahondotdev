@@ -12,7 +12,6 @@ export const FourOhFourPage = ({ extraClasses }) => {
         <article className={css.cover}>
           <h1 className={css.errorHeader}>
             <span className={css.errorCode}>404</span>
-            {/* <span className={css.errorDescription}>Whoops! Page not found</span> */}
           </h1>
           <div className={css.errorMessage}>
             Whoops! That not the page you want.

@@ -2,7 +2,7 @@
 @import "../lib/mixins.css";
 
 /* 
------- WRAPPERS ------ 
+------ WRAPPERS AND SECTIONING ------ 
 */
 
 .bodyWrapper {
@@ -25,38 +25,15 @@
   /* max-width: var(--measure); */
 }
 
-.homeHeader {
-  position: relative;
-
-  @media screen and (--small) {
-    left: 21rem;
-  }
-  @media screen and (--medium) {
-    margin-top: 0;
-    left: 20rem;
-  }
-}
-
-.recentTalks {
-  margin-top: 0.5rem;
-
-  @media screen and (--small) {
-    margin-top: -3.25rem;
-  }
-
-  @media screen and (--medium) {
-    /* margin-top: 10rem; */
-    margin-top: -4.85rem;
-    left: 28rem;
-  }
-}
-
-.featuredPosts {
-  /* max-width: var(--measure); */
+.purpleRedHR {
+  margin-top: 3rem;
+  border-top: 0.063em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
 }
 
 /* 
------- HERO IMAGE ------
+------ HEROS AND IMAGES ------
 */
 
 .heroImageMasked {
@@ -93,9 +70,73 @@
   }
 }
 
+.lineDotRoot {
+  position: relative;
+  top: 0;
+  left: 3.25rem;
+  margin-top: 0.25rem;
+  mix-blend-mode: hard-light;
+
+  @media screen and (--medium) {
+    left: 11.5rem;
+  }
+}
+
+.lineDotLine {
+  background-color: #64015e;
+  @media screen and (--small) {
+    height: 7.25rem;
+  }
+
+  @media screen and (--medium) {
+    height: 4.55rem;
+  }
+}
+
+.lineDotDot {
+  background-color: #64015e;
+}
+
+.svgLineDot {
+  position: absolute;
+  border: 1px solid green;
+  width: 3rem;
+  top: 20px;
+}
+
 /* 
 ------ HEADINGS and CONTENT ------
 */
+
+.homeHeader {
+  position: relative;
+
+  @media screen and (--small) {
+    left: 21rem;
+  }
+  @media screen and (--medium) {
+    margin-top: 0;
+    left: 20rem;
+  }
+}
+
+.recentTalks {
+  margin-top: 0.5rem;
+
+  @media screen and (--small) {
+    margin-top: -3.25rem;
+  }
+
+  @media screen and (--medium) {
+    /* margin-top: 10rem; */
+    margin-top: -4.85rem;
+    left: 28rem;
+  }
+}
+
+.featuredPosts {
+  /* max-width: var(--measure); */
+}
 
 .homeH1 {
   margin-top: 0;
@@ -139,40 +180,6 @@
   @media screen and (--medium) {
     left: 10.125rem;
   }
-}
-
-.lineDotRoot {
-  position: relative;
-  top: 0;
-  left: 3.25rem;
-  margin-top: 0.25rem;
-  mix-blend-mode: hard-light;
-
-  @media screen and (--medium) {
-    left: 11.5rem;
-  }
-}
-
-.lineDotLine {
-  background-color: #64015e;
-  @media screen and (--small) {
-    height: 7.25rem;
-  }
-
-  @media screen and (--medium) {
-    height: 4.55rem;
-  }
-}
-
-.lineDotDot {
-  background-color: #64015e;
-}
-
-.svgLineDot {
-  position: absolute;
-  border: 1px solid green;
-  width: 3rem;
-  top: 20px;
 }
 
 /* 
@@ -280,15 +287,8 @@
   margin-left: 0.375rem;
 }
 
-.purpleRedHR {
-  margin-top: 3rem;
-  border-top: 0.063em solid;
-  border-image-source: var(--grad-lin-purple-red);
-  border-image-slice: 1;
-}
-
-/*
-  ------ POST STYLES -----
+/* 
+------ POSTS ------
 */
 
 .postUl {
@@ -350,6 +350,10 @@
   @add-mixin font-weight-bold;
   font-size: 90%;
 }
+
+/* 
+------ INTERACTIVE CONTROLS ------
+*/
 
 .ctaLink {
   display: inline-flex;

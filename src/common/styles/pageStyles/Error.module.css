@@ -20,10 +20,6 @@
   @media screen and (--small) {
     max-width: var(--measure);
   }
-
-  @media screen and (--medium) {
-    /* max-width: 50em; */
-  }
 }
 
 .cover {

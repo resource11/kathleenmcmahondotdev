@@ -26,7 +26,11 @@ const About = ({
   const css = useExtraClasses(styles, extraClasses)
 
   const cardListClasses = classnames(css.cardUl, css.stackCardList)
-  const socialListClasses = classnames(css.socialUl, css.stackSocialList)
+  const socialListClasses = classnames(
+    css.socialUl,
+    css.grid,
+    css.stackSocialList
+  )
   const cardListItemClasses = classnames(css.cardListItem, css.liReset)
   const socialListItemClasses = classnames(css.socialListItem, css.liReset)
 

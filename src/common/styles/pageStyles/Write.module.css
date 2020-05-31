@@ -111,7 +111,6 @@
   margin-top: 14%;
   line-height: 1.15;
   color: var(--text-reverse);
-  font-size: calc(0.1vw + 0.1vh + 2.25rem);
   font-size: calc(2.3 * 5vw);
 
   & small {

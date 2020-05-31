@@ -1,23 +1,18 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
+/* 
+------ WRAPPERS AND SECTIONING ------
+*/
+
 .bodyWrapper {
-  /* margin-left: 1.75rem;
-  margin-right: 1.75rem;
-  margin-bottom: 3rem; */
   margin: 0 1.75rem 3rem;
   @media screen and (--small) {
-    /* margin-left: 3rem;
-    margin-right: 3rem; */
     margin: 0 3rem 3rem;
   }
 
   @media screen and (--medium) {
-    /* margin-left: 5.625rem;
-    margin-right: 5.625rem;
-    margin-bottom: 5.625rem; */
     margin: 0 5.625rem 5.625rem;
-    /* max-width: var(--measure); */
     max-width: 50em;
   }
 }
@@ -25,9 +20,14 @@
 .contentWrapper {
   max-width: var(--measure);
 }
-/* .pageMeasure {
-  max-width: 65ch;
-} */
+
+/* 
+------ HEADINGS AND CONTENT ------
+*/
+
+/* 
+------ LISTS ------
+*/
 
 .cardUl {
   position: relative;
@@ -73,12 +73,6 @@
   background-clip: border-box; /* !importanté */
   transition: color 0.2s, background 0.2s, border-color 0.2s;
   transition-timing-function: ease;
-
-  /* &::before {
-    content: "";
-    width: 0;
-    margin: 0;
-  } */
 
   @media screen and (--small) {
     padding: 0.5rem 1rem;
@@ -126,6 +120,7 @@
 
 .speakingH3 {
   font-size: var(--s0);
+  /* font-size: 1.25rem; */
   color: var(--grey-500);
 
   @media screen and (--small) {
@@ -142,7 +137,6 @@
 .headingAccentImage {
   position: absolute;
   top: 3.5rem;
-  /* top: 2.5rem; */
   left: 0;
   width: 100%;
   z-index: -1;
@@ -163,7 +157,6 @@
   margin-top: 20.5%;
   line-height: 1.15;
   color: var(--text-reverse);
-  font-size: calc(0.1vw + 0.1vh + 2.25rem);
   font-size: calc(2.3 * 5vw);
 
   @media screen and (--small) {

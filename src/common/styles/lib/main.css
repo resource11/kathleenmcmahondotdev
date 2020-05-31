@@ -13,9 +13,8 @@
 }
 
 html {
-  /* @add-mixin font-body-normal; */
   font-family: var(--font-standard);
-  font-size: 1rem;
+  font-size: var(--s0);
   line-height: var(--line-height);
   color: var(--color-dark);
   box-sizing: border-box;
@@ -67,23 +66,6 @@ body {
   background-color: var(--color-light);
 }
 
-main {
-  /* margin-left: 1.75rem;
-  margin-right: 1.75rem;
-  margin-bottom: 3rem;
-  @media screen and (--small) {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-
-  @media screen and (--medium) {
-    margin-left: 5.625rem;
-    margin-right: 5.625rem;
-    margin-bottom: 5.625rem;
-    max-width: 50em;
-  } */
-}
-
 /* 
 ------ 
   Block spacing
@@ -108,9 +90,6 @@ main {
 
 main > * + * {
   margin-top: var(--s0);
-  @media screen and (--small) {
-    /* margin-top: var(--s1); */
-  }
 
   @media screen and (--medium) {
     margin-top: var(--s1);
@@ -119,10 +98,6 @@ main > * + * {
 
 article > * + * {
   margin-top: var(--s0);
-
-  @media screen and (--small) {
-    /* margin-top: var(--s1); */
-  }
 
   @media screen and (--medium) {
     margin-top: var(--s1);
@@ -170,14 +145,6 @@ h2,
 .sectionHeader {
   @add-mixin font-section-header;
   margin-top: var(--s2);
-
-  @media screen and (--small) {
-    /* margin-top: var(--s2); */
-  }
-
-  @media screen and (--medium) {
-    /* margin-top: var(--s3); */
-  }
 }
 
 h3,
@@ -185,10 +152,6 @@ h3,
 .sectionTitle {
   @add-mixin font-section-title;
   margin-top: var(--s1);
-
-  @media screen and (--small) {
-    /* margin-top: var(--s1); */
-  }
 
   @media screen and (--medium) {
     margin-top: var(--s2);
@@ -219,10 +182,6 @@ h5,
   @media screen and (--small) {
     margin-top: var(--s1);
   }
-
-  /* @media screen and (--medium) {
-    margin-top: var(--s2);
-  } */
 }
 
 h6,
@@ -230,14 +189,6 @@ h6,
 .attribute {
   @add-mixin font-attribute;
   margin-top: var(--s0);
-
-  /* @media screen and (--small) {
-    margin-top: var(--s1);
-  }
-
-  @media screen and (--medium) {
-    margin-top: var(--s2);
-  } */
 }
 
 hr,
@@ -273,11 +224,7 @@ p,
 .paragraph {
   @add-mixin font-body-normal;
   @media screen and (--small) {
-    font-size: calc(0.1vw + 0.1vh + 1.25rem);
     font-size: 1.25rem;
-  }
-  @media screen and (--medium) {
-    /* font-size: calc(0.1vw + 0.1vh + 1.5rem); */
   }
 }
 
@@ -305,7 +252,6 @@ ol {
   padding-left: var(--s-2);
   font-size: inherit;
   margin-inline-start: 1rem;
-  /* max-width: 80%; */
 
   @media screen and (--small) {
     margin-inline-start: 1.25rem;
@@ -314,7 +260,6 @@ ol {
   @media screen and (--medium) {
     font-size: 1.125rem;
     margin-inline-start: 2.25rem;
-    /* max-width: 75%; */
   }
 
   & ol,
@@ -344,7 +289,6 @@ ul {
   padding-left: var(--s-2);
   font-size: inherit;
   margin-inline-start: 1rem;
-  /* max-width: 80%; */
 
   @media screen and (--small) {
     margin-inline-start: 1.25rem;
@@ -353,7 +297,6 @@ ul {
   @media screen and (--medium) {
     font-size: 1.125rem;
     margin-inline-start: 2.25rem;
-    /* max-width: 75%; */
   }
 
   & ol,
@@ -361,19 +304,7 @@ ul {
     padding-left: var(--s-2);
   }
   & li {
-    /* list-style-type: none; */
     padding-left: 1.25rem;
-
-    /* &::before {
-      @add-mixin font-weight-bold;
-      @add-mixin font-body-large;
-
-      content: "•";
-      color: var(--text);
-      display: inline-block;
-      width: 1.25rem;
-      margin-left: -1.25rem;
-    } */
   }
 }
 
