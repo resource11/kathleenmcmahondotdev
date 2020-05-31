@@ -21,9 +21,85 @@
   max-width: var(--measure);
 }
 
+.purpleRedHR {
+  border-top: 0.063em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
+}
+
+/* 
+------ HEROS AND IMAGES ------
+*/
+
+.headingAccentImage {
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%);
+
+  @media screen and (--small) {
+    top: 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
+  }
+
+  @media screen and (--medium) {
+    clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
+  }
+}
+
 /* 
 ------ HEADINGS AND CONTENT ------
 */
+
+.speakingH3 {
+  font-size: var(--s0);
+  color: var(--grey-500);
+
+  @media screen and (--small) {
+    font-size: 1.325rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: var(--s1);
+  }
+}
+
+.speakH1 {
+  margin-top: 23.5%;
+  margin-top: 20.5%;
+  line-height: 1.15;
+  color: var(--text-reverse);
+  font-size: calc(2.3 * 5vw);
+
+  @media screen and (--small) {
+    margin-top: 3.25rem;
+    margin-top: 15.5%;
+    font-size: calc(1.8 * 5vw);
+  }
+
+  @media screen and (--medium) {
+    margin-top: 6rem;
+    margin-top: 5rem;
+    font-size: calc(1.8 * 5vw);
+    font-size: 5rem;
+  }
+}
+
+.speakIntroPara {
+  margin-top: calc(50vw * (9 / 16));
+  font-size: 1.25rem;
+  max-width: 28ch;
+
+  @media screen and (--small) {
+    margin-top: 9.5rem;
+  }
+}
+
+.speakSecondPara {
+  max-width: 28ch;
+}
 
 /* 
 ------ LISTS ------
@@ -90,19 +166,20 @@
 .cardLinkRoot {
   @add-mixin font-weight-bold;
   line-height: 1.2;
+  font-size: 1.125rem;
 
   @media screen and (--small) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.75rem;
   }
 }
 
 .upcomingCardLinkRoot {
   @add-mixin font-weight-bold;
   line-height: 1.2;
-
-  @media screen and (--small) {
-    font-size: 1.25rem;
-  }
 }
 
 .pastCardLinkRoot {
@@ -116,77 +193,12 @@
   margin-top: var(--s-3);
   line-height: 1.2;
   color: var(--caribbean-blue-muted-100);
-}
-
-.speakingH3 {
-  font-size: var(--s0);
-  /* font-size: 1.25rem; */
-  color: var(--grey-500);
 
   @media screen and (--small) {
-    font-size: var(--s1);
-  }
-}
-
-.purpleRedHR {
-  border-top: 0.063em solid;
-  border-image-source: var(--grad-lin-purple-red);
-  border-image-slice: 1;
-}
-
-.headingAccentImage {
-  position: absolute;
-  top: 3.5rem;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%);
-
-  @media screen and (--small) {
-    top: 1.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
+    font-size: 1.125rem;
   }
 
   @media screen and (--medium) {
-    clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
+    font-size: 1.25rem;
   }
-}
-
-.speakH1 {
-  margin-top: 23.5%;
-  margin-top: 20.5%;
-  line-height: 1.15;
-  color: var(--text-reverse);
-  font-size: calc(2.3 * 5vw);
-
-  @media screen and (--small) {
-    margin-top: 3.25rem;
-    margin-top: 15.5%;
-    font-size: calc(1.8 * 5vw);
-  }
-
-  @media screen and (--medium) {
-    margin-top: 6rem;
-    margin-top: 5rem;
-    font-size: calc(1.8 * 5vw);
-    font-size: 5rem;
-  }
-}
-
-.speakIntroPara {
-  margin-top: calc(50vw * (9 / 16));
-  font-size: 1.25rem;
-  max-width: 28ch;
-
-  @media screen and (--small) {
-    margin-top: 9.5rem;
-  }
-}
-
-.speakSecondPara {
-  max-width: 28ch;
-}
-
-.clipPath {
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 73% 100%, 0 50%);
 }
