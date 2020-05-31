@@ -22,7 +22,6 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
       <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
       <article className={css.bodyWrapper}>
         <img src={BlogHeroAccent} alt="" className={css.blogHeroAccent} />
-        {/* <article className={css.contentWrapper}> */}
         <header className={css.postHeader}>
           <h1 className={css.postH1}>{mdx.frontmatter.title}</h1>
         </header>

@@ -1,23 +1,18 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
+/* 
+------ WRAPPERS AND SECTIONING ------ 
+*/
+
 .bodyWrapper {
-  /* margin-left: 1.75rem;
-  margin-right: 1.75rem;
-  margin-bottom: 3rem; */
   margin: 0 1.75rem 3rem;
   @media screen and (--small) {
-    /* margin-left: 3rem;
-    margin-right: 3rem; */
     margin: 0 3rem 3rem;
   }
 
   @media screen and (--medium) {
-    /* margin-left: 5.625rem;
-    margin-right: 5.625rem;
-    margin-bottom: 5.625rem; */
     margin: 0 5.625rem 5.625rem;
-    /* max-width: var(--measure); */
     max-width: 50em;
   }
 }
@@ -32,63 +27,9 @@
   border-image-slice: 1;
 }
 
-/*
-  ------ POST STYLES -----
+/* 
+------ HEROS AND IMAGES ------
 */
-
-.postUl {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  margin-inline-start: 0;
-  max-width: 100%;
-  padding-left: 0;
-}
-
-.stackPostList > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.stackPostList > * + * {
-  margin-top: 2.75rem;
-  @media screen and (--small) {
-  }
-}
-
-.postListItem {
-  /* margin: 0; */
-  padding-left: 0;
-
-  /* &::before {
-    content: "";
-    width: 0;
-    margin: 0;
-  } */
-}
-
-.postListLink {
-  @add-mixin font-weight-bold;
-  display: block;
-  font-size: var(--s1);
-  line-height: 1.15;
-}
-
-.postListPublishedDate {
-  display: inline-block;
-  margin-top: var(--s-2);
-  font-size: 0.875rem;
-  color: var(--grey-500);
-}
-
-.postListPublished {
-  @add-mixin font-weight-bold;
-  font-size: 90%;
-}
-
-.postListExcerpt {
-  margin-top: var(--s-1);
-}
 
 .headingAccentImage {
   position: absolute;
@@ -106,6 +47,10 @@
     clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
   }
 }
+
+/* 
+------ HEADINGS and CONTENT ------
+*/
 
 .writeH1 {
   margin-top: 14%;
@@ -152,6 +97,61 @@
   }
 }
 
-.clipPath {
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 73% 100%, 0 50%);
+/*
+  ------ LISTS -----
+*/
+
+.postUl {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 0;
+  max-width: 100%;
+  padding-left: 0;
+}
+
+.stackPostList > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackPostList > * + * {
+  margin-top: 2.75rem;
+  @media screen and (--small) {
+  }
+}
+
+.postListItem {
+  padding-left: 0;
+}
+
+.postListLink {
+  @add-mixin font-weight-bold;
+  display: block;
+  font-size: var(--s1);
+  line-height: 1.15;
+
+  @media screen and (--small) {
+    font-size: 1.75rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: var(--s2);
+  }
+}
+
+.postListPublishedDate {
+  display: inline-block;
+  margin-top: var(--s-2);
+  font-size: 0.875rem;
+  color: var(--grey-500);
+}
+
+.postListPublished {
+  @add-mixin font-weight-bold;
+  font-size: 90%;
+}
+
+.postListExcerpt {
+  margin-top: var(--s-1);
 }
