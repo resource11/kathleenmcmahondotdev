@@ -45,15 +45,29 @@
 }
 
 .socialUl {
-  max-width: 25ch;
+  /* max-width: 25ch; */
   @media screen and (--small) {
-    max-width: 38ch;
-    column-count: 2;
+    /* max-width: 38ch; */
+    /* column-width: 38ch; */
+    /* column-count: 2; */
+    height: 300px;
+    columns: 2;
+    column-fill: balance;
   }
   @media screen and (--medium) {
     /* max-width: 50em; */
-    column-count: 2;
+    /* column-count: 2; */
   }
+}
+
+.liReset {
+  padding-left: 0;
+
+  /* &::before {
+    content: "";
+    width: 0;
+    margin: 0;
+  } */
 }
 
 .stackCardList > * {
@@ -107,8 +121,18 @@
 }
 
 .socialListItem {
+  break-inside: avoid;
   @media screen and (--small) {
     font-size: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+  }
+}
+
+.socialListItem:first-of-type {
+  @media screen and (--small) {
+    margin-top: var(--s-1);
   }
 
   @media screen and (--medium) {
@@ -135,16 +159,6 @@
   border-top: 0.063em solid;
   border-image-source: var(--grad-lin-red-orange);
   border-image-slice: 1;
-}
-
-.liReset {
-  padding-left: 0;
-
-  /* &::before {
-    content: "";
-    width: 0;
-    margin: 0;
-  } */
 }
 
 .headingAccentImage {

@@ -106,7 +106,6 @@ ul {
   }
 
   @media screen and (--medium) {
-    font-size: 1.125rem;
     margin-inline-start: 2.25rem;
     max-width: 75%;
   }
@@ -116,18 +115,6 @@ ul {
     padding-left: var(--s-2);
   }
   & li {
-    /* list-style-type: none; */
     padding-left: 1.25rem;
-
-    /* &::before {
-      @add-mixin font-weight-bold;
-      @add-mixin font-body-large;
-
-      content: "•";
-      color: var(--text);
-      display: inline-block;
-      width: 1.25rem;
-      margin-left: -1.25rem;
-    } */
   }
 }

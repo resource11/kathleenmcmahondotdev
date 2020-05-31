@@ -9,6 +9,7 @@
 }
 
 .main {
+  @add-mixin font-body-normal;
   flex: 1 0 auto;
 }
 

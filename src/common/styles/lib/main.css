@@ -13,8 +13,9 @@
 }
 
 html {
-  @add-mixin font-body-normal;
+  /* @add-mixin font-body-normal; */
   font-family: var(--font-standard);
+  font-size: 1rem;
   line-height: var(--line-height);
   color: var(--color-dark);
   box-sizing: border-box;
