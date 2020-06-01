@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
+import Img from "gatsby-image"
 import styles from "./Card.module.css"
 
 export const Card = ({
@@ -21,9 +22,7 @@ export const Card = ({
     <article className={cardCSS}>
       {image && (
         <header className={css.cardHeader}>
-          <figure className={css.cardImageFigure}>
-            <img src={image} alt={imageAlt} className={css.cardImage} />
-          </figure>
+          <Img fluid={image} alt={imageAlt} loading="eager" />
         </header>
       )}
       <div className={css.cardContentWrapper}>

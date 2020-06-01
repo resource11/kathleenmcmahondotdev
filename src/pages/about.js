@@ -15,6 +15,8 @@ import styles from "../common/styles/pageStyles/About.module.css"
 const About = ({
   data: {
     dataYaml: { portfolioList },
+    image05,
+    image06,
     site: {
       siteMetadata: { title },
     },
@@ -25,14 +27,37 @@ const About = ({
 
   const css = useExtraClasses(styles, extraClasses)
 
-  const cardListClasses = classnames(css.cardUl, css.stackCardList)
+  const cardListClasses = classnames(
+    css.cardUl,
+    css.cardGrid,
+    css.stackCardList
+  )
   const socialListClasses = classnames(
     css.socialUl,
-    css.grid,
+    css.socialGrid,
     css.stackSocialList
   )
   const cardListItemClasses = classnames(css.cardListItem, css.liReset)
   const socialListItemClasses = classnames(css.socialListItem, css.liReset)
+
+  const imageArray = [
+    {
+      relativePath: image05.childImageSharp.fluid,
+      name: "images/about/iso-km-me.png",
+    },
+    {
+      relativePath: image06.childImageSharp.fluid,
+      name: "images/about/iso-r11.png",
+    },
+  ]
+
+  const fullPortfolioList = portfolioList.map((port, index) => {
+    return imageArray.forEach((node) => {
+      if (port.image === node.name) {
+        return Object.assign(port, { relativePath: node.relativePath })
+      }
+    })
+  })
 
   return (
     <Layout>
@@ -94,7 +119,7 @@ const About = ({
                       {port.cta}
                     </Link>
                   }
-                  image={port.image}
+                  image={port.relativePath}
                   imageAlt={port.name}
                 />
               </li>
@@ -129,6 +154,16 @@ const About = ({
 
 export default About
 
+export const cardImage = graphql`
+  fragment cardImage on File {
+    childImageSharp {
+      fluid(srcSetBreakpoints: [200, 340, 520, 890]) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
 export const aboutQuery = graphql`
   query {
     dataYaml {
@@ -139,6 +174,12 @@ export const aboutQuery = graphql`
         link
         name
       }
+    }
+    image05: file(relativePath: { eq: "images/about/iso-km-me.png" }) {
+      ...cardImage
+    }
+    image06: file(relativePath: { eq: "images/about/iso-r11.png" }) {
+      ...cardImage
     }
     site {
       siteMetadata {

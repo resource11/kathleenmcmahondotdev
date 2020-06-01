@@ -122,6 +122,10 @@
   }
 }
 
+.cardUl > * {
+  flex: 1 1 30ch;
+}
+
 .liReset {
   padding-left: 0;
 }
@@ -137,6 +141,23 @@
   @media screen and (--small) {
     margin-top: 0;
     margin-left: 1rem;
+  }
+}
+
+@supports (width: min(250px, 100%)) {
+  .cardGrid {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+
+    @media screen and (--small) {
+      grid-gap: var(--s0);
+    }
+  }
+
+  .stackCardList > * + * {
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -181,7 +202,7 @@
 }
 
 @supports (display: grid) {
-  .grid {
+  .socialGrid {
     display: grid;
     grid-gap: 0.5rem;
     grid-template-columns: repeat(auto-fit, minmax(6rem, 9rem));

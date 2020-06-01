@@ -17,6 +17,10 @@ export const Home = ({
   data: {
     allMdx,
     dataYaml: { recentSpeaking },
+    image01,
+    image02,
+    image03,
+    image04,
     site: {
       siteMetadata: { title },
     },
@@ -28,9 +32,36 @@ export const Home = ({
   const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
   const postListClasses = classnames(css.postUl, css.stackPostList)
 
+  const imageArray = [
+    {
+      relativePath: image01.childImageSharp.fluid,
+      name: "images/home/smoothly-inclusive-documentation-with-mdx.jpg",
+    },
+    {
+      relativePath: image02.childImageSharp.fluid,
+      name: "images/home/accessibility-favored-react-components.jpg",
+    },
+    {
+      relativePath: image03.childImageSharp.fluid,
+      name: "images/home/thats-my-jamstack.jpg",
+    },
+    {
+      relativePath: image04.childImageSharp.fluid,
+      name: "images/home/design-systems-and-mdx-in-gatsby.jpg",
+    },
+  ]
+
+  const fullRecentSpeaking = recentSpeaking.map((recent, index) => {
+    return imageArray.forEach((node) => {
+      if (recent.image === node.name) {
+        return Object.assign(recent, { relativePath: node.relativePath })
+      }
+    })
+  })
+
   return (
     <Layout>
-      <SEO title={`Kathleen McMahon | About`} />
+      <SEO title={title} />
       <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
       <article className={css.bodyWrapper}>
         <article className={css.contentWrapper}>
@@ -84,7 +115,7 @@ export const Home = ({
                         {speak.cta}
                       </Link>
                     }
-                    image={speak.image}
+                    image={speak.relativePath}
                     imageAlt={speak.name}
                   />
                 </li>
@@ -137,6 +168,16 @@ export const Home = ({
 
 export default Home
 
+export const cardImage = graphql`
+  fragment cardImage on File {
+    childImageSharp {
+      fluid(srcSetBreakpoints: [200, 340, 520, 890]) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
 export const indexQuery = graphql`
   query {
     allMdx(filter: { frontmatter: { isFeatured: { eq: true } } }) {
@@ -168,6 +209,28 @@ export const indexQuery = graphql`
         link
         name
       }
+    }
+    image01: file(
+      relativePath: {
+        eq: "images/home/smoothly-inclusive-documentation-with-mdx.jpg"
+      }
+    ) {
+      ...cardImage
+    }
+    image02: file(
+      relativePath: {
+        eq: "images/home/accessibility-favored-react-components.jpg"
+      }
+    ) {
+      ...cardImage
+    }
+    image03: file(relativePath: { eq: "images/home/thats-my-jamstack.jpg" }) {
+      ...cardImage
+    }
+    image04: file(
+      relativePath: { eq: "images/home/design-systems-and-mdx-in-gatsby.jpg" }
+    ) {
+      ...cardImage
     }
     site {
       siteMetadata {
