@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import classnames from "classnames"
 import { useExtraClasses } from "../utils/useExtraClasses"
 import data from "../../data"
@@ -12,15 +11,6 @@ import styles from "../common/styles/pageStyles/Speak.module.css"
 const Speak = ({ extraClasses }) => {
   const css = useExtraClasses(styles, extraClasses)
   const { pastTalks, upcomingTalks } = data
-  const dataQuery = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   const talks2018 = pastTalks.filter((talk) => talk.eventYear === "2018")
   const talks2019 = pastTalks.filter((talk) => talk.eventYear === "2019")
@@ -40,7 +30,7 @@ const Speak = ({ extraClasses }) => {
   console.log(`talks 2018 are  ${talks2018}`)
   return (
     <Layout>
-      <SEO title={`${dataQuery.site.siteMetadata.title} | Speaking`} />
+      <SEO title={`Kathleen McMahon | Speaking`} />
       <article className={css.bodyWrapper}>
         <img
           src={HeadingAccentImage}

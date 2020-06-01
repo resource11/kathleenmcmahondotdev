@@ -10,7 +10,6 @@ import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/hero-masked.svg"
 import { LineDot } from "../components/LineDot"
 import RecentBgMasked from "../svgs/sm-bot-white-diamond.svg"
-import SVGLineDot from "../svgs/line-dot-flipped-shorter.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
@@ -18,6 +17,9 @@ export const Home = ({
   data: {
     allMdx,
     dataYaml: { recentSpeaking },
+    site: {
+      siteMetadata: { title },
+    },
   },
   extraClasses,
 }) => {
@@ -28,7 +30,7 @@ export const Home = ({
 
   return (
     <Layout>
-      <SEO title={`Kathleen McMahon | Software Engineer,Designer, Speaker`} />
+      <SEO title={`Kathleen McMahon | About`} />
       <img src={HeadingAccentImage} alt="" className={css.heroImageMasked} />
       <article className={css.bodyWrapper}>
         <article className={css.contentWrapper}>
@@ -165,6 +167,11 @@ export const indexQuery = graphql`
         image
         link
         name
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }

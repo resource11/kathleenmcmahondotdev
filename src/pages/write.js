@@ -2,20 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import classnames from "classnames"
 import { useExtraClasses } from "../utils/useExtraClasses"
-import data from "../../data"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/angled-purp-violet-xs.svg"
 import styles from "../common/styles/pageStyles/Write.module.css"
 
-const Write = ({ data: { site, allMdx } }, extraClasses) => {
+const Write = ({ data: { allMdx } }, extraClasses) => {
   const css = useExtraClasses(styles, extraClasses)
 
   const postListClasses = classnames(css.postUl, css.stackPostList)
   return (
     <Layout>
-      <SEO title={`${site.siteMetadata.title} | Write`} />
+      <SEO title={`Kathleen McMahon | Writing`} />
       <article className={css.bodyWrapper}>
         <img
           src={HeadingAccentImage}
@@ -68,11 +67,6 @@ export default Write
 
 export const writeQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMdx(
       filter: { frontmatter: { isPublished: { ne: false } } }
       sort: { fields: frontmatter___date, order: DESC }

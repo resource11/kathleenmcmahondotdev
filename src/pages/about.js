@@ -14,10 +14,10 @@ import styles from "../common/styles/pageStyles/About.module.css"
 
 const About = ({
   data: {
+    dataYaml: { portfolioList },
     site: {
       siteMetadata: { title },
     },
-    dataYaml: { portfolioList },
   },
   extraClasses,
 }) => {
@@ -131,11 +131,6 @@ export default About
 
 export const aboutQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     dataYaml {
       portfolioList {
         cta
@@ -143,6 +138,11 @@ export const aboutQuery = graphql`
         image
         link
         name
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
