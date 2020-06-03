@@ -7,18 +7,17 @@ description: "Documenting all the ways you can use GatsbyJS through a set of cha
 tags:
   - 100 Days of Gatsby
   - GatsbyJS
-isPublished: false
-isHidden: true
+isPublished: true
+isHidden: false
 ---
 
-If you've been following my 100 Days of Gatsby series of blog posts, you may have noticed that I have been completing them in a slower cadence than the release of the official prompts. Technically, I'm still on track considering it was never specified that the 100 Days of Gatsby should be completed... 100 days in a row! Anyhow, now that I have an [unexpected amount of free time](/write/well-that-was-unexpected/), more of my focus will be dedicated to working through these prompts.
+If you've been following my 100 Days of Gatsby series of blog posts, you may have noticed that I have been completing them in a slower cadence than the release of the official prompts. Technically, I'm still on track considering it was never specified that the 100 Days of Gatsby should be completed... **100 days in a row**! Anyhow, now that I have an [unexpected amount of free time](/write/well-that-was-unexpected/), more of my focus has been dedicated to working through these prompts.
 
 ## Learn How to Use Images with Gatsby
 
-I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the link in Challenge resources part 1.
-https://www.gatsbyjs.org/docs/working-with-images-in-markdown/
+I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the [Working with Images in Markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/) link found in the [Challenge 03 resources section](https://www.gatsbyjs.org/blog/100days/gatsby-image/#challenge-resources) of the prompt.
 
-After installing plugins related to gatsby image, `npm` warned me in the CLI about of security vulnerabilities (I love this new feature of NPM by the way). Running the `npm audit` command gave me a list of all the vulnerabilities and which commands to run to fix them. I especially loved the flag for `mini mist` that showed the `—depth 8` because it allowed me to target the **exact** place where that package is in the dependency tree. I fixed the errors, and did a clean install.
+After installing plugins related to gatsby image, `npm` warned me in the Command Line Interface (CLI) that my project had security vulnerabilities. I love this new feature of NPM by the way. Running the `npm audit` command gave me a list of all the vulnerabilities and which commands to run to fix them. I especially loved the flag for `mini mist` that showed the `—depth 8` because it allowed me to target the **exact** place where that package is in the dependency tree. I fixed the errors, and did a clean install.
 
 When I got to this error in the CLI:
 
@@ -28,17 +27,17 @@ The fragment “GatsbyImageSharpFluid” does not exist
 
 I realized that I had to start following instructions from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead, and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page to get a better sense of things before diving deeper.
 
-This helped me understand what Webpack does with the images at the bundle stage. Is this specific for Gatsby sites, though? Or is this what Webpack does at the bundle stage for all sites, as long as you specify the output path?
+This helped me understand what [Webpack](https://webpack.js.org/) does with the images at the bundle stage. Is this specific for Gatsby sites, though? Or is this what Webpack does at the bundle stage for all sites, as long as you specify the output path?
 
-Ahhh, I read this and it helped:
+Ahhh, I read this in the docs, and it helped:
 
-> At build time Webpack moves the images into the public folder and provide the correct path)
+> At build time Webpack moves the images into the public folder and provides the correct path.
 
-I then went through the part 1 steps, made pages with images for the Markdown pages. Got a bit stuck when trying to do the same with MDX (needed to use the MDX provider to wrap Layout). I want to see if you can do both Markdown and MDX queries at the same time in a page, so I tested that out and it works.
+Next, I went through the part 1 steps, and made pages with images for the Markdown pages. I got a bit stuck when trying to do the same with [MDX](https://mdxjs.com/) files, and remembered that you need to use the `MDXProvider` to wrap your `Layout` when using MDX. I want to see if you can do both Markdown and MDX queries at the same time in a page, so I tested that out and it works.
 
-While reading the [pages and layouts recipes](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically) docs section, the `createPage()` method uses the `path` value to create the route, component to use the template, the `context` value to set the context object. In the [provided docs example](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#directions-3) the `createPages` method uses the `forEach()` method to loop through the `dogData` array of objects to provide the `path` `component` and `context` value for each `dog`. The `dog` object is destructured as an object to pass in the context { dog }, which has to do with pageContext (find link on that)
+While reading the [pages and layouts recipes](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically) docs section, I remembered the `createPage()` method uses the `path` value to create the route, the `component` value to use the template, and the `context` value to set the context object. In the [provided docs example](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#directions-3) the `createPages` method used the `forEach()` method to loop through the `dogData` array of objects to provide the `path` `component` and `context` value for each `dog`.
 
-Then, in your template, you pass in the destructured doc into `pageContext`. So…
+Then, in your template, you could access the `dog` value in your page component by destructuring the `pageContext` object like so:
 
 ```jsx
 import React from "react"
@@ -50,11 +49,10 @@ export default ({ pageContext: { dog } }) => (
 )
 ```
 
-I abandoned the MDX portion for now and will stick with Markdown and will continue with challenges
+I abandoned the MDX portion in this challenges and chose to stick with using Markdown for the short term.
 
-While working on the https://www.gatsbyjs.org/docs/working-with-images-in-markdown/#inline-images-with-gatsby-remark-images section, make sure you pass in linkImagesToOriginal: false
-into the webpack config, otherwise your image will be linked
+### Things I learned:
 
-the rest of the challenge was straightforward.
+I learned that while [working with images in Markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/#inline-images-with-gatsby-remark-images), I had to make sure you pass in [linkImagesToOriginal: false](https://www.gatsbyjs.org/packages/gatsby-remark-images/?=remar#options) into the `gatsby-config` settings, otherwise the image would be served up at full size.
 
-Later on I plan on learning [how to use the Cloudinary image service](https://www.gatsbyjs.org/docs/using-cloudinary-image-service/) to host my images
+The rest of the challenge was straightforward. Later on I planned on learning [how to use the Cloudinary image service](https://www.gatsbyjs.org/docs/using-cloudinary-image-service/) to host my images, but for now... on to [100 Days of Gatsby — Challenge 4](/write/100-days-of-gatsby-challenge-04/).

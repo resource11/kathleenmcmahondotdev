@@ -31,15 +31,15 @@ The purpose of this challenge is to encourage users to learn all the wonderful w
 
 ### Tutorial Parts 1 and 2
 
-I started following the steps in the 8-part tutorial and **Tutorial parts 0 through 02** were straightforward to follow. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
+I started by following the steps in the 8-part tutorial and **Tutorial parts 0 through 02** were straightforward. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
 
 ### Tutorial Part 3
 
-During **Tutorial Part 03** I got a bit stuck when I reached **step 4** when I received an error in the [Terminal](https://support.apple.com/guide/terminal/welcome/mac). The [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) (CLI) alerted me that my app could not find React after running `gatsby develop`. What I noticed — after some digging — was that by following the instructions **literally**, I ended up using both [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/) package managers at once. I then chose to use `npm` only going forward in this challenge.
+During **Tutorial Part 03** I got a bit stuck when I reached **step 4** and received an error in the [Terminal](https://support.apple.com/guide/terminal/welcome/mac). The [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) (CLI) alerted me that my app could not find React after running `gatsby develop`. What I noticed — after some digging — was that by following the instructions **literally**, I ended up using both [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/) package managers at once. I then chose to use `npm` only going forward in this challenge.
 
-Mixing package managers in the same app can cause issues, and not knowing this can trip up users who are new to `npm` and `yarn` in general. Armed with this knowledge, I decided to open a [Github issue](https://guides.github.com/features/issues/) on the Gatsby codebase, capturing a summary of what was going on and the motivation of why this would be a great addition to the docs.
+Mixing package managers in the same app can cause issues, and not knowing this can trip up users who are new to `npm` and `yarn` in general. Armed with this knowledge, I decided to open a [GitHub issue](https://guides.github.com/features/issues/) on the Gatsby codebase, capturing a summary of what was going on and the motivation of why this would be a great addition to the docs.
 
-I got a bit busy with my other life commitments before submitting an **official** pull request (PR), so the documentation was updated by the Gatsby team and the issue closed before I got a chance to make a submission. If you're curious, here is the [Github issue I submitted to Gatsby](https://github.com/gatsbyjs/gatsby/issues/20378#event-3187870756).
+I got a bit busy with my other life commitments before submitting an **official** pull request (PR), so the documentation was updated by the Gatsby team and the issue closed before I got a chance to make a submission. If you're curious, here is the [GitHub issue I submitted to Gatsby](https://github.com/gatsbyjs/gatsby/issues/20378#event-3187870756).
 
 ### Tutorial Part 4
 
@@ -107,11 +107,11 @@ Running a [Google Lighthouse](https://developers.google.com/web/tools/lighthouse
 
 ### Tutorial Part 8
 
-Yep! Looks like React helmet is used for injecting `lang` and `title` attribute information, along with the [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) plugin.
+Yep! Looks like React helmet was used for injecting `lang` and `title` attribute information, along with the [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) plugin.
 
-I’m pretty new to [Progressive Web Apps](https://developers.google.com/web/ilt/pwa) (PWAs), creating manifests and offline support other than cursory knowledge. I’ll dig into the links in the docs to learn more.
+I’ve been pretty new to [Progressive Web Apps](https://developers.google.com/web/ilt/pwa) (PWAs), creating manifests and offline support other than cursory knowledge. I’ll dig into the links in the docs to learn more later.
 
-**Aside:** Ooo, that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks really nice. I had to learn how to adjust settings for `title` prop and `description` prop.
+**Aside:** Ooo, that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks really nice. I had to learn how to adjust settings for `title` prop and `description` prop to fit my needs.
 
 > **Question:** does the SEO component need to be added to every component?
 
