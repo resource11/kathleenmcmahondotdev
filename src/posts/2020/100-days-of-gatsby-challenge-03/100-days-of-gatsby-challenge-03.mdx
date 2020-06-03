@@ -7,17 +7,18 @@ description: "Documenting all the ways you can use GatsbyJS through a set of cha
 tags:
   - 100 Days of Gatsby
   - GatsbyJS
+  - gatsby-image
 isPublished: true
 isHidden: false
 ---
 
 If you've been following my 100 Days of Gatsby series of blog posts, you may have noticed that I have been completing them in a slower cadence than the release of the official prompts. Technically, I'm still on track considering it was never specified that the 100 Days of Gatsby should be completed... **100 days in a row**! Anyhow, now that I have an [unexpected amount of free time](/write/well-that-was-unexpected/), more of my focus has been dedicated to working through these prompts.
 
-## Learn How to Use Images with Gatsby
+## Learning How to Use Images with Gatsby
 
 I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the [Working with Images in Markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/) link found in the [Challenge 03 resources section](https://www.gatsbyjs.org/blog/100days/gatsby-image/#challenge-resources) of the prompt.
 
-After installing plugins related to gatsby image, `npm` warned me in the Command Line Interface (CLI) that my project had security vulnerabilities. I love this new feature of NPM by the way. Running the `npm audit` command gave me a list of all the vulnerabilities and which commands to run to fix them. I especially loved the flag for `mini mist` that showed the `—depth 8` because it allowed me to target the **exact** place where that package is in the dependency tree. I fixed the errors, and did a clean install.
+After installing plugins related to gatsby image, `npm` warned me in the Command Line Interface (CLI) that my project had security vulnerabilities. I love this new feature of NPM by the way. Running the `npm audit` command gave me a list of all the vulnerabilities and which commands to run to fix them. I especially loved the flag for `minimist` that showed the `—depth 8` because it allowed me to target the **exact** place where that package is in the dependency tree. I fixed the errors, and did a clean install.
 
 When I got to this error in the CLI:
 
@@ -25,7 +26,7 @@ When I got to this error in the CLI:
 The fragment “GatsbyImageSharpFluid” does not exist
 ```
 
-I realized that I had to start following instructions from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead, and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page to get a better sense of things before diving deeper.
+I realized that I had to start following instructions from the [Using gatsby-image](https://www.gatsbyjs.org/docs/using-gatsby-image/) page instead — and then decided to start from the top of the section altogether at the [Images, Files & Video](https://www.gatsbyjs.org/docs/images-and-files/) page — to get a better sense of things before diving deeper.
 
 This helped me understand what [Webpack](https://webpack.js.org/) does with the images at the bundle stage. Is this specific for Gatsby sites, though? Or is this what Webpack does at the bundle stage for all sites, as long as you specify the output path?
 
@@ -33,11 +34,11 @@ Ahhh, I read this in the docs, and it helped:
 
 > At build time Webpack moves the images into the public folder and provides the correct path.
 
-Next, I went through the part 1 steps, and made pages with images for the Markdown pages. I got a bit stuck when trying to do the same with [MDX](https://mdxjs.com/) files, and remembered that you need to use the `MDXProvider` to wrap your `Layout` when using MDX. I want to see if you can do both Markdown and MDX queries at the same time in a page, so I tested that out and it works.
+Next, I went through the part 1 steps, and made pages with images for the Markdown pages. I got a bit stuck when trying to do the same with [MDX](https://mdxjs.com/) files, and remembered that you need to use the `MDXProvider` to wrap your `Layout` component when using MDX. I wanted to see if you can do both Markdown and MDX queries at the same time in a page, so I tested that out and it worked.
 
-While reading the [pages and layouts recipes](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically) docs section, I remembered the `createPage()` method uses the `path` value to create the route, the `component` value to use the template, and the `context` value to set the context object. In the [provided docs example](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#directions-3) the `createPages` method used the `forEach()` method to loop through the `dogData` array of objects to provide the `path` `component` and `context` value for each `dog`.
+While reading the [pages and layouts recipes](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#creating-pages-automatically) docs section, I remembered that the `createPage()` method uses the `path` value to create the route, the `component` value to set the component you want to use as a template, and the `context` value to set the context object in your `gatsby-node` file. In the [provided docs example](https://www.gatsbyjs.org/docs/recipes/pages-layouts/#directions-3) the `createPages` method used the `forEach()` method to loop through the `dogData` array of objects to provide the `path` `component` and `context` value for each `dog`.
 
-Then, in your template, you could access the `dog` value in your page component by destructuring the `pageContext` object like so:
+Once that was set up, you could then access the `dog` value in your page component by destructuring the `pageContext` object like so:
 
 ```jsx
 import React from "react"

@@ -12,18 +12,20 @@ isHidden: false
 isFeatured: true
 ---
 
-New year, new challenge! Last year was a very busy time that included traveling to many interesting places speaking about accessible React component libraries and design systems. After I ended the year with a bit of rest, I decided to start this year by continuing to dig deeper into one of my favorite new topics: [JAMstack](https://jamstack.org/), and [MDX](https://mdxjs.com/).
+New year, new challenge! Last year was a very busy time that included traveling to many interesting places speaking about accessible React component libraries and design systems. After I ended the year with a bit of rest, I decided to start this year by continuing to dig deeper into some of my favorite new topics: [JAMstack](https://jamstack.org/), and [MDX](https://mdxjs.com/).
 
 ---
 
 ## Why I'm doing this challenge
 
-Currently, we're using Gatsby for documenting our design system, so I'm pretty familiar with how to get started and using Gatsby for projects. Lo and behold, I noticed the [100 Days of Gatsby Challenge](https://twitter.com/gatsbyjs/status/1208068118335119364) come across my Twitter feed. Oh yes, this is something I can have some fun with!
+Currently, we're using Gatsby for documenting our design system, so I'm pretty familiar with how to get started and using Gatsby for projects. Lo and behold, I noticed the [100 Days of Gatsby Challenge](https://twitter.com/gatsbyjs/status/1208068118335119364) come across my Twitter feed. Oh yes, this is a project where I can dig in and have some fun!
 
 The purpose of this challenge is to encourage users to learn all the wonderful ways you can create a site using [Gatsby](https://www.gatsbyjs.org/) through a curated set of weekly prompts beginning on January 1st. My first time using Gatsby was in the spring of 2019, so I chose to do this challenge for a few reasons:
 
-1. The learning curve seemed a bit steep when I jumped into the [Gatsby.js tutorials](https://www.gatsbyjs.org/tutorial/) last year, so I wanted to follow the prompts this year to compare the progress of what I learned, determine if there was anything still unclear in the documentation, and capture it to provide feedback and make some contributions back to the code base.
+1. The learning curve seemed a bit steep when I jumped into the [Gatsby.js tutorials](https://www.gatsbyjs.org/tutorial/) last year, so I wanted to follow the prompts this year to compare the progress of what I learned, determine if there was anything still unclear in the documentation, and capture it to provide feedback and make some contributions back to the code base when I'm done.
 2. I have a site or two that I want to refactor to use a more modern stack, and this is the perfect opportunity to use what I learn to do a refactor, and write about it. Well more than two sites need a refactor — I like making sites, OK?! Don't judge.
+
+So here we go... the beginning a series of posts that document what I learned from these set of challenges.
 
 ---
 
@@ -31,11 +33,11 @@ The purpose of this challenge is to encourage users to learn all the wonderful w
 
 ### Tutorial Parts 1 and 2
 
-I started by following the steps in the 8-part tutorial and **Tutorial parts 0 through 02** were straightforward. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
+I started by following the steps in the 8-part tutorial and **Tutorial parts 0 through 2** were straightforward. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
 
 ### Tutorial Part 3
 
-During **Tutorial Part 03** I got a bit stuck when I reached **step 4** and received an error in the [Terminal](https://support.apple.com/guide/terminal/welcome/mac). The [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) (CLI) alerted me that my app could not find React after running `gatsby develop`. What I noticed — after some digging — was that by following the instructions **literally**, I ended up using both [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/) package managers at once. I then chose to use `npm` only going forward in this challenge.
+During **Tutorial Part 3** I got a bit stuck when I reached **step 4** and received an error in the [Terminal](https://support.apple.com/guide/terminal/welcome/mac). The [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) (CLI) alerted me that my app could not find React after running `gatsby develop`. What I noticed — after some digging — was that by following the instructions **literally**, I ended up using both [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/) package managers at once. I then chose to use `npm` only going forward in this challenge.
 
 Mixing package managers in the same app can cause issues, and not knowing this can trip up users who are new to `npm` and `yarn` in general. Armed with this knowledge, I decided to open a [GitHub issue](https://guides.github.com/features/issues/) on the Gatsby codebase, capturing a summary of what was going on and the motivation of why this would be a great addition to the docs.
 
@@ -75,11 +77,11 @@ I noticed some of the key commands didn't work for me in the [Introducing Graphi
 
 Pressing `Ctrl + Space` (or use `Shift + Space` as an alternate keyboard shortcut) [in the query area] to bring up the autocomplete window didn't work, yet using `Ctrl + Enter` to run the GraphQL query worked for me, though.
 
-The instructions on using GraphiQL improve as Tutorial Part 5 progresses.
+The instructions on using GraphiQL improved as this part of the tutorial progressed.
 
 ### Tutorial Part 6
 
-The question I had during this section: **Frontmatter**... what is it? You see it used in Markdown and MDX files, I needed to learn more about it.
+The question I had during this section: **Frontmatter**... what is it? I've seen it used in Markdown and MDX files, I needed to learn more about it.
 
 ### Tutorial Part 7
 
@@ -101,7 +103,7 @@ Hooray! Looks like gatsby cleans site cache automatically now. Or does it? I see
 
 I took a quick break from the tutorial to focus on improving the semantic structure and accessibility of the site. The links weren’t presenting visually as links, so I fixed that and added proper headings and landmarks to the site structure.
 
-Running a [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audit revealed a missing `lang` attribute for the `<html>` element and a missing `title` attribute for the page `<head>` element. I started digging into codebase to see if there was a template to modify, or if I should use [`react-helmet`](https://www.npmjs.com/package/react-helmet). I then decided to continue to lesson 8 to see if this was addressed.
+Running a [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audit revealed a missing `lang` attribute for the `<html>` element and a missing `title` attribute for the page `<head>` element. I started digging into codebase to see if there was a template to modify, or if I should use [`react-helmet`](https://www.npmjs.com/package/react-helmet). I then decided to continue to **Tutorial part 8** to see if this was addressed.
 
 ---
 
@@ -111,7 +113,7 @@ Yep! Looks like React helmet was used for injecting `lang` and `title` attribute
 
 I’ve been pretty new to [Progressive Web Apps](https://developers.google.com/web/ilt/pwa) (PWAs), creating manifests and offline support other than cursory knowledge. I’ll dig into the links in the docs to learn more later.
 
-**Aside:** Ooo, that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks really nice. I had to learn how to adjust settings for `title` prop and `description` prop to fit my needs.
+**Aside:** Ooo... that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks **really** nice. I had to learn how to adjust settings for `title` prop and `description` prop, though, to fit my needs.
 
 > **Question:** does the SEO component need to be added to every component?
 

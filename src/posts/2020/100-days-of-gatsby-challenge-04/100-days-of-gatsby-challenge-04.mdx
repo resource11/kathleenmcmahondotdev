@@ -1,53 +1,47 @@
 ---
 slug: 100-days-of-gatsby-challenge-04
 date: 2020-04-10
-title: "100 Days of Gatsby — Challenge 4"
+title: "Adding Formik React Components to Your Gatsby Site"
 author: "Kathleen McMahon"
 description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
 tags:
   - 100 Days of Gatsby
   - GatsbyJS
-isPublished: false
+  - Formik
+isPublished: true
 isHidden: true
 ---
 
-Intro paragraph.
+Now that I've had a chance to play with using the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin to my site for imaging handling, it's time for the next challenge. This one includes creating a contact form and [adding third-party React components to my site](https://www.gatsbyjs.org/blog/100days/react-component), using [Formik components](https://jaredpalmer.com/formik). Creating forms is not my favorite thing to do, so I wanted to know if Formik would make things less painful. Here's what I learned.
 
-## Challenge 4 - Add Third-Party React Components to Your Gatsby Site
+## Using Formik to build a contact form
 
-https://www.gatsbyjs.org/blog/100days/react-component
+I started off by reading [Formik's getting started page](https://jaredpalmer.com/formik/docs/overview) and then followed the Formik tutorial through all the steps. I then learned that the site I spun up on [Gatsby Cloud](https://www.gatsbyjs.com/) — which uses [Netlify for CDN hosting](https://docs.netlify.com/) — can **also** use [Netlify Forms](https://docs.netlify.com/forms/setup/) (yay!). I got a bit lost finding/remembering the site settings, and figuring out that my site was connected to my [Netlify team](https://docs.netlify.com/accounts-and-billing/team-management/).
 
-learned that the site I spun up on Gatsby cloud (which uses Netlify for CDN hosting) can use the netlify Forms (yay!). I got a bit lost finding/remembering the site settings, and figuring out that my site was connected to my netlify team
+Formik forms don’t use the `method=“post”` in their examples at all, but [Gatsby's Sending Form Data](https://www.gatsbyjs.org/docs/building-a-contact-form/#sending-form-data) documentation showed that attribute in their example for using Netlify’s form handling feature.
 
-Formik forms don’t use the method=“post” in their examples at all, but Gatsby show that in their example for using Netlify’s form handling feature. https://www.gatsbyjs.org/docs/building-a-contact-form/
+According to [MDN's documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) on forms, this is what is written about the [form method attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formmethod):
 
-according to MDN though…
+> This value is overridden by `formmethod` attributes on `<button>`, `<input type="submit">`, or `<input type="image">` elements.
 
-form method
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
-This value is overridden by formmethod attributes on `<button>`, `<input type="submit">`, or `<input type="image">` elements.
-can be overridden by using the formmethod attribute
-on a button or input of type submit,
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formmethod
+This was confusing to me and my questions were:
 
-So… should we use Formik’s Form component here at all? What happens if you use the Form component here and use a button with just type of submit without using the formmethod? The formik Form component gave me really odd rendering errors, so I used a standard form JSX element instead.
+1. Should we use Formik’s Form component here at all?
+1. What happens if you use the Form component here and use a `button` with a `type="submit"` without using the `formmethod` attribute?
 
-Looks like you can use your own form component and combine with Formik, like how [Paul Scanlon](https://paulie.dev/) did with [gatsby-theme-gatstats](https://gatsby-theme-gatstats.netlify.com/). The Form doesn’t didn’t have a clear example of a handleSubmit function. I didn’t even need to use a handleSubmit function at all. Once I added a URL to the action to load a success page after the form submission, everything seemed to work.
+Using Formik's `<Form>` component gave me really odd rendering errors, so I decided to use a standard form JSX element instead, ditched the `method` on the form, and made sure my `Button` component's `type` attribute was set to `submit`.
 
-https://raw.githubusercontent.com/PaulieScanlon/gatsby-theme-gatstats/master/demo/src/pages/contact.mdx
+After digging around some other projects to see if anyone else was using `Formik` in their forms, I discovered that you can indeed use your own form component and combine with Formik. For example, [Paul Scanlon](https://paulie.dev/) did so with [gatsby-theme-gatstats](https://gatsby-theme-gatstats.netlify.com/) in his `<NetlifyForm />` component. His [contact form demo](https://github.com/PaulieScanlon/gatsby-theme-gatstats/blob/master/demo/src/pages/contact.mdx) didn’t have a clear example of a `handleSubmit` function, other than passing through the prop from the `<Formik>` component. I wondered if I needed to create a `handleSubmit` function at all. Once I added a URL to the action to load a success page after the form submission, everything seemed to work. Or did it?
 
-So far, this challenge took the longest because of the ‘fun’ of forms
+So far, this challenge took me the longest because of the ‘fun’ of forms. Anyhow, I still have this odd warning when using the `setTimeout()` in the `<Formik>` component's `onSubmit` `fetch` method:
 
-FFS
-
-still have this odd warning when using the setTimeout() in the fetch Promise
-
+```bash
 index.js:2177 Warning: React instrumentation encountered an error: TypeError: Converting circular structure to JSON
 --> starting at object with constructor 'Object'
 | property '\_context' -> object with constructor 'Object'
 --- property 'Provider' closes the circle
+```
 
-This example by [Derek Spaulding](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/) was helpful in exposing that you can indeed pass through netlify props to the formik Form component
-…
-OK. The form now works on the kathleenmcmahon.dev site, with the site I’m deploying directly to Netlify though Github. The site that’s deployed manually through Gatsby Cloud somehow doesn’t talk to the Netlify form action properly for some reason. Will figure out later and read up more about the ins/outs of using Gatsby Cloud as a CI service and how it relates to Netlify forms and/or functions
-https://joshwcomeau.com/gatsby/netlify-functions-and-gatsby-cloud/
+I kept on searching for more `Formik` examples and found this one by [Derek Spaulding](https://www.derekaspaulding.com/blog/simple-contact-form-with-gatsby-formik-and-netlify/). This example was useful in showing that you can indeed pass through Netlify props to the Formik `<Form>` component.
+
+Sweet. My form now works on my [kathleenmcmahon.dev](https://kathleenmcmahon.dev) site — the site I’m deploying directly to Netlify though Github. [My 100 Days of Gatsby Challenges site](https://kathleenmcmahon.netlify.app) that’s deployed manually through Gatsby Cloud somehow doesn’t talk to the Netlify form action properly for some reason. I will figure out later and read up more about the ins/outs of using Gatsby Cloud as a CI service and how it relates to Netlify forms and/or functions by reading [Josh Comeau's post on the subject](https://joshwcomeau.com/gatsby/netlify-functions-and-gatsby-cloud/). Now... onward to [100 Days of Gatsby — Challenge 5](/write/100-days-of-gatsby-challenge-05/).

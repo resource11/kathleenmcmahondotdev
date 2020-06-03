@@ -68,7 +68,9 @@ export default Write
 export const writeQuery = graphql`
   query {
     allMdx(
-      filter: { frontmatter: { isPublished: { ne: false } } }
+      filter: {
+        frontmatter: { isHidden: { eq: false }, isPublished: { eq: true } }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
