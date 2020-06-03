@@ -111,6 +111,61 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edges) => {
+                return Object.assign({}, edges.node.frontmatter, {
+                  description: edges.node.excerpt,
+                  date: edges.node.frontmatter.date,
+                  author: edges.node.frontmatter.author,
+                  url: `${site.siteMetadata.siteUrl}${edges.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}${edges.node.fields.slug}`,
+                  categories: edges.node.frontmatter.tags,
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(filter: {frontmatter: {isHidden: {eq: false}, isPublished: {eq: true}}}, sort: {order: DESC, fields: frontmatter___date}) {
+                  edges {
+                    node {
+                      frontmatter {
+                        title
+                        tags
+                        author
+                        date(formatString: "DD MMMM, YYYY")
+                      }
+                      excerpt
+                      fields {
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: `Kathleen McMahon | Engineer - Designer - Speaker`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-cloudinary`,
       options: {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
