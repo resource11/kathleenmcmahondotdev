@@ -29,47 +29,23 @@ The purpose of this challenge is to encourage users to learn all the wonderful w
 
 ## Challenge 1: Create a Gatsby Blog from Scratch
 
-I started following the steps in the 8-part Gatsby.js tutorial and **Tutorial parts 0 through 02** were straightforward to follow. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
+### Tutorial Parts 1 and 2
 
-During **Tutorial Part 03** I got a bit stuck when I reached **step 4** where I received an error in the [apple Terminal](https://support.apple.com/guide/terminal/welcome/mac) where the [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) alerted me that my app could not find react after running `gatsby develop`. What I realized after some digging was that by following the instructions literally, that I was mixing usage of [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/), and that was causing issues.
+I started following the steps in the 8-part tutorial and **Tutorial parts 0 through 02** were straightforward to follow. One thing I did to smooth out my workflow at this point was to update my [Visual Studio Code](https://code.visualstudio.com/) `files: AutoSavesetting` setting to `onFocusChange` so my work would be automatically saved when I moved to work on another window. I also made sure my formatting setting was set to `Format on Save` so the [Prettier](https://prettier.io/) extension I have installed was formatting my code properly.
 
-This can trip up users who are new to `npm` and `yarn`, so I chose to change my package manager and use `npm` only going forward in this challenge. I then opened a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) on the Gatsby codebase, capturing a summary of what was going on and the motivation of why I wanted to make a contribution to the docs.
+### Tutorial Part 3
 
-I got a bit busy, so the documentation was updated before I completed my submission. If you're curious to what I captured, here it is:
+During **Tutorial Part 03** I got a bit stuck when I reached **step 4** when I received an error in the [Terminal](https://support.apple.com/guide/terminal/welcome/mac). The [command line interface](https://en.wikipedia.org/wiki/Command-line_interface) (CLI) alerted me that my app could not find React after running `gatsby develop`. What I noticed — after some digging — was that by following the instructions **literally**, I ended up using both [`npm`](https://www.npmjs.com/) and [`yarn`](https://yarnpkg.com/) package managers at once. I then chose to use `npm` only going forward in this challenge.
 
-### Docs PR Summary
+Mixing package managers in the same app can cause issues, and not knowing this can trip up users who are new to `npm` and `yarn` in general. Armed with this knowledge, I decided to open a [Github issue](https://guides.github.com/features/issues/) on the Gatsby codebase, capturing a summary of what was going on and the motivation of why this would be a great addition to the docs.
 
-Hello Gatsby core team! I think users working through the Gatsby tutorials will benefit from guidance on choosing `npm` as their default package manager to select on first run of `gatsby new` when starting to learn Gatsby. In addition, pointing to the page on Gatsby CLI commands will be helpful. This missing piece of info should reduce issues that occur when a user works through Tutorial Part 3 and is required to install dependencies in a project for the first time.
-
-I'm happy to make updates to the documentation if you wish.
-
-Some recommended topics to cover:
-
-- [How to change your default package manager for your next project](https://www.gatsbyjs.org/docs/gatsby-cli/#how-to-change-your-default-package-manager-for-your-next-project)
-
-#### Docs PR Motivation
-
-Users who are brand new to using npm and/or yarn will benefit greatly from this info, here's why:
-
-While working through the Gatsby Tutorials, I ran into an issue in Tutorial Part 3 where running `gatsby develop` in the CLI at step 4 of the [Install and configure gatsby-plugin-typography step](https://www.gatsbyjs.org/tutorial/part-three/#-install-and-configure-gatsby-plugin-typography), and threw the following error:
-
-`Error: Cannot find module 'react'`
-
-After checking the `package.json` file dependencies I ran `yarn` in the cli, and then `gatsby develop`. The app loaded just fine after that.
-
-I reviewed all the tutorial steps to determine what possibly may have caused the error, and I remembered one thing: when I generated a Gastby project for the first time, I selected `yarn` as my default package manager (in anticipation to working with theming and yarn workspaces later in the week).
-
-As I was following the tutorial steps, I realized I was using `npm` rather than `yarn` to install the typography dependencies. I'm not fully familiar with the issues that could happen (if any) by using `yarn` as your default package manager, generating gatsby projects, and then using `npm` to install dependencies in the project.
-
-However. Considering the tutorial steps are indicating we should be using `npm` to install dependencies, it seems it makes sense to guide brand new users to select `npm` as their default package manager during the first run of `gatsby new`, yes?
+I got a bit busy with my other life commitments before submitting an **official** pull request (PR), so the documentation was updated by the Gatsby team and the issue closed before I got a chance to make a submission. If you're curious, here is the [Github issue I submitted to Gatsby](https://github.com/gatsbyjs/gatsby/issues/20378#event-3187870756).
 
 ### Tutorial Part 4
 
-During this part of the tutorial, I notice my VSCode linter complaining about the syntax I was leveraging in my code from the [your first GraphQL query](https://www.gatsbyjs.org/tutorial/part-four/#your-first-graphql-query) section, yet the code was still working. I wondered What IDE setting will fix this? What fixed the error for me was [changing the language of the selected file](https://code.visualstudio.com/docs/languages/overview#_changing-the-language-for-the-selected-file) from `JavaScript React` to `GraphQL` and then back to `Javascript React`. Once I did that, all syntax errors disappeared. The rest of the tutorial went smoothly.
+During this part of the tutorial, I noticed my VS Code linter complaining about the syntax I was leveraging in my code from the [your first GraphQL query](https://www.gatsbyjs.org/tutorial/part-four/#your-first-graphql-query) section, yet the code was still working. I wondered which IDE setting would fix this and started fiddling around with my settings. Ultimately, [changing the language of the selected file](https://code.visualstudio.com/docs/languages/overview#_changing-the-language-for-the-selected-file) from `JavaScript React` to `GraphQL` and then back to `Javascript React` did the trick, and all syntax errors disappeared. The rest of Tutorial Part 4 went smoothly.
 
-and work
-
-**Aside:** when digging into to docs for the createPages API and the createPages action, the Pokémon examples for can be confusing for… anyone who didn’t grow up playing Pokémon.
+**Aside:** When digging into to docs code examples demonstrating how the `createPages API` and the `createPages action` work:
 
 ```jsx
 export default ({ pageContext: { pokemon } }) => (
@@ -91,6 +67,8 @@ export default ({ pageContext: { pokemon } }) => (
 )
 ```
 
+Those Pokémon examples for mayyyyyy be confusing for… anyone who didn’t grow up playing Pokémon. Possibly changing the example to a less cultural reference may benefit a wider user base.
+
 ### Tutorial Part 5
 
 I noticed some of the key commands didn't work for me in the [Introducing GraphiQL](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql) and [Source Plugins](https://www.gatsbyjs.org/tutorial/part-five/#source-plugins) page sections:
@@ -101,7 +79,7 @@ The instructions on using GraphiQL improve as Tutorial Part 5 progresses.
 
 ### Tutorial Part 6
 
-The question I had during this section: **Frontmatter**... what is it? You see it used in Markdown and MDX files, I need to learn more about it.
+The question I had during this section: **Frontmatter**... what is it? You see it used in Markdown and MDX files, I needed to learn more about it.
 
 ### Tutorial Part 7
 
@@ -115,7 +93,7 @@ After modifying the `gatsby-node.js` file and running `gatsby develop` again, I 
 info: One or more of your plugins have changed since the last time you ran Gatsby. As a precaution, we're deleting your site's cache to ensure there's no stale data.
 ```
 
-Hooray! Looks like gatsby cleans site cache automatically now? Or does it? I seem to have to still run `gatsby clean` whenever I make changes to `gatsby-config.js` `gatsby-browser.js` or `gatsby-node.js`.
+Hooray! Looks like gatsby cleans site cache automatically now. Or does it? I seem to have to still run `gatsby clean` whenever I make changes to `gatsby-config.js` `gatsby-browser.js` or `gatsby-node.js`.
 
 ---
 
@@ -129,13 +107,11 @@ Running a [Google Lighthouse](https://developers.google.com/web/tools/lighthouse
 
 ### Tutorial Part 8
 
-Yep! Looks like we’re using React helmet for injecting `lang` and `title` attribute information, along with the [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) plugin.
+Yep! Looks like React helmet is used for injecting `lang` and `title` attribute information, along with the [`gatsby-plugin-react-helmet`](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) plugin.
 
 I’m pretty new to [Progressive Web Apps](https://developers.google.com/web/ilt/pwa) (PWAs), creating manifests and offline support other than cursory knowledge. I’ll dig into the links in the docs to learn more.
 
-**Aside:**
-
-Ooo, that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks really nice. I had to learn how to adjust settings for `title` prop and `description` prop.
+**Aside:** Ooo, that `SEO` component config in the [Add Page Metadata](https://www.gatsbyjs.org/tutorial/part-eight/#add-page-metadata) section looks really nice. I had to learn how to adjust settings for `title` prop and `description` prop.
 
 > **Question:** does the SEO component need to be added to every component?
 
