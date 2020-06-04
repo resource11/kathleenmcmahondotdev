@@ -13,6 +13,8 @@ isHidden: false
 
 Making apps accessible to all users is something I aim for whenever I do any design or engineering, so this particular [100 Days of Gatsby](https://twitter.com/gatsbyjs/status/1208068118335119364) challenge is near and dear to my heart. I completed these steps during [Challenge 1](/write/100-days-of-gatsby-challenge-01), however, because the site is more expanded, I did a re-audit to make sure nothing broke in the process.
 
+---
+
 ## Re-auditing my site:
 
 Once I started re-auditng the site for accessibility, I noticed that the form `<labels>` were not being recognized as properly with their respective `<inputs>` anymore, so I made sure that the `id` attribute was clearly added to each input. The component was relying on using spreaded props before this. The `<iframe>` embeds were missing the `title` attribute which provides descriptive information for screen readers, so I added those in.
@@ -23,7 +25,9 @@ Once all those accessibility issues were solved, I chose to focus on getting end
 
 I decided to tackle setting up [Cypress CI GitHub action](https://github.com/cypress-io/github-action) in my [kathleenmcmahon.dev](https://kathleenmcmahon.dev) site… later.
 
-## What I learned from setting up unit and end-to-end testing:
+---
+
+## Setting up unit and end-to-end testing:
 
 While I was setting up my unit testing config, I had to remember to refer to the `config` file's code snippet repeatedly when referencing the [creating a configuration file for Jest section](https://www.gatsbyjs.org/docs/unit-testing/#2-creating-a-configuration-file-for-jest) documentation.
 
@@ -41,7 +45,9 @@ When adding both Jest and Cypress support into the app, if you named your Cypres
 
 Another way I could have avoided this issue was to add `cypress` as one of the items to the [exclude/ignore files from Jest coverage](https://codewithhugo.com/jest-exclude-coverage/) statement in the `jest.config.js` `testPathIgnorePatterns` array https://codewithhugo.com/jest-exclude-coverage/
 
-### Items to tackle later
+---
+
+## Items to tackle later
 
 I’d love to try out testing components that use GraphQL in [Storybook](https://storybook.js.org/), because I really enjoy all the features Storybook provided when I used it for the O'Reilly Design System component testing. Also, I’m planning to look into using [Cloudinary](https://cloudinary.com/) to host my images.
 

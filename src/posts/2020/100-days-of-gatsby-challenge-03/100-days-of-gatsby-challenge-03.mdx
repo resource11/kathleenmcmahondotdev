@@ -14,6 +14,8 @@ isHidden: false
 
 If you've been following my 100 Days of Gatsby series of blog posts, you may have noticed that I have been completing them in a slower cadence than the release of the official prompts. Technically, I'm still on track considering it was never specified that the 100 Days of Gatsby should be completed... **100 days in a row**! Anyhow, now that I have an [unexpected amount of free time](/write/well-that-was-unexpected/), more of my focus has been dedicated to working through these prompts.
 
+---
+
 ## Learning How to Use Images with Gatsby
 
 I was pretty excited to learn how to use the [gatsby-image](https://www.gatsbyjs.org/blog/100days/gatsby-image) plugin, and started the challenge by following the [Working with Images in Markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/) link found in the [Challenge 03 resources section](https://www.gatsbyjs.org/blog/100days/gatsby-image/#challenge-resources) of the prompt.
@@ -52,7 +54,9 @@ export default ({ pageContext: { dog } }) => (
 
 I abandoned the MDX portion in this challenges and chose to stick with using Markdown for the short term.
 
-### Things I learned:
+---
+
+## Things I learned:
 
 I learned that while [working with images in Markdown](https://www.gatsbyjs.org/docs/working-with-images-in-markdown/#inline-images-with-gatsby-remark-images), I had to make sure you pass in [linkImagesToOriginal: false](https://www.gatsbyjs.org/packages/gatsby-remark-images/?=remar#options) into the `gatsby-config` settings, otherwise the image would be served up at full size.
 
