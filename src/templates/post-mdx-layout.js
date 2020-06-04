@@ -24,12 +24,16 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
         <img src={BlogHeroAccent} alt="" className={css.blogHeroAccent} />
         <header className={css.postHeader}>
           <h1 className={css.postH1}>{mdx.frontmatter.title}</h1>
+          <small className={css.publishedDateReadTime}>
+            <span className={css.published}>Published:</span>{" "}
+            {mdx.frontmatter.date} | Reading time:{" "}
+            {Math.round(mdx.fields.readingTime.minutes)} minutes
+          </small>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
         <article className={css.contentWrapper}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </article>
-        {/* </article> */}
       </article>
     </Layout>
   )
@@ -93,12 +97,14 @@ export const contentQuery = graphql`
       id
       body
       excerpt
-      timeToRead
       wordCount {
         words
       }
       fields {
         slug
+        readingTime {
+          minutes
+        }
       }
       frontmatter {
         title

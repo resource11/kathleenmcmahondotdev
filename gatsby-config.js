@@ -16,7 +16,8 @@ module.exports = {
     description: `A software engineer, product designer, and internationally-known conference speaker with a passion for making inclusive and accessible experiences.`,
     url: "https://kathleenmcmahon.dev", // No trailing slash allowed!
     siteUrl: `https://kathleenmcmahon.dev`,
-    image: "/static/social-sharing-card.png", // Path to your image you placed in the 'static' folder
+    image:
+      "https://res.cloudinary.com/kathleenmcmahon/image/upload/w_auto,q_auto/v1590693720/kathleenmcmahon-dot-dev/social-sharing-card.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@resource11",
   },
   plugins: [
@@ -30,6 +31,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-catch-links`,
+    `gatsby-remark-reading-time`,
     {
       resolve: "gatsby-plugin-postcss",
       options: {

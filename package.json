@@ -44,6 +44,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-autolink-headers": "^2.3.0",
     "gatsby-remark-images": "^3.2.1",
+    "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-cloudinary": "^0.1.13",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-cloudinary": "^0.3.3",

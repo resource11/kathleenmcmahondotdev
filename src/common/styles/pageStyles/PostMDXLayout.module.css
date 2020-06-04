@@ -1,6 +1,10 @@
 @import "../lib/variables.css";
 @import "../lib/mixins.css";
 
+/* 
+------ WRAPPERS AND SECTIONING ------ 
+*/
+
 .bodyWrapper {
   margin: 0 1.75rem 3rem;
   @media screen and (--small) {
@@ -18,7 +22,25 @@
 
 .contentWrapper {
   max-width: var(--measure);
+
+  & p:first-child {
+    font-size: 1.25rem;
+
+    @media screen and (--small) {
+      font-size: var(--s1);
+      margin-top: var(--s1);
+    }
+
+    @media screen and (--medium) {
+      font-size: 1.75rem;
+      margin-top: var(--s2);
+    }
+  }
 }
+
+/* 
+------ HEROS AND IMAGES ------
+*/
 
 .blogHeroAccent {
   position: absolute;
@@ -41,6 +63,10 @@
   }
 }
 
+/* 
+------ HEADINGS and CONTENT ------
+*/
+
 .postH1 {
   margin-top: 5.5rem;
 
@@ -51,6 +77,22 @@
   @media screen and (--medium) {
     margin-top: 8rem;
   }
+}
+
+.publishedDateReadTime {
+  display: inline-block;
+  margin-top: var(--s-2);
+  font-size: 0.875rem;
+  color: var(--grey-500);
+
+  @media screen and (--small) {
+    font-size: var(--s0);
+  }
+}
+
+.published {
+  @add-mixin font-weight-bold;
+  font-size: 90%;
 }
 
 /*
