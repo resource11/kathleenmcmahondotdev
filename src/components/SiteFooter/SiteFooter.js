@@ -16,14 +16,28 @@ export const SiteFooter = ({ footerNav }) => {
               aria-label={nav.ariaLabel ? nav.ariaLabel : null}
               className={css.link}
             >
-              <FontAwesomeIcon
-                icon={["fab", nav.icon]}
-                className={css.footerIcon}
-              />
+              {nav.icon && (
+                <FontAwesomeIcon
+                  icon={["fab", nav.icon]}
+                  className={css.footerIcon}
+                />
+              )}
               {nav.name}
             </a>
           </li>
         ))}
+        <li key="gatsby" className={css.footerNavLi}>
+          Built with{" "}
+          <a href="https://gatsbyjs.org" className={css.link}>
+            Gatsby
+          </a>
+        </li>
+        <li key="netlify" className={css.footerNavLi}>
+          Hosted by{" "}
+          <a href="https://netlify.com" className={css.link}>
+            Netlify
+          </a>
+        </li>
       </ul>
       <small>copyright 2020 - present Kathleen McMahon</small>
     </footer>

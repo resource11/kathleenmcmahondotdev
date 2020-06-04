@@ -36,6 +36,21 @@
       margin-top: var(--s2);
     }
   }
+
+  & blockquote > p:first-child,
+  & blockquote > p {
+    font-size: 1.125rem;
+
+    @media screen and (--small) {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+
+    @media screen and (--medium) {
+      font-size: var(--s1);
+      margin-top: 0;
+    }
+  }
 }
 
 /* 
