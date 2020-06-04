@@ -26,8 +26,8 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
           <h1 className={css.postH1}>{mdx.frontmatter.title}</h1>
           <small className={css.publishedDateReadTime}>
             <span className={css.published}>Published:</span>{" "}
-            {mdx.frontmatter.date} | Reading time:{" "}
-            {Math.round(mdx.fields.readingTime.minutes)} minutes
+            {mdx.frontmatter.date} |{" "}
+            {Math.round(mdx.fields.readingTime.minutes)} min read
           </small>
         </header>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
