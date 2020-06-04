@@ -52,16 +52,16 @@ const About = ({
   ]
 
   const fullPortfolioList = portfolioList.map((port, index) => {
-    let tempArr = []
+    // let tempArr = []
     imageArray.forEach((node) => {
       if (port.image === node.name) {
-        let updatedNode = Object.assign(port, {
+        return Object.assign(port, {
           relativePath: node.relativePath,
         })
-        tempArr.push(updatedNode)
+        // tempArr.push(updatedNode)
       }
     })
-    return tempArr
+    // return tempArr
   })
 
   return (
@@ -105,7 +105,7 @@ const About = ({
             consulting business:
           </p>
           <ul className={cardListClasses} role="list">
-            {fullPortfolioList.map((port) => (
+            {portfolioList.map((port) => (
               <li key={port.id} className={cardListItemClasses}>
                 <Card
                   extraClasses={{

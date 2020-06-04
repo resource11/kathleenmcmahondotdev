@@ -52,16 +52,17 @@ export const Home = ({
   ]
 
   const fullRecentSpeaking = recentSpeaking.map((recent) => {
-    let tempArr = []
+    // let tempArr = []
     imageArray.forEach((node) => {
       if (recent.image === node.name) {
-        let updatedNode = Object.assign(recent, {
+        return Object.assign(recent, {
           relativePath: node.relativePath,
         })
-        tempArr.push(updatedNode)
+        // tempArr.push(updatedNode)
       }
     })
-    return tempArr
+
+    // /console.log(JSON.stringify(tempArr, null, 2))/ return tempArr
   })
 
   return (
@@ -98,7 +99,7 @@ export const Home = ({
               podcasts, streams
             </h2>
             <ul className={cardListClasses} role="list">
-              {fullRecentSpeaking.map((speak) => (
+              {recentSpeaking.map((speak) => (
                 <li key={speak.id} className={css.cardListItem}>
                   <Card
                     extraClasses={{
