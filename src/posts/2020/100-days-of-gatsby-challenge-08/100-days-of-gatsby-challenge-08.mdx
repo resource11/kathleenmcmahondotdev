@@ -1,51 +1,48 @@
 ---
 slug: 100-days-of-gatsby-challenge-08
 date: 2020-04-18
-title: "100 Days of Gatsby — Challenge 8"
+title: "Accessible Forms and Images in Gatsby"
 author: "Kathleen McMahon"
 description: "Documenting all the ways you can use GatsbyJS through a set of challenges."
 tags:
   - 100 Days of Gatsby
   - GatsbyJS
-isPublished: false
-isHidden: true
+isPublished: true
+isHidden: false
 ---
 
-Intro paragraph.
+Making apps accessible to all users is something I aim for whenever I do any design or engineering, so this particular [100 Days of Gatsby](https://twitter.com/gatsbyjs/status/1208068118335119364) challenge is near and dear to my heart. I completed these steps during [Challenge 1](/write/100-days-of-gatsby-challenge-01), however, because the site is more expanded, I did a re-audit to make sure nothing broke in the process.
 
-## Challenge 8: Make Your Forms and Images Accessible to Everyone
+## Re-auditing my site:
 
-I completed these steps during [Challenge 1](), however, because the site is more expanded, I did a re-audit
+Once I started re-auditng the site for accessibility, I noticed that the form `<labels>` were not being recognized as properly with their respective `<inputs>` anymore, so I made sure that the `id` attribute was clearly added to each input. The component was relying on using spreaded props before this. The `<iframe>` embeds were missing the `title` attribute, so I added those in.
 
-re-auditing the site:
-Once I started re-auditng the site for a11y, I noticed that the form labels were not being recognized as associated with the labels anymore, so I made sure that the id attribute was clearly added to each input (it was relying on the spreaded props before this). The iframe embeds were missing the title attribute, so I added those in.
+I also noticed that any of the [MDX files that used a default export](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) in the document would fail the accessibility audit, because they would not use the default layout defined in my `gatsby-config` file. The default layout file I used contained the `<SEO>` component I created, which injected a `lang` attribute into the `<html>` element and a page `title` attribute in the `<head>` element. Importing the `<SEO>` component into those particular files solved the issue.
 
-I also noticed that any of the [MDX files that used a default export](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) in the document would fail the accessibility audit, because they will not use the default layout you defined in your `gatsby-config` file. The default layout file I used contains the `<Seo>` which injects a `lang` attribute into the `<html>` element and a page `title` attribute in the `<head>` element. Importing the `<Seo>` into those particular files solved the issue.
+Once all those accessibility issues were solved, I chose to focus on getting end-to-end testing scaffolded using [Cypress](https://www.cypress.io/), along with some unit testing on one component as a proof of concept.
 
-Once all those accessibility issues were solved, I chose to focus on getting end-to-end testing scaffolded using Cypress, along with some unit testing on one component as a proof of concept.
+I decided to tackle setting up [Cypress CI GitHub action](https://github.com/cypress-io/github-action) in my [kathleenmcmahon.dev](https://kathleenmcmahon.dev) site… later.
 
-I’ll tackle setting up basic Cypress CI GitHub actions in my other site… later.
+## What I learned from setting up unit and end-to-end testing:
 
-what I learned from setting up unit and end-to-end testing:
-I had to remember to refer to the config file code snippet repeatedly when referencing the [creating a configuration file for Jest section](https://www.gatsbyjs.org/docs/unit-testing/#2-creating-a-configuration-file-for-jest), while reading the text.
+While I was setting up my unit testing config, I had to remember to refer to the `config` file's code snippet repeatedly when referencing the [creating a configuration file for Jest section](https://www.gatsbyjs.org/docs/unit-testing/#2-creating-a-configuration-file-for-jest) documentation.
 
-I went back add started adding support for unit testing with Jest, and learned that I should delete the `cypress/integration` folder, otherwise the test script that calls Jest will also look at that integration folder and try to test it. I deleted it, but still, Jest was running tests that lived in the `cypress/e2e` folder, so I explored what wa
+As I went back and started adding support for unit testing with Jest, I learned that I should delete the `cypress/integration` folder, otherwise the test script that calls Jest will also look at that integration folder and try to test it. I deleted it, but still, Jest was running tests that lived in the `cypress/e2e` folder. Odd. I then tried going about it using the steps described in the [Gatsby documentation on testing React components](https://www.gatsbyjs.org/docs/testing-react-components/), then tried using [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro) and [@testing-library/jest-dom](https://testing-library.com/docs/ecosystem-jest-dom) instead. Still no luck.
 
-Lastly you need to tell Jest where to find this file. Open your jest.config.js and add this entry to the bottom after ‘setupFiles’. When looking
+Then... I noticed this sentence in the documentation:
 
-I ran into issues running Jest with Cypress already added. Tried going about it using the [](https://www.gatsbyjs.org/docs/testing-react-components/) way instead, using [@testing-library/react]() and [@testing-library/jest-dom]() instead
+> Lastly you need to tell Jest where to find this file. Open your `jest.config.js` and add this entry to the bottom after `setupFiles`.
 
-noticed this sentence:
+I wondered if order was important in the config, since the link to the [using-jest](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest) example at the **bottom** of the page showed a **different order in the config**. `setupFiles` in that example was listed **after** the `setupFilesAfterEnv` in the example repo config, rather than before.
 
-> Lastly you need to tell Jest where to find this file. Open your jest.config.js and add this entry to the bottom after ‘setupFiles’:
+I changed the order in my config file and still ran into issues. After some digging, I discovered that **file naming is important**.
 
-and wondered if order was important in the config, since the link to the [using-jest](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest) example at the bottom of the page showed a different order in the config (setupFiles in that example was listed after the setupFilesAfterEnv in the example config up in the repo, rather than before. I changed the order in my config file.
+When adding both Jest and Cypress support into the app, if you named your Cypress test file according to the [writing tests for Cypress](https://www.gatsbyjs.org/docs/end-to-end-testing/#writing-tests) section and named your file `accessibility.test.js` rather than `accessibility.js`, Jest would try to run a test on that file. Once I removed the `.test` from the file name, all tests ran smoothly.
 
-I still ran into issues. After some digging, I discovered that file naming is important. When adding both Jest and Cypress support into the app, if you named your file according to the [writing tests for Cypress](https://www.gatsbyjs.org/docs/end-to-end-testing/#writing-tests) section, if you named your file `accessibility.test.js` rather than `accessibility.js`, Jest would try to run a test on that file. Once I removed the `.test` from the file name, all tests ran smoothly.
+Another way I could have avoided this issue was to add `cypress` as one of the items to [exclude/ignore files from Jest coverage](https://codewithhugo.com/jest-exclude-coverage/) in the `jest.config.js` `testPathIgnorePatterns` array https://codewithhugo.com/jest-exclude-coverage/
 
-Another way to do this is to add `cypress` as one of the items to [exclude/ignore files from Jest coverage](https://codewithhugo.com/jest-exclude-coverage/) in the `jest.config.js` `testPathIgnorePatterns` array https://codewithhugo.com/jest-exclude-coverage/
+### Items to tackle later
 
-Todo:
-Later on, I’ll dig into testing components that use GraphQL and Gatsby components in Storybook.
+I’d love to try out testing components that use GraphQL in [Storybook](https://storybook.js.org/), because I really enjoy all the features Storybook has provided when I used it for the O'Reilly Design System component testing. Also, I’m planning to look into using [Cloudinary](https://cloudinary.com/) to host my images.
 
-Also, I’m going to also look into using Cloudinary to host my images.
+That wraps up this challenge. Next on my list, [100 Days of Gatsby — Challenge 9](/write/100-days-of-gatsby-challenge-09/).
