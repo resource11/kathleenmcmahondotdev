@@ -49,7 +49,7 @@ const Speak = ({ extraClasses }) => {
           <hr className={css.purpleRedHR} />
           <h2>Upcoming talks</h2>
           <h3 className={css.speakingH3}>2020</h3>
-          <ul className={talkListClasses}>
+          <ul className={talkListClasses} role="list">
             {upcomingTalks.map((upcoming) => (
               <li key={upcoming.event} className={upcomingTalkListClasses}>
                 <Link
@@ -68,7 +68,7 @@ const Speak = ({ extraClasses }) => {
           <hr className={css.purpleRedHR} />
           <h2>Past talks</h2>
           <h3 className={css.speakingH3}>2020</h3>
-          <ul className={talkListClasses}>
+          <ul className={talkListClasses} role="list">
             {talks2020.map((talk) => (
               <li key={talk.event} className={pastTalkListClasses}>
                 <Link
@@ -92,7 +92,7 @@ const Speak = ({ extraClasses }) => {
             ))}
           </ul>
           <h3 className={css.speakingH3}>2019</h3>
-          <ul className={talkListClasses}>
+          <ul className={talkListClasses} role="list">
             {talks2019.map((talk) => (
               <li key={talk.event} className={pastTalkListClasses}>
                 <Link
@@ -116,7 +116,7 @@ const Speak = ({ extraClasses }) => {
             ))}
           </ul>
           <h3 className={css.speakingH3}>2018</h3>
-          <ul className={talkListClasses}>
+          <ul className={talkListClasses} role="list">
             {talks2018.map((talk) => (
               <li key={talk.event} className={pastTalkListClasses}>
                 <Link

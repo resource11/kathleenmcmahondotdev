@@ -160,3 +160,7 @@
     }
   }
 }
+
+.visuallyHidden {
+  @add-mixin visually-hidden;
+}

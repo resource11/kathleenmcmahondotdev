@@ -6,7 +6,7 @@
   min-height: 8rem;
   padding: 1.5rem 1.75rem;
   text-align: center;
-  color: var(--grey-400);
+  color: var(--grey-500);
   border-top: 0.25em solid;
   border-image-source: var(--grad-lin-purple-red);
   border-image-slice: 1;
@@ -57,7 +57,7 @@
   }
 
   & .link {
-    color: var(--grey-400);
+    color: var(--grey-500);
     font-size: 1rem;
 
     &:hover {

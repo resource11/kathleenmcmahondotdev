@@ -39,7 +39,7 @@ const Write = ({ data: { allMdx } }, extraClasses) => {
             to learn more about the philosophy behind the phase.
           </p>
           <hr className={css.blueVioletHR} />
-          <ul className={postListClasses}>
+          <ul className={postListClasses} role="list">
             {allMdx.edges.map(({ node }) => (
               <li key={node.id} className={css.postListItem}>
                 <Link

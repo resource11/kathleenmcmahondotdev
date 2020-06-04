@@ -121,7 +121,7 @@ h6 {
   line-height: var(--line-height-small);
   font-family: var(--font-bold);
   font-weight: 700;
-  hyphens: auto;
+  /* hyphens: auto; */
   max-width: 50em;
 }
 
@@ -223,6 +223,7 @@ hr,
 p,
 .paragraph {
   @add-mixin font-body-normal;
+  @add-mixin hyphens;
   @media screen and (--small) {
     font-size: 1.25rem;
   }

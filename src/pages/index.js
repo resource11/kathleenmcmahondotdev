@@ -51,12 +51,17 @@ export const Home = ({
     },
   ]
 
-  const fullRecentSpeaking = recentSpeaking.map((recent, index) => {
-    return imageArray.forEach((node) => {
+  const fullRecentSpeaking = recentSpeaking.map((recent) => {
+    let tempArr = []
+    imageArray.forEach((node) => {
       if (recent.image === node.name) {
-        return Object.assign(recent, { relativePath: node.relativePath })
+        let updatedNode = Object.assign(recent, {
+          relativePath: node.relativePath,
+        })
+        tempArr.push(updatedNode)
       }
     })
+    return tempArr
   })
 
   return (
@@ -93,7 +98,7 @@ export const Home = ({
               podcasts, streams
             </h2>
             <ul className={cardListClasses} role="list">
-              {recentSpeaking.map((speak) => (
+              {fullRecentSpeaking.map((speak) => (
                 <li key={speak.id} className={css.cardListItem}>
                   <Card
                     extraClasses={{
@@ -133,7 +138,7 @@ export const Home = ({
           <hr className={css.purpleRedHR} />
           <article className={css.featuredPosts}>
             <h2>Featured posts</h2>
-            <ul className={postListClasses}>
+            <ul className={postListClasses} role="list">
               {allMdx.edges.map(({ node }) => (
                 <li key={node.id} className={css.postListItem}>
                   <Link
