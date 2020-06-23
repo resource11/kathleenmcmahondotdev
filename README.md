@@ -1,13 +1,13 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.kathleenmcmahon.dev">
-    <img alt="KM" src="https://www.kathleenmcmahon.dev/km.svg" width="60" />
+    <img alt="" src="static/social-sharing-card.png" width="100%" />
   </a>
 </p>
 
 ---
 
-# Kathleen McMahon - Dev
+# Kathleen McMahon | Engineer — Designer — Speaker
 
 Repo for my personal website.
 
