@@ -43,7 +43,6 @@
   z-index: -2;
   top: 6.5em;
   width: 268vw;
-  overflow-x: hidden;
 
   @media screen and (--small) {
     width: 111rem;
