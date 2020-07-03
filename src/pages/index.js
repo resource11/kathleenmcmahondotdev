@@ -10,7 +10,6 @@ import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/hero-masked.svg"
 import { LineDot } from "../components/LineDot"
 import RecentBgMasked from "../svgs/sm-bot-white-diamond.svg"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/Home.module.css"
 
 export const Home = ({
@@ -52,18 +51,19 @@ export const Home = ({
   ]
 
   const fullRecentSpeaking = recentSpeaking.map((recent) => {
-    // let tempArr = []
+    let tempArr = []
     imageArray.forEach((node) => {
       if (recent.image === node.name) {
-        return Object.assign(recent, {
+        let tempObj = Object.assign({}, recent, {
           relativePath: node.relativePath,
         })
-        // tempArr.push(updatedNode)
+        return tempArr.push(tempObj)
       }
     })
-
-    // /console.log(JSON.stringify(tempArr, null, 2))/ return tempArr
+    return tempArr
   })
+
+  const fullRecentSpeakingList = fullRecentSpeaking.flat()
 
   return (
     <Layout>
@@ -86,7 +86,6 @@ export const Home = ({
                 lineDotDot: css.lineDotDot,
               }}
             />
-            {/* <img src={SVGLineDot} alt="" className={css.svgLineDot} /> */}
           </header>
           <img
             src={RecentBgMasked}
@@ -99,7 +98,7 @@ export const Home = ({
               podcasts, streams
             </h2>
             <ul className={cardListClasses} role="list">
-              {recentSpeaking.map((speak) => (
+              {fullRecentSpeakingList.map((speak) => (
                 <li key={speak.id} className={css.cardListItem}>
                   <Card
                     extraClasses={{
@@ -113,7 +112,7 @@ export const Home = ({
                           root: css.cardFooterLink,
                           iconSpan: css.cardFooterLinkIcon,
                         }}
-                        icon={faArrowRight}
+                        icon={"arrow-right"}
                         iconAfter={true}
                         size="small"
                         to={speak.link}

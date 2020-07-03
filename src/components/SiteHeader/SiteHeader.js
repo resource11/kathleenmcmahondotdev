@@ -19,7 +19,7 @@ export const SiteHeader = () => {
             className={css.logoImg}
             role="img"
           />
-          <span class={css.visuallyHidden}>KathleenMcMahon.me</span>
+          <span className={css.visuallyHidden}>KathleenMcMahon.me</span>
         </Link>
       </div>
 

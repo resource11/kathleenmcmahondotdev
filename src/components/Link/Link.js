@@ -51,30 +51,30 @@ export const Link = ({
     ariaCurrentValue = ariaCurrent
   }
 
-  if (variant === LinkVariants.a) {
+  if (variant === LinkVariants.link) {
     return (
-      <a
-        aria-current={ariaCurrentValue}
+      <GatsbyLink
+        activeClassName={css.activeLink}
         aria-label={ariaLabel}
         className={linkClasses}
-        href={to}
-        ref={linkRef}
+        innerRef={linkRef}
+        to={to}
       >
         {content}
-      </a>
+      </GatsbyLink>
     )
   }
 
   return (
-    <GatsbyLink
-      activeClassName={css.activeLink}
+    <a
+      aria-current={ariaCurrentValue}
       aria-label={ariaLabel}
       className={linkClasses}
-      innerRef={linkRef}
-      to={to}
+      href={to}
+      ref={linkRef}
     >
       {content}
-    </GatsbyLink>
+    </a>
   )
 }
 
@@ -122,7 +122,11 @@ Link.propTypes = {
   /**
    * Optional icon
    */
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
 
   /**
    * If there is an icon, this sets the size of the icon (Optional)

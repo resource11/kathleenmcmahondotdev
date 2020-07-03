@@ -12,6 +12,20 @@
   border-color: currentColor;
 }
 
+*:focus {
+  outline: 0;
+  outline-offset: var(--s-5);
+  box-shadow: 0 0 0 var(--s-5) var(--purple-orchid);
+}
+
+/* Smooth scrolling */
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 html {
   font-family: var(--font-standard);
   font-size: var(--s0);
@@ -19,6 +33,29 @@ html {
   color: var(--color-dark);
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+}
+
+/* Make sure Safari honors hidden overflow */
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  @add-mixin font-weight-regular;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background-color: var(--color-light);
+}
+
+/* For older browsers */
+nav,
+main,
+header,
+footer {
+  display: block;
 }
 
 /* Hidden content */
@@ -35,58 +72,12 @@ html {
   @add-mixin visually-hidden;
 }
 
-/* For older browsers */
-nav,
-main,
-header,
-footer {
-  display: block;
-}
-
-/* Smooth scrolling */
-
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-
-*:focus {
-  outline: 0;
-  outline-offset: var(--s-5);
-  box-shadow: 0 0 0 var(--s-5) var(--purple-orchid);
-}
-
-body {
-  @add-mixin font-weight-regular;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  overflow-x: hidden;
-  background-color: var(--color-light);
-}
-
 /* 
 ------ 
   Block spacing
   Based on Every Layout by Andy Bell and Heydon Pickering 
 ------
 */
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.stack > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.stack > * + * {
-  margin-top: var(--s0);
-}
 
 main > * + * {
   margin-top: var(--s0);
@@ -102,6 +93,21 @@ article > * + * {
   @media screen and (--medium) {
     margin-top: var(--s1);
   }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--s0);
 }
 
 /* Typography */
