@@ -192,7 +192,7 @@ const siteData = {
     {
       event: "EnterJS",
       eventYear: "2020",
-      eventDate: "2020-10-29",
+      eventDate: "2020-09-29",
       eventLocation: "Darmstadt, Germany",
       eventURL: "https://enterjs.de/",
       talkName:
@@ -203,7 +203,7 @@ const siteData = {
     {
       event: "Web Accessibility Conference",
       eventYear: "2020",
-      eventDate: "2020-11-19",
+      eventDate: "2020-11-18",
       eventLocation: "New Orleans, LA",
       eventURL: "https://webaccessibilityconf.com/",
       talkName:

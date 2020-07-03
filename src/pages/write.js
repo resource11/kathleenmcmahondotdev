@@ -43,7 +43,7 @@ const Write = ({ data: { allMdx } }, extraClasses) => {
             {allMdx.edges.map(({ node }) => (
               <li key={node.id} className={css.postListItem}>
                 <Link
-                  to={`write/${node.frontmatter.slug}`}
+                  to={node.frontmatter.slug}
                   variant="link"
                   extraClasses={{ root: css.postListLink }}
                 >
