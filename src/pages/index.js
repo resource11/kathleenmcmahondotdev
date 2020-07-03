@@ -32,7 +32,15 @@ export const Home = ({
   const cardListClasses = classnames(css.cardUl, css.stackCardList, css.grid)
   const postListClasses = classnames(css.postUl, css.stackPostList)
 
-  const imageArray = [
+  /**
+   * The fullRecentSpeakingList is a flattened version of the fullRecentSpeaking function. The fullRecentSpeaking function manipulates the recentSpeaking array to include the correct relativePath as part of each recentSpeaking array item's object, in a side-effect manner. 
+   * 
+   * When mapping over fullRecentSpeakingList in the return block to generate the Cards, everything works fine in the development environment, however, the build fails when Netlify does the build during deployment.
+   * 
+   * For now, I'm choosing to leverage the side-effected recentSpeaking array in this scenario to get the deploy to build, and will explore how to refactor later.
+   */
+  
+   const imageArray = [
     {
       relativePath: image01.childImageSharp.fluid,
       name: "images/home/smoothly-inclusive-documentation-with-mdx.jpg",
@@ -51,19 +59,21 @@ export const Home = ({
     },
   ]
 
+  
   const fullRecentSpeaking = recentSpeaking.map((recent) => {
-    // let tempArr = []
+    let tempArr = []
     imageArray.forEach((node) => {
       if (recent.image === node.name) {
-        return Object.assign(recent, {
+        let updatedNode = Object.assign(recent, {
           relativePath: node.relativePath,
         })
-        // tempArr.push(updatedNode)
+        tempArr.push(updatedNode)
       }
     })
-
-    // /console.log(JSON.stringify(tempArr, null, 2))/ return tempArr
+    return tempArr
   })
+
+  const fullRecentSpeakingList = fullRecentSpeaking.flat()
 
   return (
     <Layout>
@@ -86,7 +96,6 @@ export const Home = ({
                 lineDotDot: css.lineDotDot,
               }}
             />
-            {/* <img src={SVGLineDot} alt="" className={css.svgLineDot} /> */}
           </header>
           <img
             src={RecentBgMasked}

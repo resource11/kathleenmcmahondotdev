@@ -40,6 +40,14 @@ const About = ({
   const cardListItemClasses = classnames(css.cardListItem, css.liReset)
   const socialListItemClasses = classnames(css.socialListItem, css.liReset)
 
+  /**
+   * The fullPortfolioList is a flattened version of the fullPortfolio function. The fullPortfolio function manipulates the portfolioList array to include the correct relativePath as part of each portfolioList array item's object, in a side-effect manner.
+   *
+   * When mapping over fullPortfolioList in the return block to generate the Cards, everything works fine in the development environment, however, the build fails when Netlify does the build during deployment.
+   *
+   * For now, I'm choosing to leverage the side-effected portfolioList array in this scenario to get the deploy to build, and will explore how to refactor later.
+   */
+
   const imageArray = [
     {
       relativePath: image05.childImageSharp.fluid,
@@ -51,18 +59,20 @@ const About = ({
     },
   ]
 
-  const fullPortfolioList = portfolioList.map((port, index) => {
-    // let tempArr = []
+  const fullPortfolio = portfolioList.map((port, index) => {
+    let tempArr = []
     imageArray.forEach((node) => {
       if (port.image === node.name) {
-        return Object.assign(port, {
+        let updatedNode = Object.assign(port, {
           relativePath: node.relativePath,
         })
-        // tempArr.push(updatedNode)
+        tempArr.push(updatedNode)
       }
     })
-    // return tempArr
+    return tempArr
   })
+
+  const fullPortfolioList = fullPortfolio.flat()
 
   return (
     <Layout>
