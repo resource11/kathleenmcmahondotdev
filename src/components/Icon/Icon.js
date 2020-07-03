@@ -32,9 +32,13 @@ Icon.propTypes = {
    */
   extraClasses: PropTypes.object,
   /**
-   * A map of CSS classes used to override specific CSS in the component
+   * Name of icon to use, this app uses react-fontawesome
    */
-  icon: PropTypes.object,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   /**
    * The available sizes for the FontAwesomeIcon used in this component
    * https://github.com/FortAwesome/react-fontawesome#features

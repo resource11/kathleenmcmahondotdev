@@ -9,7 +9,6 @@ import { ContactForm } from "../components/ContactForm"
 import { Card } from "../components/Card"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/angled-orange-xs.svg"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import styles from "../common/styles/pageStyles/About.module.css"
 
 const About = ({
@@ -51,18 +50,20 @@ const About = ({
     },
   ]
 
-  const fullPortfolioList = portfolioList.map((port, index) => {
-    // let tempArr = []
+  const fullPortfolio = portfolioList.map((port, index) => {
+    let tempArr = []
     imageArray.forEach((node) => {
       if (port.image === node.name) {
-        return Object.assign(port, {
+        let tempObj = Object.assign(port, {
           relativePath: node.relativePath,
         })
-        // tempArr.push(updatedNode)
+        return tempArr.push(tempObj)
       }
     })
-    // return tempArr
+    return tempArr
   })
+
+  const fullPortfolioList = fullPortfolio.flat()
 
   return (
     <Layout>
@@ -105,7 +106,7 @@ const About = ({
             consulting business:
           </p>
           <ul className={cardListClasses} role="list">
-            {portfolioList.map((port) => (
+            {fullPortfolioList.map((port) => (
               <li key={port.id} className={cardListItemClasses}>
                 <Card
                   extraClasses={{
@@ -116,7 +117,7 @@ const About = ({
                     <Link
                       aria-label={port.ctaAria}
                       extraClasses={{ root: css.cardFooterLink }}
-                      icon={faArrowRight}
+                      icon={"arrow-right"}
                       iconAfter={true}
                       size="small"
                       to={port.link}

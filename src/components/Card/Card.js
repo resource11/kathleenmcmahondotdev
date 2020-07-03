@@ -71,7 +71,7 @@ Card.propTypes = {
   /**
    * The Card image
    */
-  image: PropTypes.string,
+  image: PropTypes.object,
 
   /**
    * The Card image alt attribute
