@@ -1,30 +1,22 @@
-![](./static/social-sharing-card.png)
-
----
-
 # Kathleen McMahon - Dev
 
 Repo for my personal website.
+
+![](./static/social-sharing-card.png)
 
 ---
 
 ## Table of Contents
 
-[Motivation](https://github.com/resource11/kathleenmcmahondotdev#motivation)
-[Contributing](https://github.com/resource11/kathleenmcmahondotdev#contributing)
-[License](https://github.com/resource11/kathleenmcmahondotdev#license)
+- [Motivation](https://github.com/resource11/kathleenmcmahondotdev#motivation)
+- [Contributing](https://github.com/resource11/kathleenmcmahondotdev#contributing)
+- [License](https://github.com/resource11/kathleenmcmahondotdev#license)
 
 ---
 
 ## Motivation
 
 This is a much-needed update for my personal website. It's less a portfolio and more a centralized reference for all my various internet-related activities.
-
-## Installation
-
-This website is built using [Gatsby](https://www.gatsbyjs.org)
-
-From there, you can follow enchilada's setup instructions. Let me know if you run into any issues!
 
 ## Contributing
 
