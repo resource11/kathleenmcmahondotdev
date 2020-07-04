@@ -1,9 +1,4 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.kathleenmcmahon.dev">
-    <img alt="KM" src="https://www.kathleenmcmahon.dev/km.svg" width="60" />
-  </a>
-</p>
+![](https://github.com/resource11/kathleenmcmahondotdev/static/social-sharing-card.png)
 
 ---
 
