@@ -1,4 +1,4 @@
-![](https://github.com/resource11/kathleenmcmahondotdev/static/social-sharing-card.png)
+![](./static/social-sharing-card.png)
 
 ---
 
