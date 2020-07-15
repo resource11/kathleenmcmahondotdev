@@ -33,14 +33,14 @@ export const Home = ({
   const postListClasses = classnames(css.postUl, css.stackPostList)
 
   /**
-   * The fullRecentSpeakingList is a flattened version of the fullRecentSpeaking function. The fullRecentSpeaking function manipulates the recentSpeaking array to include the correct relativePath as part of each recentSpeaking array item's object, in a side-effect manner. 
-   * 
+   * The fullRecentSpeakingList is a flattened version of the fullRecentSpeaking function. The fullRecentSpeaking function manipulates the recentSpeaking array to include the correct relativePath as part of each recentSpeaking array item's object, in a side-effect manner.
+   *
    * When mapping over fullRecentSpeakingList in the return block to generate the Cards, everything works fine in the development environment, however, the build fails when Netlify does the build during deployment.
-   * 
+   *
    * For now, I'm choosing to leverage the side-effected recentSpeaking array in this scenario to get the deploy to build, and will explore how to refactor later.
    */
-  
-   const imageArray = [
+
+  const imageArray = [
     {
       relativePath: image01.childImageSharp.fluid,
       name: "images/home/smoothly-inclusive-documentation-with-mdx.jpg",
@@ -59,7 +59,6 @@ export const Home = ({
     },
   ]
 
-  
   const fullRecentSpeaking = recentSpeaking.map((recent) => {
     let tempArr = []
     imageArray.forEach((node) => {
@@ -73,7 +72,12 @@ export const Home = ({
     return tempArr
   })
 
-  const fullRecentSpeakingList = fullRecentSpeaking.flat()
+  /**
+   * Keeping the line below commented out.
+   * Netlify won't build even though we're
+   * not using this const presently.
+   */
+  // const fullRecentSpeakingList = fullRecentSpeaking.flat()
 
   return (
     <Layout>

@@ -72,7 +72,12 @@ const About = ({
     return tempArr
   })
 
-  const fullPortfolioList = fullPortfolio.flat()
+  /**
+   * Keeping the line below commented out.
+   * Netlify won't build even though we're
+   * not using this const presently.
+   */
+  // const fullPortfolioList = fullPortfolio.flat()
 
   return (
     <Layout>
