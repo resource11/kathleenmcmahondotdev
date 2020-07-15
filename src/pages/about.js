@@ -99,7 +99,14 @@ const About = ({
             React component libraries, design systems, and inclusive
             documentation.
           </p>
-          <p className={css.aboutSecondPara}>
+          <p className={css.aboutPara}>
+            I’m also a Color Module Specification Editor for the{" "}
+            <Link to="https://www.w3.org/community/design-tokens">
+              W3C Design Tokens Community Group
+            </Link>
+            .
+          </p>
+          <p className={css.aboutPara}>
             When I’m not coding, designing, or speaking about things, I’m the
             best{" "}
             <Link to="https://facebook.com/cxsisters">

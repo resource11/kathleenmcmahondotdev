@@ -80,16 +80,17 @@
 .aboutIntroPara {
   margin-top: calc(55vw * (9 / 16));
   font-size: 1.25rem;
-  max-width: 28ch;
-
+  max-width: 34ch;
+  hyphens: none;
   @media screen and (--small) {
     margin-top: 9.5rem;
   }
 }
 
-.aboutSecondPara {
+.aboutPara {
   font-size: 1.25rem;
-  max-width: 28ch;
+  max-width: 34ch;
+  hyphens: none;
 }
 
 .clipPath {
