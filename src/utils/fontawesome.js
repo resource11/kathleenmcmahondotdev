@@ -13,6 +13,7 @@ import {
   faArrowUp,
   faChevronRight,
   faExclamationCircle,
+  faRssSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
 const fontLibrary = library
@@ -27,6 +28,7 @@ fontLibrary.add(
   faInstagram,
   faGithub,
   faLinkedin,
+  faRssSquare,
   faTwitch,
   faTwitter
 )

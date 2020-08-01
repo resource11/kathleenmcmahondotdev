@@ -18,7 +18,7 @@ export const SiteFooter = ({ footerNav }) => {
             >
               {nav.icon && (
                 <FontAwesomeIcon
-                  icon={["fab", nav.icon]}
+                  icon={[nav.libraryAlias, nav.icon]}
                   className={css.footerIcon}
                 />
               )}

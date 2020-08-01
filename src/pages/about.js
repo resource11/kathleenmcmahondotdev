@@ -160,7 +160,7 @@ const About = ({
               <li key={social.name} className={socialListItemClasses}>
                 <Link
                   extraClasses={{ root: css.socialListLink }}
-                  icon={["fab", social.icon]}
+                  icon={[social.libraryAlias, social.icon]}
                   size="large"
                   to={social.link}
                 >

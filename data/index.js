@@ -18,13 +18,22 @@ const siteData = {
       name: "resource11",
       link: "https://github.com/resource11",
       icon: "github",
+      libraryAlias: "fab",
       ariaLabel: "View my GitHub profile",
     },
     {
       name: "resource11",
       link: "https://twitter.com/resource11",
       icon: "twitter",
+      libraryAlias: "fab",
       ariaLabel: "Contact me on Twitter",
+    },
+    {
+      name: "RSS feed",
+      link: "https://www.kathleenmcmahon.dev/rss.xml",
+      icon: "rss-square",
+      libraryAlias: "fas",
+      ariaLabel: "Follow my RSS feed",
     },
   ],
   socialLinks: [
@@ -32,26 +41,31 @@ const siteData = {
       name: "GitHub",
       link: "https://github.com/resource11",
       icon: "github",
+      libraryAlias: "fab",
     },
     {
       name: "Twitter",
       link: "https://twitter.com/resource11",
       icon: "twitter",
+      libraryAlias: "fab",
     },
     {
       name: "LinkedIn",
       link: "https://linkedin.com/in/resource11",
       icon: "linkedin",
+      libraryAlias: "fab",
     },
     {
       name: "Instagram",
       link: "https://instagram.com/resource11",
       icon: "instagram",
+      libraryAlias: "fab",
     },
     {
       name: "Twitch",
       link: "https://twitch.tv/resource11",
       icon: "twitch",
+      libraryAlias: "fab",
     },
   ],
   pastTalks: [
@@ -189,6 +203,16 @@ const siteData = {
     },
   ],
   upcomingTalks: [
+    {
+      event: "MDXConf",
+      eventYear: "2020",
+      eventDate: "2020-08-24",
+      eventLocation: "Online",
+      eventURL: "https: //mdxjs.com/conf",
+      talkName: "Digital Gardening with MDX",
+      talkURL: "",
+      talkType: "Talk",
+    },
     {
       event: "EnterJS",
       eventYear: "2020",
