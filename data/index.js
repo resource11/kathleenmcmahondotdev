@@ -209,7 +209,7 @@ const siteData = {
       eventDate: "2020-08-24",
       eventLocation: "Online",
       eventURL: "https: //mdxjs.com/conf",
-      talkName: "Digital Gardening with MDX",
+      talkName: "Digital Gardening with MDX Magic",
       talkURL: "",
       talkType: "Talk",
     },
