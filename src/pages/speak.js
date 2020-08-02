@@ -16,6 +16,13 @@ const Speak = ({ extraClasses }) => {
   const talks2019 = pastTalks.filter((talk) => talk.eventYear === "2019")
   const talks2020 = pastTalks.filter((talk) => talk.eventYear === "2020")
 
+  const upcomingTalks2020 = upcomingTalks.filter(
+    (talk) => talk.eventYear === "2020"
+  )
+  const upcomingTalks2021 = upcomingTalks.filter(
+    (talk) => talk.eventYear === "2021"
+  )
+
   const talkListClasses = classnames(css.cardUl, css.stackList)
 
   const upcomingTalkListClasses = classnames(css.cardLi, css.upcomingCardLi)
@@ -48,9 +55,26 @@ const Speak = ({ extraClasses }) => {
           </p>
           <hr className={css.purpleRedHR} />
           <h2>Upcoming talks</h2>
+          <h3 className={css.speakingH3}>2021</h3>
+          <ul className={talkListClasses} role="list">
+            {upcomingTalks2021.map((upcoming) => (
+              <li key={upcoming.event} className={upcomingTalkListClasses}>
+                <Link
+                  extraClasses={{ root: upcomingTalkLinkClasses }}
+                  size="small"
+                  to={upcoming.eventURL}
+                >
+                  {upcoming.event}
+                </Link>
+                <p className={css.cardDateLocation}>
+                  {upcoming.eventDate} | {upcoming.eventLocation}
+                </p>
+              </li>
+            ))}
+          </ul>
           <h3 className={css.speakingH3}>2020</h3>
           <ul className={talkListClasses} role="list">
-            {upcomingTalks.map((upcoming) => (
+            {upcomingTalks2020.map((upcoming) => (
               <li key={upcoming.event} className={upcomingTalkListClasses}>
                 <Link
                   extraClasses={{ root: upcomingTalkLinkClasses }}
