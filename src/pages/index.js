@@ -203,10 +203,6 @@ export const indexQuery = graphql`
       edges {
         node {
           id
-          fields {
-            slug
-            isFeatured
-          }
           frontmatter {
             slug
             title

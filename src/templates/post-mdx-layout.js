@@ -39,58 +39,6 @@ const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
   )
 }
 
-// export const contentQuery = graphql`
-//   query postQuery($id: String) {
-//     mdx(id: { eq: $id }) {
-//       id
-//       body
-//       excerpt
-//       timeToRead
-//       wordCount {
-//         words
-//       }
-//       fields {
-//         slug
-//       }
-//       frontmatter {
-//         title
-//         tags
-//         published
-//         date(formatString: "MMMM DD, YYYY")
-//         featuredImage {
-//           childImageSharp {
-//             fluid(quality: 90) {
-//               aspectRatio
-//               src
-//               srcSet
-//               sizes
-//             }
-//           }
-//         }
-//         embeddedImages {
-//           publicURL
-//           childImageSharp {
-//             fluid {
-//               base64
-//               tracedSVG
-//               aspectRatio
-//               src
-//               srcSet
-//               srcWebp
-//               srcSetWebp
-//               sizes
-//               originalImg
-//               originalName
-//               presentationWidth
-//               presentationHeight
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
 export const contentQuery = graphql`
   query postQuery($id: String) {
     mdx(id: { eq: $id }) {
@@ -101,7 +49,6 @@ export const contentQuery = graphql`
         words
       }
       fields {
-        slug
         readingTime {
           minutes
         }
@@ -111,6 +58,16 @@ export const contentQuery = graphql`
         tags
         isPublished
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          childImageSharp {
+            fluid(quality: 90) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
       }
     }
   }
