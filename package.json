@@ -65,6 +65,7 @@
     "yup": "^0.28.3"
   },
   "devDependencies": {
+    "@adobe/react-spectrum": "^3.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
@@ -78,6 +79,8 @@
     "classnames": "^2.2.6",
     "cypress": "^4.11.0",
     "cypress-axe": "^0.8.1",
+    "grommet": "^2.15.0",
+    "grommet-icons": "^4.4.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
     "postcss-color-function": "^4.1.0",
@@ -88,7 +91,8 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.2",
     "react-test-renderer": "^16.13.1",
-    "start-server-and-test": "^1.11.0"
+    "start-server-and-test": "^1.11.0",
+    "styled-components": "^5.1.1"
   },
   "repository": {
     "type": "git",
