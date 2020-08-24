@@ -5,7 +5,7 @@ import css from "./DisplayBox.module.css"
 
 export const DisplayBox = ({ children, display = "block" }) => {
   const displayBoxCSS = classnames(css.displayBox, css[display])
-  return <h4 className={displayBoxCSS}>testing and {children}</h4>
+  return <div className={displayBoxCSS}>{children}</div>
 }
 
 export default DisplayBox

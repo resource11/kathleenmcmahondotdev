@@ -4,10 +4,11 @@ import Img from "gatsby-image"
 import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+
 import BlogHeroAccent from "../svgs/blog-hero-accent.svg"
 import styles from "../common/styles/pageStyles/PostMDXLayout.module.css"
 
-const BlogMDXLayout = ({ data: { mdx }, pageContext, extraClasses }) => {
+const BlogMDXLayout = ({ data: { mdx }, extraClasses }) => {
   const css = useExtraClasses(styles, extraClasses)
 
   // find the fluid image

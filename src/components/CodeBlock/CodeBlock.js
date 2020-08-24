@@ -18,7 +18,7 @@ export const CodeBlock = ({ codeString, language, ...props }) => {
         <DisplayBox>
           <LivePreview />
         </DisplayBox>
-        <LiveEditor />
+        <LiveEditor style={{ margin: 0 }} />
         <LiveError />
       </LiveProvider>
     )
