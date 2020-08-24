@@ -5,6 +5,9 @@ import { useExtraClasses } from "../utils/useExtraClasses"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
+import { Grommet } from "grommet"
+import { grommet, dark } from "grommet/themes"
+
 import BlogHeroAccent from "../svgs/blog-hero-accent.svg"
 import styles from "../common/styles/pageStyles/PostMDXLayout.module.css"
 
@@ -19,6 +22,14 @@ const BlogMDXLayout = ({ data: { mdx }, extraClasses }) => {
   }
 
   return (
+    // <Grommet
+    //   theme={grommet}
+    //   full
+    //   style={{
+    //     display: "flex",
+    //     flexDirection: "column",
+    //   }}
+    // >
     <Layout>
       <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
       <article className={css.bodyWrapper}>
@@ -37,6 +48,7 @@ const BlogMDXLayout = ({ data: { mdx }, extraClasses }) => {
         </article>
       </article>
     </Layout>
+    // </Grommet>
   )
 }
 

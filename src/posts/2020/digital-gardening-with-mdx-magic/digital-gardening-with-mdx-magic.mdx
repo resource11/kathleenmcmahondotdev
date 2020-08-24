@@ -13,7 +13,21 @@ tags:
 isPublished: true
 isHidden: false
 isFeatured: false
-# featuredImage: ./daylilies-in-july.jpg
+featuredImage: ./daylilies-in-july.jpg
+---
+
+import {
+  Button,
+  Card,
+  CTALink,
+  DisplayBox,
+  Icon,
+  Link,
+} from "../../../../src/components"
+
+<!-- import * as GrommetSystem from "grommet"
+import { Favorite, ShareOption } from "grommet-icons"-->
+
 ---
 
 I’m not sure about any of y’all, but I have more that one personal site that I’ve created over the years, using the technology of the time. Every once in a while, I’d look back at that site and think “wow, you should really update that code, Kathleen.”
@@ -27,11 +41,67 @@ When I first heard the term digital gardening, it really struck a chord with me 
 ## React component support
 
 <DisplayBox>
-  <Button>Click me</Button>
+  <Button>Click me</Button> <Button size="small">Click me</Button>
 </DisplayBox>
 
-```jsx
-<Button>Click me</Button>
+```jsx react-live
+<div>
+  <Button>Click me</Button>
+  {/*<GrommetSystem.Button primary label="label" />*/}
+</div>
+```
+
+## gatsby-plugin-embed is SWEET!
+
+### CodePen embeds!
+
+<CodePen codePenId="eYOQQxY" />
+
+### Flickr embeds!
+
+<Flickr flickrLink="5305/5641024002_61bbfb08f2_3k.jpg" />
+
+### YouTube embeds!
+
+<YouTube youTubeId="yGd8j0sXhQ4" />
+
+### Instagram embeds!
+
+<Instagram instagramId="B3z1w2hg4WY" />
+
+## Hello... custom codeblocks!
+
+Fancy custom codeblocks are so fancy, yo.
+
+### Editable fancy code
+
+```jsx react-live
+<div>
+  <Button size="large">Click me</Button>
+  {/* <GrommetSystem.Button primary label="label" />
+  <GrommetSystem.Box
+    direction="row"
+    border={{ color: "brand", size: "large" }}
+    pad="medium"
+  >
+    <GrommetSystem.Button primary label="label" />
+    <GrommetSystem.CheckBoxGroup options={["Maui", "Kauai", "Oahu"]} />
+  </GrommetSystem.Box>
+  <GrommetSystem.Card height="small" width="small" background="light-1">
+    <GrommetSystem.CardHeader pad="medium">Header</GrommetSystem.CardHeader>
+    <GrommetSystem.CardBody pad="medium">Body</GrommetSystem.CardBody>
+    <GrommetSystem.CardFooter
+      pad={{ horizontal: "small" }}
+      background="light-2"
+    >
+      <GrommetSystem.Button icon={<Favorite color="red" />} hoverIndicator />
+      <GrommetSystem.Button
+        icon={<ShareOption color="plain" />}
+        hoverIndicator
+      />
+    </GrommetSystem.CardFooter>
+  </GrommetSystem.Card> */}
+</div>
 ```
 
 ---
