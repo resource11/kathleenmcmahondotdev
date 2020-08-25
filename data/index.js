@@ -201,8 +201,6 @@ const siteData = {
         "https://noti.st/resource11/w6pfZD/smoothly-inclusive-react-component-library-documentation-with-gatsby-and-mdx",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "MDXConf",
       eventYear: "2020",
@@ -210,9 +208,12 @@ const siteData = {
       eventLocation: "Online",
       eventURL: "https://mdxjs.com/conf",
       talkName: "Digital Gardening with MDX Magic",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/URLAn0/digital-gardening-with-mdx-magic",
       talkType: "Talk",
     },
+  ],
+  upcomingTalks: [
     {
       event: "EnterJS",
       eventYear: "2020",

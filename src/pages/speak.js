@@ -13,8 +13,12 @@ const Speak = ({ extraClasses }) => {
   const { pastTalks, upcomingTalks } = data
 
   const talks2018 = pastTalks.filter((talk) => talk.eventYear === "2018")
-  const talks2019 = pastTalks.filter((talk) => talk.eventYear === "2019")
-  const talks2020 = pastTalks.filter((talk) => talk.eventYear === "2020")
+  const talks2019 = pastTalks
+    .filter((talk) => talk.eventYear === "2019")
+    .reverse()
+  const talks2020 = pastTalks
+    .filter((talk) => talk.eventYear === "2020")
+    .reverse()
 
   const upcomingTalks2020 = upcomingTalks.filter(
     (talk) => talk.eventYear === "2020"

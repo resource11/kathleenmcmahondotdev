@@ -117,8 +117,7 @@ const About = ({
             <Link to="https://facebook.com/cxsisters">
               Lanterne Rouge cyclocrosser
             </Link>{" "}
-            you’ll ever meet. I'm also{" "}
-            <Link to="#contact-me">currently available for work</Link>.
+            you’ll ever meet.
           </p>
           <hr className={css.redOrangeHR} />
           <h2>My portfolios</h2>

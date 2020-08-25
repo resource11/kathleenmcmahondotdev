@@ -21,6 +21,8 @@ export const Home = ({
     image02,
     image03,
     image04,
+    image05,
+    image06,
     site: {
       siteMetadata: { title },
     },
@@ -43,18 +45,26 @@ export const Home = ({
   const imageArray = [
     {
       relativePath: image01.childImageSharp.fluid,
-      name: "images/home/smoothly-inclusive-documentation-with-mdx.jpg",
+      name: "images/home/digital-gardening-with-mdx-magic.jpg",
     },
     {
       relativePath: image02.childImageSharp.fluid,
-      name: "images/home/accessibility-favored-react-components.jpg",
+      name: "images/home/smoothly-inclusive-documentation-with-mdx.jpg",
     },
     {
       relativePath: image03.childImageSharp.fluid,
-      name: "images/home/thats-my-jamstack.jpg",
+      name: "images/home/accessibility-favored-react-components.jpg",
     },
     {
       relativePath: image04.childImageSharp.fluid,
+      name: "images/home/thats-my-jamstack.jpg",
+    },
+    {
+      relativePath: image05.childImageSharp.fluid,
+      name: "images/home/a11y-talks-panel-dec-2019.jpg",
+    },
+    {
+      relativePath: image06.childImageSharp.fluid,
       name: "images/home/design-systems-and-mdx-in-gatsby.jpg",
     },
   ]
@@ -199,7 +209,10 @@ export const cardImage = graphql`
 
 export const indexQuery = graphql`
   query {
-    allMdx(filter: { frontmatter: { isFeatured: { eq: true } } }) {
+    allMdx(
+      filter: { frontmatter: { isFeatured: { eq: true } } }
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
       edges {
         node {
           id
@@ -226,24 +239,36 @@ export const indexQuery = graphql`
       }
     }
     image01: file(
+      relativePath: { eq: "images/home/digital-gardening-with-mdx-magic.jpg" }
+    ) {
+      ...cardImage
+    }
+    image02: file(
       relativePath: {
         eq: "images/home/smoothly-inclusive-documentation-with-mdx.jpg"
       }
     ) {
       ...cardImage
     }
-    image02: file(
+    image03: file(
       relativePath: {
         eq: "images/home/accessibility-favored-react-components.jpg"
       }
     ) {
       ...cardImage
     }
-    image03: file(relativePath: { eq: "images/home/thats-my-jamstack.jpg" }) {
+    image04: file(relativePath: { eq: "images/home/thats-my-jamstack.jpg" }) {
       ...cardImage
     }
-    image04: file(
-      relativePath: { eq: "images/home/design-systems-and-mdx-in-gatsby.jpg" }
+    image05: file(
+      relativePath: { eq: "images/home/a11y-talks-panel-dec-2019.jpg" }
+    ) {
+      ...cardImage
+    }
+    image06: file(
+      relativePath: {
+        eq: "images/home/smoothly-inclusive-documentation-with-mdx.jpg"
+      }
     ) {
       ...cardImage
     }
