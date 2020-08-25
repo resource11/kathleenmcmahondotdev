@@ -75,15 +75,25 @@
   top: -0.25rem;
   max-width: 20rem;
   margin: 0;
+  margin-inline-start: 2.25rem;
   padding-inline-start: 0;
   list-style-type: none;
 
   @media screen and (--small) {
     margin-left: 3.3rem;
+
+    // because FF wants this pseudo-class
+    &:dir(ltr) {
+      margin-left: 3.3rem;
+    }
   }
 
   @media screen and (--medium) {
     margin-left: 8.5rem;
+
+    &:dir(ltr) {
+      margin-left: 8.5rem;
+    }
   }
 
   & .primaryNavLi {
@@ -139,11 +149,13 @@
 }
 
 .logo {
+  min-width: 5.5rem;
   width: 5.5rem;
   height: 4.38rem;
   z-index: 1;
 
   @media screen and (--medium) {
+    min-width: 8.5rem;
     width: 8.5rem;
   }
 

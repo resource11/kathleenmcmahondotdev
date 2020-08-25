@@ -266,9 +266,7 @@ export const indexQuery = graphql`
       ...cardImage
     }
     image06: file(
-      relativePath: {
-        eq: "images/home/smoothly-inclusive-documentation-with-mdx.jpg"
-      }
+      relativePath: { eq: "images/home/design-systems-and-mdx-in-gatsby.jpg" }
     ) {
       ...cardImage
     }
