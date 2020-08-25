@@ -82,7 +82,7 @@
   @media screen and (--small) {
     margin-left: 3.3rem;
 
-    // because FF wants this pseudo-class
+    /* because FF wants this pseudo-class */
     &:dir(ltr) {
       margin-left: 3.3rem;
     }
