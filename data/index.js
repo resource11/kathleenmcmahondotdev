@@ -215,11 +215,44 @@ const siteData = {
   ],
   upcomingTalks: [
     {
+      event: "Frontend Live",
+      eventYear: "2020",
+      eventDate: "2020-09-26",
+      eventLocation: "Online",
+      eventURL: "https://frontendconf.ru/moscow/2020",
+      talkName:
+        "Accessibility-flavored React components make your design system delicious!",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
       event: "EnterJS",
       eventYear: "2020",
       eventDate: "2020-09-29",
-      eventLocation: "Darmstadt, Germany",
+      eventLocation: "Online",
       eventURL: "https://enterjs.de/",
+      talkName:
+        "Accessibility-flavored React components make your design system delicious!",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "React Summit",
+      eventYear: "2020",
+      eventDate: "2020-10-15",
+      eventLocation: "Online",
+      eventURL: "https://reactsummit.com/",
+      talkName: "Smoothly Inclusive Component Library Documentation",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "Codemotion Online",
+      eventYear: "2020",
+      eventDate: "2020-10-21",
+      eventLocation: "Online",
+      eventURL:
+        "https://events.codemotion.com/conferences/online/2020/codemotion-online-tech-conference/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
       talkURL: "",
@@ -242,17 +275,6 @@ const siteData = {
       eventDate: "2021-05-07",
       eventLocation: "Detroit, MI",
       eventURL: "https://selfconference.org/",
-      talkName:
-        "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "",
-      talkType: "Talk",
-    },
-    {
-      event: "Codemotion Amsterdam",
-      eventYear: "2021",
-      eventDate: "2021-05-27",
-      eventLocation: "Amsterdam, Netherlands",
-      eventURL: "https://events.codemotion.com/conferences/amsterdam/2020/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
       talkURL: "",
