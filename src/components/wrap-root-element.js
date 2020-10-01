@@ -3,13 +3,9 @@ import PropTypes from "prop-types"
 import { MDXProvider } from "@mdx-js/react"
 import { preToCodeBlock } from "mdx-utils"
 
-// import { Heading } from "grommet"
 import { Button, Card, CodeBlock, CTALink, DisplayBox, Icon, Link } from "./"
 
 const components = {
-  // h1: (props) => <Heading level={1} {...props} />,
-  // h2: (props) => <Heading level={2} {...props} />,
-  // h3: (props) => <Heading level={3} {...props} />,
   pre: (preProps) => {
     const props = preToCodeBlock(preProps)
     // if there's a codeString and some props, use the custom code block

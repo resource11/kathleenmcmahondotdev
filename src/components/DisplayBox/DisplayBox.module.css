@@ -9,6 +9,11 @@
   border-style: solid;
   border-color: var(--grey-300);
   border-bottom: 0;
+
+  /* temporary fix to get displaybox pre margin to zero out */
+  & ~ pre {
+    margin: 0;
+  }
 }
 
 .block {
