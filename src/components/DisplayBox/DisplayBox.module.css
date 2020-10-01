@@ -10,9 +10,12 @@
   border-color: var(--grey-300);
   border-bottom: 0;
 
-  /* temporary fix to get displaybox pre margin to zero out */
+  /* temporary fix to get displaybox pre margin to zero out, size and style font correctly */
   & ~ pre {
     margin: 0;
+    font-size: 1.25rem;
+    font-family: monospace;
+    padding: 0.75rem;
   }
 }
 

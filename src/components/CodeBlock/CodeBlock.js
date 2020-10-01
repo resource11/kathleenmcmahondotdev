@@ -18,7 +18,7 @@ export const CodeBlock = ({ codeString, language, ...props }) => {
         <DisplayBox>
           <LivePreview  />
         </DisplayBox>
-        <LiveEditor style={{ padding: '0.5rem', margin: 0 }} />
+        <LiveEditor style={{ margin: 0, fontSize: '1.25rem' }} />
         <LiveError />
       </LiveProvider>
     )
@@ -36,6 +36,7 @@ export const CodeBlock = ({ codeString, language, ...props }) => {
           code={codeString}
           language={language}
           theme={theme}
+          style={{ fontSize: '1.25rem' }}
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre className={className} style={style}>
