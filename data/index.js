@@ -212,8 +212,6 @@ const siteData = {
         "https://noti.st/resource11/URLAn0/digital-gardening-with-mdx-magic",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "Frontend Live",
       eventYear: "2020",
@@ -222,7 +220,8 @@ const siteData = {
       eventURL: "https://frontendconf.ru/moscow/2020",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/SvZuZX/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
     {
@@ -233,13 +232,16 @@ const siteData = {
       eventURL: "https://enterjs.de/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/5FIiRw/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
+  ],
+  upcomingTalks: [
     {
       event: "React Summit",
       eventYear: "2020",
-      eventDate: "2020-10-15",
+      eventDate: "2020-10-16",
       eventLocation: "Online",
       eventURL: "https://reactsummit.com/",
       talkName: "Smoothly Inclusive Component Library Documentation",
@@ -253,6 +255,17 @@ const siteData = {
       eventLocation: "Online",
       eventURL:
         "https://events.codemotion.com/conferences/online/2020/codemotion-online-tech-conference/",
+      talkName:
+        "Accessibility-flavored React components make your design system delicious!",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "Accessibility Chicago",
+      eventYear: "2020",
+      eventDate: "2020-10-28",
+      eventLocation: "Online",
+      eventURL: "https://www.meetup.com/a11ychi/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
       talkURL: "",
