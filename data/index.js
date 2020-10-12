@@ -241,7 +241,7 @@ const siteData = {
     {
       event: "React Summit",
       eventYear: "2020",
-      eventDate: "2020-10-16",
+      eventDate: "2020-10-15",
       eventLocation: "Online",
       eventURL: "https://reactsummit.com/",
       talkName: "Smoothly Inclusive Component Library Documentation",
