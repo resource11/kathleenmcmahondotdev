@@ -236,8 +236,6 @@ const siteData = {
         "https://noti.st/resource11/5FIiRw/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Summit",
       eventYear: "2020",
@@ -245,7 +243,7 @@ const siteData = {
       eventLocation: "Online",
       eventURL: "https://reactsummit.com/",
       talkName: "Smoothly Inclusive Component Library Documentation",
-      talkURL: "",
+      talkURL: "https://noti.st/resource11/2uy6Ol/smoothly-inclusive-component-library-documentation",
       talkType: "Talk",
     },
     {
@@ -257,7 +255,7 @@ const siteData = {
         "https://events.codemotion.com/conferences/online/2020/codemotion-online-tech-conference/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "",
+      talkURL: "https://noti.st/resource11/hN5MgP/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
     {
@@ -268,17 +266,30 @@ const siteData = {
       eventURL: "https://www.meetup.com/a11ychi/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "",
+      talkURL: "https://noti.st/resource11/cb2h86/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
     {
-      event: "Web Accessibility Conference",
+      event: "Egghead Talks",
       eventYear: "2020",
       eventDate: "2020-11-18",
-      eventLocation: "New Orleans, LA",
-      eventURL: "https://webaccessibilityconf.com/",
+      eventLocation: "Online",
+      eventURL: "https://egghead.io/talks",
       talkName:
-        "Smoothly Inclusive: React component library documentation with Gatsby and MDX",
+        "Accessibility-flavored React components make your design system delicious!",
+      talkURL: "https://noti.st/resource11/lxBsam/accessibility-flavored-react-components-make-your-design-system-delicious",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "axe-con",
+      eventYear: "2021",
+      eventDate: "2021-03-10",
+      eventLocation: "Online",
+      eventURL: "https://www.deque.com/axe-con/",
+      talkName:
+        "Accessibility-flavored React components make your design system delicious!",
       talkURL: "",
       talkType: "Talk",
     },
@@ -290,6 +301,17 @@ const siteData = {
       eventURL: "https://selfconference.org/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "Web Accessibility Conference",
+      eventYear: "2021",
+      eventDate: "",
+      eventLocation: "New Orleans, LA",
+      eventURL: "https://webaccessibilityconf.com/",
+      talkName:
+        "Smoothly Inclusive: React component library documentation with Gatsby and MDX",
       talkURL: "",
       talkType: "Talk",
     },
