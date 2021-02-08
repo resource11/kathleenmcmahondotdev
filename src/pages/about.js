@@ -158,12 +158,15 @@ const About = ({
             {socialLinks.map((social) => (
               <li key={social.name} className={socialListItemClasses}>
                 <Link
-                  extraClasses={{ root: css.socialListLink }}
+                  extraClasses={{
+                    root: css.socialListLink,
+                    icon: css.socialListLinkIcon,
+                  }}
                   icon={[social.libraryAlias, social.icon]}
                   size="large"
                   to={social.link}
                 >
-                  {social.name}
+                  <span>{social.name}</span>
                 </Link>
               </li>
             ))}

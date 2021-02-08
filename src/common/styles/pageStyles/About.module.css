@@ -229,7 +229,7 @@
 }
 
 .socialListLink {
-  display: inline-block;
+  display: flex;
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -239,4 +239,8 @@
   @media screen and (--small) {
     font-size: 1.5rem;
   }
+}
+
+.socialListLinkIcon {
+  display: flex;
 }
