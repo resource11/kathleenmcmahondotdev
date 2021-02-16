@@ -243,7 +243,8 @@ const siteData = {
       eventLocation: "Online",
       eventURL: "https://reactsummit.com/",
       talkName: "Smoothly Inclusive Component Library Documentation",
-      talkURL: "https://noti.st/resource11/2uy6Ol/smoothly-inclusive-component-library-documentation",
+      talkURL:
+        "https://noti.st/resource11/2uy6Ol/smoothly-inclusive-component-library-documentation",
       talkType: "Talk",
     },
     {
@@ -255,7 +256,8 @@ const siteData = {
         "https://events.codemotion.com/conferences/online/2020/codemotion-online-tech-conference/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "https://noti.st/resource11/hN5MgP/accessibility-flavored-react-components-make-your-design-system-delicious",
+      talkURL:
+        "https://noti.st/resource11/hN5MgP/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
     {
@@ -266,7 +268,8 @@ const siteData = {
       eventURL: "https://www.meetup.com/a11ychi/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "https://noti.st/resource11/cb2h86/accessibility-flavored-react-components-make-your-design-system-delicious",
+      talkURL:
+        "https://noti.st/resource11/cb2h86/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
     {
@@ -277,11 +280,22 @@ const siteData = {
       eventURL: "https://egghead.io/talks",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
-      talkURL: "https://noti.st/resource11/lxBsam/accessibility-flavored-react-components-make-your-design-system-delicious",
+      talkURL:
+        "https://noti.st/resource11/lxBsam/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
   ],
   upcomingTalks: [
+    {
+      event: "TECH(K)NOW Day",
+      eventYear: "2021",
+      eventDate: "2021-03-08",
+      eventLocation: "Online",
+      eventURL: "http://techknowday.com/",
+      talkName: "Smoothly Inclusive Component Library Documentation",
+      talkURL: "",
+      talkType: "Talk",
+    },
     {
       event: "axe-con",
       eventYear: "2021",
@@ -296,7 +310,7 @@ const siteData = {
     {
       event: "Self Conference",
       eventYear: "2021",
-      eventDate: "2021-05-07",
+      eventDate: "",
       eventLocation: "Detroit, MI",
       eventURL: "https://selfconference.org/",
       talkName:
