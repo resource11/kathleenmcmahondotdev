@@ -105,7 +105,9 @@ const About = ({
             documentation.
           </p>
           <p className={css.aboutPara}>
-            I’m also a Color Module Specification Editor for the{" "}
+            I’m currently a Senior Design Engineer on{" "}
+            <Link to="https://launchdarkly.com/">LaunchDarkly</Link>&rsquo;s
+            Design System team, and a Color Module Specification Editor for the{" "}
             <Link to="https://www.w3.org/community/design-tokens">
               W3C Design Tokens Community Group
             </Link>
