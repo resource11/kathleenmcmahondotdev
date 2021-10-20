@@ -39,13 +39,14 @@ export const ContactForm = () => {
           })
             .then(() => {
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2))
+                // alert(JSON.stringify(values, null, 2))
+                alert("Your message has been sent.")
                 actions.setSubmitting(false)
                 actions.resetForm()
               }, 400)
             })
             .catch(() => {
-              alert("Error")
+              alert("Whoops! Something went wrong. Please try again.")
             })
             .finally(() => actions.setSubmitting(false))
         }}
