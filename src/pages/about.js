@@ -94,7 +94,7 @@ const About = ({
         </header>
         <article className={css.contentWrapper}>
           <p className={css.aboutIntroPara}>
-            So... you want to know more about me? OK. Well, I'm fullstack
+            So... you want to know more about me? OK. Well, I'm a software
             engineer with a design background. In other words, I really enjoy
             the{" "}
             <Link to="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">
@@ -105,9 +105,7 @@ const About = ({
             documentation.
           </p>
           <p className={css.aboutPara}>
-            I’m currently a Senior Design Engineer on{" "}
-            <Link to="https://launchdarkly.com/">LaunchDarkly</Link>&rsquo;s
-            Design System team, and a Color Module Specification Editor for the{" "}
+            I’m also a Color Module Specification Editor for the{" "}
             <Link to="https://www.w3.org/community/design-tokens">
               W3C Design Tokens Community Group
             </Link>

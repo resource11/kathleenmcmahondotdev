@@ -284,8 +284,6 @@ const siteData = {
         "https://noti.st/resource11/lxBsam/accessibility-flavored-react-components-make-your-design-system-delicious",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "TECH(K)NOW Day",
       eventYear: "2021",
@@ -304,9 +302,49 @@ const siteData = {
       eventURL: "https://www.deque.com/axe-con/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
+      talkURL:
+        "https://noti.st/resource11/1G5PnK/accessibility-flavored-react-components-make-your-design-system-delicious",
+      talkType: "Talk",
+    },
+    {
+      event: "Trajectory",
+      eventYear: "2021",
+      eventDate: "2021-11-09",
+      eventLocation: "Online",
+      eventURL: "https://launchdarkly.com/trajectory-2021/",
+      talkName:
+        "Stealth-mode North Star! Rebranding in secret with feature flags",
+      talkURL:
+        "https://noti.st/resource11/jNR91d/stealth-mode-north-star-rebranding-in-secret-with-feature-flags",
+      talkType: "Talk",
+    },
+    {
+      event: "ReactJSDay",
+      eventYear: "2021",
+      eventDate: "2021-11-30",
+      eventLocation: "Online",
+      eventURL: "https://2021.reactjsday.it/",
+      talkName:
+        "Stealth-mode North Star! Rebranding in secret with feature flags",
+      talkURL:
+        "https://noti.st/resource11/yKCLsK/stealth-mode-north-star-rebranding-in-secret-with-feature-flags",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "React Miami",
+      eventYear: "2022",
+      eventDate: "2022-04-18",
+      eventLocation: "Miami, FL",
+      eventURL: "https://www.reactmiami.com/",
+      talkName:
+        "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
       talkURL: "",
       talkType: "Talk",
     },
+  ],
+  postponedTalks: [
     {
       event: "Self Conference",
       eventYear: "2021",
