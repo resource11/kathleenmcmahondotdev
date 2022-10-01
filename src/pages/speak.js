@@ -38,7 +38,6 @@ const Speak = ({ extraClasses }) => {
   )
   const pastTalkLinkClasses = classnames(css.cardLinkRoot, css.pastCardLinkRoot)
 
-  console.log(`talks 2018 are  ${talks2018}`)
   return (
     <Layout>
       <SEO title={`Kathleen McMahon | Speaking`} />
