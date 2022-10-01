@@ -117,7 +117,7 @@ const siteData = {
       talkType: "Talk",
     },
     {
-      event: "React JS Day Italy",
+      event: "reactjsday",
       eventYear: "2019",
       eventDate: "2019-10-04",
       eventLocation: "Verona, Italy",
@@ -319,7 +319,7 @@ const siteData = {
       talkType: "Talk",
     },
     {
-      event: "ReactJSDay",
+      event: "reactjsday",
       eventYear: "2021",
       eventDate: "2021-11-30",
       eventLocation: "Online",
@@ -330,8 +330,6 @@ const siteData = {
         "https://noti.st/resource11/yKCLsK/stealth-mode-north-star-rebranding-in-secret-with-feature-flags",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Miami",
       eventYear: "2022",
@@ -342,6 +340,40 @@ const siteData = {
         "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
       talkURL: "",
       talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "React Brussels",
+      eventYear: "2022",
+      eventDate: "2022-10-14",
+      eventLocation: "Brussels, Belgium",
+      eventURL: "https://www.react.brussels/",
+      talkName:
+        "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "reactjsday",
+      eventYear: "2022",
+      eventDate: "2022-10-21",
+      eventLocation: "Verona, Italy",
+      eventURL: "https://2022.reactjsday.it/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "Web Unleashed",
+      eventYear: "2022",
+      eventDate: "2022-10-25",
+      eventLocation: "Online",
+      eventURL: "https://fitc.ca/event/webu22/",
+      talkName: "Do You Really Need That Design System?",
+      talkURL: "",
+      talkType: "Panel",
     },
   ],
   postponedTalks: [
