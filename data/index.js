@@ -392,40 +392,6 @@ const siteData = {
       talkType: "",
     },
   ],
-  upcomingTalks: [
-    {
-      event: "React Brussels",
-      eventYear: "2022",
-      eventDate: "2022-10-14",
-      eventLocation: "Brussels, Belgium",
-      eventURL: "https://www.react.brussels/",
-      talkName:
-        "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
-      talkURL: "",
-      talkType: "Talk",
-    },
-    {
-      event: "reactjsday",
-      eventYear: "2022",
-      eventDate: "2022-10-21",
-      eventLocation: "Verona, Italy",
-      eventURL: "https://2022.reactjsday.it/",
-      talkName:
-        "Design System Carnival! One accessible component, many pretty masks.",
-      talkURL: "",
-      talkType: "Talk",
-    },
-    {
-      event: "Web Unleashed",
-      eventYear: "2022",
-      eventDate: "2022-10-25",
-      eventLocation: "Online",
-      eventURL: "https://fitc.ca/event/webu22/",
-      talkName: "Do You Really Need That Design System?",
-      talkURL: "",
-      talkType: "Panel",
-    },
-  ],
   postponedTalks: [
     {
       event: "Self Conference",
