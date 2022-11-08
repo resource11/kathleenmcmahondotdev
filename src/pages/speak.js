@@ -23,8 +23,12 @@ const Speak = ({ extraClasses }) => {
     .filter((talk) => talk.eventYear === "2021")
     .reverse()
 
-  const upcomingTalks2022 = upcomingTalks.filter(
-    (talk) => talk.eventYear === "2022"
+  const talks2022 = pastTalks
+    .filter((talk) => talk.eventYear === "2022")
+    .reverse()
+
+  const upcomingTalks2023 = upcomingTalks.filter(
+    (talk) => talk.eventYear === "2023"
   )
 
   const talkListClasses = classnames(css.cardUl, css.stackList)
@@ -58,9 +62,9 @@ const Speak = ({ extraClasses }) => {
           </p>
           <hr className={css.purpleRedHR} />
           <h2>Upcoming talks</h2>
-          <h3 className={css.speakingH3}>2022</h3>
+          <h3 className={css.speakingH3}>2023</h3>
           <ul className={talkListClasses} role="list">
-            {upcomingTalks2022.map((upcoming) => (
+            {upcomingTalks2023.map((upcoming) => (
               <li key={upcoming.event} className={upcomingTalkListClasses}>
                 <Link
                   extraClasses={{ root: upcomingTalkLinkClasses }}
@@ -77,6 +81,30 @@ const Speak = ({ extraClasses }) => {
           </ul>
           <hr className={css.purpleRedHR} />
           <h2>Past talks</h2>
+          <h3 className={css.speakingH3}>2022</h3>
+          <ul className={talkListClasses} role="list">
+            {talks2022.map((talk) => (
+              <li key={talk.event} className={pastTalkListClasses}>
+                <Link
+                  extraClasses={{ root: pastTalkLinkClasses }}
+                  size="small"
+                  to={talk.eventURL}
+                >
+                  {talk.event}
+                </Link>
+                <Link
+                  extraClasses={{ root: css.pastCardSublinkRoot }}
+                  size="small"
+                  to={talk.talkURL}
+                >
+                  {talk.talkName}
+                </Link>
+                <p className={css.cardDateLocation}>
+                  {talk.eventDate} | {talk.eventLocation}
+                </p>
+              </li>
+            ))}
+          </ul>
           <h3 className={css.speakingH3}>2021</h3>
           <ul className={talkListClasses} role="list">
             {talks2021.map((talk) => (

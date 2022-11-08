@@ -44,9 +44,9 @@ const siteData = {
       libraryAlias: "fab",
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/resource11",
-      icon: "twitter",
+      name: "Mastodon",
+      link: "https://front-end.social/@resource11",
+      icon: "mastodon",
       libraryAlias: "fab",
     },
     {
@@ -59,6 +59,12 @@ const siteData = {
       name: "Instagram",
       link: "https://instagram.com/resource11",
       icon: "instagram",
+      libraryAlias: "fab",
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/resource11",
+      icon: "twitter",
       libraryAlias: "fab",
     },
     {
@@ -340,6 +346,50 @@ const siteData = {
         "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
       talkURL: "",
       talkType: "Talk",
+    },
+    {
+      event: "React Brussels",
+      eventYear: "2022",
+      eventDate: "2022-10-14",
+      eventLocation: "Brussels, Belgium",
+      eventURL: "https://www.react.brussels/",
+      talkName:
+        "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "reactjsday",
+      eventYear: "2022",
+      eventDate: "2022-10-21",
+      eventLocation: "Verona, Italy",
+      eventURL: "https://2022.reactjsday.it/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "Web Unleashed",
+      eventYear: "2022",
+      eventDate: "2022-10-25",
+      eventLocation: "Online",
+      eventURL: "https://fitc.ca/event/webu22/",
+      talkName: "Do You Really Need That Design System?",
+      talkURL: "",
+      talkType: "Panel",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "Stay tuned...",
+      eventYear: "2023",
+      eventDate: "2023",
+      eventLocation: "To be announced",
+      eventURL: "#",
+      talkName: "",
+      talkURL: "",
+      talkType: "",
     },
   ],
   upcomingTalks: [
