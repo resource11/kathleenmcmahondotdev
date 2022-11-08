@@ -44,9 +44,9 @@ const siteData = {
       libraryAlias: "fab",
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/resource11",
-      icon: "twitter",
+      name: "Mastodon",
+      link: "https://front-end.social/@resource11",
+      icon: "mastodon",
       libraryAlias: "fab",
     },
     {
@@ -59,6 +59,12 @@ const siteData = {
       name: "Instagram",
       link: "https://instagram.com/resource11",
       icon: "instagram",
+      libraryAlias: "fab",
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/resource11",
+      icon: "twitter",
       libraryAlias: "fab",
     },
     {
@@ -341,8 +347,6 @@ const siteData = {
       talkURL: "",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Brussels",
       eventYear: "2022",
@@ -374,6 +378,18 @@ const siteData = {
       talkName: "Do You Really Need That Design System?",
       talkURL: "",
       talkType: "Panel",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "Stay tuned...",
+      eventYear: "2023",
+      eventDate: "2023",
+      eventLocation: "To be announced",
+      eventURL: "#",
+      talkName: "",
+      talkURL: "",
+      talkType: "",
     },
   ],
   postponedTalks: [
