@@ -344,7 +344,8 @@ const siteData = {
       eventURL: "https://www.reactmiami.com/",
       talkName:
         "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/QnaxsB/stealth-mode-north-star-rebranding-in-secret-with-feature-flags",
       talkType: "Talk",
     },
     {
@@ -355,7 +356,8 @@ const siteData = {
       eventURL: "https://www.react.brussels/",
       talkName:
         "Stealth-Mode North Star! Rebranding in Secret with Feature Flags",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/ZEs6N9/stealth-mode-north-star-rebranding-in-secret-with-feature-flags",
       talkType: "Talk",
     },
     {
@@ -366,7 +368,8 @@ const siteData = {
       eventURL: "https://2022.reactjsday.it/",
       talkName:
         "Design System Carnival! One accessible component, many pretty masks.",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/jDeU1b/design-system-carnival-one-accessible-component-many-pretty-masks",
       talkType: "Talk",
     },
     {
@@ -376,7 +379,7 @@ const siteData = {
       eventLocation: "Online",
       eventURL: "https://fitc.ca/event/webu22/",
       talkName: "Do You Really Need That Design System?",
-      talkURL: "",
+      talkURL: "https://fitc.ca/event/webu22/",
       talkType: "Panel",
     },
   ],
