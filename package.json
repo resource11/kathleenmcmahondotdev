@@ -2,7 +2,7 @@
   "name": "kathleen-mcmahon-dot-dev",
   "private": true,
   "description": "The digital garden site for Kathleen McMahon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "build": " gatsby build --log-pages",
