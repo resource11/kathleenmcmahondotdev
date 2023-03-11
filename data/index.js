@@ -385,14 +385,25 @@ const siteData = {
   ],
   upcomingTalks: [
     {
-      event: "Stay tuned...",
+      event: "React Miami",
       eventYear: "2023",
-      eventDate: "2023",
-      eventLocation: "To be announced",
-      eventURL: "#",
-      talkName: "",
+      eventDate: "2023-04-20",
+      eventLocation: "Miami, FL",
+      eventURL: "https://www.reactmiami.com/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
       talkURL: "",
-      talkType: "",
+      talkType: "Talk",
+    },
+    {
+      event: "React Next",
+      eventYear: "2023",
+      eventDate: "2023-06-27",
+      eventLocation: "Tel Aviv, Israel",
+      eventURL: "https://www.react-next.com/",
+      talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
+      talkURL: "",
+      talkType: "Talk",
     },
   ],
   postponedTalks: [
