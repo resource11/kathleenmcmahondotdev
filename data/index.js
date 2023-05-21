@@ -382,8 +382,6 @@ const siteData = {
       talkURL: "https://fitc.ca/event/webu22/",
       talkType: "Panel",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Miami",
       eventYear: "2023",
@@ -392,15 +390,28 @@ const siteData = {
       eventURL: "https://www.reactmiami.com/",
       talkName:
         "Design System Carnival! One accessible component, many pretty masks.",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/e9MxhM/design-system-carnival-one-accessible-component-many-pretty-masks",
       talkType: "Talk",
     },
+  ],
+  upcomingTalks: [
     {
       event: "React Next",
       eventYear: "2023",
       eventDate: "2023-06-27",
       eventLocation: "Tel Aviv, Israel",
       eventURL: "https://www.react-next.com/",
+      talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "React Alicante",
+      eventYear: "2023",
+      eventDate: "2023-09-28",
+      eventLocation: "Alicante, Spain",
+      eventURL: "https://reactalicante.es/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
       talkURL: "",
       talkType: "Talk",
