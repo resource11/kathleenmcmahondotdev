@@ -115,7 +115,7 @@ const siteData = {
       eventYear: "2019",
       eventDate: "2019-09-20",
       eventLocation: "Dublin, Ireland",
-      eventURL: "https://www.jsday.org/",
+      eventURL: "https://www.jsday.ie/blog/speaker-spotlight/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
       talkURL:
@@ -411,7 +411,7 @@ const siteData = {
       eventYear: "2023",
       eventDate: "2023-09-26",
       eventLocation: "Dublin, Ireland",
-      eventURL: "https://www.jsday.org/",
+      eventURL: "https://www.jsday.ie/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
       talkURL: "",
       talkType: "Talk",
