@@ -105,15 +105,15 @@ const About = ({
             documentation.
           </p>
           <p className={css.aboutPara}>
-            I’m also a Color Module Specification Editor for the{" "}
+            I’m also a{" "}
             <Link to="https://www.w3.org/community/design-tokens">
-              W3C Design Tokens Community Group
-            </Link>
-            .
+              Design Tokens Community Group
+            </Link>{" "}
+            Specification Editor.
           </p>
           <p className={css.aboutPara}>
-            When I’m not coding, designing, or speaking about things, I’m the
-            best{" "}
+            When I’m not coding, designing, or speaking about things, I can be
+            found racing bikes in costume &#8212; as the best{" "}
             <Link to="https://facebook.com/cxsisters">
               Lanterne Rouge cyclocrosser
             </Link>{" "}

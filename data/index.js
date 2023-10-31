@@ -404,8 +404,6 @@ const siteData = {
       talkURL: "",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "JSDayIE",
       eventYear: "2023",
@@ -413,7 +411,8 @@ const siteData = {
       eventLocation: "Dublin, Ireland",
       eventURL: "https://www.jsday.ie/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
-      talkURL: "",
+      talkURL:
+        "https://noti.st/resource11/9NnEIE/bye-bye-weeds-digital-gardening-with-astro-solidjs-and-mdx",
       talkType: "Talk",
     },
     {
@@ -422,7 +421,21 @@ const siteData = {
       eventDate: "2023-09-28",
       eventLocation: "Alicante, Spain",
       eventURL: "https://reactalicante.es/",
-      talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
+      talkName: "Bye-bye, weeds! Digital Gardening with Astro & MDX.",
+      talkURL:
+        "https://noti.st/resource11/cegRnq/bye-bye-weeds-digital-gardening-with-astro-mdx",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "Clarity",
+      eventYear: "2023",
+      eventDate: "2023-11-1",
+      eventLocation: "San Francisco, CA",
+      eventURL: "https://www.clarityconf.com/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
       talkURL: "",
       talkType: "Talk",
     },
