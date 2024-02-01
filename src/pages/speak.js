@@ -34,8 +34,8 @@ const Speak = ({ extraClasses }) => {
     .filter((talk) => talk.eventYear === "2023")
     .reverse()
 
-  const upcomingTalks2023 = upcomingTalks.filter(
-    (talk) => talk.eventYear === "2023"
+  const upcomingTalks2024 = upcomingTalks.filter(
+    (talk) => talk.eventYear === "2024"
   )
 
   const talkListClasses = classnames(css.cardUl, css.stackList)
@@ -68,9 +68,9 @@ const Speak = ({ extraClasses }) => {
           </p>
           <hr className={css.purpleRedHR} />
           <h2>Upcoming talks</h2>
-          <h3 className={css.speakingH3}>2023</h3>
+          <h3 className={css.speakingH3}>2024</h3>
           <ul className={talkListClasses} role="list">
-            {upcomingTalks2023.map((upcoming) => (
+            {upcomingTalks2024.map((upcoming) => (
               <li key={upcoming.event} className={upcomingTalkListClasses}>
                 <Link
                   extraClasses={{ root: upcomingTalkLinkClasses }}

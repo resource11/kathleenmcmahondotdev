@@ -450,8 +450,6 @@ const siteData = {
         "https://noti.st/resource11/8c2biU/design-system-carnival-one-accessible-component-many-pretty-masks",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "Island Architecture: The Monthly Dev #35",
       eventYear: "2023",
@@ -460,6 +458,19 @@ const siteData = {
       eventURL:
         "https://www.meetup.com/the-monthly-dev-world-class-talks-by-expert-developers/events/297351688/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro & MDX.",
+      talkURL: "https://noti.st/resource11/2WApae",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "CityJS London",
+      eventYear: "2024",
+      eventDate: "2024-04-05",
+      eventLocation: "London, UK",
+      eventURL: "https://london.cityjsconf.org/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
       talkURL: "",
       talkType: "Talk",
     },
