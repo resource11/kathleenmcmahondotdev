@@ -461,8 +461,6 @@ const siteData = {
       talkURL: "https://noti.st/resource11/2WApae",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "CityJS London",
       eventYear: "2024",
@@ -471,8 +469,31 @@ const siteData = {
       eventURL: "https://london.cityjsconf.org/",
       talkName:
         "Design System Carnival! One accessible component, many pretty masks.",
-      talkURL: "",
+      talkURL: "https://noti.st/resource11/XRHV5d",
       talkType: "Talk",
+    },
+    {
+      event: "ConfrontJS",
+      eventYear: "2024",
+      eventDate: "2024-04-12",
+      eventLocation: "Warsaw, Poland",
+      eventURL: "https://confrontjs.pl/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
+      talkURL: "https://noti.st/resource11/9l0Iy2",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "To be announced",
+      eventYear: "2024",
+      eventDate: "Stay",
+      eventLocation: "Tuned",
+      eventURL: "",
+      talkName: "",
+      talkURL: "",
+      talkType: "",
     },
   ],
   postponedTalks: [

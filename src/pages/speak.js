@@ -34,6 +34,10 @@ const Speak = ({ extraClasses }) => {
     .filter((talk) => talk.eventYear === "2023")
     .reverse()
 
+  const talks2024 = pastTalks
+    .filter((talk) => talk.eventYear === "2024")
+    .reverse()
+
   const upcomingTalks2024 = upcomingTalks.filter(
     (talk) => talk.eventYear === "2024"
   )
@@ -87,6 +91,30 @@ const Speak = ({ extraClasses }) => {
           </ul>
           <hr className={css.purpleRedHR} />
           <h2>Past talks</h2>
+          <h3 className={css.speakingH3}>2023</h3>
+          <ul className={talkListClasses} role="list">
+            {talks2024.map((talk) => (
+              <li key={talk.event} className={pastTalkListClasses}>
+                <Link
+                  extraClasses={{ root: pastTalkLinkClasses }}
+                  size="small"
+                  to={talk.eventURL}
+                >
+                  {talk.event}
+                </Link>
+                <Link
+                  extraClasses={{ root: css.pastCardSublinkRoot }}
+                  size="small"
+                  to={talk.talkURL}
+                >
+                  {talk.talkName}
+                </Link>
+                <p className={css.cardDateLocation}>
+                  {talk.eventDate} | {talk.eventLocation}
+                </p>
+              </li>
+            ))}
+          </ul>
           <h3 className={css.speakingH3}>2023</h3>
           <ul className={talkListClasses} role="list">
             {talks2023.map((talk) => (
