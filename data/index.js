@@ -486,14 +486,15 @@ const siteData = {
   ],
   upcomingTalks: [
     {
-      event: "To be announced",
+      event: "React Alicante",
       eventYear: "2024",
-      eventDate: "Stay",
-      eventLocation: "Tuned",
-      eventURL: "",
-      talkName: "",
+      eventDate: "2024-09-19",
+      eventLocation: "Alicante, Spain",
+      eventURL: "https://reactalicante.es/",
+      talkName:
+        "Holy Cannoli! Headless WordPress with NextJS, React Spectrum, and TailwindCSS",
       talkURL: "",
-      talkType: "",
+      talkType: "Workshop",
     },
   ],
   postponedTalks: [
