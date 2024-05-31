@@ -91,7 +91,7 @@ const Speak = ({ extraClasses }) => {
           </ul>
           <hr className={css.purpleRedHR} />
           <h2>Past talks</h2>
-          <h3 className={css.speakingH3}>2023</h3>
+          <h3 className={css.speakingH3}>2024</h3>
           <ul className={talkListClasses} role="list">
             {talks2024.map((talk) => (
               <li key={talk.event} className={pastTalkListClasses}>
