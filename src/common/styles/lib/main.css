@@ -391,12 +391,15 @@ a,
   color: var(--link);
   cursor: pointer;
   max-width: fit-content;
+  text-decoration-color: var(--purple-red-050);
+  text-underline-offset: 0.125em;
 }
 
 a:hover,
 .link:hover {
   background: var(--grad-rad-blue-violet);
   color: var(--text-reverse);
+  text-decoration-line: none;
 }
 
 a:active,

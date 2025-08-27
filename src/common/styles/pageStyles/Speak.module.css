@@ -108,7 +108,7 @@
 .cardUl {
   position: relative;
   list-style-type: none;
-  max-width: 30em;
+  max-width: 75ch;
 }
 
 .cardRoot {
@@ -135,11 +135,19 @@
   margin-top: var(--s0);
 }
 
+.cardTalkType {
+  @add-mixin font-body-medium;
+  display: block;
+  color: var(--grey-700);
+  margin-top: auto;
+}
+
 .cardDateLocation {
   @add-mixin font-body-medium;
   display: block;
-  color: var(--grey-500);
+  color: var(--grey-700);
   margin-top: auto;
+  line-height: 1.5;
 }
 
 .cardLi {
@@ -180,19 +188,21 @@
 .upcomingCardLinkRoot {
   @add-mixin font-weight-bold;
   line-height: 1.2;
+  text-decoration-color: var(--magenta-red-100);
 }
 
 .pastCardLinkRoot {
   @add-mixin font-weight-bold;
   color: var(--caribbean-blue-muted-200);
+  text-decoration-color: var(--caribbean-blue-100);
 }
-
 .pastCardSublinkRoot {
   @add-mixin font-weight-medium;
   display: block;
   margin-top: var(--s-3);
   line-height: 1.2;
   color: var(--caribbean-blue-muted-100);
+  text-decoration-color: var(--caribbean-blue-100);
 
   @media screen and (--small) {
     font-size: 1.125rem;
@@ -202,3 +212,26 @@
     font-size: 1.25rem;
   }
 }
+
+.upcomingCardSublinkRoot {
+  @add-mixin font-weight-medium;
+  display: block;
+  margin-top: var(--s-3);
+  line-height: 1.2;
+  color: var(--purple-violet-200-muted);
+
+  @media screen and (--small) {
+    font-size: 1.125rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.25rem;
+  }
+}
+
+/* .pastCardLinkRoot:hover,
+.pastCardSublinkRoot:hover,
+.upcomingCardLinkRoot:hover,
+.upcomingCardSublinkRoot:hover {
+  text-decoration-line: none;
+} */
