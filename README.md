@@ -24,7 +24,7 @@ As it is my personal website, I'm not really looking for feature requests for th
 
 The best way to submit these issues is using this repo's [Issue tracker](https://github.com/resource11/kathleenmcmahondotdev/issues). Please make sure you read the [contributing guidelines](https://github.com/resource11/kathleenmcmahondotdev#contributing) before doing so!
 
-If you can't or won't use GitHub, I can also be reached on Twitter, as well as on the other social networking services linked to on my site.
+If you can't or won't use GitHub, I can also be reached on Twitter, Bluesky, and other social networking services linked to on my site.
 
 ## License
 
