@@ -528,6 +528,16 @@ const siteData = {
       talkType: "Lightning Talk",
     },
     {
+      event: "DevFest Santiago de Compostela",
+      eventYear: "2025",
+      eventDate: "2025-10-08",
+      eventLocation: "DevFest Santiago de Compostela, Spain",
+      eventURL: "https://devfest.gdg-sdc.org/",
+      talkName: "Practical Accessibility in React: The Sand Dollar Approach",
+      talkURL: "",
+      talkType: "Workshop",
+    },
+    {
       event: "Codemotion Milan",
       eventYear: "2025",
       eventDate: "2025-10-14",
