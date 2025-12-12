@@ -38,8 +38,12 @@ const Speak = ({ extraClasses }) => {
     .filter((talk) => talk.eventYear === "2024")
     .reverse()
 
-  const upcomingTalks2025 = upcomingTalks.filter(
-    (talk) => talk.eventYear === "2025"
+  const talks2025 = pastTalks
+    .filter((talk) => talk.eventYear === "2025")
+    .reverse()
+
+  const upcomingTalks2026 = upcomingTalks.filter(
+    (talk) => talk.eventYear === "2026"
   )
 
   const talkListClasses = classnames(css.cardUl, css.stackList)
@@ -72,9 +76,9 @@ const Speak = ({ extraClasses }) => {
           </p>
           <hr className={css.purpleRedHR} />
           <h2>Upcoming talks</h2>
-          <h3 className={css.speakingH3}>2025</h3>
+          <h3 className={css.speakingH3}>2026</h3>
           <ul className={talkListClasses} role="list">
-            {upcomingTalks2025.map((upcoming) => (
+            {upcomingTalks2026.map((upcoming) => (
               <li key={upcoming.event} className={upcomingTalkListClasses}>
                 <Link
                   extraClasses={{ root: upcomingTalkLinkClasses }}
@@ -86,15 +90,48 @@ const Speak = ({ extraClasses }) => {
                 <p className={css.upcomingCardSublinkRoot}>
                   {upcoming.talkName}
                 </p>
-                <p className={css.cardDateLocation}>
+                <p className={css.cardDateLocation}>{upcoming.eventLocation}</p>
+                {/* <p className={css.cardDateLocation}>
                   {upcoming.eventDate} | {upcoming.eventLocation} |{" "}
                   {upcoming.talkType}
-                </p>
+                </p> */}
               </li>
             ))}
           </ul>
           <hr className={css.purpleRedHR} />
           <h2>Past talks</h2>
+          <h3 className={css.speakingH3}>2025</h3>
+          <ul className={talkListClasses} role="list">
+            {talks2025.map((talk) => (
+              <li key={talk.event} className={pastTalkListClasses}>
+                {talk.eventURL ? (
+                  <Link
+                    extraClasses={{ root: pastTalkLinkClasses }}
+                    size="small"
+                    to={talk.eventURL}
+                  >
+                    {talk.event}
+                  </Link>
+                ) : (
+                  <p className={css.pastCardSublinkRoot}>{talk.event}</p>
+                )}
+                {talk.talkURL ? (
+                  <Link
+                    extraClasses={{ root: css.pastCardSublinkRoot }}
+                    size="small"
+                    to={talk.talkURL}
+                  >
+                    {talk.talkName}
+                  </Link>
+                ) : (
+                  <p className={css.pastCardSublinkRoot}>{talk.talkName}</p>
+                )}
+                <p className={css.cardDateLocation}>
+                  {talk.eventDate} | {talk.eventLocation} | {talk.talkType}
+                </p>
+              </li>
+            ))}
+          </ul>
           <h3 className={css.speakingH3}>2024</h3>
           <ul className={talkListClasses} role="list">
             {talks2024.map((talk) => (

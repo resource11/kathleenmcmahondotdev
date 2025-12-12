@@ -502,11 +502,9 @@ const siteData = {
       eventURL: "https://reactalicante.es/",
       talkName:
         "Sweet, savory, and fresh! Accessible design system Storybook tests.",
-      talkURL: "",
+      talkURL: "https://noti.st/resource11/5jnITE",
       talkType: "Lightning Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Alicante",
       eventYear: "2025",
@@ -524,8 +522,8 @@ const siteData = {
       eventLocation: "Alicante, Spain",
       eventURL: "https://reactalicante.es/",
       talkName: "The Beachcomber’s Guide to Type-Safe Design Systems.",
-      talkURL: "",
-      talkType: "Lightning Talk",
+      talkURL: "https://noti.st/resource11/wgxi6R",
+      talkType: "Talk",
     },
     {
       event: "DevFest Santiago de Compostela",
@@ -536,6 +534,16 @@ const siteData = {
       talkName: "Practical Accessibility in React: The Sand Dollar Approach",
       talkURL: "",
       talkType: "Workshop",
+    },
+    {
+      event: "DevFest Santiago de Compostela",
+      eventYear: "2025",
+      eventDate: "2025-10-08",
+      eventLocation: "DevFest Santiago de Compostela, Spain",
+      eventURL: "https://devfest.gdg-sdc.org/",
+      talkName: "The Beachcomber’s Guide to Type-Safe Design Systems.",
+      talkURL: "",
+      talkType: "Talk",
     },
     {
       event: "Codemotion Milan",
@@ -556,6 +564,18 @@ const siteData = {
       talkName: "The Beachcomber’s Guide to Type-Safe Design Systems.",
       talkURL: "",
       talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "",
+      eventYear: "2026",
+      eventDate: "",
+      eventLocation: "To be announced",
+      eventURL: "",
+      talkName: "",
+      talkURL: "",
+      talkType: "",
     },
   ],
   postponedTalks: [
